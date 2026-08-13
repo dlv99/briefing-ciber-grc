@@ -1,0 +1,44 @@
+# -*- coding: utf-8 -*-
+"""Glosario. Las entradas con explicacion propia van aqui; el resto se genera
+solo a partir de siglas.py para que nunca falte ninguna."""
+from siglas import EXPANDIR, SOLO_ABBR
+
+# sigla: (categoria, explicacion)
+EXPLICA = {
+"TJUE": ("Instituciones", "Máxima instancia judicial de la Unión, con sede en Luxemburgo. Cuando en este briefing lees que un país está «demandado ante el TJUE» significa que la Comisión ha interpuesto un <b>recurso por incumplimiento</b>, el último escalón tras la carta de emplazamiento y el dictamen motivado. Lo que hace que muerda es el <b>artículo 260.3 del Tratado de Funcionamiento</b>: cuando lo incumplido es notificar la transposición de una directiva, la Comisión puede pedir sanciones económicas ya en el primer procedimiento, sin esperar a una segunda sentencia. Hay precedente español directo: en el asunto C-658/19, de febrero de 2021, el Tribunal condenó a España a <b>15 millones de euros a tanto alzado más 89.000 euros diarios</b> por no transponer la Directiva 2016/680. Ojo al matiz de calendario: si se transpone antes de la sentencia decae la multa diaria, pero la suma a tanto alzado puede imponerse igual, porque castiga el tiempo ya incumplido."),
+"NIS2": ("Normas UE", "Directiva (UE) 2022/2555 de seguridad de las redes y sistemas de información. Sustituye a la NIS original, amplía muchísimo el perímetro de entidades esenciales e importantes, y sus artículos 20 a 23 imponen deberes de gobernanza, gestión de riesgos y notificación de incidentes. <b>España no la ha transpuesto</b>, así que hoy siguen rigiendo el RDL 12/2018 y el RD 43/2021, y no existe registro nacional de entidades NIS2 ni régimen sancionador."),
+"CER": ("Normas UE", "Directiva (UE) 2022/2557 sobre resiliencia de las entidades críticas. Es la hermana física de NIS2: donde NIS2 mira a lo digital, CER mira a la continuidad del servicio frente a sabotaje, catástrofe o amenaza híbrida. Solapa mucho con NIS2 en energía, transporte, agua, salud, banca e infraestructura digital, y está sistemáticamente infratratada en los programas de cliente."),
+"DORA": ("Normas UE", "Reglamento (UE) 2022/2554 de resiliencia operativa digital del sector financiero. Aplicable directamente desde el 17 de enero de 2025, sin necesidad de transposición. Cubre gestión del riesgo TIC, notificación de incidentes, pruebas de resiliencia y, muy importante, la <b>vigilancia de proveedores terceros críticos</b> mediante el registro de información del artículo 28."),
+"CRA": ("Normas UE", "Reglamento (UE) 2024/2847 de ciberresiliencia. Obliga a que los productos con elementos digitales se diseñen y mantengan de forma segura. Su hito inmediato es el <b>11 de septiembre de 2026</b>, cuando arranca la obligación de notificar vulnerabilidades explotadas activamente e incidentes graves: alerta en 24 horas, notificación en 72 e informe final después."),
+"ENS": ("España", "Esquema Nacional de Seguridad, regulado por el Real Decreto 311/2022. Es el marco obligatorio de seguridad para el sector público español y, por arrastre contractual, para sus proveedores. Organiza medidas por categoría (básica, media, alta) y se audita."),
+"CCN": ("España", "Centro Criptológico Nacional, adscrito al CNI. Es quien publica las guías CCN-STIC, gestiona el catálogo CPSTIC de productos cualificados y opera el CCN-CERT. En la práctica, es contra sus guías contra lo que se audita en ámbito ENS."),
+"CPSTIC": ("España", "Catálogo de Productos y Servicios de Seguridad TIC del CCN. El artículo 19 del RD 311/2022 exige productos cualificados de este catálogo en sistemas ENS de categoría media y alta, así que condiciona directamente las compras."),
+"INES": ("España", "Informe Nacional del Estado de Seguridad. La plataforma donde las entidades en ámbito ENS reportan su nivel de cumplimiento al CCN. Últimamente el CCN la está usando también para recoger datos temáticos de madurez más allá del catálogo de medidas."),
+"INCIBE": ("España", "Instituto Nacional de Ciberseguridad, con sede en León. Opera el INCIBE-CERT, que es el equipo de respuesta de referencia para el sector privado y los ciudadanos, mientras que el CCN-CERT cubre el sector público."),
+"AEPD": ("España", "Agencia Española de Protección de Datos. Autoridad de control del RGPD en España. Sus resoluciones sancionadoras son la mejor fuente de precedente para valorar exposición por fallos de seguridad del artículo 32."),
+"AESIA": ("España", "Agencia Española de Supervisión de la Inteligencia Artificial, con sede en A Coruña. Designada y notificada como autoridad de vigilancia del mercado del Reglamento de IA, pero sus competencias formales siguen supeditadas a una ley orgánica pendiente."),
+"MUS": ("Supervisión financiera", "Mecanismo Único de Supervisión: el sistema por el que el Banco Central Europeo supervisa directamente a las entidades de crédito significativas de la zona euro, entre ellas las grandes españolas. Las menos significativas quedan con el supervisor nacional, que aquí es el Banco de España."),
+"JST": ("Supervisión financiera", "Equipo Conjunto de Supervisión. El equipo mixto de personal del BCE y del supervisor nacional que sigue el día a día de cada entidad significativa. Es a quien se le presentan los planes de acción y quien evalúa si un entregable es serio o es humo."),
+"SREP": ("Supervisión financiera", "Proceso de revisión y evaluación supervisora. El examen anual con el que el supervisor puntúa a cada entidad y del que salen los requerimientos de capital de Pilar 2. Que el riesgo TIC entre de lleno en el SREP significa que un fallo de gobernanza tecnológica puede acabar costando capital."),
+"JERS": ("Supervisión financiera", "Junta Europea de Riesgo Sistémico. El organismo macroprudencial de la UE, presidido por la presidencia del BCE. No supervisa entidades una a una: vigila riesgos para el sistema financiero en su conjunto y emite avisos y recomendaciones formales."),
+"AES": ("Supervisión financiera", "Autoridades Europeas de Supervisión: EBA para banca, ESMA para valores y mercados, y EIOPA para seguros y pensiones. Cuando actúan juntas lo hacen a través del Comité Mixto."),
+"CEPD": ("Protección de datos", "Comité Europeo de Protección de Datos. Reúne a las autoridades nacionales, entre ellas la AEPD, y emite las directrices que fijan la interpretación común del RGPD en toda la UE."),
+"KEV": ("Amenaza", "Catálogo de vulnerabilidades explotadas conocidas que mantiene la agencia estadounidense de ciberseguridad. No es normativa europea, pero es la referencia de facto para priorizar parcheo, porque solo entra lo que consta explotado en la práctica."),
+"EPSS": ("Amenaza", "Sistema de puntuación de probabilidad de explotación. Estima la probabilidad de que una vulnerabilidad se explote en los próximos 30 días. Complementa al CVSS, que mide gravedad técnica pero no probabilidad."),
+"CVSS": ("Amenaza", "Sistema común de puntuación de vulnerabilidades, de 0 a 10. Mide gravedad técnica. Conviene no confundirlo con riesgo: una vulnerabilidad de 9.8 en un sistema aislado puede importar menos que una de 6 en uno expuesto."),
+"IAF": ("Acreditación", "International Accreditation Forum. Era el foro que garantizaba que un certificado ISO emitido en un país valiera en otro. <b>Dejó de existir el 1 de enero de 2026</b>, fusionado con ILAC en la Global Accreditation Cooperation. Las plantillas de compras que exijan «firmante del MLA del IAF» están obsoletas."),
+"RGPD": ("Protección de datos", "Reglamento General de Protección de Datos, el (UE) 2016/679. Para lo que aquí interesa, su artículo 32 exige medidas técnicas y organizativas apropiadas, el 33 obliga a notificar brechas a la autoridad en 72 horas y el 34 a comunicarlas a los afectados cuando haya alto riesgo."),
+"CSIRT": ("Instituciones", "Equipo de respuesta a incidentes de seguridad informática. En España el CCN-CERT cubre el sector público y el INCIBE-CERT el privado; bajo NIS2 cada Estado designa el suyo como punto de notificación."),
+"DOUE": ("Instituciones", "Diario Oficial de la Unión Europea. Donde se publica la normativa europea y desde donde cuentan sus plazos. Es la fuente que hay que citar, no los navegadores de articulado de terceros, que a veces van desactualizados."),
+"BOCG": ("España", "Boletín Oficial de las Cortes Generales. Donde se publican los proyectos de ley y su tramitación. Es donde se comprueba en qué fase real está una norma española, antes de que llegue al BOE."),
+}
+CATS = ["Normas UE","España","Supervisión financiera","Protección de datos",
+        "Amenaza","Acreditación","Instituciones","Otras siglas"]
+
+def entradas():
+    todas = {**EXPANDIR, **SOLO_ABBR}
+    out = []
+    for sig in sorted(todas, key=lambda s: s.lower()):
+        cat, txt = EXPLICA.get(sig, ("Otras siglas", ""))
+        out.append((sig, todas[sig], cat, txt))
+    return out
