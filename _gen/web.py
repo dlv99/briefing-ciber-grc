@@ -3,7 +3,8 @@
 con particion de palabras, ladillos interrogativos e iconos de navegacion."""
 import re, json, os, html
 from contenido import (SEC, SEC_DARK, HOT, HOTBG, ITEMS, PLAZOS, BULOS,
-                       SILENCIO, TITULAR, ENTRADA, CLAVE_1, CLAVE_2, counts)
+                       SILENCIO, TITULAR, ENTRADA, CLAVE_1, CLAVE_2, counts,
+                       NUM, FECHA_ISO, FECHA_TXT, PERIODO, TITS)
 from glosario import entradas as GLOS, CATS as GCATS
 from mapa import EST, REJILLA, PAIS, NORMAS, D as MAPA
 from incidentes import INCIDENTES, DESCARTADOS, LAGUNAS, SECTORES, TIPOS
@@ -28,7 +29,6 @@ def iso(f):
     if not m: return ""
     d, mes, a = m.groups()
     return f"{a}-{MESES[mes]:02d}-{int(d):02d}"
-FECHA_ISO, FECHA_TXT, NUM = "2026-08-13", "13 de agosto de 2026", 1
 NOMBRES = {"es":"España","eu":"Unión Europea","fin":"Financiero",
            "std":"Normas","ai":"IA y datos","thr":"Amenaza"}
 
@@ -423,17 +423,11 @@ def render(eds, permalink=False):
       f'<p class="ante">Lo más importante de la semana</p>'
       f'<h2 class="tit">{TITULAR}</h2>'
       f'<p class="entradilla">{ENTRADA}</p>'
-      f'<div class="firma"><span><b>Periodo</b> del 1 de julio al 13 de agosto de 2026</span>'
+      f'<div class="firma"><span><b>Periodo</b> {PERIODO}</span>'
       f'<span><b>{TOTAL} asuntos</b></span><span><b>{len(PLAZOS)} plazos vivos</b></span>'
       f'<span>Verificado contra fuentes primarias</span></div>'
       f'<div class="clave"><span class="et">Lo único que hay que retener</span>'
       f'<p class="capitular">{marcar(CLAVE_1, set())}</p><p>{marcar(CLAVE_2, set())}</p></div></div>')
-    TITS = {"es":"El CCN obliga a autoevaluarse en inteligencia artificial ofensiva antes del 15 de septiembre",
-            "eu":"El reglamento de ciberresiliencia empieza a exigir notificación de vulnerabilidades",
-            "fin":"España por fin activa el régimen sancionador de DORA",
-            "std":"Dos normas ISO republicadas en julio, y ninguna es la 27001",
-            "ai":"El aplazamiento del alto riesgo es fecha fija, no condicional",
-            "thr":"Compromiso de plataforma de gestión remota: problema NIS2 y del artículo 28"}
     A('<div class="grid">')
     for k in SEC:
         A(f'<a class="card" href="#{k}" data-go="{k}" style="background:var(--{k}-t)">'
@@ -748,7 +742,7 @@ MAN = f"{RAIZ}/ediciones.json"
 eds = json.load(open(MAN, encoding="utf-8")) if os.path.exists(MAN) else []
 eds = [e for e in eds if e["iso"] != FECHA_ISO]
 eds.insert(0, {"n": NUM, "iso": FECHA_ISO, "fecha": FECHA_TXT, "titular": TITULAR,
-               "entrada": ENTRADA, "periodo": "del 1 de julio al 13 de agosto de 2026",
+               "entrada": ENTRADA, "periodo": PERIODO,
                "asuntos": TOTAL, "plazos": len(PLAZOS)})
 eds.sort(key=lambda x: x["iso"], reverse=True)
 json.dump(eds, open(MAN, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
