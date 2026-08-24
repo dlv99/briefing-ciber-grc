@@ -1,5 +1,15 @@
 [
  {
+  "n": 3,
+  "iso": "2026-08-24",
+  "fecha": "24 de agosto de 2026",
+  "titular": "Agosto se cierra sin normativa nueva, y septiembre entra cargado de plazos con el reglamento de ciberresiliencia a medio preparar",
+  "entrada": "La semana normativa fue casi tan tranquila como marca el calendario, y decirlo también es información. Lo poco que se movió apunta todo a septiembre: el reglamento de ciberresiliencia empieza a exigir notificaciones el día 11 y llega con la vigilancia del mercado apenas designada, mientras se acumulan los cierres de enmiendas de las dos leyes españolas y la autoevaluación de IA ofensiva en INES. Fuera de la normativa, lo accionable fue operativo: un fallo crítico y sin credenciales en el acceso remoto de Citrix, y un vuelco en el caso de la hacienda francesa, donde la autoridad de protección de datos ya investiga.",
+  "periodo": "del 17 al 24 de agosto de 2026",
+  "asuntos": 7,
+  "plazos": 11
+ },
+ {
   "n": 2,
   "iso": "2026-08-17",
   "fecha": "17 de agosto de 2026",
