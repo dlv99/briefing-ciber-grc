@@ -34,8 +34,8 @@ ENTRADA = ("Semana corta en normativa nueva y larga en consecuencias. Lo que má
  "la EBA publicó el 18 de septiembre su marco definitivo de riesgo de terceros para servicios no TIC, que "
  "derogará las directrices de externalización de 2019 en cuanto se aplique. Lo más revelador es español: la "
  "AEPD contó el 14 de septiembre la primera notificación de una brecha ejecutada por un agente de IA, y lo "
- "acompañó de una advertencia que sube el listón del artículo 32. En calendario, el cuadro del Congreso del "
- "viernes mantiene el 23 de septiembre para los plazos de enmiendas de entidades críticas, DORA e IA. En "
+ "acompañó de una advertencia que sube el listón del artículo 32. En calendario, el Congreso volvió a "
+ "prorrogar el 22 de septiembre los plazos de enmiendas de entidades críticas, DORA e IA, ahora al 30. En "
  "amenaza, Cisco suma dos explotaciones activas nuevas.")
 
 CLAVE_1 = ("Lo más consecuente de la semana es el cierre de un hueco que DORA dejó abierto. Desde enero de 2025 "
@@ -51,16 +51,16 @@ CLAVE_2 = ("La señal de fondo llega de la AEPD. El <b>14 de septiembre</b> expl
  "el que un agente de IA buscó vulnerabilidades, entró con credenciales válidas, modificó datos personales y "
  "accedió a facturas, y escribió que la seguridad de los tratamientos no puede depender únicamente de la "
  "intervención manual. Es la misma dirección que el BCE, que espera los planes contra la ciberamenaza "
- "potenciada por IA el <b>31 de octubre</b>. En calendario, el cuadro del Congreso del viernes 18 mantiene "
- "el <b>23 de septiembre</b> para las enmiendas de los tres proyectos del ámbito, sin la prórroga semanal "
- "de otras veces. Y en amenaza, Cisco suma explotación activa en su pasarela de correo y en su control "
+ "potenciada por IA el <b>31 de octubre</b>. En calendario, el Congreso volvió a prorrogar el 22 de septiembre "
+ "las enmiendas de los tres proyectos del ámbito, ahora hasta el <b>30 de septiembre</b>: la prórroga "
+ "semanal sigue. Y en amenaza, Cisco suma explotación activa en su pasarela de correo y en su control "
  "de acceso a red, encima de la del gestor de cortafuegos de la semana anterior.")
 
 PLAZOS = [
- ("23 sep 2026", True,  "Cierre de los plazos de enmiendas de 121/000088 (entidades críticas), 121/000105 (adaptación de DORA), 121/000096 (ley orgánica de IA) y 121/000068 (gobernanza democrática en servicios digitales), según el cuadro del Congreso del 18 de septiembre", "Quien quiera influir en cualquiera de los textos españoles"),
  ("25 sep 2026", True,  "Cierre de comentarios del NIST SP 800-239 sobre seguridad de centros de datos de IA", "Operadores de centros de datos y quien asesore sobre infraestructura de IA"),
  ("25 sep 2026", True,  "Cierre, a las 16:00, de la inscripción en la audiencia pública de la EBA sobre gestión del riesgo operacional", "Bancos y quien haga el encaje entre riesgo operacional y DORA"),
  ("29 sep 2026", True,  "Audiencia pública de la EBA sobre las RTS de gestión del riesgo operacional, de 10:00 a 12:00", "Bancos"),
+ ("30 sep 2026", True,  "Cierre de los plazos de enmiendas de 121/000088 (entidades críticas), 121/000105 (adaptación de DORA) y 121/000096 (ley orgánica de IA), según el cuadro del Congreso del 22 de septiembre, tras otra prórroga semanal", "Quien quiera influir en cualquiera de los textos españoles"),
  ("1 oct 2026",  True,  "Entrada en vigor de la NISG austriaca, con notificación de incidentes obligatoria desde ese día", "Grupos españoles con filiales o servicios en Austria"),
  ("5 oct 2026",  True,  "Cierre de comentarios del NIST IR 8613 sobre seguridad y cumplimiento en arquitecturas multinube", "Quien quiera posicionarse en el debate de multinube"),
  ("15 oct 2026", True,  "Cierre de comentarios del NIST SP 1353 sobre uso de IA en el análisis del marco de ciberseguridad", "Despachos y consultoras con práctica de IA y cumplimiento"),
@@ -79,7 +79,7 @@ PLAZOS = [
 
 # titulares de las tarjetas de portada, uno por ámbito
 TITS = {
- "es":  "El Congreso mantiene el 23 de septiembre para los tres proyectos, y el ENS ya se puede leer por máquina",
+ "es":  "El Congreso vuelve a prorrogar las enmiendas al 30 de septiembre, y el ENS ya se puede leer por máquina",
  "eu":  "La certificación de la revisión del Reglamento de Ciberseguridad entra en el Consejo, y Austria arranca NIS2 el 1 de octubre",
  "fin": "La EBA jubila las directrices de externalización de 2019 con un marco nuevo para terceros no TIC",
  "std": "El NIST reescribe su guía de tecnología operativa y el CEPD estudia la ISO/IEC 27701 como certificación",
@@ -89,12 +89,12 @@ TITS = {
 
 # (seccion, marcas, prioritario, titular, que_cambia, por_que, que_leer, aviso)
 ITEMS = [
-("es", "Congreso · vence el 23 de septiembre", True,
- "Los plazos de enmiendas de entidades críticas, DORA e IA vencen el 23 de septiembre, y el cuadro del viernes no trae prórroga",
- "El cuadro de plazos de enmiendas del Congreso, <b>actualizado el viernes 18 de septiembre</b>, mantiene el <b>23 de septiembre de 2026</b> como último día para los tres proyectos del ámbito: el 121/000088 de protección y resiliencia de las entidades críticas, que transpone CER; el 121/000105 de digitalización y modernización del sector financiero, que adapta DORA; y el 121/000096, ley orgánica para el buen uso y la gobernanza de la IA. Hay un cuarto con la misma fecha que conviene tener en el radar: el <b>121/000068</b>, de gobernanza democrática en servicios digitales y medios. En el BOCG no hay enmiendas, ponencia ni dictamen de ninguno; el único documento posterior del proyecto de DORA sigue siendo la corrección de errores del 11 de septiembre.",
- "La Mesa lleva prorrogando estos plazos semana a semana desde abril, y la ampliación solía verse ya en el cuadro del viernes. Que el del 18 no la traiga no garantiza que no llegue, pero obliga a trabajar como si el 23 fuera el último día: quien tenga una nota técnica para un grupo parlamentario sobre el perímetro de entidades críticas, el régimen sancionador financiero o las competencias de la AESIA, la envía ahora. El 088 y el 105 van por competencia legislativa plena, así que el texto no vuelve al Pleno, y el 105 va además por urgencia.",
+("es", "Congreso · prorrogado al 30 de septiembre", True,
+ "Los plazos de enmiendas de entidades críticas, DORA e IA se prorrogan otra semana, ahora hasta el 30 de septiembre",
+ "El cuadro de plazos de enmiendas del Congreso, <b>actualizado el martes 22 de septiembre</b>, lleva al <b>30 de septiembre de 2026</b> el último día para los tres proyectos del ámbito: el 121/000088 de protección y resiliencia de las entidades críticas, que transpone CER; el 121/000105 de digitalización y modernización del sector financiero, que adapta DORA; y el 121/000096, ley orgánica para el buen uso y la gobernanza de la IA. Hay un cuarto que conviene tener en el radar: el <b>121/000068</b>, de gobernanza democrática en servicios digitales y medios, que en el cuadro del 18 tenía el mismo fin de plazo. En el BOCG no hay enmiendas, ponencia ni dictamen de ninguno; el único documento posterior del proyecto de DORA sigue siendo la corrección de errores del 11 de septiembre.",
+ "La Mesa lleva prorrogando estos plazos semana a semana desde abril, y esta vez la ampliación llegó en el cuadro del martes 22, a un día del cierre. Es la señal de bloqueo que conviene leer: mientras el plazo se siga moviendo, el texto no avanza. Aun así, hay que trabajar como si el 30 fuera el último día: quien tenga una nota técnica para un grupo parlamentario sobre el perímetro de entidades críticas, el régimen sancionador financiero o las competencias de la AESIA, la envía ahora. El 088 y el 105 van por competencia legislativa plena, así que el texto no vuelve al Pleno, y el 105 va además por urgencia.",
  '<a href="https://www.congreso.es/webpublica/ficherosportal/cuadro_plazo_enmiendas_XV.pdf" @L>Cuadro de plazos de enmiendas del Congreso</a> y la <a href="https://www.congreso.es/public_oficiales/L15/CONG/BOCG/A/BOCG-15-A-106-2.PDF" @L>corrección de errores BOCG-15-A-106-2</a>.',
- "Corrección a la edición 004: dimos las 18:00 como hora de cierre, y el cuadro oficial no indica hora, solo fecha. No la trasladamos sin leerla en la ficha de cada iniciativa, que se carga por JavaScript y no se ha podido abrir desde este entorno. Y conviene reconfirmar el cuadro el mismo 23 por la mañana, porque una ampliación acordada después del viernes no aparecería todavía."),
+ "Actualizado el 22 de septiembre: esta edición se publicó con el 23 de septiembre como cierre y el aviso de reconfirmar el cuadro; el cuadro de ese martes recogió una nueva ampliación al 30. Y una corrección a la edición 004: dimos las 18:00 como hora de cierre, y el cuadro oficial no indica hora, solo fecha. Las previsiones de cuándo puede salir cada ley están ahora en el mapa de la UE, país por país."),
 
 ("es", "CCN · 17 sep 2026", False,
  "El CCN publica las medidas del ENS en formato legible por máquina, y el formulario de IA ofensiva cierra sin nueva prórroga",
@@ -138,9 +138,9 @@ ITEMS = [
  '<a href="https://www.bankingsupervision.europa.eu/press/speeches/date/2026/html/ssm.sp260908~f0dd8b1456.en.html" @L>Intervención de Frank Elderson del 8 de septiembre</a>, la <a href="https://www.bankingsupervision.europa.eu/press/interviews/date/2026/html/ssm.in260916~3467f1febf.en.html" @L>entrevista de Sharon Donnery</a> y la <a href="https://www.bankingsupervision.europa.eu/ecb/pub/pdf/ssm.supervisory_guides_202609.en.pdf" @L>guía de solicitudes de licencia</a>.',
  "Los índices de publicaciones del BCE aparecían desactualizados al consultarlos, así que puede haber algo de la ventana que no se haya visto. La guía de licencias está fechada solo como septiembre de 2026, sin día. Y un detalle que no conviene sobreinterpretar: la guía remite a las directrices de la EBA sobre riesgo TIC y no nombra DORA."),
 
-("fin", "Calendario · 23, 25 y 29 de septiembre", False,
+("fin", "Calendario · 25, 29 y 30 de septiembre", False,
  "Tres citas en una semana: enmiendas al proyecto que adapta DORA, inscripción en la audiencia de la EBA y la propia audiencia",
- "El proyecto <b>121/000105</b>, que adapta DORA y trae los regímenes sancionadores de banca, valores, seguros y fondos de pensiones, cierra enmiendas el <b>23 de septiembre</b> según el cuadro del Congreso del 18. En Europa, la consulta de la EBA sobre las <b>RTS de gestión del riesgo operacional</b> del artículo 323.2 del CRR, abierta el 26 de agosto hasta el 31 de diciembre, tiene audiencia pública el <b>29 de septiembre</b> de 10:00 a 12:00, con inscripción hasta el <b>25 de septiembre a las 16:00</b>. El texto prevé proporcionalidad para indicadores de negocio por debajo de 750 millones de euros y deja el riesgo TIC expresamente en DORA.",
+ "El proyecto <b>121/000105</b>, que adapta DORA y trae los regímenes sancionadores de banca, valores, seguros y fondos de pensiones, cierra enmiendas el <b>30 de septiembre</b> según el cuadro del Congreso del 22, tras otra prórroga semanal. En Europa, la consulta de la EBA sobre las <b>RTS de gestión del riesgo operacional</b> del artículo 323.2 del CRR, abierta el 26 de agosto hasta el 31 de diciembre, tiene audiencia pública el <b>29 de septiembre</b> de 10:00 a 12:00, con inscripción hasta el <b>25 de septiembre a las 16:00</b>. El texto prevé proporcionalidad para indicadores de negocio por debajo de 750 millones de euros y deja el riesgo TIC expresamente en DORA.",
  "Son dos ventanas de influencia distintas y las dos se cierran en días. La española es la última oportunidad de tocar el régimen sancionador antes de que la Comisión apruebe el texto sin volver al Pleno. La europea es la que fija dónde acaba el riesgo operacional clásico y dónde empieza DORA, que es la frontera que más discusiones genera en los mapas de riesgos de los bancos. Quien quiera asistir a la audiencia tiene que inscribirse antes del jueves.",
  '<a href="https://www.eba.europa.eu/publications-and-media/press-releases/eba-consults-draft-technical-standards-institutions-operational-risk-management" @L>Consulta de la EBA sobre gestión del riesgo operacional</a> y el <a href="https://www.congreso.es/public_oficiales/L15/CONG/BOCG/A/BOCG-15-A-106-1.PDF" @L>texto del proyecto, BOCG-15-A-106-1</a>.',
  None),
@@ -203,8 +203,8 @@ ITEMS = [
 ]
 
 BULOS = [
- ("«Los plazos de enmiendas del Congreso cierran el 23 de septiembre a las 18:00.»",
-  "La fecha está en el cuadro oficial del 18 de septiembre; la hora, no. La edición 004 dio las 18:00 y el cuadro no las recoge. Da la fecha y remite a la ficha de cada iniciativa para la hora."),
+ ("«Los plazos de enmiendas del Congreso cerraron el 23 de septiembre a las 18:00.»",
+  "Ni lo uno ni lo otro. El cuadro del 22 de septiembre los amplió al 30, y el cuadro no indica hora: la edición 004 dio las 18:00 sin respaldo. Da la fecha del último cuadro y remite a la ficha de cada iniciativa para la hora."),
  ("«Revolut ha confirmado 680 clientes afectados.»",
   "No. La cifra de unos 680 afectados en varios países europeos procede de una fuente anónima citada por la prensa financiera, no de Revolut, que sigue sin dar número. Lo que sí está confirmado es que la autoridad británica de protección de datos recibió la notificación y la está evaluando."),
  ("«Las nuevas directrices de la EBA sobre terceros sustituyen a DORA para los proveedores TIC.»",
