@@ -56,6 +56,15 @@ EXPANDIR = {
  "BOCG": "Boletín Oficial de las Cortes Generales",
  "DOUE": "Diario Oficial de la Unión Europea",
  "PCE": "Perfil de Cumplimiento Específico",
+ "OSCAL": "lenguaje abierto del NIST para describir y evaluar controles de seguridad",
+ "DAkkS": "entidad nacional de acreditación de Alemania",
+ "ICO": "autoridad británica de protección de datos",
+ "ITRE": "comisión de Industria, Investigación y Energía del Parlamento Europeo",
+ "RTS": "normas técnicas de regulación",
+ "CRR": "Reglamento de requisitos de capital",
+ "CADA": "propuesta de reglamento europeo de desarrollo de la nube y la IA",
+ "NISG": "ley austriaca que transpone NIS2",
+ "CNI": "Centro Nacional de Inteligencia",
 }
 SOLO_ABBR = {
  "TIC": "tecnologías de la información y la comunicación",

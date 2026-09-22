@@ -31,6 +31,8 @@ EXPLICA = {
 "CSIRT": ("Instituciones", "Equipo de respuesta a incidentes de seguridad informática. En España el CCN-CERT cubre el sector público y el INCIBE-CERT el privado; bajo NIS2 cada Estado designa el suyo como punto de notificación."),
 "DOUE": ("Instituciones", "Diario Oficial de la Unión Europea. Donde se publica la normativa europea y desde donde cuentan sus plazos. Es la fuente que hay que citar, no los navegadores de articulado de terceros, que a veces van desactualizados."),
 "BOCG": ("España", "Boletín Oficial de las Cortes Generales. Donde se publican los proyectos de ley y su tramitación. Es donde se comprueba en qué fase real está una norma española, antes de que llegue al BOE."),
+"OSCAL": ("Otras siglas", "Open Security Controls Assessment Language, el formato abierto del NIST para expresar catálogos de controles, perfiles y evaluaciones en ficheros legibles por máquina. Desde el 17 de septiembre de 2026 las medidas del anexo II del ENS existen también en JSON conforme a OSCAL, lo que permite cargarlas directamente en herramientas de GRC y automatizar la verificación."),
+"CADA": ("Normas UE", "Cloud and AI Development Act, la propuesta de reglamento europeo de desarrollo de la nube y la IA presentada por la Comisión el 3 de junio de 2026. Es la pieza legislativa del frente de soberanía digital: capacidad de cómputo, centros de datos y condiciones de acceso. Sigue en fase de trabajo técnico en Consejo y Parlamento."),
 }
 CATS = ["Normas UE","España","Supervisión financiera","Protección de datos",
         "Amenaza","Acreditación","Instituciones","Otras siglas"]
