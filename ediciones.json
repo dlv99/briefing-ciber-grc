@@ -1,5 +1,15 @@
 [
  {
+  "n": 6,
+  "iso": "2026-09-28",
+  "fecha": "28 de septiembre de 2026",
+  "titular": "Citrix cierra la semana con dos días cero explotados, y el BCE avisa de que los planes del 31 de octubre se van a comparar unos con otros",
+  "entrada": "Semana densa en lo operativo y reveladora en lo supervisor. El domingo 27 Citrix reconoció explotación activa de dos vulnerabilidades sin autenticación en NetScaler, y el catálogo estadounidense de vulnerabilidades explotadas les puso el plazo más corto del año, tres días; el INCIBE-CERT publicó su aviso esta misma mañana. En supervisión, la presidenta del Consejo de Supervisión del BCE dijo el 22 en Ámsterdam lo que la carta de julio no decía tan claro: los planes contra la ciberamenaza potenciada por IA que vencen el 31 de octubre se evaluarán en horizontal, es decir, comparados entre entidades. En Bruselas se abre hasta el 13 de octubre la única ventana real de enmiendas del paquete que reabre NIS2. Y en España, Adif y Renfe confirmaron un acceso con datos de clientes, mientras el Congreso deja el 30 de septiembre en pie sin nueva prórroga.",
+  "periodo": "del 21 al 28 de septiembre de 2026",
+  "asuntos": 20,
+  "plazos": 23
+ },
+ {
   "n": 5,
   "iso": "2026-09-21",
   "fecha": "21 de septiembre de 2026",

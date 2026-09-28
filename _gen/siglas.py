@@ -65,6 +65,7 @@ EXPANDIR = {
  "CADA": "propuesta de reglamento europeo de desarrollo de la nube y la IA",
  "NISG": "ley austriaca que transpone NIS2",
  "CNI": "Centro Nacional de Inteligencia",
+ "ENAC": "Entidad Nacional de Acreditación",
 }
 SOLO_ABBR = {
  "TIC": "tecnologías de la información y la comunicación",
