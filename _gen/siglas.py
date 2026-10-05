@@ -66,6 +66,8 @@ EXPANDIR = {
  "NISG": "ley austriaca que transpone NIS2",
  "CNI": "Centro Nacional de Inteligencia",
  "ENAC": "Entidad Nacional de Acreditación",
+ "SAML": "lenguaje de marcado para aserciones de seguridad, usado en el inicio de sesión federado",
+ "DNS": "sistema de nombres de dominio",
 }
 SOLO_ABBR = {
  "TIC": "tecnologías de la información y la comunicación",
