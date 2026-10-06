@@ -1,0 +1,6 @@
+# Cache del generador
+_gen/__pycache__/
+
+# Artefactos de trabajo de las revisiones de diseño, no del sitio
+.impeccable/review/
+.impeccable/questions/

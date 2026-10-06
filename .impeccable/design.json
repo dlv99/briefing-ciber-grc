@@ -1,0 +1,583 @@
+{
+ "schemaVersion": 2,
+ "generatedAt": "2026-10-06T13:35:47+02:00",
+ "title": "Design System: Briefing Ciber-GRC",
+ "language": "es-ES",
+ "sourceOfTruth": [
+  "_gen/web.py :: CSS (f-string, llaves dobladas)",
+  "_gen/web.py :: CSS_QE (cadena normal, llaves sencillas, acotada bajo .qe)",
+  "_gen/web.py :: SEC, SEC_DARK, HOT, HOTBG, TABS, IC, BANDEROLA, PLIEGUES, AMBITOS",
+  "index.html / ed-2026-10-05.html (mundo establecido, siete ediciones)",
+  "que-es.html (superficie nueva)"
+ ],
+ "extensions": {
+  "colorMeta": {
+   "hot": {
+    "role": "primary",
+    "displayName": "Rojo de cinta",
+    "canonical": "oklch(53.9% 0.194 26.7)",
+    "tonalRamp": [
+     "oklch(15% 0.194 26.7)",
+     "oklch(25% 0.194 26.7)",
+     "oklch(35% 0.194 26.7)",
+     "oklch(45% 0.194 26.7)",
+     "oklch(55% 0.194 26.7)",
+     "oklch(70% 0.194 26.7)",
+     "oklch(85% 0.194 26.7)",
+     "oklch(95% 0.194 26.7)"
+    ],
+    "purpose": "Acento unico: urgencia, banderola, linea de lo comprobado, boton principal."
+   },
+   "hot-t": {
+    "role": "primary",
+    "displayName": "Tinte de cinta",
+    "canonical": "oklch(95.6% 0.019 25.6)",
+    "tonalRamp": [
+     "oklch(15% 0.019 25.6)",
+     "oklch(25% 0.019 25.6)",
+     "oklch(35% 0.019 25.6)",
+     "oklch(45% 0.019 25.6)",
+     "oklch(55% 0.019 25.6)",
+     "oklch(70% 0.019 25.6)",
+     "oklch(85% 0.019 25.6)",
+     "oklch(95% 0.019 25.6)"
+    ],
+    "purpose": "Fondo de la fila de plazo urgente y del panel de correcciones."
+   },
+   "es": {
+    "role": "secondary",
+    "displayName": "Rojo Espana",
+    "canonical": "oklch(53.9% 0.194 26.7)",
+    "tonalRamp": [
+     "oklch(15% 0.194 26.7)",
+     "oklch(25% 0.194 26.7)",
+     "oklch(35% 0.194 26.7)",
+     "oklch(45% 0.194 26.7)",
+     "oklch(55% 0.194 26.7)",
+     "oklch(70% 0.194 26.7)",
+     "oklch(85% 0.194 26.7)",
+     "oklch(95% 0.194 26.7)"
+    ],
+    "purpose": "Ambito nacional. Comparte valor con el rojo de cinta, a proposito."
+   },
+   "eu": {
+    "role": "secondary",
+    "displayName": "Azul Union",
+    "canonical": "oklch(51.3% 0.16 255.7)",
+    "tonalRamp": [
+     "oklch(15% 0.16 255.7)",
+     "oklch(25% 0.16 255.7)",
+     "oklch(35% 0.16 255.7)",
+     "oklch(45% 0.16 255.7)",
+     "oklch(55% 0.16 255.7)",
+     "oklch(70% 0.16 255.7)",
+     "oklch(85% 0.16 255.7)",
+     "oklch(95% 0.16 255.7)"
+    ],
+    "purpose": "Regulacion horizontal; tambien el mapa UE."
+   },
+   "fin": {
+    "role": "secondary",
+    "displayName": "Verde finanzas",
+    "canonical": "oklch(51.7% 0.093 181.1)",
+    "tonalRamp": [
+     "oklch(15% 0.093 181.1)",
+     "oklch(25% 0.093 181.1)",
+     "oklch(35% 0.093 181.1)",
+     "oklch(45% 0.093 181.1)",
+     "oklch(55% 0.093 181.1)",
+     "oklch(70% 0.093 181.1)",
+     "oklch(85% 0.093 181.1)",
+     "oklch(95% 0.093 181.1)"
+    ],
+    "purpose": "DORA y supervisores; panel de comprobado y sin novedad."
+   },
+   "std": {
+    "role": "secondary",
+    "displayName": "Violeta normas",
+    "canonical": "oklch(42.0% 0.19 308.0)",
+    "tonalRamp": [
+     "oklch(15% 0.19 308.0)",
+     "oklch(25% 0.19 308.0)",
+     "oklch(35% 0.19 308.0)",
+     "oklch(45% 0.19 308.0)",
+     "oklch(55% 0.19 308.0)",
+     "oklch(70% 0.19 308.0)",
+     "oklch(85% 0.19 308.0)",
+     "oklch(95% 0.19 308.0)"
+    ],
+    "purpose": "ISO, NIST y distintivo de tipo directiva."
+   },
+   "ai": {
+    "role": "secondary",
+    "displayName": "Naranja IA",
+    "canonical": "oklch(63.1% 0.197 40.3)",
+    "tonalRamp": [
+     "oklch(15% 0.197 40.3)",
+     "oklch(25% 0.197 40.3)",
+     "oklch(35% 0.197 40.3)",
+     "oklch(45% 0.197 40.3)",
+     "oklch(55% 0.197 40.3)",
+     "oklch(70% 0.197 40.3)",
+     "oklch(85% 0.197 40.3)",
+     "oklch(95% 0.197 40.3)"
+    ],
+    "purpose": "Reglamento de IA y datos. 3,45:1 sobre papel: nunca texto de cuerpo."
+   },
+   "thr": {
+    "role": "secondary",
+    "displayName": "Magenta amenaza",
+    "canonical": "oklch(49.0% 0.187 2.5)",
+    "tonalRamp": [
+     "oklch(15% 0.187 2.5)",
+     "oklch(25% 0.187 2.5)",
+     "oklch(35% 0.187 2.5)",
+     "oklch(45% 0.187 2.5)",
+     "oklch(55% 0.187 2.5)",
+     "oklch(70% 0.187 2.5)",
+     "oklch(85% 0.187 2.5)",
+     "oklch(95% 0.187 2.5)"
+    ],
+    "purpose": "Explotacion activa y avisos de CERT."
+   },
+   "bg": {
+    "role": "neutral",
+    "displayName": "Papel hueso",
+    "canonical": "oklch(96.8% 0.007 80.7)",
+    "tonalRamp": [
+     "oklch(15% 0.007 80.7)",
+     "oklch(25% 0.007 80.7)",
+     "oklch(35% 0.007 80.7)",
+     "oklch(45% 0.007 80.7)",
+     "oklch(55% 0.007 80.7)",
+     "oklch(70% 0.007 80.7)",
+     "oklch(85% 0.007 80.7)",
+     "oklch(95% 0.007 80.7)"
+    ],
+    "purpose": "Fondo de pagina y fondo opaco de la navegacion fija."
+   },
+   "paper": {
+    "role": "neutral",
+    "displayName": "Papel claro",
+    "canonical": "oklch(99.5% 0.005 78.3)",
+    "tonalRamp": [
+     "oklch(15% 0.005 78.3)",
+     "oklch(25% 0.005 78.3)",
+     "oklch(35% 0.005 78.3)",
+     "oklch(45% 0.005 78.3)",
+     "oklch(55% 0.005 78.3)",
+     "oklch(70% 0.005 78.3)",
+     "oklch(85% 0.005 78.3)",
+     "oklch(95% 0.005 78.3)"
+    ],
+    "purpose": "Cajas que se levantan del fondo."
+   },
+   "ink": {
+    "role": "neutral",
+    "displayName": "Tinta",
+    "canonical": "oklch(20.0% 0.009 264.4)",
+    "tonalRamp": [
+     "oklch(15% 0.009 264.4)",
+     "oklch(25% 0.009 264.4)",
+     "oklch(35% 0.009 264.4)",
+     "oklch(45% 0.009 264.4)",
+     "oklch(55% 0.009 264.4)",
+     "oklch(70% 0.009 264.4)",
+     "oklch(85% 0.009 264.4)",
+     "oklch(95% 0.009 264.4)"
+    ],
+    "purpose": "Prosa, titulares, filetes fuertes. 16,5:1 sobre papel."
+   },
+   "ink2": {
+    "role": "neutral",
+    "displayName": "Tinta media",
+    "canonical": "oklch(39.1% 0.018 254.7)",
+    "tonalRamp": [
+     "oklch(15% 0.018 254.7)",
+     "oklch(25% 0.018 254.7)",
+     "oklch(35% 0.018 254.7)",
+     "oklch(45% 0.018 254.7)",
+     "oklch(55% 0.018 254.7)",
+     "oklch(70% 0.018 254.7)",
+     "oklch(85% 0.018 254.7)",
+     "oklch(95% 0.018 254.7)"
+    ],
+    "purpose": "Entradilla y prosa secundaria. 8,7:1 sobre papel."
+   },
+   "ink3": {
+    "role": "neutral",
+    "displayName": "Tinta debil",
+    "canonical": "oklch(58.7% 0.017 257.2)",
+    "tonalRamp": [
+     "oklch(15% 0.017 257.2)",
+     "oklch(25% 0.017 257.2)",
+     "oklch(35% 0.017 257.2)",
+     "oklch(45% 0.017 257.2)",
+     "oklch(55% 0.017 257.2)",
+     "oklch(70% 0.017 257.2)",
+     "oklch(85% 0.017 257.2)",
+     "oklch(95% 0.017 257.2)"
+    ],
+    "purpose": "3,79:1: filetes, graficos y texto grande. Nunca prosa ni etiqueta pequena."
+   },
+   "rule": {
+    "role": "neutral",
+    "displayName": "Filete",
+    "canonical": "oklch(86.9% 0.016 82.8)",
+    "tonalRamp": [
+     "oklch(15% 0.016 82.8)",
+     "oklch(25% 0.016 82.8)",
+     "oklch(35% 0.016 82.8)",
+     "oklch(45% 0.016 82.8)",
+     "oklch(55% 0.016 82.8)",
+     "oklch(70% 0.016 82.8)",
+     "oklch(85% 0.016 82.8)",
+     "oklch(95% 0.016 82.8)"
+    ],
+    "purpose": "Separador de 1px entre bloques distintos."
+   },
+   "hair": {
+    "role": "neutral",
+    "displayName": "Capilar",
+    "canonical": "oklch(92.6% 0.013 82.4)",
+    "tonalRamp": [
+     "oklch(15% 0.013 82.4)",
+     "oklch(25% 0.013 82.4)",
+     "oklch(35% 0.013 82.4)",
+     "oklch(45% 0.013 82.4)",
+     "oklch(55% 0.013 82.4)",
+     "oklch(70% 0.013 82.4)",
+     "oklch(85% 0.013 82.4)",
+     "oklch(95% 0.013 82.4)"
+    ],
+    "purpose": "Separador de 1px dentro de una misma lista."
+   }
+  },
+  "typographyMeta": {
+   "display": {
+    "displayName": "Display",
+    "purpose": "Titulo de una superficie propia. Hoy solo el h1 de /que-es."
+   },
+   "headline": {
+    "displayName": "Titular de pestana",
+    "purpose": "h2.tit de cada pestana de una edicion. text-wrap:balance, hyphens:none."
+   },
+   "title": {
+    "displayName": "Titular de asunto",
+    "purpose": "h3.titular de cada asunto publicado."
+   },
+   "subtitle": {
+    "displayName": "Entradilla",
+    "purpose": "Bajada de cualquier titular, en tinta media. 19px por debajo de 640px."
+   },
+   "body": {
+    "displayName": "Prosa",
+    "purpose": "Lectura larga justificada a 34em, con guion blando inyectado por silabas.blandear(). 18px por debajo de 640px."
+   },
+   "body-small": {
+    "displayName": "Prosa de servicio",
+    "purpose": "Cajas de referencia, bulos y celdas de tabla."
+   },
+   "ladillo": {
+    "displayName": "Ladillo interrogativo",
+    "purpose": "Los tres ladillos de cada asunto, en cursiva y a color de ambito."
+   },
+   "label": {
+    "displayName": "Rotulo versalita",
+    "purpose": "Inter en versalitas con tracking abierto. Rotula, nunca narra. Suelo de 11px."
+   },
+   "ui": {
+    "displayName": "Mando",
+    "purpose": "Pestanas, chips, botones y selectores de norma."
+   },
+   "mono": {
+    "displayName": "Monoespaciada",
+    "purpose": "Solo en code, para dominios y referencias tecnicas dentro de la prosa."
+   }
+  },
+  "shadows": [
+   {
+    "name": "anillo-capilar",
+    "value": "0 0 0 1px rgba(0,0,0,.13)",
+    "purpose": "Sin desplazamiento ni difusion: sustituye el borde en las banderas img del mapa, donde un border recortaria el grafico. Variante .15 en la bandera grande de la ficha."
+   },
+   {
+    "name": "flotante",
+    "value": "0 6px 22px rgba(0,0,0,.28)",
+    "purpose": "Unica sombra real del sistema, y solo en el tooltip del mapa, que si flota sobre la pagina."
+   }
+  ],
+  "motion": [
+   {
+    "name": "opacidad-ancla",
+    "value": "opacity .15s",
+    "purpose": "Aparicion del boton de copiar enlace al pasar por un asunto."
+   },
+   {
+    "name": "opacidad-tooltip",
+    "value": "opacity .12s",
+    "purpose": "Entrada y salida del tooltip del mapa."
+   },
+   {
+    "name": "realce-mapa",
+    "value": "filter .12s, stroke-width .12s",
+    "purpose": "Realce del pais bajo el raton o el foco."
+   },
+   {
+    "name": "escala-celda",
+    "value": "transform .1s",
+    "purpose": "Celda de la rejilla de 27 Estados al hover (scale 1.09)."
+   }
+  ],
+  "breakpoints": [
+   {
+    "name": "mapa",
+    "value": "860px",
+    "purpose": "El mapa y .qe-top pasan a una columna; las rejillas de ambitos y de leyenda se colapsan."
+   },
+   {
+    "name": "mapa-ue",
+    "value": "820px",
+    "purpose": "Segunda declaracion de .mapa-w."
+   },
+   {
+    "name": "movil",
+    "value": "640px",
+    "purpose": "Cuerpo a 18px, menos relleno, se oculta la columna de a quien obliga."
+   }
+  ],
+  "measure": {
+   "token": "--medida",
+   "value": "34em",
+   "purpose": "Medida de lectura que gobierna la pagina entera, pie y leyenda incluidos. Lo que deba ser mas ancho declara max-width:none."
+  },
+  "container": {
+   "value": "1080px",
+   "purpose": "Caja de pagina: mastil, navegacion, buscador y main."
+  },
+  "icons": {
+   "grid": "16x16",
+   "stroke": "1.45",
+   "style": "fill:none, stroke:currentColor, remates y uniones redondeados",
+   "source": "diccionario IC en _gen/web.py",
+   "purpose": "Iconos autorales, pintados a 15-19px. Ni glifos, ni emoji, ni paquete de iconos."
+  },
+  "signatureShape": {
+   "name": "muesca de banderola",
+   "value": "clip-path:polygon(0 0,calc(100% - 11px) 0,100% 50%,calc(100% - 11px) 100%,0 100%)",
+   "purpose": "Flanco derecho en pico, misma silueta que el SVG BANDEROLA que abre cada seccion de /que-es."
+  },
+  "contrast": {
+   "sobre-f7f4ef": {
+    "ink": "16.5:1",
+    "ink2": "8.7:1",
+    "ink3": "3.79:1",
+    "hot": "5.12:1",
+    "ai": "3.45:1"
+   },
+   "sobre-0e0f11": {
+    "ink": "17.1:1",
+    "ink2": "10.7:1",
+    "ink3": "6.1:1",
+    "hot": "7.63:1"
+   },
+   "rule": "--ink3 y el ambito ai estan por debajo de AA para texto de cuerpo: valen para texto grande, filetes y graficos no textuales."
+  },
+  "notCanonized": [
+   {
+    "what": "Texto funcional a 10,5px",
+    "where": "_gen/web.py :: CSS, reglas .mast-sub y .ed-n (misma familia en .et y .card .ci)",
+    "why": "Por debajo del suelo de 11px. Renderiza identico en las siete ediciones publicadas; no se reparo a proposito. La superficie nueva respeta el suelo (.pl-est y .ficha dt a 11px)."
+   },
+   {
+    "what": "--ink3 en texto pequeno",
+    "where": "_gen/web.py :: CSS, regla .mast-sub",
+    "why": "3,79:1 a 10,5px, contra la regla del color que no porta. /que-es lo corrige solo para su superficie con .qe .mast-sub{color:var(--ink2)}; la cabecera de las ediciones queda como estaba."
+   },
+   {
+    "what": "Filete de color de 5px",
+    "where": "_gen/web.py :: CSS, regla .clave (border-left:5px solid var(--es))",
+    "why": "Unico filete de color de ese grosor; el resto del sistema se queda en 3px. No se extiende y no se repara."
+   },
+   {
+    "what": "Rotulos de antetitulo (.ante)",
+    "where": "_gen/web.py :: render(), un .ante por pestana de edicion",
+    "why": "Antetitulo versalita suelto sobre el titular. Es un defecto que el build arrastra, no un componente del sistema: no se documenta como patron y /que-es no lo usa."
+   },
+   {
+    "what": "Colision de nombre en .leyenda",
+    "where": "_gen/web.py :: CSS (.leyenda, clave del mapa) frente a CSS_QE (.qe .leyenda)",
+    "why": "Conviven solo porque la acotacion va en un sentido: la nueva esta bajo .qe, la antigua no. Un tercer uso rompe una de las dos."
+   }
+  ]
+ },
+ "components": [
+  {
+   "name": "Franja de ambitos",
+   "kind": "custom",
+   "refersTo": null,
+   "description": "Primer elemento de cualquier pagina: seis segmentos de 5px, uno por ambito, en orden fijo es, eu, fin, std, ai, thr.",
+   "html": "<div class=\"ds-stripe\"><i></i><i></i><i></i><i></i><i></i><i></i></div>",
+   "css": ".ds-stripe{display:flex;height:5px}.ds-stripe i{flex:1}.ds-stripe i:nth-child(1){background:#C62828}.ds-stripe i:nth-child(2){background:#1565C0}.ds-stripe i:nth-child(3){background:#00796B}.ds-stripe i:nth-child(4){background:#6A1B9A}.ds-stripe i:nth-child(5){background:#E65100}.ds-stripe i:nth-child(6){background:#AD1457}"
+  },
+  {
+   "name": "Navegacion por pestanas",
+   "kind": "nav",
+   "refersTo": "nav-tab",
+   "description": "Barra fija con desbordamiento horizontal; la pestana activa toma el color de su ambito en texto y filete inferior de 3px.",
+   "html": "<nav class=\"ds-nav\"><button class=\"ds-nav-b\" aria-selected=\"false\" style=\"--tc:#5a6570\"><svg viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.45\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M2 4h9v10H3a1 1 0 0 1-1-1z\"/><path d=\"M11 6h3v7a1 1 0 0 1-1 1h-2\"/><path d=\"M4.4 6.6h4.2M4.4 9h4.2M4.4 11.4h2.6\"/></svg><span>Portada</span></button><button class=\"ds-nav-b\" aria-selected=\"true\" style=\"--tc:#1565C0\"><svg viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.45\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"8\" cy=\"8\" r=\"6\"/><path d=\"M8 2c1.8 2 1.8 10 0 12M8 2c-1.8 2-1.8 10 0 12M2.3 6.2h11.4M2.3 9.8h11.4\"/></svg><span>Union Europea</span></button></nav>",
+   "css": ".ds-nav{display:flex;gap:1px;background:var(--bg,#f7f4ef);border-bottom:1px solid var(--rule,#d9d3c8);overflow-x:auto;scrollbar-width:none}.ds-nav::-webkit-scrollbar{display:none}.ds-nav-b{flex:none;display:flex;align-items:center;gap:7px;background:none;border:none;border-bottom:3px solid transparent;cursor:pointer;padding:12px 13px;font:600 13.5px/1 Inter,ui-sans-serif,Arial,sans-serif;color:var(--ink3,#767d87);white-space:nowrap}.ds-nav-b svg{width:16px;height:16px;flex:none;opacity:.75}.ds-nav-b:hover{color:var(--ink,#14161a)}.ds-nav-b:hover svg{opacity:1}.ds-nav-b:focus-visible{outline:2px solid var(--hot,#C62828);outline-offset:2px}.ds-nav-b[aria-selected=true]{color:var(--tc);border-bottom-color:var(--tc)}.ds-nav-b[aria-selected=true] svg{opacity:1}"
+  },
+  {
+   "name": "Tarjeta de ambito",
+   "kind": "card",
+   "refersTo": "card-ambito",
+   "description": "Ficha de portada sobre tinte de ambito; el borde esta reservado en transparente y solo se tine al hover, asi nada se mueve.",
+   "html": "<a class=\"ds-card\" href=\"#\" style=\"--c:#1565C0;--ct:#E8F1FB\"><span class=\"ds-card-i\"><svg viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.45\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"8\" cy=\"8\" r=\"6\"/><path d=\"M8 2c1.8 2 1.8 10 0 12M8 2c-1.8 2-1.8 10 0 12M2.3 6.2h11.4M2.3 9.8h11.4\"/></svg>Union Europea</span><span class=\"ds-card-t\">Cero organismos notificados del CRA, comprobado en el censo europeo</span><span class=\"ds-card-m\">4 asuntos</span></a>",
+   "css": ".ds-card{display:block;padding:19px 21px;border-radius:4px;text-decoration:none;color:inherit;border:1px solid transparent;background:var(--ct)}.ds-card:hover{border-color:var(--rule,#d9d3c8)}.ds-card:focus-visible{outline:2px solid var(--c);outline-offset:2px}.ds-card-i{display:flex;align-items:center;gap:8px;margin-bottom:11px;font:700 10.5px/1 Inter,ui-sans-serif,Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--c)}.ds-card-i svg{width:15px;height:15px}.ds-card-t{font:400 16px/1.42 'Source Serif 4',Georgia,serif;color:var(--ink2,#3f464f);display:block}.ds-card-m{font:600 11.5px/1 Inter,ui-sans-serif,Arial,sans-serif;color:var(--ink3,#767d87);display:block;margin-top:12px}"
+  },
+  {
+   "name": "Chip de filtro",
+   "kind": "chip",
+   "refersTo": "chip",
+   "description": "Pastilla de 20px con el recuento dentro; pulsada toma el color del grupo de filtro.",
+   "html": "<div class=\"ds-chips\"><button class=\"ds-chip\" aria-pressed=\"true\" style=\"--cc:#14161a\">Todos</button><button class=\"ds-chip\" aria-pressed=\"false\" style=\"--cc:#00796B\">Financiero <b>3</b></button></div>",
+   "css": ".ds-chips{display:flex;flex-wrap:wrap;gap:7px}.ds-chip{background:var(--paper,#fffdfa);border:1px solid var(--rule,#d9d3c8);border-radius:20px;cursor:pointer;padding:7px 14px;font:600 12.5px/1 Inter,ui-sans-serif,Arial,sans-serif;color:var(--ink2,#3f464f)}.ds-chip:hover{border-color:var(--ink3,#767d87)}.ds-chip:focus-visible{outline:2px solid var(--cc);outline-offset:2px}.ds-chip[aria-pressed=true]{background:var(--cc);border-color:var(--cc);color:#fff}"
+  },
+  {
+   "name": "Buscador",
+   "kind": "input",
+   "refersTo": "input-busca",
+   "description": "Unico campo de entrada del sistema; el foco dibuja un contorno de 2px por dentro del borde.",
+   "html": "<div class=\"ds-busca\"><input class=\"ds-input\" type=\"search\" placeholder=\"Buscar en esta edicion, por ejemplo DORA, plazo, ransomware\" aria-label=\"Buscar\"><span class=\"ds-res\">7 resultados</span></div>",
+   "css": ".ds-busca{display:flex;gap:10px;align-items:center}.ds-input{flex:1;max-width:420px;background:var(--paper,#fffdfa);border:1px solid var(--rule,#d9d3c8);border-radius:4px;padding:9px 13px;font:400 15px/1.4 Inter,ui-sans-serif,Arial,sans-serif;color:var(--ink,#14161a)}.ds-input:focus{outline:2px solid #C62828;outline-offset:-1px;border-color:#C62828}.ds-res{font:500 13px/1 Inter,ui-sans-serif,Arial,sans-serif;color:var(--ink3,#767d87)}"
+  },
+  {
+   "name": "Boton de banderola (primario)",
+   "kind": "button",
+   "refersTo": "boton-banderola",
+   "description": "Unico boton del sistema: bloque de tinta con el flanco derecho en pico, misma silueta que la banderola de seccion.",
+   "html": "<a class=\"ds-btn\" href=\"#\">Leer la edicion 007</a>",
+   "css": ".ds-btn{display:inline-block;padding:13px 26px 13px 19px;background:var(--hot,#C62828);color:var(--bg,#f7f4ef);text-decoration:none;font:600 12px/1 Inter,ui-sans-serif,Arial,sans-serif;letter-spacing:.13em;text-transform:uppercase;clip-path:polygon(0 0,calc(100% - 11px) 0,100% 50%,calc(100% - 11px) 100%,0 100%)}.ds-btn:hover{background:var(--ink,#14161a)}.ds-btn:focus-visible{outline:2px solid var(--hot,#C62828);outline-offset:3px}"
+  },
+  {
+   "name": "Boton de banderola (secundario)",
+   "kind": "button",
+   "refersTo": "boton-banderola-2",
+   "description": "Conserva la muesca; el filete se dibuja con 1px de relleno y el fondo del elemento exterior, porque un border se lo comeria el clip-path.",
+   "html": "<a class=\"ds-btn-2\" href=\"#\"><span>Ver el archivo</span></a>",
+   "css": ".ds-btn-2{display:inline-block;background:var(--ink,#14161a);color:var(--ink,#14161a);padding:1px;border:0;text-decoration:none;font:600 12px/1 Inter,ui-sans-serif,Arial,sans-serif;letter-spacing:.13em;text-transform:uppercase;clip-path:polygon(0 0,calc(100% - 11px) 0,100% 50%,calc(100% - 11px) 100%,0 100%)}.ds-btn-2 span{display:block;padding:12px 25px 12px 18px;background:var(--bg,#f7f4ef);clip-path:polygon(0 0,calc(100% - 10px) 0,100% 50%,calc(100% - 10px) 100%,0 100%)}.ds-btn-2:hover{background:var(--ink,#14161a)}.ds-btn-2:hover span{background:var(--ink,#14161a);color:var(--bg,#f7f4ef)}.ds-btn-2:focus-visible{outline:2px solid var(--hot,#C62828);outline-offset:3px}"
+  },
+  {
+   "name": "Cinta de custodia",
+   "kind": "custom",
+   "refersTo": "chip-estado",
+   "description": "Componente firma de /que-es. Cada pliegue dice su estado tres veces: trazo de linea, forma de marca y chip de texto. Cuatro estados: comprobado, prevision propia, no alcanzado y descartado.",
+   "html": "<ol class=\"ds-pliegues\"><li class=\"ds-pl ds-pl-firme\"><div class=\"ds-pl-cab\"><h3>1. La fuente primaria</h3><span class=\"ds-pl-est\">Comprobado</span></div><p>Cada asunto arranca en el documento original, no en quien lo cuenta.</p></li><li class=\"ds-pl ds-pl-prev\"><div class=\"ds-pl-cab\"><h3>2. Lo que es prevision va etiquetado</h3><span class=\"ds-pl-est\">Prevision propia</span></div><p>Esa parte no es un hecho y no se disfraza de hecho.</p></li><li class=\"ds-pl ds-pl-hueco\"><div class=\"ds-pl-cab\"><h3>3. Lo que no se alcanza se dice</h3><span class=\"ds-pl-est\">No alcanzado</span></div><p>Un hueco declarado sigue siendo un hueco; lo que no puede ser es invisible.</p></li><li class=\"ds-pl ds-pl-fuera\"><div class=\"ds-pl-cab\"><h3>4. Lo que no entra, y por que</h3><span class=\"ds-pl-est\">Descartado</span></div><p>Se lista aparte, en descartados, con el motivo.</p></li></ol>",
+   "css": ".ds-pliegues{list-style:none;margin:0;padding:0;max-width:34em;color:var(--ink,#14161a)}.ds-pl{position:relative;padding:0 0 34px 44px}.ds-pl:last-child{padding-bottom:0}.ds-pl h3{margin:0;font:600 20px/1.3 'Source Serif 4',Georgia,serif;letter-spacing:-.012em}.ds-pl p{margin:0;font:400 19px/1.68 'Source Serif 4',Georgia,serif}.ds-pl-cab{display:flex;flex-wrap:wrap;align-items:baseline;gap:7px 13px;margin:0 0 8px}.ds-pl-est{font:600 11px/1.5 Inter,ui-sans-serif,Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--ink2,#3f464f);border:1px solid var(--rule,#d9d3c8);padding:2px 8px;white-space:nowrap}.ds-pl::before{content:'';position:absolute;left:10px;top:21px;bottom:0;width:2px}.ds-pl:last-child::before{display:none}.ds-pl::after{content:'';position:absolute;left:4px;top:5px;width:14px;height:14px;border-radius:50%;box-sizing:border-box}.ds-pl-firme::before,.ds-pl-firme::after{background:var(--hot,#C62828)}.ds-pl-firme .ds-pl-est{color:var(--hot,#C62828);border-color:var(--hot,#C62828)}.ds-pl-prev::before{left:11px;width:1px;background:var(--hot,#C62828)}.ds-pl-prev::after{border:1px solid var(--hot,#C62828);background:var(--bg,#f7f4ef)}.ds-pl-prev .ds-pl-est{color:var(--hot,#C62828);border-style:dashed;border-color:var(--hot,#C62828)}.ds-pl-hueco::before,.ds-pl-fuera::before{width:2px;background:repeating-linear-gradient(var(--ink3,#767d87) 0 4px,transparent 4px 9px)}.ds-pl-hueco::after{border:2px dashed var(--ink3,#767d87);background:var(--bg,#f7f4ef)}.ds-pl-fuera::after{border:1px solid var(--ink2,#3f464f);background:linear-gradient(45deg,transparent 43%,var(--ink2,#3f464f) 43% 57%,transparent 57%),linear-gradient(-45deg,transparent 43%,var(--ink2,#3f464f) 43% 57%,transparent 57%),var(--bg,#f7f4ef)}.ds-pl-hueco .ds-pl-est,.ds-pl-fuera .ds-pl-est{border-style:dashed}"
+  },
+  {
+   "name": "Leyenda de la cinta",
+   "kind": "custom",
+   "refersTo": null,
+   "description": "Clave de los cuatro estados en rejilla 2x2 sobre filete superior. Cada entrada repite linea y marca; la marca va un paso mayor (16px) que la de la cinta, porque a 12px el anillo discontinuo se rompe en fragmentos.",
+   "html": "<p class=\"ds-leyenda\"><span><i></i>Comprobado contra su fuente</span><span><i class=\"ds-l-prev\"></i>Prevision propia, fechada</span><span><i class=\"ds-l-hueco\"></i>No alcanzado, y dicho</span><span><i class=\"ds-l-fuera\"></i>Descartado, y listado aparte</span></p>",
+   "css": ".ds-leyenda{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px 26px;margin:0;padding:14px 0 0;border-top:1px solid var(--rule,#d9d3c8);max-width:34em;font:500 12px/1.5 Inter,ui-sans-serif,Arial,sans-serif;color:var(--ink2,#3f464f)}.ds-leyenda span{display:flex;align-items:center;gap:12px}.ds-leyenda i{position:relative;flex:none;width:36px;height:2px;background:var(--hot,#C62828)}.ds-leyenda i::before{content:'';position:absolute;left:0;top:50%;margin-top:-8px;width:16px;height:16px;border-radius:50%;box-sizing:border-box;background:var(--hot,#C62828)}.ds-leyenda .ds-l-prev{height:1px}.ds-leyenda .ds-l-prev::before{background:var(--bg,#f7f4ef);border:1px solid var(--hot,#C62828)}.ds-leyenda .ds-l-hueco,.ds-leyenda .ds-l-fuera{background:repeating-linear-gradient(90deg,var(--ink3,#767d87) 0 4px,transparent 4px 9px)}.ds-leyenda .ds-l-hueco::before{background:var(--bg,#f7f4ef);border:2px dashed var(--ink3,#767d87)}.ds-leyenda .ds-l-fuera::before{border:1px solid var(--ink2,#3f464f);background:linear-gradient(45deg,transparent 43%,var(--ink2,#3f464f) 43% 57%,transparent 57%),linear-gradient(-45deg,transparent 43%,var(--ink2,#3f464f) 43% 57%,transparent 57%),var(--bg,#f7f4ef)}@media(max-width:860px){.ds-leyenda{grid-template-columns:1fr}}"
+  },
+  {
+   "name": "Entrada de archivo",
+   "kind": "card",
+   "refersTo": null,
+   "description": "Bloque enlazado de papel con cuatro renglones fijos: numero de edicion, fecha, titular y linea de recuentos, con cifras tabulares.",
+   "html": "<a class=\"ds-ed\" href=\"#\"><span class=\"ds-ed-n\">Edicion 007</span><span class=\"ds-ed-f\">5 de octubre de 2026</span><span class=\"ds-ed-t\">El Gobierno convoca elecciones para el 29 de noviembre, y los cuatro proyectos de ley del ambito caducan</span><span class=\"ds-ed-m\">22 asuntos &middot; 14 plazos vivos &middot; del 28 de septiembre al 5 de octubre de 2026</span></a>",
+   "css": ".ds-ed{display:block;padding:22px 24px;border:1px solid var(--rule,#d9d3c8);border-radius:4px;text-decoration:none;color:inherit;background:var(--paper,#fffdfa);max-width:34em}.ds-ed:hover{border-color:var(--ink3,#767d87)}.ds-ed:focus-visible{outline:2px solid var(--hot,#C62828);outline-offset:3px}.ds-ed-n{font:700 11px/1 Inter,ui-sans-serif,Arial,sans-serif;letter-spacing:.15em;text-transform:uppercase;color:#C62828;display:block;margin-bottom:9px}.ds-ed-f{font:600 12.5px/1 Inter,ui-sans-serif,Arial,sans-serif;color:var(--ink3,#767d87);display:block;margin-bottom:10px;font-variant-numeric:tabular-nums}.ds-ed-t{font:600 20px/1.32 'Source Serif 4',Georgia,serif;display:block;margin-bottom:10px;color:var(--ink,#14161a)}.ds-ed-m{font:400 13px/1.5 Inter,ui-sans-serif,Arial,sans-serif;color:var(--ink3,#767d87);display:block;font-variant-numeric:tabular-nums}"
+  }
+ ],
+ "narrative": {
+  "northStar": "El diario de taller",
+  "overview": "Un periodico de una sola columna impreso en papel barato y bueno: fondo hueso, tinta casi negra, filetes finos, titulares en serifa apretada y una franja de seis colores arriba que dice de que va cada cosa antes de leer una palabra. No hay ilustracion, no hay fotografia, no hay logotipo, no hay firma. La densidad es alta y deliberada: el lector viene el lunes a leer largo en escritorio, asi que el cuerpo es grande (19px), la medida es corta (--medida: 34em) y la pagina se deja recorrer sin sobresaltos. Todo adorno que no distinga un hecho comprobado de uno que no lo esta sobra.\n\nEl sistema es de dos mundos completos, no de un tema con variantes: prefers-color-scheme cambia todas las fichas de una vez, incluidos los seis colores de ambito y sus seis tintes de fondo. Nada se queda a medias entre claro y oscuro.\n\nLo propio del mundo, y lo unico que la superficie nueva /que-es ha anadido al sistema, es que el estado de verificacion de un dato es un elemento grafico: linea continua donde hay documento detras, linea discontinua gris donde el briefing no llega. Ese es el movimiento que el resto de las decisiones protege.",
+  "keyCharacteristics": [
+   "Papel hueso #f7f4ef y tinta #14161a; mundo oscuro equivalente y total.",
+   "Seis ambitos fijos con color propio, tinte de fondo propio y variante oscura propia.",
+   "Serifa de lectura a 19px/1.68, justificada, con guion blando inyectado; Inter solo para etiquetas y mandos.",
+   "Plano: ni sombras de elevacion ni degradados decorativos. La profundidad es tinte y filete.",
+   "El estado de un dato se dice tres veces a la vez: linea, marca y chip de texto."
+  ],
+  "rules": [
+   {
+    "name": "La regla del color que no porta",
+    "section": "colors",
+    "body": "--ink3 (3,79:1) y el ambito ai (3,45:1) estan por debajo de AA para texto de cuerpo sobre papel claro. No llevan nunca prosa corrida ni etiquetas pequenas: valen para texto grande, filetes y graficos no textuales. En la cinta de custodia ink3 dibuja la linea discontinua, no la palabra."
+   },
+   {
+    "name": "La regla de los seis ambitos",
+    "section": "colors",
+    "body": "El color de un bloque no se elige: se hereda del ambito al que pertenece el contenido, inyectado como variable. Seis ambitos, seis colores, ni uno mas. Una superficie nueva que necesite un color tematico usa uno de los seis o no usa ninguno."
+   },
+   {
+    "name": "La regla del doble mundo completo",
+    "section": "colors",
+    "body": "Toda ficha nueva se declara en los dos bloques: :root y @media(prefers-color-scheme:dark). Un color que solo existe en claro es un error, no una simplificacion."
+   },
+   {
+    "name": "La regla de la medida unica",
+    "section": "typography",
+    "body": "--medida: 34em es la medida de lectura y gobierna la pagina entera, no solo los parrafos: tambien el pie, la leyenda y el borde izquierdo del que arranca todo lo demas. Lo que necesita mas ancho declara max-width:none de forma explicita; no se ensancha por omision."
+   },
+   {
+    "name": "La regla del guion blando",
+    "section": "typography",
+    "body": "La prosa va justificada y todo texto corrido pasa por silabas.blandear() antes de imprimirse, que inyecta guiones blandos. Sin eso el justificado abre rios. Los titulares quedan fuera: llevan hyphens:none y text-wrap:balance."
+   },
+   {
+    "name": "La regla de la sans que no narra",
+    "section": "typography",
+    "body": "Inter no escribe nunca una frase. Si un bloque de Inter pasa de una linea de rotulo, va en serifa."
+   },
+   {
+    "name": "La regla del ancho declarado",
+    "section": "layout",
+    "body": "Nada se ensancha por descuido. Si una pieza pasa de 34em, lo dice en su propia regla."
+   },
+   {
+    "name": "La regla de lo plano en reposo",
+    "section": "elevation",
+    "body": "Ninguna superficie en reposo proyecta sombra. Solo la proyecta lo que de verdad esta por encima del plano de la pagina, y hoy eso es exactamente una pieza: el tooltip del mapa."
+   },
+   {
+    "name": "La regla del tinte antes del borde",
+    "section": "elevation",
+    "body": "Para separar un bloque de su entorno, primero tinte de ambito; despues papel; el borde, solo si hay que distinguir dos bloques del mismo tono."
+   },
+   {
+    "name": "La regla del icono autoral",
+    "section": "shapes",
+    "body": "Los iconos se dibujan en IC con la misma rejilla de 16 y el mismo trazo de 1,45. Ni glifos tipograficos, ni emoji, ni iconos de paquete, ni img."
+   }
+  ],
+  "dos": [
+   "Do declarar toda ficha nueva en los dos mundos, :root y prefers-color-scheme:dark, incluido su tinte.",
+   "Do tomar el color tematico de uno de los seis ambitos, inyectado como variable (--tc, --ac, --cc, --tg), nunca como literal nuevo.",
+   "Do pasar toda prosa corrida por silabas.blandear() antes de imprimirla; el justificado a 34em lo exige.",
+   "Do mantener --medida: 34em como medida de lectura y declarar max-width:none de forma explicita en lo que deba ser mas ancho.",
+   "Do llevar el estado de un dato por tres canales a la vez (trazo, forma y palabra), como hace la cinta de custodia.",
+   "Do dibujar los iconos nuevos en IC, a 16x16 con trazo de 1,45 y remates redondeados.",
+   "Do separar bloques con tinte y filete antes que con sombra.",
+   "Do acotar el CSS de una superficie nueva bajo su propia clase raiz, como CSS_QE hace con .qe, para que las ediciones publicadas no cambien un pixel.",
+   "Do recordar que CSS es un f-string y necesita llaves dobladas, mientras CSS_QE es una cadena normal con llaves sencillas. Confundirlas rompe la generacion.",
+   "Do mantener el bloque @media print al dia: cada pieza nueva decide si se imprime o se oculta."
+  ],
+  "donts": [
+   "Don't poner prosa corrida ni etiquetas pequenas en --ink3 (3,79:1) ni en el ambito ai (3,45:1).",
+   "Don't usar el color como unico portador de un estado: si se quita el color, el estado tiene que seguir leyendose.",
+   "Don't anadir sombras de elevacion en reposo. Lo plano es el sistema, no una carencia.",
+   "Don't introducir un septimo color tematico ni un acento nuevo junto al rojo de cinta.",
+   "Don't escribir frases en Inter: la sans rotula, la serifa narra.",
+   "Don't usar guiones largos ni medios en ningun texto; web.py aborta la generacion.",
+   "Don't calcular a mano una cifra que se puede contar: recuentos, totales y fechas futuras salen del generador (counts, proxima()).",
+   "Don't anadir glifos tipograficos, emoji o iconos de paquete donde toca un SVG de IC.",
+   "Don't meter contenido de una edicion dentro de web.py; el contenido vive en los ficheros de contenido.",
+   "Don't tocar las clases no acotadas del mundo heredado (.leyenda, .ficha, .ed) desde una superficie nueva sin acotar la regla bajo su clase raiz."
+  ]
+ }
+}

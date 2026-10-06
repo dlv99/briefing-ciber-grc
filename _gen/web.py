@@ -29,6 +29,33 @@ def iso(f):
     if not m: return ""
     d, mes, a = m.groups()
     return f"{a}-{MESES[mes]:02d}-{int(d):02d}"
+
+MESES_L = ("enero","febrero","marzo","abril","mayo","junio",
+           "julio","agosto","septiembre","octubre","noviembre","diciembre")
+DIAS_L = ("lunes","martes","miercoles","jueves","viernes","sabado","domingo")
+
+def fecha_larga(f):
+    """'2026-09-14' -> 'lunes 14 de septiembre de 2026'. Nombra el dia real."""
+    d = datetime.date.fromisoformat(f)
+    return f"{DIAS_L[d.weekday()]} {d.day} de {MESES_L[d.month - 1]} de {d.year}"
+
+def proxima(f):
+    """Lunes siguiente a la fecha de la edicion. Se calcula, no se escribe.
+       '2026-10-05' -> 'lunes 12 de octubre de 2026'"""
+    d = datetime.date.fromisoformat(f)
+    d += datetime.timedelta(days=7 - d.weekday())
+    return fecha_larga(d.isoformat())
+
+def pie_proxima(f, eds):
+    """Que poner en 'Proxima edicion' al pie de UNA edicion concreta.
+
+       Si ya hay una edicion posterior publicada, se usa su fecha real. El lunes
+       siguiente solo vale para la ultima, porque ha habido semanas sin edicion:
+       despues de la del 24 de agosto no vino el 31, vino el 14 de septiembre.
+       Calcularlo siempre publicaba una fecha que nunca existio."""
+    posteriores = sorted(e["iso"] for e in eds if e.get("iso") and e["iso"] > f)
+    return fecha_larga(posteriores[0]) if posteriores else proxima(f)
+
 NOMBRES = {"es":"España","eu":"Unión Europea","fin":"Financiero",
            "std":"Normas","ai":"IA y datos","thr":"Amenaza"}
 
@@ -91,6 +118,9 @@ letter-spacing:-.022em;font-variant:small-caps}}
 padding:9px 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);
 font:500 10.5px/1.4 var(--san);letter-spacing:.17em;text-transform:uppercase;color:var(--ink3)}}
 .mast-sub b{{color:var(--ink2);font-weight:600}}
+.mast-sub a{{color:var(--hot);text-decoration:underline;text-decoration-thickness:1px;
+text-underline-offset:3px}}
+.mast-sub a:hover{{color:var(--ink)}}
 
 /* ── navegacion ── */
 nav{{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--rule);
@@ -394,6 +424,289 @@ text-transform:uppercase;padding:5px 9px;border-radius:2px;margin-bottom:11px;co
 }}
 """
 
+# ══════════ /que-es: la entrada publica ══════════
+# Mundo heredado. Lo unico propio es la cinta de custodia: linea continua para lo
+# comprobado, discontinua para lo que no se alcanza, filete para lo que es prevision.
+# Todo va bajo .qe para que las ediciones no cambien ni un pixel.
+CSS_QE = """
+.qe .mast-sub{color:var(--ink2)}
+.qe ::selection{background:var(--hot-t);color:var(--ink)}
+.qe :focus-visible{outline:2px solid var(--hot);outline-offset:3px}
+.qe{scrollbar-color:var(--rule) var(--bg)}
+.qe main{padding-top:44px}
+.qe h2{margin:0;font:700 clamp(25px,3.4vw,33px)/1.18 var(--ser);letter-spacing:-.022em;
+text-align:left;text-wrap:balance;hyphens:none;display:flex;gap:11px;align-items:baseline}
+.qe h2 svg{flex:none;color:var(--hot);transform:translateY(2px)}
+.qe h3{margin:0 0 3px;font:600 20px/1.3 var(--ser);letter-spacing:-.012em;text-align:left}
+.qe section{margin:0 0 64px}
+
+/* ficha + entrada. Una sola medida de lectura manda en toda la pagina, y todo
+   arranca en el mismo borde izquierdo: la ficha es aparato de margen, no columna. */
+.qe-top{display:grid;grid-template-columns:minmax(0,var(--medida)) 15.5em;gap:0 46px;
+align-items:start;margin:0 0 70px}
+.qe h2,.qe section>.entradilla,.pliegues,.qe .leyenda,.qe footer{max-width:var(--medida)}
+.qe-ancho{max-width:calc(var(--medida) + 15.5em + 46px)}
+.qe footer{margin-left:0}
+.ficha{border:1px solid var(--rule);background:var(--paper);padding:20px 22px 22px}
+.ficha dl{margin:0}
+.ficha dt{font:600 11px/1.4 var(--san);letter-spacing:.15em;text-transform:uppercase;
+color:var(--ink2);margin:15px 0 3px}
+.ficha dt:first-child{margin-top:0}
+.ficha dd{margin:0;font:400 16px/1.4 var(--ser);color:var(--ink)}
+.ficha .nula{color:var(--ink2);font-style:italic}
+.qe-abre h1{margin:0;font:700 clamp(33px,5.4vw,50px)/1.06 var(--ser);letter-spacing:-.028em;
+text-wrap:balance;hyphens:none}
+.qe-abre .entradilla{margin:21px 0 16px}
+.ficha dd,.qe .ed-m,.qe .ed-f{font-variant-numeric:tabular-nums}
+.qe-salidas{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0 0}
+
+/* el boton del mundo: bloque con la muesca de la banderola */
+.qe-bot{display:inline-block;padding:13px 26px 13px 19px;background:var(--hot);color:var(--bg);
+text-decoration:none;font:600 12px/1 var(--san);letter-spacing:.13em;text-transform:uppercase;
+clip-path:polygon(0 0,calc(100% - 11px) 0,100% 50%,calc(100% - 11px) 100%,0 100%)}
+.qe-bot:hover{background:var(--ink)}
+/* la salida secundaria conserva la muesca: el filete se dibuja con el fondo del
+   elemento exterior, porque un border se lo comeria el clip-path */
+.qe-bot-2{background:var(--ink);color:var(--ink);padding:1px;border:0}
+.qe-bot-2 span{display:block;padding:12px 25px 12px 18px;background:var(--bg);
+clip-path:polygon(0 0,calc(100% - 10px) 0,100% 50%,calc(100% - 10px) 100%,0 100%)}
+.qe-bot-2:hover{background:var(--ink)}
+.qe-bot-2:hover span{background:var(--ink);color:var(--bg)}
+.qe-correo{font:600 15px/1 var(--san);letter-spacing:.01em;text-transform:none;
+padding:14px 30px 14px 20px;word-break:break-word}
+
+/* la cinta */
+.pliegues{list-style:none;margin:30px 0 0;padding:0}
+.pl{position:relative;padding:0 0 34px 44px}
+.pl:last-child{padding-bottom:0}
+.pl::before{content:"";position:absolute;left:10px;top:21px;bottom:0;width:2px}
+.pl:last-child::before{display:none}
+.pl::after{content:"";position:absolute;left:4px;top:5px;width:14px;height:14px;
+border-radius:50%;box-sizing:border-box}
+.pl-firme::before{background:var(--hot)}
+.pl-firme::after{background:var(--hot)}
+.pl-prev::before{left:11px;width:1px;background:var(--hot)}
+.pl-prev::after{border:1px solid var(--hot);background:var(--bg)}
+.pl-hueco::before{width:2px;background:repeating-linear-gradient(var(--ink3) 0 4px,
+transparent 4px 9px)}
+.pl-hueco::after{border:2px dashed var(--ink3);background:var(--bg)}
+.pl-fuera::before{width:2px;background:repeating-linear-gradient(var(--ink3) 0 4px,
+transparent 4px 9px)}
+.pl-fuera::after{border:1px solid var(--ink2);background:
+linear-gradient(45deg,transparent 43%,var(--ink2) 43% 57%,transparent 57%),
+linear-gradient(-45deg,transparent 43%,var(--ink2) 43% 57%,transparent 57%),var(--bg)}
+.pl-cab{display:flex;flex-wrap:wrap;align-items:baseline;gap:7px 13px;margin:0 0 8px}
+.pl-est{font:600 11px/1.5 var(--san);letter-spacing:.14em;text-transform:uppercase;
+color:var(--ink2);border:1px solid var(--rule);padding:2px 8px;white-space:nowrap}
+.pl-firme .pl-est{color:var(--hot);border-color:var(--hot)}
+.pl-prev .pl-est{color:var(--hot);border-style:dashed;border-color:var(--hot)}
+.pl-hueco .pl-est,.pl-fuera .pl-est{border-style:dashed}
+.pl p{margin:0}
+.pl a{color:var(--hot)}
+/* cuatro estados, rejilla de 2x2: en flujo libre la cuarta entrada quedaba huerfana
+   y la clave se leia como un accidente */
+.qe .leyenda{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px 26px;
+margin:34px 0 0;padding:14px 0 0;border-top:1px solid var(--rule);
+font:500 12px/1.5 var(--san);color:var(--ink2);text-align:left;hyphens:none}
+.qe .leyenda span{display:flex;align-items:center;gap:12px}
+/* cada entrada lleva su marca, no solo su linea. La marca va un paso mayor que la de
+   la cinta: a 12px el anillo discontinuo se rompe en fragmentos */
+.qe .leyenda i{position:relative;flex:none;width:36px;height:2px;background:var(--hot)}
+.qe .leyenda i::before{content:"";position:absolute;left:0;top:50%;margin-top:-8px;
+width:16px;height:16px;border-radius:50%;box-sizing:border-box;background:var(--hot)}
+.qe .leyenda .l-prev{height:1px}
+.qe .leyenda .l-prev::before{background:var(--bg);border:1px solid var(--hot)}
+.qe .leyenda .l-hueco,.qe .leyenda .l-fuera{background:repeating-linear-gradient(90deg,
+var(--ink3) 0 4px,transparent 4px 9px)}
+.qe .leyenda .l-hueco::before{background:var(--bg);border:2px dashed var(--ink3)}
+.qe .leyenda .l-fuera::before{border:1px solid var(--ink2);background:
+linear-gradient(45deg,transparent 43%,var(--ink2) 43% 57%,transparent 57%),
+linear-gradient(-45deg,transparent 43%,var(--ink2) 43% 57%,transparent 57%),var(--bg)}
+
+/* ambitos */
+.ambitos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 44px;margin:26px 0 0}
+.amb{display:grid;grid-template-columns:auto 1fr;gap:0 13px;align-items:baseline;
+padding:13px 0;border-top:1px solid var(--hair)}
+.amb i{width:20px;height:4px;background:var(--ac);transform:translateY(-3px)}
+.amb b{font:600 17px/1.35 var(--ser);color:var(--ink)}
+.amb span{display:block;font:400 15px/1.45 var(--ser);color:var(--ink2)}
+
+@media(max-width:860px){
+.qe-top{grid-template-columns:1fr;gap:34px}
+.ambitos,.qe .leyenda{grid-template-columns:1fr}
+}
+@media print{.qe-salidas,.qe-bot{display:none}}
+"""
+
+BANDEROLA = ('<svg viewBox="0 0 10 16" width="9" height="15" aria-hidden="true">'
+             '<path d="M0 0h10v16l-5-4.3L0 16z" fill="currentColor"/></svg>')
+
+# (clase de estado, etiqueta, ancla, titulo, cuerpo)
+PLIEGUES = [
+ ("pl-firme", "Comprobado", "fuente",
+  "La fuente primaria",
+  "Cada asunto arranca en el documento original, no en quien lo cuenta: EUR-Lex y el "
+  "Diario Oficial, el BOE, el Congreso de los Diputados, ENISA, la Supervisión Bancaria del "
+  "Banco Central Europeo, la Junta Europea de Riesgo Sistémico, EBA, ESMA, EIOPA, el Comité "
+  "Europeo de Protección de Datos, el CCN, ISO y el NIST. Si de un asunto solo existe la nota "
+  "de prensa que lo resume, lo que se enlaza es el documento, y si el documento no está, se "
+  "dice que no está."),
+ ("pl-firme", "Comprobado", "hora",
+  "La comprobación lleva su hora",
+  "Ningún plazo se hereda de la edición anterior: cada fecha se vuelve a verificar contra su "
+  "fuente en cada edición. Cuando un hecho está a medias, lo que se publica es su estado a la "
+  "hora en que se miró, y se separa lo anunciado de lo consumado. Es la diferencia entre «el "
+  "Gobierno ha anunciado la disolución» y «las Cortes están disueltas», que en una misma "
+  "mañana pueden ser verdad la primera y mentira la segunda."),
+ ("pl-hueco", "No alcanzado", "hueco",
+  "Lo que no se alcanza se dice",
+  "Hay fuentes que bloquean el acceso automatizado: <code>ccn-cert.cni.es</code>, "
+  "<code>aepd.es</code>, <code>incibe.es</code> y <code>cisa.gov</code>. El texto completo de "
+  "EUR-Lex falla con frecuencia. Cuando un asunto depende de una de ellas, lleva la "
+  "advertencia encima, y en el repaso de cada ámbito aparece literalmente como «no alcanzado» "
+  "en lugar de como silencio. Un hueco declarado sigue siendo un hueco; lo que no puede ser es "
+  "invisible."),
+ ("pl-fuera", "Descartado", "fuera",
+  "Lo que no entra, y por qué",
+  "Un incidente solo se publica con confirmación de la entidad afectada, de un regulador o de "
+  "un CERT oficial. Lo que circula sin esa confirmación no se publica como incidente, pero "
+  "tampoco desaparece: se lista aparte, en descartados, con el motivo. Así se distingue «no ha "
+  "pasado» de «no está confirmado», que son cosas muy distintas para quien tiene que decidir."),
+ ("pl-prev", "Previsión propia", "prevision",
+  "Lo que es previsión va etiquetado",
+  "El briefing anticipa cuándo puede transponer cada Estado, porque sin eso el mapa no sirve "
+  "de nada. Esa parte no es un hecho y no se disfraza de hecho: va firmada como previsión "
+  "propia, con su fecha de revisión, y da horizontes (este trimestre, primer semestre de 2027) "
+  "en lugar de fechas inventadas. Se revisa cada lunes aunque no cambie nada."),
+ ("pl-firme", "Comprobado", "cifras",
+  "Las cifras se cuentan",
+  "Ningún total se escribe a mano. Los asuntos de una edición salen de contar los asuntos, y "
+  "los plazos vivos, de contar los plazos. Una semana sin nada en un ámbito es un resultado "
+  "válido y se publica como tal: el generador aborta antes que maquillar un cero."),
+ ("pl-firme", "Comprobado", "rectificacion",
+  "Lo que se publica mal se rectifica con nombre",
+  "Las rectificaciones no se corrigen en silencio sobre la edición vieja: se publican en la "
+  "siguiente, diciendo qué se dijo, qué era y de dónde salió el error. En la sección de "
+  "verificación conviven los bulos ajenos y las rectificaciones propias, sin distinguir el "
+  "tamaño de letra de unos y otras."),
+]
+
+AMBITOS = [
+ ("es",  "España",          "ENS, CCN y normativa nacional"),
+ ("eu",  "Unión Europea",   "Regulación horizontal: NIS2, CER, CRA y el paquete en curso"),
+ ("fin", "Sector financiero","DORA y los supervisores: BCE, EBA, ESMA, EIOPA"),
+ ("std", "Normas",          "Marcos de referencia: ISO, NIST y normas armonizadas"),
+ ("ai",  "IA y datos",      "Reglamento de IA, protección de datos y sanciones"),
+ ("thr", "Amenaza",         "Explotación activa, exposición y avisos de los CERT"),
+]
+
+CORREO = "davidlv4850@gmail.com"
+
+# Prosa corrida de la pagina. Pasa entera por blandear(), igual que la de las
+# ediciones: sin guiones blandos, el texto justificado abre rios.
+ABRE_1 = ("Un boletín que cada lunes por la mañana cuenta qué ha cambiado en la regulación de "
+ "ciberseguridad, gobernanza, riesgo y cumplimiento en España y en la Unión Europea, y qué "
+ "plazos vencen. Cada fecha está comprobada contra su fuente primaria, y lo que no se pudo "
+ "comprobar aparece dicho.")
+ABRE_2 = ("No lo firma nadie, y no es un descuido: la credibilidad de esto no puede descansar en "
+ "quién lo escribe. Descansa en el método, que está entero más abajo, y en que cada afirmación "
+ "lleva detrás el documento del que sale. No hay suscripción, no hay publicidad y no se vende "
+ "nada.")
+INTRO_CINTA = ("Siete pliegues. Donde la línea es continua, hay documento detrás; donde se "
+ "interrumpe, el briefing está diciendo que ahí no llega, y esa interrupción es parte de lo "
+ "que se publica.")
+INTRO_AMBITOS = ("Seis ámbitos fijos. Una semana sin nada en uno de ellos se publica vacía, "
+ "porque el silencio comprobado también es información.")
+INTRO_ULTIMO = "Las tres ediciones más recientes, tal cual salieron."
+INTRO_CORREO = ("Escribe. Lo más útil que se puede mandar es el documento que contradice lo "
+ "publicado: el número de BOE, el expediente del Congreso, el acto de EUR-Lex. Con eso la "
+ "rectificación sale en la edición siguiente, con nombre de error y sin tocar la edición vieja.")
+
+
+def render_que_es(eds):
+    o = []; A = o.append
+    tot_asuntos = sum(e["asuntos"] for e in eds)
+    A(f'<!DOCTYPE html><html lang="es" class="qe"><head><meta charset="utf-8">'
+      f'<meta name="robots" content="noindex,nofollow">'
+      f'<meta name="viewport" content="width=device-width,initial-scale=1">'
+      f'<title>Qué es esto · Briefing Ciber-GRC</title>'
+      f'<link rel="preconnect" href="https://fonts.googleapis.com">'
+      f'<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
+      f'<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@'
+      f'0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&family=Inter:wght@500;600;700'
+      f'&display=swap" rel="stylesheet">'
+      f'<style>{CSS}{CSS_QE}</style></head><body><div class="stripe">')
+    for k in SEC: A(f'<i style="background:var(--{k})"></i>')
+    A(f'</div><header class="masthead"><h1>Briefing Ciber-GRC</h1>'
+      f'<div class="mast-sub"><span>España y Unión Europea</span><span>·</span>'
+      f'<span><b>Qué es esto</b></span><span>·</span>'
+      f'<span><a href="index.html">Ir a la última edición</a></span></div></header><main>')
+
+    # ── ficha y apertura ──
+    A(f'<div class="qe-top"><div class="qe-abre">'
+      f'<h1>Qué es esto</h1>'
+      f'<p class="entradilla">{blandear(ABRE_1)}</p>'
+      f'<p>{blandear(ABRE_2)}</p>'
+      f'<div class="qe-salidas">'
+      f'<a class="qe-bot" href="index.html">Leer la edición {eds[0]["n"]:03d}</a>'
+      f'<a class="qe-bot qe-bot-2" href="index.html#archivo"><span>Ver el archivo</span></a>'
+      f'</div></div><aside class="ficha"><dl>'
+      f'<dt>Qué es</dt><dd>Boletín semanal</dd>'
+      f'<dt>Ámbito</dt><dd>España y Unión Europea</dd>'
+      f'<dt>Sale</dt><dd>Cada lunes por la mañana</dd>'
+      f'<dt>Firma</dt><dd class="nula">Ninguna, a propósito</dd>'
+      f'<dt>Ediciones</dt><dd>{len(eds)}</dd>'
+      f'<dt>Asuntos publicados</dt><dd>{tot_asuntos}</dd>'
+      f'<dt>Última</dt><dd>Edición {eds[0]["n"]:03d}, {eds[0]["fecha"]}</dd>'
+      f'</dl></aside></div>')
+
+    # ── la cinta ──
+    A(f'<section id="metodo"><h2>{BANDEROLA}De la fuente primaria al asunto publicado</h2>'
+      f'<p class="entradilla">{blandear(INTRO_CINTA)}</p><ol class="pliegues">')
+    for i, (cls, est, anc, tit, cuerpo) in enumerate(PLIEGUES, 1):
+        A(f'<li class="pl {cls}" id="metodo-{anc}">'
+          f'<div class="pl-cab"><h3>{i}. {tit}</h3><span class="pl-est">{est}</span></div>'
+          f'<p>{blandear(cuerpo)}</p></li>')
+    A('</ol><p class="leyenda">'
+      '<span><i></i>Comprobado contra su fuente</span>'
+      '<span><i class="l-prev"></i>Previsión propia, fechada</span>'
+      '<span><i class="l-hueco"></i>No alcanzado, y dicho</span>'
+      '<span><i class="l-fuera"></i>Descartado, y listado aparte</span>'
+      '</p></section>')
+
+    # ── ambitos ──
+    A(f'<section><h2>{BANDEROLA}Qué entra en cada edición</h2>'
+      f'<p class="entradilla">{blandear(INTRO_AMBITOS)}</p>'
+      f'<div class="ambitos qe-ancho">')
+    for k, nom, desc in AMBITOS:
+        A(f'<div class="amb" style="--ac:var(--{k})"><i></i><div>'
+          f'<b>{nom}</b><span>{blandear(desc)}</span></div></div>')
+    A('</div></section>')
+
+    # ── lo ultimo ──
+    A(f'<section><h2>{BANDEROLA}Lo último publicado</h2>'
+      f'<p class="entradilla">{INTRO_ULTIMO}</p>'
+      f'<div class="qe-ancho" style="margin-top:26px">')
+    for e in eds[:3]:
+        A(f'<a class="ed" href="ed-{e["iso"]}.html"><span class="ed-n">Edición {e["n"]:03d}</span>'
+          f'<span class="ed-f">{e["fecha"]}</span>'
+          f'<span class="ed-t">{html.escape(e["titular"])}</span>'
+          f'<span class="ed-m">{e["asuntos"]} asuntos · {e["plazos"]} plazos vivos · '
+          f'{e["periodo"]}</span></a>')
+    A('</div></section>')
+
+    # ── correcciones ──
+    A(f'<section><h2>{BANDEROLA}Si algo de aquí no cuadra con su fuente</h2>'
+      f'<p class="entradilla">{blandear(INTRO_CORREO)}</p>'
+      f'<div class="qe-salidas"><a class="qe-bot qe-correo" '
+      f'href="mailto:{CORREO}?subject=Correcci%C3%B3n%20al%20Briefing%20Ciber-GRC">'
+      f'{CORREO}</a></div></section>')
+
+    A(f'<footer><p><b>Próxima edición</b> {pie_proxima(eds[0]["iso"], eds)}.</p></footer>'
+      f'</main></body></html>')
+    return "".join(o)
+
+
 def render(eds, permalink=False):
     o = []; A = o.append
     A(f'<!DOCTYPE html><html lang="es"><head><meta charset="utf-8">'
@@ -409,7 +722,8 @@ def render(eds, permalink=False):
     for k in SEC: A(f'<i style="background:var(--{k})"></i>')
     A(f'</div><header class="masthead"><h1>Briefing Ciber-GRC</h1>'
       f'<div class="mast-sub"><span>España y Unión Europea</span><span>·</span>'
-      f'<span><b>Edición {NUM:03d}</b></span><span>·</span><span>{FECHA_TXT}</span></div>'
+      f'<span><b>Edición {NUM:03d}</b></span><span>·</span><span>{FECHA_TXT}</span>'
+      f'<span>·</span><span><a href="que-es.html">Qué es esto</a></span></div>'
       f'</header><nav role="tablist"><div class="nav-in">')
     for i, (tid, lab, col) in enumerate(TABS):
         A(f'<button role="tab" aria-selected="{"true" if i==0 else "false"}" data-t="{tid}" '
@@ -636,16 +950,12 @@ def render(eds, permalink=False):
           f'{e["periodo"]}</span></a>')
     A('</div></div></section>')
 
-    A('<footer><p><b>Método.</b> Fuentes primarias siempre que han sido accesibles: EUR-Lex, '
-      'digital-strategy.ec.europa.eu, ENISA, Supervisión Bancaria del Banco Central Europeo, '
-      'Junta Europea de Riesgo Sistémico, EBA, ESMA, EIOPA, Comité Europeo de Protección de Datos, '
-      'ccn.cni.es, BOE, Congreso de los Diputados, iso.org y csrc.nist.gov. Los incidentes solo se '
-      'admiten con confirmación de la entidad afectada, de un regulador o de un CERT oficial. '
-      'Cada plazo se ha reverificado de forma independiente contra su fuente primaria.</p>'
-      '<p><b>Limitaciones de acceso.</b> <code>ccn-cert.cni.es</code>, <code>aepd.es</code>, '
-      '<code>incibe.es</code> y <code>cisa.gov</code> bloquean el acceso automatizado, y el texto '
-      'completo de EUR-Lex falla con frecuencia. Los asuntos afectados llevan advertencia explícita.</p>'
-      '<p><b>Próxima edición</b> lunes 17 de agosto de 2026.</p></footer></main>'
+    A('<footer><p><b>Método.</b> Fuentes primarias siempre que han sido accesibles, cada plazo '
+      'reverificado de forma independiente contra la suya, y los incidentes solo con '
+      'confirmación de la entidad afectada, de un regulador o de un CERT oficial. '
+      '<a href="que-es.html#metodo">El método entero, con sus límites de acceso y lo que deja '
+      'fuera</a>.</p>'
+      f'<p><b>Próxima edición</b> {pie_proxima(FECHA_ISO, eds)}.</p></footer></main>'
       '<script>'
       'const tabs=[...document.querySelectorAll("nav button")];'
       'function go(id){tabs.forEach(b=>b.setAttribute("aria-selected",b.dataset.t===id));'
@@ -755,3 +1065,9 @@ open(f"{RAIZ}/ed-{FECHA_ISO}.html", "w", encoding="utf-8").write(pag)
 open(f"{RAIZ}/robots.txt", "w", encoding="utf-8").write("User-agent: *\nDisallow: /\n")
 print(f"web: {len(pag)/1024:.1f} KB | {TOTAL} asuntos | siglas desplegadas: {pag.count('<abbr')}")
 print(f"iconos: {pag.count('<svg')} | justificado: {'text-align:justify' in pag}")
+
+qe = render_que_es(eds)
+assert not re.search(r"[–—]", qe), "guion largo en que-es"
+open(f"{RAIZ}/que-es.html", "w", encoding="utf-8").write(qe)
+print(f"que-es: {len(qe)/1024:.1f} KB | {len(PLIEGUES)} pliegues | "
+      f"{sum(e['asuntos'] for e in eds)} asuntos contados")

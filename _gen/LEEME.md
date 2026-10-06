@@ -25,6 +25,13 @@ mapa).
 > de `contenido.py`. Si vuelve a aparecer contenido de una edición dentro de `web.py`,
 > es un error: sácalo a `contenido.py`.
 
+> **Corregido el 06/10/2026.** El pie llevaba incrustado «Próxima edición lunes 17 de agosto
+> de 2026», de la edición 001, y salió así en seis de las siete ediciones publicadas. Ahora
+> lo calcula `proxima(FECHA_ISO)`, el lunes siguiente a la fecha de la edición. Las páginas
+> archivadas se corrigieron a mano una por una; en la 003 se escribió el 14 de septiembre,
+> que es la edición que de verdad vino después de la pausa de agosto, y no el 31 de agosto,
+> que fue un lunes sin edición. Mismo aviso que arriba: ninguna fecha se escribe en `web.py`.
+
 ## Cómo se ejecuta
 
 ```

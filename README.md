@@ -5,8 +5,9 @@ en España y la Unión Europea. Se publica cada lunes por la mañana.
 
 - **Web**: Cloudflare Pages, desplegada automáticamente desde la rama `main` de este
   repositorio (migrada desde Netlify el 21-09-2026 con una copia exacta de lo publicado).
-- **Última edición**: 004, 14 de septiembre de 2026
-- **Ediciones publicadas**: 4
+- **Histórico**: la cuenta viva está en `ediciones.json`, que es el manifiesto y se
+  actualiza con cada edición. Al cierre de la 007 (5 de octubre de 2026) van siete
+  ediciones publicadas.
 
 ## Cómo funciona
 
