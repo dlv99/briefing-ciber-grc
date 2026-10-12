@@ -68,6 +68,14 @@ EXPANDIR = {
  "ENAC": "Entidad Nacional de Acreditación",
  "SAML": "lenguaje de marcado para aserciones de seguridad, usado en el inicio de sesión federado",
  "DNS": "sistema de nombres de dominio",
+ "CNIL": "autoridad francesa de protección de datos",
+ "ANSSI": "agencia nacional francesa de ciberseguridad y de seguridad de los sistemas de información",
+ "ENISA": "Agencia de la Unión Europea para la Ciberseguridad",
+ "NIST": "instituto nacional estadounidense de normas y tecnología",
+ "CISA": "agencia estadounidense de ciberseguridad y seguridad de las infraestructuras",
+ "AEMET": "Agencia Estatal de Meteorología",
+ "LIBE": "comisión de Libertades Civiles, Justicia e Interior del Parlamento Europeo",
+ "LOREG": "Ley Orgánica del Régimen Electoral General",
 }
 SOLO_ABBR = {
  "TIC": "tecnologías de la información y la comunicación",
