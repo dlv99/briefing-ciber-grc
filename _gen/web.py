@@ -8,6 +8,9 @@ from contenido import (SEC, SEC_DARK, HOT, HOTBG, ITEMS, PLAZOS, BULOS,
 from glosario import entradas as GLOS, CATS as GCATS
 from mapa import EST, REJILLA, PAIS, NORMAS, D as MAPA
 from incidentes import INCIDENTES, DESCARTADOS, LAGUNAS, SECTORES, TIPOS
+
+# Plazos vivos: los marcados como tales, no todos. Se cuenta, no se escribe a mano.
+VIVOS = sum(1 for _p in PLAZOS if _p[1])
 import unicodedata, datetime
 from siglas import marcar as _marcar
 from silabas import blandear
@@ -458,7 +461,7 @@ def render(eds, permalink=False):
       f'<h2 class="tit">{TITULAR}</h2>'
       f'<p class="entradilla">{ENTRADA}</p>'
       f'<div class="firma"><span><b>Periodo</b> {PERIODO}</span>'
-      f'<span><b>{TOTAL} asuntos</b></span><span><b>{len(PLAZOS)} plazos vivos</b></span>'
+      f'<span><b>{TOTAL} asuntos</b></span><span><b>{VIVOS} plazos vivos</b></span>'
       f'<span>Verificado contra fuentes primarias</span></div>'
       f'<div class="clave"><span class="et">Lo único que hay que retener</span>'
       f'<p class="capitular">{marcar(CLAVE_1, set())}</p><p>{marcar(CLAVE_2, set())}</p></div></div>')
@@ -839,7 +842,7 @@ eds = json.load(open(MAN, encoding="utf-8")) if os.path.exists(MAN) else []
 eds = [e for e in eds if e["iso"] != FECHA_ISO]
 eds.insert(0, {"n": NUM, "iso": FECHA_ISO, "fecha": FECHA_TXT, "titular": TITULAR,
                "entrada": ENTRADA, "periodo": PERIODO,
-               "asuntos": TOTAL, "plazos": len(PLAZOS)})
+               "asuntos": TOTAL, "plazos": VIVOS})
 eds.sort(key=lambda x: x["iso"], reverse=True)
 json.dump(eds, open(MAN, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 

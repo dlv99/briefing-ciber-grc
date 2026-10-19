@@ -166,3 +166,11 @@ lo que se lee. `conf` solo alimenta el filtro y la línea «confirmado el …».
 `web.py` **aborta** si falta o no es una fecha válida, igual que aborta con un guion largo.
 Es deliberado: se parchea la entrada, no la salida. Un filtro de fechas que silenciosamente
 se come los incidentes sin fecha es peor que un generador que no compila.
+
+## El recuento de plazos vivos (corregido el 19/10/2026)
+
+La línea de datos de la portada y la del archivo dicen «N plazos vivos». Hasta la edición 008
+ese número era `len(PLAZOS)`, es decir **todos** los plazos, incluidos los marcados como lejanos.
+Desde la edición 009 cuenta solo los que llevan el indicador de vivo, con `VIVOS` calculado en
+`web.py`. Las entradas de `ediciones.json` anteriores a la 009 conservan el número antiguo, que
+era el total: no se han reescrito porque no se pueden reverificar sus plazos a posteriori.
