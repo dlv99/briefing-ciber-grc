@@ -242,14 +242,46 @@ article:hover .ancla{{opacity:1}}
 .ancla.ok{{color:#2E7D32;opacity:1}}
 
 /* ── incidentes ── */
-.filtros{{margin:22px 0 0;max-width:none}}
+.filtros{{margin:22px 0 0;max-width:none;border:1px solid var(--rule);border-radius:6px;
+background:var(--paper);padding:17px 19px 4px}}
+.filtros-h{{display:flex;align-items:baseline;justify-content:space-between;gap:12px;
+flex-wrap:wrap;margin:0 0 16px;padding-bottom:13px;border-bottom:1px solid var(--hair)}}
+.filtros-h .ft{{font:700 11px/1 var(--san);letter-spacing:.15em;text-transform:uppercase;
+color:var(--ink)}}
+.filtros-h .fr{{display:flex;align-items:baseline;gap:14px}}
+#cuenta{{font:500 12px/1 var(--san);color:var(--ink3);font-variant-numeric:tabular-nums}}
+#cuenta b{{color:var(--ink);font-weight:600}}
+.limpiar{{background:none;border:0;padding:0;cursor:pointer;font:600 12px/1 var(--san);
+color:var(--ink3);text-decoration:underline;text-underline-offset:3px}}
+.limpiar:hover{{color:var(--hot)}}
+.limpiar[hidden]{{display:none}}
 .filtros .fl{{font:700 10px/1 var(--san);letter-spacing:.15em;text-transform:uppercase;
 color:var(--ink3);display:block;margin:0 0 9px}}
-.chips{{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:16px}}
-.chip{{background:var(--paper);border:1px solid var(--rule);border-radius:20px;cursor:pointer;
-padding:7px 14px;font:600 12.5px/1 var(--san);color:var(--ink2)}}
+.chips{{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:17px}}
+.chip{{background:transparent;border:1px solid var(--rule);border-radius:20px;cursor:pointer;
+padding:7px 13px;font:600 12.5px/1 var(--san);color:var(--ink2);display:inline-flex;
+align-items:center;gap:8px;transition:border-color .12s,background .12s,color .12s}}
+.chip::before{{content:"";width:7px;height:7px;border-radius:50%;background:var(--cc);
+flex:0 0 auto}}
+.chip b{{font-weight:600;color:var(--ink3);font-variant-numeric:tabular-nums}}
 .chip:hover{{border-color:var(--ink3)}}
+.chip:focus-visible{{outline:2px solid var(--cc);outline-offset:2px}}
 .chip[aria-pressed=true]{{background:var(--cc);border-color:var(--cc);color:#fff}}
+.chip[aria-pressed=true] b{{color:#fff;opacity:.72}}
+.chip[aria-pressed=true]::before{{background:#fff;box-shadow:0 0 0 3px rgba(255,255,255,.3)}}
+.pers{{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:15px}}
+.per{{background:transparent;border:1px solid var(--rule);border-radius:4px;cursor:pointer;
+padding:7px 12px;font:600 12.5px/1 var(--san);color:var(--ink2);transition:border-color .12s}}
+.per:hover{{border-color:var(--ink3)}}
+.per:focus-visible{{outline:2px solid var(--ink3);outline-offset:2px}}
+.per[aria-pressed=true]{{background:var(--ink);border-color:var(--ink);color:var(--paper)}}
+.rango{{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;margin-bottom:17px}}
+.rango label{{font:600 12px/1 var(--san);color:var(--ink3);display:inline-flex;
+align-items:center;gap:9px}}
+.rango input{{font:500 12.5px/1 var(--san);color:var(--ink);background:var(--bg);
+border:1px solid var(--rule);border-radius:4px;padding:7px 9px;color-scheme:light dark}}
+.rango input:focus-visible{{outline:2px solid var(--ink3);outline-offset:1px}}
+@media(max-width:560px){{.rango label{{width:100%}}.rango input{{flex:1}}}}
 .inc{{border:1px solid var(--rule);border-radius:4px;background:var(--paper);
 padding:23px 25px;margin:0 0 13px}}
 .inc[data-oculto],.gl[data-oculto]{{display:none}}
@@ -260,6 +292,8 @@ padding:5px 9px;border-radius:2px;color:#fff}}
 .tag.tip{{background:none;border:1px solid var(--tg);color:var(--tg)}}
 .inc h4{{font:600 20px/1.32 var(--ser);margin:0 0 5px;text-align:left;hyphens:none}}
 .inc .meta{{font:500 12.5px/1.5 var(--san);color:var(--ink3);margin:0 0 14px}}
+.inc .meta.crono{{font-size:12px;color:var(--ink3);margin:-10px 0 14px;
+padding-left:11px;border-left:2px solid var(--hair)}}
 .inc .meta b{{color:var(--ink2)}}
 .inc dl{{margin:0}}
 .inc dt{{font:700 9.5px/1 var(--san);letter-spacing:.15em;text-transform:uppercase;
@@ -489,36 +523,72 @@ def render(eds, permalink=False):
 
 
     # ── INCIDENTES ──
+    # Fecha de confirmacion: obligatoria y legible por maquina. Alimenta el filtro
+    # de rango. Si falta o esta mal, se aborta: es dato de entrada, no de salida.
+    _MES = ("enero","febrero","marzo","abril","mayo","junio","julio","agosto",
+            "septiembre","octubre","noviembre","diciembre")
+    def fecha_es(iso):
+        a, m, d = iso.split("-")
+        return "%d de %s de %s" % (int(d), _MES[int(m) - 1], a)
+    import datetime as _dt
+    _confs = []
+    for _i in INCIDENTES:
+        _c = _i[6]
+        try:
+            _dt.date(*(int(x) for x in _c.split("-")))
+        except Exception:
+            raise SystemExit("incidentes.py: el incidente '%s' no tiene fecha de "
+                             "confirmacion valida en formato AAAA-MM-DD (vino %r). "
+                             "Es obligatoria: el filtro de fechas depende de ella."
+                             % (_i[0], _c))
+        _confs.append(_c)
+    CMIN, CMAX = (min(_confs), max(_confs)) if _confs else ("", "")
     A(f'<section id="t-incidentes" hidden><div class="col izq no-busca">'
       f'<p class="ante" style="color:#B71C1C">Casos reales</p>'
       f'<h2 class="tit">Últimos incidentes</h2>'
       f'<p class="entradilla">Incidentes del periodo <b>confirmados por la entidad afectada, '
       f'un regulador o un CERT oficial</b>. Lo reivindicado por atacantes o publicado solo en prensa '
       f'sin confirmación se queda fuera, y se lista aparte al final para que sepas que existe.</p></div>'
-      f'<div class="col filtros no-busca"><span class="fl">Filtrar por sector</span><div class="chips" id="fs">'
-      f'<button class="chip" data-f="sector" data-v="" aria-pressed="true" style="--cc:#14161a">Todos</button>')
+      f'<div class="col filtros no-busca">'
+      f'<div class="filtros-h"><span class="ft">Filtrar incidentes</span>'
+      f'<span class="fr"><span id="cuenta" aria-live="polite"></span>'
+      f'<button class="limpiar" id="limpiar" hidden>Limpiar</button></span></div>'
+      f'<span class="fl" id="l-sec">Sector</span>'
+      f'<div class="chips" id="fs" role="group" aria-labelledby="l-sec">')
     for sk, (sn, sc) in SECTORES.items():
         n = sum(1 for i in INCIDENTES if i[3] == sk)
         if n: A(f'<button class="chip" data-f="sector" data-v="{sk}" aria-pressed="false" '
                 f'style="--cc:{sc}">{sn} <b>{n}</b></button>')
-    A('</div><span class="fl">Filtrar por tipo</span><div class="chips" id="ft">'
-      '<button class="chip" data-f="tipo" data-v="" aria-pressed="true" style="--cc:#14161a">Todos</button>')
+    A('</div><span class="fl" id="l-tip">Tipo</span>'
+      '<div class="chips" id="ft" role="group" aria-labelledby="l-tip">')
     for tk, (tn, tc) in TIPOS.items():
         n = sum(1 for i in INCIDENTES if tk in i[4])
-        A(f'<button class="chip" data-f="tipo" data-v="{tk}" aria-pressed="false" '
-          f'style="--cc:{tc}">{tn} <b>{n}</b></button>')
-    A('</div></div><div class="col" id="lista-inc">')
-    for iid, ent, pais, sec, tips, fecha, estado, sabe, quien, url, obl, lec in INCIDENTES:
+        if n: A(f'<button class="chip" data-f="tipo" data-v="{tk}" aria-pressed="false" '
+                f'style="--cc:{tc}">{tn} <b>{n}</b></button>')
+    A(f'</div><span class="fl" id="l-fec">Fecha de confirmación</span>'
+      f'<div class="pers" id="fp" role="group" aria-labelledby="l-fec">'
+      f'<button class="per" data-p="ed" aria-pressed="false">Esta edición</button>'
+      f'<button class="per" data-p="30" aria-pressed="false">Últimos 30 días</button>'
+      f'<button class="per" data-p="90" aria-pressed="false">Últimos 90 días</button>'
+      f'<button class="per" data-p="all" aria-pressed="true">Todo</button></div>'
+      f'<div class="rango">'
+      f'<label for="d1">Desde <input type="date" id="d1" min="{CMIN}" max="{CMAX}"></label>'
+      f'<label for="d2">Hasta <input type="date" id="d2" min="{CMIN}" max="{CMAX}"></label>'
+      f'</div></div><div class="col" id="lista-inc">')
+    for iid, ent, pais, sec, tips, fecha, conf, estado, sabe, quien, url, obl, lec in INCIDENTES:
         sn, sc = SECTORES[sec]
         v = set()
         ctx = " ".join([sabe, quien, obl, lec])
-        A(f'<div class="inc" id="i-{iid}" data-sector="{sec}" data-tipo="{",".join(tips)}">'
+        A(f'<div class="inc" id="i-{iid}" data-sector="{sec}" data-tipo="{",".join(tips)}" '
+          f'data-conf="{conf}">'
           f'<div class="inc-h"><span class="tag sec" style="--tg:{sc}">{sn}</span>')
         for t in tips:
             tn, tc = TIPOS[t]
             A(f'<span class="tag tip" style="--tg:{tc}">{tn}</span>')
         A(f'</div><h4>{ent}</h4>'
-          f'<p class="meta"><b>{pais}</b> &nbsp;·&nbsp; {fecha} &nbsp;·&nbsp; {estado}</p>'
+          f'<p class="meta"><b>{pais}</b> &nbsp;·&nbsp; confirmado el '
+          f'<time datetime="{conf}">{fecha_es(conf)}</time> &nbsp;·&nbsp; {estado}</p>'
+          f'<p class="meta crono">{fecha}</p>'
           f'<dl><dt>Qué se sabe</dt><dd><p>{marcar(sabe, v, contexto=ctx)}</p></dd>'
           f'<dt>Quién lo confirma</dt><dd><p>{marcar(quien, v, contexto=ctx)} '
           f'<a href="{url}">Fuente</a>.</p></dd>'
@@ -664,15 +734,41 @@ def render(eds, permalink=False):
       'const u=location.origin+location.pathname+"#"+b.dataset.a;'
       'navigator.clipboard.writeText(u).then(()=>{b.classList.add("ok");'
       'setTimeout(()=>b.classList.remove("ok"),1400);});});'
-      'let fSec="",fTip="";'
-      'function filtra(){let n=0;document.querySelectorAll(".inc").forEach(c=>{'
-      'const ok=(!fSec||c.dataset.sector===fSec)&&(!fTip||c.dataset.tipo.split(",").includes(fTip));'
+      f'const IED="{FECHA_ISO}";'
+      'const _dsum=(iso,n)=>{const p=iso.split("-");'
+      'const x=new Date(Date.UTC(+p[0],+p[1]-1,+p[2]));x.setUTCDate(x.getUTCDate()+n);'
+      'return x.toISOString().slice(0,10);};'
+      'const selS=new Set(),selT=new Set();let fD1="",fD2="";'
+      'const inD1=document.getElementById("d1"),inD2=document.getElementById("d2");'
+      'function filtra(){let n=0,tot=0;document.querySelectorAll(".inc").forEach(c=>{tot++;'
+      'const cf=c.dataset.conf||"";'
+      'const ok=(!selS.size||selS.has(c.dataset.sector))'
+      '&&(!selT.size||c.dataset.tipo.split(",").some(t=>selT.has(t)))'
+      '&&(!fD1||(cf&&cf>=fD1))&&(!fD2||(cf&&cf<=fD2));'
       'ok?c.removeAttribute("data-oculto"):c.setAttribute("data-oculto","");if(ok)n++;});'
-      'const v=document.getElementById("vacio");if(v)v.hidden=n>0;}'
+      'const v=document.getElementById("vacio");if(v)v.hidden=n>0;'
+      'const cu=document.getElementById("cuenta");'
+      'if(cu)cu.innerHTML=n===tot?"<b>"+tot+"</b> incidentes":"<b>"+n+"</b> de "+tot;'
+      'const lp=document.getElementById("limpiar");'
+      'if(lp)lp.hidden=!(selS.size||selT.size||fD1||fD2);}'
       'document.querySelectorAll(".chip").forEach(c=>c.onclick=()=>{'
-      'const g=c.dataset.f==="sector"?"fs":"ft";'
-      'document.querySelectorAll("#"+g+" .chip").forEach(o=>o.setAttribute("aria-pressed",o===c));'
-      'if(c.dataset.f==="sector")fSec=c.dataset.v;else fTip=c.dataset.v;filtra();});'
+      'const st=c.dataset.f==="sector"?selS:selT,vv=c.dataset.v;'
+      'if(st.has(vv)){st.delete(vv);c.setAttribute("aria-pressed","false");}'
+      'else{st.add(vv);c.setAttribute("aria-pressed","true");}filtra();});'
+      'function marcaPer(p){document.querySelectorAll("#fp .per")'
+      '.forEach(b=>b.setAttribute("aria-pressed",b.dataset.p===p));}'
+      'function ponPer(p){if(p==="all"){fD1="";fD2="";}'
+      'else if(p==="ed"){fD1=_dsum(IED,-7);fD2=IED;}'
+      'else{fD1=_dsum(IED,-parseInt(p));fD2=IED;}'
+      'if(inD1)inD1.value=fD1;if(inD2)inD2.value=fD2;marcaPer(p);filtra();}'
+      'document.querySelectorAll("#fp .per").forEach(b=>b.onclick=()=>ponPer(b.dataset.p));'
+      'if(inD1)inD1.onchange=()=>{fD1=inD1.value;marcaPer(fD1||fD2?"":"all");filtra();};'
+      'if(inD2)inD2.onchange=()=>{fD2=inD2.value;marcaPer(fD1||fD2?"":"all");filtra();};'
+      'const lpB=document.getElementById("limpiar");'
+      'if(lpB)lpB.onclick=()=>{selS.clear();selT.clear();'
+      'document.querySelectorAll(".chip").forEach(c=>c.setAttribute("aria-pressed","false"));'
+      'ponPer("all");};'
+      'filtra();'
       'const q=document.getElementById("q"),res=document.getElementById("res");'
       'const piezas=[...document.querySelectorAll("article[data-sec], .inc, .gl")];'
       'q.addEventListener("input",()=>{const t=q.value.trim().toLowerCase();'

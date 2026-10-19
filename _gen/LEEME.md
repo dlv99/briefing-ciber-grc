@@ -10,7 +10,7 @@ haría que fuese degradándose.
 | Fichero | Frecuencia | Qué contiene |
 |---|---|---|
 | `contenido.py` | **Cada lunes, entero** | `NUM`, `FECHA_ISO`, `FECHA_TXT`, `PERIODO`, titular, entradilla, claves, plazos, `TITS` (titulares de las tarjetas de portada), asuntos, correcciones y «comprobado y sin novedad» |
-| `incidentes.py` | **Cada lunes, entero** | Incidentes confirmados, descartados y lagunas |
+| `incidentes.py` | **Cada lunes, entero** | Incidentes confirmados, descartados y lagunas. Cada incidente lleva `conf`, la fecha de confirmación pública en `AAAA-MM-DD`: es obligatoria |
 | `mapa.py` | Cada lunes, al menos la previsión | Estado de las 5 normas en los 27 Estados y previsión de los que no tienen ley |
 | `siglas.py` | Al añadir siglas nuevas | Despliegue de siglas |
 | `glosario.py` | Al añadir siglas nuevas | Explicaciones largas del glosario |
@@ -21,6 +21,10 @@ haría que fuese degradándose.
 mapa) y `contador.py` (fechas ancla y cuantías verificadas del incumplimiento de
 transposición: solo se toca si cambia un hecho verificado, como una sentencia o un
 número de asunto nuevo).
+
+«No se toca» quiere decir **no metas contenido de la edición ahí dentro**. Mejorar la
+maqueta sí es tocar `web.py`, y es legítimo: para eso existe. Lo que nunca entra en
+`web.py` es una fecha, un titular ni un dato de la semana.
 
 > **Corregido el 17/08/2026.** `web.py` tenía incrustados la fecha, el número de edición,
 > el periodo y los titulares de las tarjetas de portada de la edición 001. Ahora los lee
@@ -121,3 +125,44 @@ Dos cosas que hay que revisar cada lunes antes de dar el bloque por bueno:
 Si España transpone, por ley o por decreto-ley, el bloque **no desaparece**: pasa a
 decir cuánto se acumuló hasta la fecha de notificación a la Comisión, que es lo que
 seguirá pidiéndose como tanto alzado.
+
+## Filtros de la sección de incidentes (añadido el 19/10/2026)
+
+La sección de incidentes lleva un panel de filtros con tres controles, y los tres se
+construyen solos a partir de los datos de `incidentes.py`:
+
+1. **Sector y Tipo**, en fichas de colores con el recuento de incidentes de cada uno.
+   Son de **selección múltiple**: marcar «Banca y seguros» y «Sanidad» muestra los de
+   los dos. Dentro de un grupo la condición es «o»; entre los dos grupos, «y». Ninguna
+   ficha marcada equivale a todas. Solo aparecen las fichas con al menos un incidente.
+2. **Fecha de confirmación**, con cuatro atajos («Esta edición», «Últimos 30 días»,
+   «Últimos 90 días» y «Todo») y dos campos de calendario para un rango a medida.
+   Los atajos se calculan **desde `FECHA_ISO` de la edición, no desde el día en que se
+   lee la página**: así una edición archivada sigue diciendo lo mismo dentro de un año.
+   La aritmética de fechas va en UTC a propósito; con horas locales, un lector al este
+   de Greenwich veía el rango desplazado un día.
+3. **Contador y botón de limpiar**, que aparecen y se actualizan solos.
+
+### El campo `conf`, y por qué el generador aborta sin él
+
+Cada incidente lleva una fecha de confirmación pública legible por máquina:
+
+```python
+("cpr", "Registro central de personas de Dinamarca", "Dinamarca", "adm",
+ ["acc","rgpd","sum"],
+ "Accesos durante unos diez días de septiembre; actividad irregular detectada el 2 de octubre...",
+ "2026-10-05",          # <- conf: AAAA-MM-DD, obligatoria
+ "Abierto, con revisión de seguridad ordenada por el ministerio", ...)
+```
+
+`conf` es **la fecha en que la entidad afectada, el regulador o el CERT lo confirmaron**,
+que es justamente la que exige la regla de admisión del boletín: si un incidente entra,
+esa fecha existe. No es la fecha del ataque ni la de la detección, que muchas veces no se
+declaran o son un rango de días.
+
+El campo largo de texto se mantiene y es donde va la cronología completa en prosa, que es
+lo que se lee. `conf` solo alimenta el filtro y la línea «confirmado el …».
+
+`web.py` **aborta** si falta o no es una fecha válida, igual que aborta con un guion largo.
+Es deliberado: se parchea la entrada, no la salida. Un filtro de fechas que silenciosamente
+se come los incidentes sin fecha es peor que un generador que no compila.
