@@ -174,3 +174,66 @@ ese número era `len(PLAZOS)`, es decir **todos** los plazos, incluidos los marc
 Desde la edición 009 cuenta solo los que llevan el indicador de vivo, con `VIVOS` calculado en
 `web.py`. Las entradas de `ediciones.json` anteriores a la 009 conservan el número antiguo, que
 era el total: no se han reescrito porque no se pueden reverificar sus plazos a posteriori.
+
+## Pendiente para la edición 010 o posterior (anotado el 20/10/2026)
+
+Tres cosas detectadas al revisar el mapa después de publicar la 009. Las dos primeras son de datos
+y le tocan a la tarea del lunes. La tercera es un cambio de diseño y **no se hace sin que David lo
+confirme**.
+
+### 1. La nota de España en el Reglamento de IA está desactualizada (hacer)
+
+`mapa.py`, entrada `ES` de `ia`, dice: «AESIA designada y notificada, pero la ley orgánica que le da
+competencias formales sigue pendiente». **Ya no está pendiente: está caducada** desde el 6 de octubre
+de 2026, porque el expediente 121/000096 figura «Concluido - (Caducado)» en el Congreso. Pendiente y
+caducada no son lo mismo y el matiz importa: pendiente sugiere que avanza. Reescribir la nota.
+
+### 2. El mapa del CRA se contradice con su propia nota (verificar y luego hacer)
+
+El reparto por país del CRA es de 25 Estados en `desc`, «sin dato público», con la explicación de que
+ni la Comisión ni ENISA publican designaciones por país. Pero **la nota de esa misma norma enumera
+quince Estados con autoridad notificante registrada**, con nombre: Bélgica, Chipre, Alemania, Estonia,
+Finlandia, Francia, Croacia, Hungría, Irlanda, Lituania con dos, Malta, Países Bajos, Polonia, Suecia
+y Eslovaquia. España no está. El mapa dice «no sabemos» encima de un texto que sí sabe.
+
+Antes de tocarlo, **reverificar los quince contra el censo europeo**, porque el dato es del 12 de
+octubre. Después, ponerlos en `parcial` con la nota de que tienen autoridad notificante pero no
+organismos notificados, y dejar en `desc` solo a los que de verdad no tengan dato.
+
+Aviso de método: la consulta al censo que sí funciona es la API de búsqueda que usa el propio
+frontal, con los índices `nando_legislation` y `nando_notification`, filtrando por el identificador
+de legislación. Y hay que hacer **prueba de control** con otra legislación que devuelva una cifra
+distinta de cero, porque un campo mal puesto da ceros falsos.
+
+### 3. Dos escalas de color en lugar de una (decisión de David, no hacer por iniciativa propia)
+
+El mapa usa los mismos cinco estados para las cinco normas, y eso hace que el verde signifique cosas
+distintas según la pestaña sin que nada lo avise:
+
+- En **directivas** (NIS2, CER) el verde es «hay ley nacional en vigor que ya obliga a las empresas».
+- En **reglamentos** (DORA, IA, CRA) el verde es «el Estado ha designado autoridades», que no obliga
+  a nadie a nada nuevo porque la norma ya obligaba igual.
+
+Hay además una asimetría escondida: **el rojo, «sin ley y demandado», solo puede darse en una
+directiva**. Por eso DORA e IA no tienen ni un país en rojo aunque España tenga carta de
+emplazamiento viva por DORA desde julio de 2026.
+
+La propuesta, pendiente de confirmación: mantener los cinco colores y la misma paleta, pero que
+cambie **qué pregunta responde el color**, con una línea fija encima del mapa que lo diga.
+
+- Directivas, la pregunta es **«¿te obliga ya?»**: verde, ley en vigor; amarillo, aprobada pero no
+  aplicable aún o solo en parte; naranja, sin ley; rojo, sin ley y demandado.
+- Reglamentos, la pregunta es **«¿quién te vigila y quién te sanciona?»**: verde, autoridades
+  designadas y régimen sancionador nacional en vigor; amarillo, autoridad designada sin régimen
+  sancionador; naranja, sin designar; gris, sin dato público.
+
+Lo que esto haría visible y hoy no se ve: **España saldría amarilla en IA y amarilla en DORA por
+exactamente la misma razón**, que la autoridad existe y el régimen sancionador no. Hoy DORA la pinta
+verde y la coincidencia se pierde. Es un patrón español que se repite en tres normas seguidas.
+
+### 4. Un plazo que puede faltar en la tabla (verificar)
+
+La nota del CRA afirma que **el plazo para que los Estados tengan organismos notificados suficientes
+es el 11 de diciembre de 2026**. Si es correcto, es un plazo vivo y no entró en la tabla de la
+edición 009. **Verificar contra el articulado del Reglamento (UE) 2024/2847 antes de publicarlo**, no
+darlo por bueno desde esta nota.
