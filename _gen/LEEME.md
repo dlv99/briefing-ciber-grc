@@ -131,12 +131,14 @@ seguirá pidiéndose como tanto alzado.
 La sección de incidentes lleva un panel de filtros con tres controles, y los tres se
 construyen solos a partir de los datos de `incidentes.py`:
 
-1. **Sector y Tipo**, en fichas de colores con el recuento de incidentes de cada uno.
-   Son de **selección múltiple**: marcar «Banca y seguros» y «Sanidad» muestra los de
-   los dos. Dentro de un grupo la condición es «o»; entre los dos grupos, «y». Ninguna
-   ficha marcada equivale a todas. Solo aparecen las fichas con al menos un incidente.
-2. **Fecha de confirmación**, con cuatro atajos («Esta edición», «Últimos 30 días»,
-   «Últimos 90 días» y «Todo») y dos campos de calendario para un rango a medida.
+1. **Sector y Tipo**, cada uno en su propio desplegable, con casillas, icono de color e
+   indicador del número de incidentes. Son de **selección múltiple**: marcar «Banca y
+   seguros» y «Sanidad» muestra los de los dos. Dentro de un grupo la condición es «o»;
+   entre los dos grupos, «y». Ninguna casilla marcada equivale a todas. Solo aparecen las
+   opciones con al menos un incidente.
+2. **Fecha de confirmación**, en un tercer desplegable, con cuatro atajos («Esta edición»,
+   «Últimos 30 días», «Últimos 90 días» y «Todo») y dos campos de calendario para un rango
+   a medida.
    Los atajos se calculan **desde `FECHA_ISO` de la edición, no desde el día en que se
    lee la página**: así una edición archivada sigue diciendo lo mismo dentro de un año.
    La aritmética de fechas va en UTC a propósito; con horas locales, un lector al este
@@ -237,3 +239,19 @@ La nota del CRA afirma que **el plazo para que los Estados tengan organismos not
 es el 11 de diciembre de 2026**. Si es correcto, es un plazo vivo y no entró en la tabla de la
 edición 009. **Verificar contra el articulado del Reglamento (UE) 2024/2847 antes de publicarlo**, no
 darlo por bueno desde esta nota.
+
+### Trampa de nombres de clase (aprendida el 20/10/2026)
+
+Los filtros se rehicieron como tres desplegables en fila. La barra que los contiene se llama
+`.fbar`, **y no `.barra`**, porque esa clase ya existía en `web.py` para la barra de leyenda
+del mapa, con `height:13px` y `overflow:hidden`. Al coincidir el nombre, la regla del mapa, que
+va después, ganaba: la barra de filtros quedaba aplastada a trece píxeles y, peor, el
+`overflow:hidden` **recortaba el panel desplegable**, que se abría vacío.
+
+El síntoma era desconcertante porque el panel existía, tenía sus cinco opciones y el navegador
+lo daba por visible: simplemente no se pintaba. Lo que lo localizó fue preguntarle al navegador
+`elementFromPoint` sobre el centro del panel, que devolvía la tarjeta de incidente de debajo, y
+después recorrer los ancestros buscando quién creaba recorte o contexto de apilamiento.
+
+**Antes de añadir una clase a `web.py`, comprueba que no existe ya**: la hoja de estilos es una
+sola y la última regla gana.

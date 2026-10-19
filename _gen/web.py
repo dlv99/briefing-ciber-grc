@@ -49,6 +49,28 @@ IC = {
  "mapa":'<path d="M6 2.6L2.2 4v9.4L6 12l4 1.4 3.8-1.4V2.6L10 4z"/><path d="M6 2.6V12M10 4v9.4"/>',
  "incidentes":'<path d="M8 1.9l2 4.2 4.4.7-3.2 3.2.8 4.5L8 12.4 4 14.5l.8-4.5L1.6 6.8l4.4-.7z"/>',
  "archivo":'<path d="M2.2 5.6h11.6v8H2.2z"/><path d="M2.2 5.6L3.7 2.8h8.6l1.5 2.8"/><path d="M6.4 8.6h3.2"/>',
+ # sectores de incidentes
+ "s-adm":'<path d="M2.6 13.6h10.8"/><path d="M3.8 13.6V7h8.4v6.6"/><path d="M8 1.8v2.4M8 2.4h3.4v2H8"/><path d="M3.2 7l4.8-2.8L12.8 7"/>',
+ "s-fin":'<path d="M2.2 6.4L8 3.2l5.8 3.2"/><path d="M4 7.4v4.4M6.6 7.4v4.4M9.4 7.4v4.4M12 7.4v4.4"/><path d="M2.4 13.4h11.2"/>',
+ "s-tec":'<rect x="5" y="5" width="6" height="6" rx="1"/><path d="M6.6 2.4v2.6M9.4 2.4v2.6M6.6 11v2.6M9.4 11v2.6M2.4 6.6h2.6M2.4 9.4h2.6M11 6.6h2.6M11 9.4h2.6"/>',
+ "s-tra":'<path d="M1.8 4.6h7.4v6.2H1.8z"/><path d="M9.2 6.8h2.6l2.4 2.2v1.8H9.2z"/><circle cx="4.6" cy="12.2" r="1.4"/><circle cx="11.4" cy="12.2" r="1.4"/>',
+ "s-ene":'<path d="M9 1.8L3.6 9h3.6l-.6 5.2L12.4 7H8.8z"/>',
+ "s-tel":'<path d="M8 11.4V14"/><circle cx="8" cy="9.2" r="1.5"/><path d="M5.2 6.4a4 4 0 0 0 0 5.6M10.8 6.4a4 4 0 0 1 0 5.6"/><path d="M3.2 4.4a6.8 6.8 0 0 0 0 9.6M12.8 4.4a6.8 6.8 0 0 1 0 9.6"/>',
+ "s-san":'<path d="M2 8.4h3l1.4-3 2.4 6 1.4-3H14"/>',
+ "s-edu":'<path d="M1.8 5.8L8 3l6.2 2.8L8 8.6z"/><path d="M4.4 7v3.6c0 .9 1.6 1.8 3.6 1.8s3.6-.9 3.6-1.8V7"/><path d="M13.4 6.2v3.4"/>',
+ "s-com":'<path d="M2 2.6h1.8l1.9 7.6h6.1"/><path d="M4.2 5h9.4l-1.2 4.2"/><circle cx="6.4" cy="12.8" r="1.1"/><circle cx="11.4" cy="12.8" r="1.1"/>',
+ # tipos de incidente
+ "t-ran":'<rect x="3.2" y="7" width="9.6" height="6.6" rx="1.2"/><path d="M5.4 7V5.2a2.6 2.6 0 0 1 5.2 0V7"/><path d="M8.6 9.4l-1.2 1.6h1.6l-1.2 1.6"/>',
+ "t-rgpd":'<path d="M3.4 2.4h5.4l3.4 3.4v7.8H3.4z"/><path d="M8.6 2.4v3.4h3.4"/><circle cx="7.8" cy="9" r="1.2"/><path d="M5.6 12.4c.4-1.2 1.2-1.8 2.2-1.8s1.8.6 2.2 1.8"/>',
+ "t-cont":'<path d="M13.2 8a5.2 5.2 0 1 0-1.6 3.8"/><path d="M13.4 4.4v3.4H10"/><path d="M8 5.4v3l1.8 1.2"/>',
+ "t-sum":'<path d="M6.6 9.4a2.4 2.4 0 0 1 0-3.4l1.8-1.8a2.4 2.4 0 0 1 3.4 3.4l-.9.9"/><path d="M9.4 6.6a2.4 2.4 0 0 1 0 3.4l-1.8 1.8a2.4 2.4 0 0 1-3.4-3.4l.9-.9"/>',
+ "t-acc":'<rect x="3.2" y="7" width="9.6" height="6.6" rx="1.2"/><path d="M5.4 7V5.2a2.6 2.6 0 0 1 4.6-1.7"/><circle cx="8" cy="10.3" r="1.1"/>',
+ # interfaz del filtro
+ "f-sec":'<circle cx="8" cy="8" r="5.8"/><path d="M8 2.2v11.6M2.2 8h11.6"/>',
+ "f-tip":'<path d="M8 2.4l5.9 10.4a.8.8 0 0 1-.7 1.2H2.8a.8.8 0 0 1-.7-1.2z"/><path d="M8 6.4v3.1M8 11.4h.01"/>',
+ "f-fec":'<rect x="2.4" y="3.6" width="11.2" height="10" rx="1.2"/><path d="M2.4 6.6h11.2M5.6 2.2v2.8M10.4 2.2v2.8"/>',
+ "chev":'<path d="M4.4 6.4L8 10l3.6-3.6"/>',
+ "check":'<path d="M3.4 8.4l3 3 6.2-6.6"/>',
 }
 def icono(k):
     return (f'<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.45" '
@@ -258,33 +280,66 @@ color:var(--ink)}}
 color:var(--ink3);text-decoration:underline;text-underline-offset:3px}}
 .limpiar:hover{{color:var(--hot)}}
 .limpiar[hidden]{{display:none}}
-.filtros .fl{{font:700 10px/1 var(--san);letter-spacing:.15em;text-transform:uppercase;
-color:var(--ink3);display:block;margin:0 0 9px}}
-.chips{{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:17px}}
-.chip{{background:transparent;border:1px solid var(--rule);border-radius:20px;cursor:pointer;
-padding:7px 13px;font:600 12.5px/1 var(--san);color:var(--ink2);display:inline-flex;
-align-items:center;gap:8px;transition:border-color .12s,background .12s,color .12s}}
-.chip::before{{content:"";width:7px;height:7px;border-radius:50%;background:var(--cc);
-flex:0 0 auto}}
-.chip b{{font-weight:600;color:var(--ink3);font-variant-numeric:tabular-nums}}
-.chip:hover{{border-color:var(--ink3)}}
-.chip:focus-visible{{outline:2px solid var(--cc);outline-offset:2px}}
-.chip[aria-pressed=true]{{background:var(--cc);border-color:var(--cc);color:#fff}}
-.chip[aria-pressed=true] b{{color:#fff;opacity:.72}}
-.chip[aria-pressed=true]::before{{background:#fff;box-shadow:0 0 0 3px rgba(255,255,255,.3)}}
-.pers{{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:15px}}
-.per{{background:transparent;border:1px solid var(--rule);border-radius:4px;cursor:pointer;
-padding:7px 12px;font:600 12.5px/1 var(--san);color:var(--ink2);transition:border-color .12s}}
+.fbar{{position:relative;display:flex;flex-wrap:wrap;gap:9px;margin-bottom:14px}}
+.dd{{position:relative}}
+.ddb{{display:inline-flex;align-items:center;gap:8px;background:transparent;cursor:pointer;
+border:1px solid var(--rule);border-radius:6px;padding:9px 12px;
+font:600 13px/1 var(--san);color:var(--ink2);transition:border-color .12s,background .12s}}
+.ddb svg{{width:15px;height:15px;flex:0 0 auto;color:var(--ink3)}}
+.ddb svg:last-child{{width:13px;height:13px;transition:transform .15s}}
+.ddb:hover{{border-color:var(--ink3)}}
+.ddb:focus-visible{{outline:2px solid var(--ink3);outline-offset:2px}}
+.ddb[aria-expanded=true]{{border-color:var(--ink);background:var(--hair)}}
+.ddb[aria-expanded=true] svg:last-child{{transform:rotate(180deg)}}
+.ddb.act{{border-color:var(--ink);color:var(--ink)}}
+.ddb.act svg:first-child{{color:var(--ink)}}
+.ddn{{display:inline-flex;align-items:center;justify-content:center;min-width:18px;height:18px;
+padding:0 5px;border-radius:9px;background:var(--ink);color:var(--paper);
+font:700 11px/1 var(--san);font-variant-numeric:tabular-nums}}
+.ddn[hidden]{{display:none}}
+.pop{{position:absolute;z-index:30;top:calc(100%% + 6px);left:0;min-width:252px;
+background:var(--paper);border:1px solid var(--rule);border-radius:8px;padding:6px;
+box-shadow:0 10px 28px rgba(0,0,0,.14),0 2px 6px rgba(0,0,0,.07);
+max-height:min(62vh,420px);overflow:auto}}
+.pop[hidden]{{display:none}}
+.opt{{display:flex;align-items:center;gap:10px;width:100%%;background:transparent;border:0;
+cursor:pointer;border-radius:5px;padding:9px 10px;text-align:left;
+font:500 13.5px/1.25 var(--san);color:var(--ink2)}}
+.opt:hover{{background:var(--hair)}}
+.opt:focus-visible{{outline:2px solid var(--cc);outline-offset:-2px}}
+.opt .ok{{flex:0 0 auto;width:17px;height:17px;border:1.5px solid var(--rule);border-radius:4px;
+display:flex;align-items:center;justify-content:center;color:transparent}}
+.opt .ok svg{{width:12px;height:12px}}
+.opt[aria-pressed=true] .ok{{background:var(--cc);border-color:var(--cc);color:#fff}}
+.opt .oi{{flex:0 0 auto;display:flex;color:var(--cc)}}
+.opt .oi svg{{width:16px;height:16px}}
+.opt .on{{flex:1}}
+.opt[aria-pressed=true]{{color:var(--ink);font-weight:600}}
+.opt b{{font:600 11.5px/1 var(--san);color:var(--ink3);font-variant-numeric:tabular-nums}}
+.pop-f{{min-width:270px;padding:12px 13px 4px}}
+.pop-f .pl{{display:block;font:700 9.5px/1 var(--san);letter-spacing:.14em;
+text-transform:uppercase;color:var(--ink3);margin:0 0 9px}}
+.pers{{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:15px}}
+.per{{background:transparent;border:1px solid var(--rule);border-radius:5px;cursor:pointer;
+padding:7px 10px;font:600 12.5px/1 var(--san);color:var(--ink2)}}
 .per:hover{{border-color:var(--ink3)}}
 .per:focus-visible{{outline:2px solid var(--ink3);outline-offset:2px}}
 .per[aria-pressed=true]{{background:var(--ink);border-color:var(--ink);color:var(--paper)}}
-.rango{{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;margin-bottom:17px}}
-.rango label{{font:600 12px/1 var(--san);color:var(--ink3);display:inline-flex;
-align-items:center;gap:9px}}
+.rango{{display:flex;flex-direction:column;gap:9px;margin-bottom:13px}}
+.rango label{{font:600 12px/1 var(--san);color:var(--ink3);display:flex;
+align-items:center;justify-content:space-between;gap:10px}}
 .rango input{{font:500 12.5px/1 var(--san);color:var(--ink);background:var(--bg);
-border:1px solid var(--rule);border-radius:4px;padding:7px 9px;color-scheme:light dark}}
+border:1px solid var(--rule);border-radius:5px;padding:7px 9px;color-scheme:light dark;
+flex:1;min-width:0}}
 .rango input:focus-visible{{outline:2px solid var(--ink3);outline-offset:1px}}
-@media(max-width:560px){{.rango label{{width:100%}}.rango input{{flex:1}}}}
+@media(max-width:560px){{
+ .fbar{{gap:7px}}
+ .dd{{position:static;flex:1}}
+ .ddb{{width:100%%;justify-content:center;padding:10px 6px;gap:6px}}
+ .ddb span:not(.ddn){{white-space:nowrap}}
+ .pop{{left:0;right:0;width:auto;min-width:0;max-height:56vh;top:calc(100%% + 6px)}}
+ .opt{{padding:11px 10px}}
+}}
 .inc{{border:1px solid var(--rule);border-radius:4px;background:var(--paper);
 padding:23px 25px;margin:0 0 13px}}
 .inc[data-oculto],.gl[data-oculto]{{display:none}}
@@ -556,27 +611,44 @@ def render(eds, permalink=False):
       f'<div class="filtros-h"><span class="ft">Filtrar incidentes</span>'
       f'<span class="fr"><span id="cuenta" aria-live="polite"></span>'
       f'<button class="limpiar" id="limpiar" hidden>Limpiar</button></span></div>'
-      f'<span class="fl" id="l-sec">Sector</span>'
-      f'<div class="chips" id="fs" role="group" aria-labelledby="l-sec">')
+      f'<div class="fbar">'
+      f'<div class="dd"><button class="ddb" id="b-sec" aria-expanded="false" aria-controls="p-sec">'
+      f'{icono("f-sec")}<span>Sector</span><span class="ddn" id="n-sec" hidden></span>'
+      f'{icono("chev")}</button>'
+      f'<div class="pop" id="p-sec" role="group" aria-labelledby="b-sec" hidden>')
     for sk, (sn, sc) in SECTORES.items():
         n = sum(1 for i in INCIDENTES if i[3] == sk)
-        if n: A(f'<button class="chip" data-f="sector" data-v="{sk}" aria-pressed="false" '
-                f'style="--cc:{sc}">{sn} <b>{n}</b></button>')
-    A('</div><span class="fl" id="l-tip">Tipo</span>'
-      '<div class="chips" id="ft" role="group" aria-labelledby="l-tip">')
+        if n: A(f'<button class="opt" data-f="sector" data-v="{sk}" aria-pressed="false" '
+                f'style="--cc:{sc}"><span class="ok">{icono("check")}</span>'
+                f'<span class="oi">{icono("s-" + sk)}</span>'
+                f'<span class="on">{sn}</span><b>{n}</b></button>')
+    A(f'</div></div>'
+      f'<div class="dd"><button class="ddb" id="b-tip" aria-expanded="false" aria-controls="p-tip">'
+      f'{icono("f-tip")}<span>Tipo</span><span class="ddn" id="n-tip" hidden></span>'
+      f'{icono("chev")}</button>'
+      f'<div class="pop" id="p-tip" role="group" aria-labelledby="b-tip" hidden>')
     for tk, (tn, tc) in TIPOS.items():
         n = sum(1 for i in INCIDENTES if tk in i[4])
-        if n: A(f'<button class="chip" data-f="tipo" data-v="{tk}" aria-pressed="false" '
-                f'style="--cc:{tc}">{tn} <b>{n}</b></button>')
-    A(f'</div><span class="fl" id="l-fec">Fecha de confirmación</span>'
-      f'<div class="pers" id="fp" role="group" aria-labelledby="l-fec">'
+        if n: A(f'<button class="opt" data-f="tipo" data-v="{tk}" aria-pressed="false" '
+                f'style="--cc:{tc}"><span class="ok">{icono("check")}</span>'
+                f'<span class="oi">{icono("t-" + tk)}</span>'
+                f'<span class="on">{tn}</span><b>{n}</b></button>')
+    A(f'</div></div>'
+      f'<div class="dd"><button class="ddb" id="b-fec" aria-expanded="false" aria-controls="p-fec">'
+      f'{icono("f-fec")}<span>Fecha</span><span class="ddn" id="n-fec" hidden></span>'
+      f'{icono("chev")}</button>'
+      f'<div class="pop pop-f" id="p-fec" role="group" aria-labelledby="b-fec" hidden>'
+      f'<span class="pl">Confirmado en</span>'
+      f'<div class="pers" id="fp">'
       f'<button class="per" data-p="ed" aria-pressed="false">Esta edición</button>'
       f'<button class="per" data-p="30" aria-pressed="false">Últimos 30 días</button>'
       f'<button class="per" data-p="90" aria-pressed="false">Últimos 90 días</button>'
       f'<button class="per" data-p="all" aria-pressed="true">Todo</button></div>'
+      f'<span class="pl">O un intervalo</span>'
       f'<div class="rango">'
       f'<label for="d1">Desde <input type="date" id="d1" min="{CMIN}" max="{CMAX}"></label>'
       f'<label for="d2">Hasta <input type="date" id="d2" min="{CMIN}" max="{CMAX}"></label>'
+      f'</div></div></div>'
       f'</div></div><div class="col" id="lista-inc">')
     for iid, ent, pais, sec, tips, fecha, conf, estado, sabe, quien, url, obl, lec in INCIDENTES:
         sn, sc = SECTORES[sec]
@@ -753,8 +825,23 @@ def render(eds, permalink=False):
       'const cu=document.getElementById("cuenta");'
       'if(cu)cu.innerHTML=n===tot?"<b>"+tot+"</b> incidentes":"<b>"+n+"</b> de "+tot;'
       'const lp=document.getElementById("limpiar");'
-      'if(lp)lp.hidden=!(selS.size||selT.size||fD1||fD2);}'
-      'document.querySelectorAll(".chip").forEach(c=>c.onclick=()=>{'
+      'if(lp)lp.hidden=!(selS.size||selT.size||fD1||fD2);'
+      'if(typeof pintaDD==="function")pintaDD();}'
+      'function pintaDD(){const g=[["n-sec","b-sec",selS.size],["n-tip","b-tip",selT.size],'
+      '["n-fec","b-fec",(fD1||fD2)?1:0]];'
+      'g.forEach(([ni,bi,n])=>{const e=document.getElementById(ni),b=document.getElementById(bi);'
+      'if(e){e.textContent=n;e.hidden=!n;}if(b)b.classList.toggle("act",!!n);});}'
+      'function cierraDD(menos){document.querySelectorAll(".dd").forEach(d=>{'
+      'const b=d.querySelector(".ddb"),p=d.querySelector(".pop");'
+      'if(d!==menos){b.setAttribute("aria-expanded","false");p.hidden=true;}});}'
+      'document.querySelectorAll(".dd").forEach(d=>{'
+      'const b=d.querySelector(".ddb"),p=d.querySelector(".pop");'
+      'b.onclick=e=>{e.stopPropagation();const ab=b.getAttribute("aria-expanded")==="true";'
+      'cierraDD(d);b.setAttribute("aria-expanded",ab?"false":"true");p.hidden=ab;};'
+      'p.onclick=e=>e.stopPropagation();});'
+      'document.addEventListener("click",()=>cierraDD(null));'
+      'document.addEventListener("keydown",e=>{if(e.key==="Escape")cierraDD(null);});'
+      'document.querySelectorAll(".opt").forEach(c=>c.onclick=()=>{'
       'const st=c.dataset.f==="sector"?selS:selT,vv=c.dataset.v;'
       'if(st.has(vv)){st.delete(vv);c.setAttribute("aria-pressed","false");}'
       'else{st.add(vv);c.setAttribute("aria-pressed","true");}filtra();});'
@@ -769,8 +856,8 @@ def render(eds, permalink=False):
       'if(inD2)inD2.onchange=()=>{fD2=inD2.value;marcaPer(fD1||fD2?"":"all");filtra();};'
       'const lpB=document.getElementById("limpiar");'
       'if(lpB)lpB.onclick=()=>{selS.clear();selT.clear();'
-      'document.querySelectorAll(".chip").forEach(c=>c.setAttribute("aria-pressed","false"));'
-      'ponPer("all");};'
+      'document.querySelectorAll(".opt").forEach(c=>c.setAttribute("aria-pressed","false"));'
+      'cierraDD(null);ponPer("all");};'
       'filtra();'
       'const q=document.getElementById("q"),res=document.getElementById("res");'
       'const piezas=[...document.querySelectorAll("article[data-sec], .inc, .gl")];'
