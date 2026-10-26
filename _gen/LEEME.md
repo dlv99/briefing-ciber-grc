@@ -177,20 +177,20 @@ Desde la edición 009 cuenta solo los que llevan el indicador de vivo, con `VIVO
 `web.py`. Las entradas de `ediciones.json` anteriores a la 009 conservan el número antiguo, que
 era el total: no se han reescrito porque no se pueden reverificar sus plazos a posteriori.
 
-## Pendiente para la edición 010 o posterior (anotado el 20/10/2026)
+## Pendiente para la edición 011 o posterior (actualizado el 26/10/2026)
 
 Tres cosas detectadas al revisar el mapa después de publicar la 009. Las dos primeras son de datos
 y le tocan a la tarea del lunes. La tercera es un cambio de diseño y **no se hace sin que David lo
 confirme**.
 
-### 1. La nota de España en el Reglamento de IA está desactualizada (hacer)
+### 1. La nota de España en el Reglamento de IA está desactualizada ~~(hacer)~~ **HECHO el 26/10/2026**
 
 `mapa.py`, entrada `ES` de `ia`, dice: «AESIA designada y notificada, pero la ley orgánica que le da
 competencias formales sigue pendiente». **Ya no está pendiente: está caducada** desde el 6 de octubre
 de 2026, porque el expediente 121/000096 figura «Concluido - (Caducado)» en el Congreso. Pendiente y
 caducada no son lo mismo y el matiz importa: pendiente sugiere que avanza. Reescribir la nota.
 
-### 2. El mapa del CRA se contradice con su propia nota (verificar y luego hacer)
+### 2. El mapa del CRA se contradice con su propia nota ~~(verificar y luego hacer)~~ **HECHO el 26/10/2026**
 
 El reparto por país del CRA es de 25 Estados en `desc`, «sin dato público», con la explicación de que
 ni la Comisión ni ENISA publican designaciones por país. Pero **la nota de esa misma norma enumera
@@ -233,7 +233,7 @@ Lo que esto haría visible y hoy no se ve: **España saldría amarilla en IA y a
 exactamente la misma razón**, que la autoridad existe y el régimen sancionador no. Hoy DORA la pinta
 verde y la coincidencia se pierde. Es un patrón español que se repite en tres normas seguidas.
 
-### 4. Un plazo que puede faltar en la tabla (verificar)
+### 4. Un plazo que puede faltar en la tabla ~~(verificar)~~ **CERRADO el 26/10/2026**
 
 La nota del CRA afirma que **el plazo para que los Estados tengan organismos notificados suficientes
 es el 11 de diciembre de 2026**. Si es correcto, es un plazo vivo y no entró en la tabla de la
@@ -255,3 +255,94 @@ después recorrer los ancestros buscando quién creaba recorte o contexto de api
 
 **Antes de añadir una clase a `web.py`, comprueba que no existe ya**: la hoja de estilos es una
 sola y la última regla gana.
+
+> **Cerrado el 26/10/2026 (punto 1).** La entrada `ES` de `ia` ya dice «caducada, no pendiente» desde el
+> 6 de octubre de 2026, con el expediente 121/000096, lo que se cayó con él (arts. 4, 5, 6 y 13 a 41), la
+> consecuencia verificada (hoy ninguna autoridad española puede imponer las multas de los arts. 99 y ss.) y
+> el obstáculo del art. 86.1 CE, que impide arreglarlo por real decreto-ley.
+
+> **Cerrado el 26/10/2026 (punto 2).** Reverificado el censo contra NANDO y reescrito el bloque `cra` entero:
+> 14 Estados en `parcial` por tener autoridad notificante, Finlandia en `completa`, **España en `ninguna`** por
+> ausencia verificada (ya no `desc`) y 11 en `desc`. Los quince Estados de la edición 009 eran correctos; lo que
+> estaba mal era la atribución: **las dos autoridades son belgas, no lituanas** (Lituania tiene dos, pero en el
+> EUCC). Y sigue habiendo **cero organismos notificados** en toda la Unión.
+>
+> **Método que funciona, corregido respecto del aviso anterior.** El endpoint es
+> `POST https://webgate.ec.europa.eu/es/search-api/rest/search`, con el cuerpo en `multipart/form-data`. Tres
+> cosas que hay que saber o la consulta no sale:
+> 1. **El `?type=` de la URL se ignora.** El tipo va dentro del JSON `query`, como `{"term":{"csType":"..."}}`.
+>    El índice de autoridades es **`nando_na_ab`** y el de organismos notificados **`nando_notification`**.
+> 2. **El campo `query` debe ir con `Content-Type: application/json`** dentro del multipart. Como campo de texto
+>    plano devuelve HTTP 500, y esa es la causa de que el método «no funcionase» antes.
+> 3. **`naLegislation` no está indexado** en `nando_na_ab`: solo vive dentro del `jsonDoc`. Hay que descargar los
+>    registros con `organizationRole=1` y `organizationIfLatestVersion=Y` (el `pageSize` real tope es 200) y
+>    filtrar en cliente. Filtrar por `naProcedure` **da ceros falsos**, eso se confirma.
+>
+> `legislationId` verificados: CRA 2024/2847 = **167953**, EUCC 2024/482 = 164702, IA 2024/1689 = 168380,
+> máquinas 2006/42/CE = 131881, reglamento de máquinas 2023/1230 = 162400. La prueba de control sigue siendo
+> obligatoria.
+
+> **Cerrado el 26/10/2026 (punto 4).** El plazo **existe y es el artículo 35.2** del Reglamento (UE) 2024/2847,
+> la única aparición de esa fecha en todo el texto. Pero **no es lo que parecía** y hay que decirlo así o se
+> sobrevende: obliga **a los Estados miembros**, no a las empresas; es obligación **de medios** («se esforzarán
+> por garantizar» / «shall strive to ensure»); y el umbral es **agregado en la Unión**, no un cupo por Estado.
+> Ya está en la tabla de la edición 010 con esa literalidad. Y ojo al citar el texto español: el DOUE dice
+> literalmente «**Los Estados** se esforzarán», no «Los Estados miembros»; corregirlo entre comillas sería una
+> cita falsa.
+>
+> Las demás fechas del artículo 71, verificadas: capítulo IV desde el **11 de junio de 2026**, artículo 14 desde
+> el **11 de septiembre de 2026**, aplicación general el **11 de diciembre de 2027**. Y el **artículo 69.3**, que
+> casi nadie cita: las obligaciones del artículo 14 alcanzan **a todos los productos comercializados antes del
+> 11 de diciembre de 2027**, no solo a los nuevos.
+
+### 5. Cuatro `%%` literales en el CSS de `web.py` (decisión de David, no hacer por iniciativa propia)
+
+Detectado el 26/10/2026 y **heredado de la edición 009**, que se publicó ya con ellos. En las reglas del panel
+de filtros hay cuatro `%%` que llegan literales al HTML, porque esa parte de la plantilla no pasa por el
+operador `%`:
+
+- `.pop{... top:calc(100%% + 6px) ...}` y su equivalente en la consulta de medios de 560 px
+- `.opt{... width:100%% ...}`
+- `.ddb{width:100%%}` en la consulta de medios de 560 px
+
+El navegador **descarta esas tres declaraciones** por inválidas. **Comprobado con Playwright sobre la página
+publicada, a 1280 px y a 390 px:** el filtro funciona (6 incidentes, 2 al marcar Administración pública, 3 al
+añadir Sanidad, 6 al limpiar, 1 con «Esta edición»), el panel abre debajo del botón, no hay desbordamiento
+horizontal y **no hay errores de consola**. El único efecto visible es que las filas de opción no llegan al
+borde del panel y que, en móvil, los tres botones no se estiran.
+
+No se ha tocado porque un lunes cualquiera no toca maqueta y porque el commit de la edición no debe incluir
+`web.py`. **Es un cambio de un carácter por sitio** y conviene hacerlo en una pasada aparte. Aviso para quien lo
+haga: comprobar si ese fragmento de CSS llega a pasar por el operador `%` en algún camino, porque si se cambia
+a `%` donde sí lo hace, el generador aborta.
+
+### Trampas de fecha y de método aprendidas el 26/10/2026
+
+- **El identificador del sumario del BOE ya no admite el formato por fecha.** `xml.php?id=BOE-S-AAAAMMDD`
+  devuelve 302 a la página de error; el identificador real es correlativo de diario (`BOE-S-2026-259`). La ruta
+  que funciona es `https://boe.es/datosabiertos/api/boe/sumario/AAAAMMDD` con `Accept: application/json`.
+- **En Cellar, para fechar notificaciones de transposición hay que usar
+  `cdm:measure_national_implementing_date_notification`, no `cdm:work_date_document`.** No coinciden: hay
+  medidas con fecha de documento de 1930, 1964 y 1991. Filtrar por la segunda mete en la ventana cosas que no
+  corresponden.
+- **`publications.europa.eu/resource/celex/<CELEX>` exige `Accept-Language`.** Sin él devuelve HTTP 400.
+- **El listado de consultas públicas del CEPD no ordena por fecha ni pone las abiertas primero.** Las consultas
+  vivas no aparecen en la primera página. Hay que ir a las fichas individuales o se concluye que no hay ninguna.
+- **El paquete mensual de infracciones de la Comisión sale el día 1 o 2 del mes.** Buscarlo en una ventana del
+  19 al 25 dará vacío casi siempre, por diseño del calendario. Y su HTML no se renderiza: el texto completo solo
+  se obtiene por el endpoint PDF de impresión de presscorner.
+- **Los avisos de recurso por incumplimiento no llevan el objeto en el título**, y el grafo de citas de Cellar no
+  indexa la legislación invocada en ellos. La única forma fiable de saber de qué va un recurso es **abrir el
+  texto del aviso**. Cualquier barrido por título o por citas produce falsos negativos.
+- **Desfase medido entre interponer un recurso y publicar su aviso en el DOUE serie C: de siete a ocho semanas**,
+  sobre cuatro casos de 2026. Ausencia de aviso no es ausencia de recurso.
+- **La ruta de avisos del INCIBE-CERT enlazada en su propio menú devuelve 404.** La que funciona es
+  `https://www.incibe.es/incibe-cert/alerta-temprana/avisos` con su paginación. El sitio es intermitente:
+  peticiones idénticas alternan 200, 404 y conexión cerrada. No concluir «no hay avisos» al primer fallo.
+- **`iso.org` da 403 a cualquier acceso automatizado; `committee.iso.org/standard/<ficha>.html` sirve el mismo
+  catálogo** y sí responde. El feed RSS de catálogo de cada comité cubre más de un año de cambios de etapa.
+- **Dominios que han migrado:** la autoridad catalana de `apdcat.gencat.cat` a `www.apdcat.cat`, y la vasca de
+  `avpd.euskadi.eus` a `www.avpd.eus`. Los dominios antiguos sirven la misma cáscara de aplicación para
+  cualquier ruta, lo que produce **falsos positivos de fecha** si se raspa el antiguo.
+- **El registro de certificaciones del ENS admite fechas de concesión futuras** y va con retraso de carga. No
+  es un diario de altas: sirve para el total y la tendencia, no para una serie temporal fina.
