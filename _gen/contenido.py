@@ -31,114 +31,192 @@ SEC_DARK = {"es":"#F08A80","eu":"#7FB0F5","fin":"#4FC9B8","std":"#C39BF0","ai":"
 HOT = "#C62828"
 HOTBG = "#FDECEA"
 
-NUM        = 9
-FECHA_ISO  = "2026-10-19"
-FECHA_TXT  = "19 de octubre de 2026"
-PERIODO    = "del 13 al 19 de octubre de 2026"
+NUM        = 10
+FECHA_ISO  = "2026-10-26"
+FECHA_TXT  = "26 de octubre de 2026"
+PERIODO    = "del 19 al 25 de octubre de 2026"
 
-TITULAR = ("La primera norma armonizada del Reglamento de IA ya está citada en el Diario Oficial, y la "
-           "Comisión interpuso contra España un recurso nuevo el 1 de octubre cuyo objeto el Tribunal "
-           "todavía no publica")
+TITULAR = ("A seis semanas de su propio hito, el Reglamento de Ciberresiliencia no tiene ni un solo "
+           "organismo notificado en toda la Unión, y España sigue sin autoridad notificante cuatro "
+           "meses después de que fuese exigible designarla")
 
-ENTRADA = ("Semana corta en producción normativa y larga en consecuencias. El Diario Oficial publicó el 14 de "
-           "octubre la referencia de la <b>EN 18286:2026</b>, que es la primera norma armonizada del Reglamento "
-           "de IA y la primera vía normalizada para acreditar el sistema de gestión de la calidad de un sistema "
-           "de alto riesgo. El mismo día, el catálogo de normas sumó la <b>ISO/IEC 27090</b>, que baja por fin a "
-           "amenazas concretas contra sistemas de IA. En España no se publicó una sola disposición de "
-           "ciberseguridad, porque las Cortes siguen disueltas y los tres proyectos que importaban caducaron el "
-           "6 de octubre. Y en el Tribunal de Justicia hay un recurso nuevo contra España, del 1 de octubre, "
-           "cuyo objeto nadie ha publicado todavía.")
+ENTRADA = ("Semana vacía donde todo el mundo mira y llena donde casi nadie. En el <b>BOE</b> no hubo una sola "
+           "disposición de ciberseguridad en 1.539 asuntos, y en el <b>Diario Oficial</b> ni uno en 196 actos. "
+           "Pero el censo europeo de organismos de evaluación de la conformidad dice algo que no se había "
+           "publicado así: a seis semanas del 11 de diciembre de 2026, fecha que el propio <b>Reglamento de "
+           "Ciberresiliencia</b> se fijó para tener capacidad suficiente, hay <b>cero organismos notificados</b> "
+           "en los veintisiete Estados, y <b>España no figura siquiera entre los quince con autoridad "
+           "notificante</b>. Mientras eso pasa en el papel, el mismo Reglamento mordió por primera vez en la "
+           "práctica: dos vulnerabilidades críticas de <b>PHP</b> activaron el 21 de octubre una declaración "
+           "conjunta de cinco instituciones europeas que recuerda, en su propio texto, que notificar ya es "
+           "obligatorio. Y en supervisión bancaria hay un plazo que vence el sábado.")
 
-CLAVE_1 = ("La primera clave es de normalización y llega con dos años de retraso sobre el calendario que la "
-           "propia Comisión se fijó. La <b>Decisión de Ejecución (UE) 2026/2274, de 12 de octubre</b>, publicada "
-           "en el Diario Oficial el <b>14 de octubre de 2026</b>, cita la referencia de la <b>EN 18286:2026</b>, "
-           "sobre sistema de gestión de la calidad para los fines del Reglamento de IA. Es la primera norma "
-           "armonizada del Reglamento que llega al Diario Oficial, y su anexo contiene una sola norma, aunque el "
-           "título de la Decisión hable en plural. Lo que abre es la vía del <b>artículo 40</b> del Reglamento "
-           "de IA: quien la aplique goza de presunción de conformidad respecto de lo que la norma cubre, que "
-           "según la petición de normalización es el sistema de gestión de la calidad de los proveedores, "
-           "vigilancia poscomercialización incluida. Para un cliente que ya tenga una ISO/IEC 42001 montada, "
-           "esto no es un proyecto nuevo: es una extensión. Para quien no tenga nada y vaya a poner en el "
-           "mercado sistemas de alto riesgo, es hoy el camino de referencia.")
+CLAVE_1 = ("La primera clave es un hueco medido, no una opinión. El <b>Reglamento (UE) 2024/2847</b> lleva su "
+           "capítulo IV aplicable desde el <b>11 de junio de 2026</b>, que es el que regula cómo un Estado "
+           "designa autoridad notificante y notifica organismos de evaluación de la conformidad. Cuatro meses y "
+           "medio después, el censo europeo devuelve <b>cero organismos notificados</b> para esa norma en toda "
+           "la Unión, con prueba de control que descarta el cero falso: la misma consulta devuelve 1.430 "
+           "registros para la Directiva de máquinas y 41 vigentes para el <b>EUCC</b>, que también es un "
+           "reglamento de ciberseguridad de 2024. Autoridades notificantes hay <b>dieciséis en quince "
+           "Estados</b>, y España no es uno de ellos. El 11 de diciembre de 2026, dentro de seis semanas, es la "
+           "fecha que el artículo 35.2 fija para que haya «un número suficiente de organismos notificados en la "
+           "Unión». Conviene decir exactamente qué es ese plazo y qué no es, porque es la diferencia entre "
+           "informar y alarmar: obliga a los Estados, no a las empresas; es una obligación de medios, porque el "
+           "texto dice que «se esforzarán por garantizar»; y su umbral es agregado en la Unión, no un cupo por "
+           "país. Lo que sí es para el cliente es un termómetro de cuello de botella. Si fabrica producto de las "
+           "clases del anexo III y va a necesitar un tercero para evaluar la conformidad antes del 11 de "
+           "diciembre de 2027, la acción de este trimestre no es cerrar un expediente: es reservar capacidad.")
 
-CLAVE_2 = ("La segunda clave es procesal y hay que contarla con cuidado, porque es una pista y no un hecho. En "
-           "el Tribunal de Justicia consta el asunto <b>C-1080/26, Comisión contra España</b>, recurso por "
-           "incumplimiento <b>interpuesto el 1 de octubre de 2026</b> y pendiente. Es el único recurso de la "
-           "Comisión contra España posterior al C-616/26, el de entidades críticas. El Tribunal <b>no ha "
-           "publicado todavía su objeto</b> y el aviso del Diario Oficial no ha aparecido, de modo que no se "
-           "puede decir de qué va. Lo que sí consta, y es llamativo, es que en esas mismas fechas se "
-           "interpusieron el <b>C-1076/26 contra Irlanda</b> y el <b>C-1089/26 contra Francia</b>, tres de los "
-           "cuatro Estados a los que la Comisión decidió demandar el 8 de julio por no transponer NIS2. Es "
-           "circunstancial y es fuerte, pero ninguna fuente primaria lo confirma. El aviso debería publicarse "
-           "entre mediados y finales de noviembre: ese día se sabrá, y con él las cuantías.")
+CLAVE_2 = ("La segunda clave es que el mismo Reglamento que no tiene organismos ya está generando obligaciones "
+           "exigibles, y esta semana se vio en vivo. El 21 de octubre el equipo de seguridad de <b>PHP</b> "
+           "publicó la corrección de dos vulnerabilidades críticas de ejecución remota de código sin "
+           "autenticar, <b>CVE-2026-109618</b> y <b>CVE-2026-109619</b>, con el riesgo más alto en Apache con "
+           "mod_php. Ese mismo día, la <b>Comisión Europea</b>, <b>ENISA</b>, <b>CERT-EU</b>, Europol y la red "
+           "de equipos nacionales de respuesta firmaron una declaración conjunta, y su apartado de política "
+           "recuerda que «desde el 11 de septiembre de 2026 los fabricantes de productos de hardware y software "
+           "deben notificar las vulnerabilidades explotadas activamente a través de la plataforma única de "
+           "notificación del Reglamento de Ciberresiliencia». Es la primera vez que se puede señalar el "
+           "artículo 14 funcionando sobre un caso real. Y tiene una consecuencia que casi nadie cuenta: por el "
+           "<b>artículo 69.3</b>, esa obligación alcanza también al parque de producto ya comercializado antes "
+           "de diciembre de 2027, no solo al nuevo. Un fabricante con catálogo vivo que incorpore PHP, incluso "
+           "sin saberlo, ya tiene 24 horas, 72 horas y catorce días que contar.")
 
 # (fecha texto, vivo, qué vence, a quién afecta)
 PLAZOS = [
- ("20 oct 2026", True, "Cierre de la audiencia e información pública del proyecto de orden que determina el cese "
-  "de la prestación de elementos del servicio universal de telecomunicaciones como obligación de servicio "
-  "público; se abrió el 7 de octubre y no consta prórroga",
-  "Operadores de telecomunicaciones y quien dependa de obligaciones de servicio universal"),
- ("30 oct 2026", True, "Cierre de las dos consultas del Comité Europeo de Protección de Datos abiertas en julio: "
-  "directrices 02/2026 sobre anonimización y 03/2026 sobre recolección masiva de datos web para IA generativa, "
-  "ambas a las 23:59",
+ ("26 oct 2026", True, "Vence hoy el plazo del catálogo de vulnerabilidades explotadas para CVE-2026-110447, "
+  "en el servidor CODE integrado de Collabora Online sobre Nextcloud, y CVE-2026-114625, en el orquestador "
+  "VeloCloud de Arista; las dos entraron el 23 de octubre con tres días de plazo",
+  "Formalmente, agencias federales estadounidenses; en la práctica, cualquiera que use Nextcloud con la app "
+  "integrada de Collabora o gestione una red definida por software de Arista"),
+ ("26 oct 2026", True, "Vence hoy el plazo prorrogado de cuatro consultas de la EBA que se desplazaron cuando "
+  "la Autoridad retiró su web por las vulnerabilidades de PHP: EBA/CP/2026/12, 13, 14 y 02/10. Ninguna de las "
+  "cuatro es de DORA", "Entidades de crédito, sistemas de garantía de depósitos y proveedores de criptoactivos"),
+ ("30 oct 2026", True, "Cierre de las dos consultas del Comité Europeo de Protección de Datos abiertas el 8 de "
+  "julio: directrices 02/2026 sobre anonimización, cuya página sí fija las 23:59 CET, y directrices 03/2026 "
+  "sobre extracción de datos web en el contexto de la IA generativa, que solo publica el día",
   "Cualquiera que confíe en datos anonimizados o entrene modelos con datos obtenidos de la web"),
  ("30 oct 2026", True, "Cierre de comentarios del borrador NIST CSWP 36G sobre estaciones base falsas y "
   "capacidades de ciberseguridad y privacidad en 5G", "Operadores móviles; relevancia baja fuera de ahí"),
+ ("31 oct 2026", True, "Las entidades significativas del Mecanismo Único de Supervisión deben haber remitido a "
+  "su Equipo Conjunto de Supervisión el plan de acción contra las amenazas de ciberseguridad potenciadas por "
+  "IA que pidió la carta SSM-2026-0301 del 7 de julio. Es expectativa supervisora, no plazo sancionable, y el "
+  "verbo de la carta es «should be submitted»",
+  "Los grupos bancarios españoles bajo supervisión directa del Banco Central Europeo"),
  ("2 nov 2026", True, "Cierre de comentarios del borrador NIST IR 8623, perfil del marco de ciberseguridad 2.0 "
   "para despliegues de redes de acceso radio abiertas", "Quien trabaje con perfiles del marco del NIST"),
+ ("3 nov 2026", True, "Vence el plazo del catálogo de vulnerabilidades explotadas para CVE-2026-110936, en el "
+  "Software Center de Siemens, y para CVE-2026-96652 y CVE-2026-96655, en Plex Media Server",
+  "Clientes industriales con herramientas de Siemens instaladas en puesto de trabajo"),
+ ("3 nov 2026", True, "Entran en vigor los Reglamentos (UE) 2026/1536, 2026/1519 y 2026/1512, que es el paquete "
+  "técnico del camino hacia la liquidación en un día",
+  "Depositarios centrales de valores, sus participantes y empresas de servicios de inversión"),
+ ("3 nov 2026", True, "Cierre de presentación de ofertas de la licitación 028/26-RI de RED.ES, apoyo a la "
+  "gestión integral de sistemas y seguridad de RedIRIS, por 4.535.000 euros de valor estimado y 27 meses, a "
+  "las 23:59", "Proveedores de servicios de seguridad gestionada al sector público"),
+ ("4 nov 2026", True, "Cierre de la consulta pública española sobre la propuesta de Reglamento de entornos "
+  "digitales fiables para menores, a las 23:59. Su supervisión se apoyaría en las estructuras del Reglamento "
+  "de Servicios Digitales y del Reglamento de IA, no en un regulador nuevo",
+  "Plataformas, redes sociales, juegos en línea, chatbots de propósito general y tiendas de aplicaciones"),
+ ("4 nov 2026", True, "Cierre de comentarios de la consulta de la CNMV sobre el proyecto de circular que "
+  "modifica la Circular 4/2022, de normas contables de las infraestructuras de mercado",
+  "Infraestructuras de mercado españolas"),
+ ("7 nov 2026", True, "Cierre de la consulta previa de las bases reguladoras de los bonos de conectividad de "
+  "banda ancha fija, a las 24:00", "Operadores de telecomunicaciones y asociaciones del sector"),
+ ("8 nov 2026", True, "Entra en vigor la Circular 1/2026 de la Autoridad Catalana de Protección de Datos sobre "
+  "videovigilancia, veinte días después de su publicación en el Diario Oficial de la Generalitat",
+  "Administraciones catalanas, universidades, colegios profesionales y entidades privadas que ejerzan "
+  "funciones públicas en Cataluña"),
+ ("9 nov 2026", True, "Cierre de solicitudes al programa de aceleración de la fábrica de IA del Barcelona "
+  "Supercomputing Center, para cien empresas emergentes", "Empresas emergentes españolas de IA"),
+ ("10 nov 2026", True, "Fecha en que Fortinet prevé publicar los boletines técnicos de las actualizaciones que "
+  "ya ha liberado. Hasta entonces no hay identificadores CVE, ni puntuaciones, ni impactos por producto",
+  "Cualquier cliente con FortiOS, FortiManager, FortiAnalyzer, FortiMail o FortiAuthenticator"),
  ("13 nov 2026", True, "Cierre de la consulta del Comité Europeo de Protección de Datos sobre las directrices "
   "04/2026, que tratan cuándo se multa y cuándo se usa otro poder correctivo",
   "Todos los responsables y encargados del tratamiento"),
- ("16 nov 2026", True, "Cierre de comentarios de la consulta de la CNMV sobre el proyecto de circular que amplía "
-  "el procedimiento de reclamaciones a los servicios de criptoactivos y de financiación participativa",
+ ("16 nov 2026", True, "Cierre de comentarios de la consulta de la CNMV sobre el proyecto de circular que "
+  "amplía el procedimiento de reclamaciones a los servicios de criptoactivos y de financiación participativa",
   "Empresas de servicios de inversión, proveedores de criptoactivos y plataformas de financiación participativa"),
- ("29 nov 2026", True, "Elecciones generales a Congreso y Senado, convocadas por el Real Decreto 806/2026",
-  "Toda la previsión regulatoria española: es el primer hito del reloj de la nueva legislatura"),
+ ("20 nov 2026", True, "Cierre de inscripción a las XX Jornadas STIC del CCN, que se celebran del 24 al 27 de "
+  "noviembre en Madrid. Ojo a la letra pequeña: el CCN escribe «hasta el 20 de noviembre o hasta completar el "
+  "aforo», y la admisión no es automática", "Cualquier profesional que quiera asistir"),
+ ("25 nov 2026", True, "Votación en el pleno del Riksdag del proyecto de ley sueco de transposición de la "
+  "directiva de entidades críticas, la proposición 2025/26:303",
+  "Quien siga el mapa de transposición: Suecia es uno de los tres Estados a cero en esa directiva"),
+ ("29 nov 2026", True, "Elecciones generales a Congreso y Senado, convocadas por el Real Decreto 806/2026, de 5 "
+  "de octubre", "Toda la previsión regulatoria española: es el primer hito del reloj de la nueva legislatura"),
  ("30 nov 2026", True, "Cierre de comentarios del borrador NIST SP 800-82 revisión 4, guía de seguridad de "
-  "tecnología operacional. Es el único plazo de normalización de esta semana con sustancia para un consultor",
+  "tecnología operacional. Sigue siendo el plazo de normalización con más sustancia para un consultor",
   "Clientes industriales, y quien esté encajando su entorno de tecnología operacional en NIS2"),
- ("2 dic 2026", True, "Entra en aplicación el apartado 4 nuevo del artículo 111 del Reglamento de IA: los "
-  "proveedores de sistemas que generen contenido sintético y estuvieran en el mercado antes del 2 de agosto de "
-  "2026 deben cumplir el marcado del artículo 50.2",
+ ("2 dic 2026", True, "Vence el plazo del apartado 4 del artículo 111 del Reglamento de IA: los proveedores de "
+  "sistemas que generen contenido sintético y estuvieran en el mercado antes del 2 de agosto de 2026 deben "
+  "cumplir el marcado legible por máquina del artículo 50.2",
   "Proveedores de IA generativa con sistemas heredados ya en el mercado"),
- ("2 dic 2026", True, "Entran en aplicación las prohibiciones nuevas del artículo 5 del Reglamento de IA sobre "
-  "contenido íntimo o sexualmente explícito no consentido y material de abuso sexual infantil generado con IA",
-  "Proveedores y responsables del despliegue de IA generativa de imagen o vídeo"),
- ("7 dic 2026", True, "Primer plazo del camino hacia la liquidación en un día: empresas de servicios de "
-  "inversión y sus clientes deben cumplir los requisitos nuevos de asignaciones y confirmaciones, con canales "
-  "electrónicos normalizados, estándares internacionales de mensajería y métodos legibles por máquina, salvo "
-  "interrupción técnica temporal",
+ ("2 dic 2026", True, "Entran en aplicación las letras b bis) y b ter) del artículo 5.1 del Reglamento de IA, "
+  "sobre contenido íntimo o sexualmente explícito no consentido y material de abuso sexual infantil generado "
+  "con IA, y con ellas los apartados 1 bis y 1 ter, que son los que delimitan a quién alcanzan",
+  "Proveedores y responsables del despliegue de IA generativa de imagen, vídeo o audio"),
+ ("4 dic 2026", True, "Cierre de comentarios del borrador NIST SP 800-100 revisión 1, el manual de seguridad "
+  "de la información para la dirección, reescrito para alinearse con el marco de ciberseguridad 2.0",
+  "Quien tenga que llevar gobernanza de seguridad a un comité de dirección"),
+ ("7 dic 2026", True, "Primer tramo de aplicación del Reglamento Delegado (UE) 2026/1536: asignaciones y "
+  "confirmaciones escritas por canales electrónicos normalizados, y corte de las 23:00 CET del mismo día de la "
+  "operación para clientes profesionales",
   "Empresas de servicios de inversión, gestoras, custodios y toda la cadena de contratación y liquidación"),
- ("7 dic 2026", True, "Cierre de comentarios del borrador NIST SP 800-185 revisión 1, funciones derivadas de "
-  "SHA-3", "Quien defina criptografía en una política; relevancia práctica baja"),
- ("23 dic 2026", False, "Sesiones constitutivas de las Cámaras, a las diez horas, según el artículo 5 del Real "
-  "Decreto 806/2026. Es el día en que arranca el reloj para volver a presentar los proyectos caducados",
+ ("7 dic 2026", True, "Cierre de comentarios de dos borradores del NIST: SP 800-185 revisión 1, funciones "
+  "derivadas de SHA-3, y SP 800-221 revisión 1, que es la referencia para meter el riesgo tecnológico en el "
+  "mapa de riesgos corporativo", "Quien tenga que explicar el riesgo ciber en el lenguaje del consejo"),
+ ("11 dic 2026", True, "Fecha del artículo 35.2 del Reglamento de Ciberresiliencia para que haya «un número "
+  "suficiente de organismos notificados en la Unión». Hoy hay cero. Es obligación de medios, obliga a los "
+  "Estados y su umbral es agregado, no un cupo por país",
+  "Fabricantes de productos con elementos digitales que vayan a necesitar evaluación por tercero"),
+ ("20 dic 2026", True, "Cierre del plazo de envío de artículos para el tercer número de la revista de la AEPD, "
+  "abierto desde el 1 de noviembre", "Quien publique sobre privacidad y tecnología"),
+ ("23 dic 2026", True, "Sesiones constitutivas de las Cámaras, a las diez horas, según el artículo 5 del Real "
+  "Decreto 806/2026. Es el día en que arranca el reloj para volver a presentar los cuatro proyectos caducados",
   "Clientes que estén planificando sobre leyes españolas de entidades críticas, DORA o IA"),
+ ("1 ene 2027", False, "Entrada en vigor propuesta de la ley sueca de entidades críticas, si el pleno la "
+  "aprueba el 25 de noviembre", "Operadores críticos con actividad en Suecia"),
  ("1 ene 2027", False, "Entra en vigor la NIIF 18 y, con ella, la opción de reportar bajo la norma antigua o la "
-  "nueva en el estado regulatorio de pérdidas y ganancias hasta que apliquen las normas técnicas; la autoridad "
-  "nacional recogerá de cada entidad la opción elegida", "Entidades significativas del Mecanismo Único de Supervisión"),
- ("11 oct 2027", False, "La Unión pasa a liquidación en un día hábil", "Todo el ecosistema de contratación y poscontratación"),
- ("2 dic 2027", False, "Aplicación del capítulo III, secciones 1, 2 y 3, del Reglamento de IA para los sistemas "
-  "de alto riesgo del anexo III: biometría, infraestructuras críticas, educación, empleo, servicios esenciales, "
-  "migración y justicia", "La mayoría de clientes con casos de uso de alto riesgo"),
- ("11 dic 2027", False, "Obligaciones principales de ciberseguridad del Reglamento de Ciberresiliencia. Las de "
-  "notificación ya están en vigor desde el 11 de septiembre de 2026",
-  "Fabricantes y responsables de productos con elementos digitales"),
- ("2 ago 2028", False, "Aplicación del capítulo III para los sistemas de alto riesgo del anexo I, es decir la IA "
-  "integrada como componente de seguridad en productos ya regulados",
+  "nueva en el estado regulatorio de pérdidas y ganancias", "Entidades significativas del Mecanismo Único de Supervisión"),
+ ("28 feb 2027", False, "Recogida anual del cuestionario de riesgo tecnológico del Mecanismo Único de "
+  "Supervisión, que la carta del 7 de julio desplazó desde septiembre de 2026 como alivio compensatorio",
+  "Entidades significativas del Mecanismo Único de Supervisión"),
+ ("1 jul 2027", False, "Segundo tramo del Reglamento Delegado (UE) 2026/1536",
+  "Depositarios centrales de valores y sus participantes"),
+ ("11 oct 2027", False, "La Unión pasa a liquidación en un día hábil, por el Reglamento (UE) 2025/2075",
+  "Todo el ecosistema de contratación y poscontratación"),
+ ("2 dic 2027", False, "Aplicación del capítulo III, secciones 1, 2 y 3, del Reglamento de IA, salvo su "
+  "artículo 6.5, para los sistemas de alto riesgo del anexo III: biometría, infraestructuras críticas, "
+  "educación, empleo, servicios esenciales, migración y justicia",
+  "La mayoría de clientes con casos de uso de alto riesgo"),
+ ("11 dic 2027", False, "Obligaciones principales de ciberseguridad del Reglamento de Ciberresiliencia, con "
+  "marcado CE y evaluación de la conformidad. Las de notificación ya obligan desde el 11 de septiembre de 2026",
+  "Fabricantes, importadores y distribuidores de productos con elementos digitales"),
+ ("11 jun 2028", False, "Caducan los certificados de examen UE de tipo y las decisiones de aprobación sobre "
+  "requisitos de ciberseguridad emitidos al amparo de otra legislación de armonización, por el artículo 69.1 "
+  "del Reglamento de Ciberresiliencia", "Fabricantes con certificados preexistentes"),
+ ("2 ago 2028", False, "Aplicación del capítulo III del Reglamento de IA para los sistemas de alto riesgo del "
+  "anexo I, es decir la IA integrada como componente de seguridad en productos ya regulados",
   "Fabricantes de máquinas, ascensores, juguetes y productos sanitarios con IA dentro"),
+ ("2 ago 2030", False, "Plazo del artículo 111.2 del Reglamento de IA para los sistemas de alto riesgo "
+  "destinados a ser utilizados por autoridades públicas, cualquiera que sea su fecha de introducción",
+  "Administraciones y sus proveedores de IA"),
 ]
 
 TITS = {
- "es":  "El contador de entidades críticas cruza los %s días y los %s euros, y hay un recurso "
-        "nuevo contra España cuyo objeto nadie ha publicado" % (CER_DIAS, CER_EUR),
- "eu":  "De los seis Estados demandados por entidades críticas, tres ya han notificado medidas: a cero siguen "
-        "España, Bulgaria y Suecia",
- "fin": "El Comité Mixto compromete para 2027 el seguimiento de las recomendaciones ya emitidas a los "
-        "proveedores críticos, y aparece un plazo de verdad que no es de DORA",
- "std": "La ISO publica la 27090, que es la primera norma que baja a amenazas concretas contra sistemas de IA",
- "ai":  "La EN 18286 abre la primera vía de presunción de conformidad del Reglamento de IA, y no es la 42001",
- "thr": "Nueve altas en el catálogo de vulnerabilidades explotadas, y la más instructiva es un 6.0 de abril",
+ "es":  f"El contador de entidades críticas cruza los {CER_DIAS} días y los {CER_EUR} euros, y la autoridad "
+        f"catalana aprueba la primera norma española que une videovigilancia e IA",
+ "eu":  "Cero organismos notificados del Reglamento de Ciberresiliencia en los 27, a seis semanas de la fecha "
+        "que la propia norma se fijó",
+ "fin": "El sábado vence el plazo del Banco Central Europeo para el plan de acción contra las ciberamenazas "
+        "potenciadas por IA, y la EBA se quedó sin web por PHP",
+ "std": "La ISO publica la 27028, que es la guía que faltaba para explotar los atributos de los controles del "
+        "27002 cuatro años después",
+ "ai":  "Hoy ninguna autoridad española puede imponer las multas del Reglamento de IA, porque el régimen "
+        "sancionador caducó con las Cortes",
+ "thr": "Dos ejecuciones remotas sin autenticar en el núcleo de PHP, y un compromiso de autoridades de "
+        "certificación del que ningún CERT español ha dicho nada",
 }
 
 # (seccion, marcas, prioritario, titular, que_cambia, por_que, que_leer, aviso)
@@ -146,908 +224,1400 @@ ITEMS = []
 
 ITEMS += [
 
-("es", "Seguimiento del incumplimiento · a %s" % FECHA_TXT, True,
- "El tanto alzado que la Comisión pide a España por entidades críticas llega a %s euros, con %s días "
- "transcurridos y %s euros acumulados solo esta semana" % (CER_EUR, CER_DIAS, CER_SEMANA),
- "Este bloque va todas las semanas, se haya movido algo o no, porque la cifra sube sola y es el mejor "
- "argumento disponible para explicar por qué un real decreto-ley es probable. A día de hoy han pasado "
- "<b>%s días</b> desde que venció el plazo de transposición de la <b>Directiva (UE) 2022/2557</b>, el 17 de "
- "octubre de 2024. Al importe diario de <b>%s euros</b> que la Comisión reclama en el asunto <b>C-616/26</b>, "
- "eso da <b>%s euros</b>, muy por encima del mínimo de %s euros que el escrito fija como suelo. El delta de "
- "esta semana son siete días, es decir <b>%s euros</b>. Las dos comprobaciones obligatorias de cada lunes, "
- "hechas: <b>no hay sentencia ni vista señalada ni conclusiones en el C-616/26</b>, cuyo único documento sigue "
- "siendo el aviso de recurso de agosto; y <b>sigue sin haber número de asunto público del recurso por "
- "NIS2</b>, barridos los treinta y seis avisos de recurso interpuesto de 2026 sin una sola coincidencia."
- % (CER_DIAS, CER_DIARIO, CER_EUR, CER_MINIMO, CER_SEMANA),
- "Hay que decir dos cosas al dar esta cifra, y las dos protegen a quien la repite. La primera: es <b>lo pedido "
- "por la Comisión, no lo impuesto</b>; solo el Tribunal fija el importe final y puede reducirlo. La segunda, y "
- "es la que convierte el dato en incentivo y no en anécdota: <b>el contador del tanto alzado se detiene al "
- "transponer, no al dictarse sentencia</b>. Cada semana que pasa sin ley son %s euros más que ya no se pueden "
- "recuperar transponiendo después. Si llega sentencia condenatoria, el tanto alzado se congela en la fecha que "
- "fije el Tribunal y arranca además la multa coercitiva de %s euros diarios, que es un régimen distinto y peor."
- % (CER_SEMANA, CER_COERC),
+("es", f"Seguimiento del incumplimiento · a {FECHA_TXT}", True,
+ f"El tanto alzado que la Comisión pide a España por entidades críticas llega a {CER_EUR} euros, con "
+ f"{CER_DIAS} días transcurridos y {CER_SEMANA} euros acumulados solo esta semana",
+ f"Este bloque va todas las semanas, se haya movido algo o no, porque la cifra sube sola y es el mejor "
+ f"argumento disponible para explicar por qué un real decreto-ley es probable. A día de hoy han pasado "
+ f"<b>{CER_DIAS} días</b> desde que venció el plazo de transposición de la <b>Directiva (UE) 2022/2557</b>, el "
+ f"17 de octubre de 2024. Al importe diario de <b>{CER_DIARIO} euros</b> que la Comisión reclama en el asunto "
+ f"<b>C-616/26</b>, eso da <b>{CER_EUR} euros</b>, muy por encima del mínimo de {CER_MINIMO} euros que el "
+ f"escrito fija como suelo. El delta de esta semana son siete días, es decir <b>{CER_SEMANA} euros</b>. Las dos "
+ f"comprobaciones obligatorias de cada lunes, hechas y esta vez con barrido completo: <b>no hay sentencia, ni "
+ f"conclusiones, ni auto en el C-616/26</b>, cuyo único documento publicado sigue siendo el aviso de recurso "
+ f"de agosto, verificado sondeando los cuatro tipos de documento del asunto; y <b>sigue sin haber número de "
+ f"asunto público del recurso por NIS2</b>, descargados y leídos los <b>328 avisos de recurso interpuesto</b> "
+ f"publicados en 2026, sin una sola mención de la Directiva 2022/2555.",
+ f"Hay que decir dos cosas al dar esta cifra, y las dos protegen a quien la repite. La primera: es <b>lo pedido "
+ f"por la Comisión, no lo impuesto</b>; solo el Tribunal fija el importe final y puede reducirlo. La segunda, y "
+ f"es la que convierte el dato en incentivo y no en anécdota: <b>el contador del tanto alzado se detiene al "
+ f"transponer, no al dictarse sentencia</b>. Cada semana que pasa sin ley son {CER_SEMANA} euros más que ya no "
+ f"se pueden recuperar transponiendo después. Si llega sentencia condenatoria, el tanto alzado se congela en la "
+ f"fecha que fije el Tribunal y arranca además la multa coercitiva de {CER_COERC} euros diarios, que es un "
+ f"régimen distinto y peor. Sobre la previsión, nada ha cambiado: por ley ordinaria no antes del <b>segundo "
+ f"semestre de 2027</b>, con 2028 como caso central, porque las Cámaras no se constituyen hasta el 23 de "
+ f"diciembre; por real decreto-ley, primer semestre de 2027 si hay gobierno en enero o febrero.",
  'El aviso del asunto en el <a href="http://data.europa.eu/eli/C/2026/3986/oj" @L>Diario Oficial, serie C, '
  'C/2026/3986 de 3 de agosto de 2026</a> y la ficha del <a href="https://curia.europa.eu/juris/liste.jsf?'
  'num=C-616/26&amp;language=es" @L>asunto C-616/26 en el Tribunal de Justicia</a>.',
  "Sobre NIS2 hay que ser preciso y no adornar: la remisión al Tribunal <b>es real y oficial</b>, porque la "
  "Comisión la decidió el 8 de julio de 2026 contra Irlanda, España, Francia y Países Bajos con petición de "
  "sanciones económicas. Pero a día de hoy <b>no hay número de asunto ni cuantías públicas</b> de NIS2, y por "
- "eso este boletín no publica ninguna cifra de NIS2. Quien vea una por ahí, que pregunte de dónde sale."),
+ "eso este boletín no publica ninguna cifra de NIS2. Quien vea una por ahí, que pregunte de dónde sale. Y una "
+ "cautela de método propia: el barrido cubre lo <b>publicado</b> en el Diario Oficial; una vista señalada que "
+ "no se publique no se vería desde aquí, porque la interfaz del Tribunal no es consultable de forma "
+ "automatizada."),
 
-("es", "Tribunal de Justicia de la Unión Europea · asunto C-1080/26", True,
- "La Comisión interpuso contra España un recurso por incumplimiento el 1 de octubre, y es el único posterior "
- "al de entidades críticas: el Tribunal todavía no ha publicado de qué va",
- "Consta en el registro del Tribunal el asunto <b>C-1080/26, Comisión contra España</b>, recurso por "
- "incumplimiento del artículo 258 del Tratado, <b>interpuesto el 1 de octubre de 2026</b>, en lengua española "
- "y en curso. Ordenados los 458 asuntos de la Comisión contra España de más nuevo a más antiguo, el C-1080/26 "
- "es el primero y el C-616/26 el segundo: <b>no hay nada entre ambos</b>. Ahora lo que no se sabe, que es "
- "tanto como lo que se sabe: la ficha del Tribunal da <b>«información no disponible»</b> en el objeto, en la "
- "publicación en el Diario Oficial y en los documentos del asunto, y el aviso en el Diario Oficial <b>todavía "
- "no existe</b>. En la misma tanda constan el <b>C-1076/26 contra Irlanda</b>, interpuesto el 2 de octubre, y "
- "el <b>C-1089/26 contra Francia</b>, del 1 de octubre.",
- "Irlanda, España y Francia son tres de los cuatro Estados a los que la Comisión decidió demandar el <b>8 de "
- "julio de 2026</b> por no transponer NIS2. Que tres recursos contra esos tres Estados aparezcan interpuestos "
- "el mismo día, cada uno en su lengua, es una coincidencia que cuesta atribuir al azar. Pero <b>coincidencia "
- "no es confirmación</b>, y España tiene veintinueve asuntos pendientes ante el Tribunal por materias de todo "
- "tipo. Lo que se puede hacer con esto hoy es preparar al cliente, no asustarlo: si el aviso confirma en "
- "noviembre que es NIS2, habrá por primera vez cuantías públicas de ese incumplimiento, y el contador de este "
- "boletín pasará a tener dos líneas en vez de una.",
- 'La <a href="https://curia.europa.eu/juris/liste.jsf?num=C-1080/26&amp;language=es" @L>ficha del asunto '
- 'C-1080/26</a> y la <a href="https://digital-strategy.ec.europa.eu/en/news/commission-refers-ireland-spain-'
- 'france-and-netherlands-court-justice-failing-transpose-rules" @L>decisión de la Comisión de 8 de julio de '
- '2026 de remitir al Tribunal por NIS2</a>.',
- "<b>No escribas, ni dejes que nadie escriba, que el C-1080/26 es el recurso por NIS2.</b> Ninguna fuente "
- "primaria lo dice. El desfase medido entre interposición y publicación del aviso es de seis a ocho semanas, "
- "así que lo razonable es esperarlo entre mediados y finales de noviembre. Se comprobó y se descartó además la "
- "hipótesis alternativa que circula en buscadores, la de un recurso contra España por normas ferroviarias: esa "
- "noticia es de octubre de 2023 y la fecha de 2026 que muestra es el sello del agregador, no la del artículo."),
+("es", "Autoridad Catalana de Protección de Datos · Circular 1/2026", True,
+ "La primera norma española de obligado cumplimiento que regula a la vez videovigilancia e inteligencia "
+ "artificial, y entra en vigor el 8 de noviembre",
+ "La <b>Circular 1/2026</b> sobre el tratamiento de datos personales mediante cámaras con fines de "
+ "videovigilancia se <b>aprobó el 14 de octubre de 2026</b> y se publicó en el <b>Diario Oficial de la "
+ "Generalitat de Cataluña el 19 de octubre</b>, número 9775. Es una <b>disposición de obligado cumplimiento</b> "
+ "en el ámbito de actuación de la autoridad catalana, que son administraciones, entidades públicas, "
+ "universidades, colegios profesionales y <b>entidades privadas cuando ejercen funciones públicas</b>. Deroga "
+ "expresamente la Instrucción 1/2009, que todavía desarrollaba la ley orgánica de 1999. Se estructura en "
+ "<b>23 artículos y seis capítulos</b>, y el <b>capítulo 6 es de obligaciones y medidas de seguridad</b>. Lo "
+ "que trae nuevo: amplía el ámbito a <b>drones, cámaras en vehículos y dispositivos incorporados a la "
+ "indumentaria</b>, con obligaciones de información específicas para cada soporte; sustituye «disociación» por "
+ "«anonimización» e incorpora las definiciones de dato biométrico y espacio público; identifica tratamientos "
+ "que nunca son lícitos, añadiendo los lugares donde los trabajadores hacen sus actividades más íntimas y "
+ "<b>las habitaciones de residencias y hoteles</b>; mantiene la memoria previa pero la exime cuando el "
+ "tratamiento deba someterse a evaluación de impacto; y adapta el modelo de información por capas de forma que "
+ "los carteles deben permitir el acceso a la información adicional <b>también mediante códigos QR</b>. Y lleva "
+ "una <b>disposición adicional específica sobre sistemas de videovigilancia que incorporen inteligencia "
+ "artificial</b>, con cita expresa del Reglamento (UE) 2024/1689 en el preámbulo.",
+ "Para un cliente catalán del ámbito es derecho aplicable desde el <b>8 de noviembre</b>, y la lista de deberes "
+ "es concreta: revisar los carteles al modelo por capas con QR, decidir memoria previa frente a evaluación de "
+ "impacto, formalizar el encargo con la empresa de seguridad privada y repasar el capítulo de seguridad contra "
+ "los controles que ya tenga. Pero el valor va más allá de Cataluña, y es el ángulo que conviene explotar: es "
+ "<b>la primera norma española que articula expresamente videovigilancia, IA y el Reglamento europeo de IA en "
+ "un mismo texto vinculante</b>. Mientras el Estado no puede legislar porque las Cortes están disueltas, una "
+ "autoridad autonómica ha fijado el estándar de hecho que van a invocar auditores, delegados de protección de "
+ "datos y reclamantes también fuera de Cataluña. Si tienes un cliente con videovigilancia analítica en "
+ "cualquier comunidad, este es el documento que te van a citar.",
+ 'La <a href="https://www.apdcat.cat/ca/actualitat/noticies/2026/CircularVideovigilancia" @L>nota de la '
+ 'autoridad catalana sobre la Circular 1/2026</a> y su texto oficial en el <a href="https://dogc.gencat.cat/es/"'
+ ' @L>Diario Oficial de la Generalitat, número 9775 de 19 de octubre de 2026</a>, referencia '
+ 'CVE-DOGC-A-26287083-2026.',
+ "Dos precisiones de fecha que evitan citarla mal, porque la propia autoridad invita a confundirlas. La "
+ "Circular está <b>aprobada el 14 de octubre</b> y firmada ese día por su directora; el <b>19 de octubre es la "
+ "fecha de publicación</b> en el diario oficial, y la entrada en vigor son veinte días después, el <b>8 de "
+ "noviembre de 2026</b>. Y un detalle revelador: la nota de prensa de la autoridad enumera las disposiciones "
+ "finales y <b>se deja fuera precisamente la disposición adicional</b>, que es la de la inteligencia "
+ "artificial. Quien se quede en la nota de prensa no verá la parte más novedosa de la norma."),
 
-("es", "Centro Criptológico Nacional · 15 de octubre de 2026", True,
- "La guía CCN-STIC 106 se reescribe entera y cambia el procedimiento, los plazos y la documentación para "
- "entrar en el catálogo de productos de seguridad del Estado",
- "Es la <b>única guía CCN-STIC nueva o actualizada de la semana</b>. Regula cómo se incluyen soluciones en el "
- "catálogo CPSTIC, tanto en el listado de productos cualificados como en el de conformidad y gobernanza, y sale "
- "en español y en inglés. Lo que cambia: los <b>nueve anexos técnicos anteriores se integran en el cuerpo</b> "
- "de la guía, con el procedimiento explicado fase a fase; la <b>vigencia se unifica en dos años</b>; se "
- "introduce una <b>prórroga excepcional de tres meses</b>; y se publican <b>tres plantillas oficiales</b>, la "
- "de justificación de requisitos, la de informe de análisis diferencial y la de procedimiento de empleo seguro. "
- "Las cifras del procedimiento: <b>un año</b> para resolver cada trámite, ampliable una sola vez por seis "
- "meses; <b>seis meses</b> para entregar el procedimiento de empleo seguro; y <b>cinco años</b> de antigüedad "
- "máxima de la certificación de partida.",
- "Afecta a dos perfiles distintos de cliente y a los dos les cambia el calendario. Al <b>fabricante o "
- "integrador que vende al sector público</b>: cambian el procedimiento, los plazos y los documentos que tiene "
- "que preparar, la vigencia de dos años obliga a planificar renovaciones antes que con el régimen anterior, y "
- "el límite de cinco años de antigüedad de la certificación de partida <b>puede dejar fuera catálogos enteros "
- "montados sobre certificaciones viejas</b>. Y al <b>organismo sujeto al ENS</b>, porque el CPSTIC es el "
- "catálogo de referencia para adquirir soluciones conformes y esos plazos condicionan su planificación de "
- "compra.",
- 'La nota del CCN sobre <a href="https://www.ccn.cni.es/es/actualidad-ccn/1394-como-incluir-productos-y-'
- 'servicios-de-seguridad-en-el-catalogo-cpstic-del-centro-criptologico-nacional" @L>cómo incluir productos y '
- 'servicios en el catálogo CPSTIC</a> y el <a href="https://cpstic.ccn.cni.es" @L>catálogo CPSTIC</a>.',
- "Dos condiciones que la nota pone y que conviene no soltar sin ellas, porque un fabricante las va a "
- "preguntar. La vigencia de dos años <b>no es absoluta para producto instalado en casa del cliente</b>: "
- "termina antes si concluye el soporte de seguridad del producto. Y la prórroga de tres meses <b>no es "
- "discrecional</b>: solo cabe cuando hay una evaluación, una certificación o una prueba de penetración en "
- "curso. Nota de verificación: se ha leído la nota del CCN, no el PDF de la guía; antes de asesorar a un "
- "fabricante conviene descargarla y comprobar el articulado."),
+("es", "Agencia Española de Protección de Datos · 20 y 21 de octubre de 2026", True,
+ "Las brechas notificadas en el primer semestre ya superan a todo 2025, y la Agencia señala con nombre y "
+ "apellidos a los encargados del tratamiento",
+ "La Agencia publicó el <b>20 de octubre</b> la nota con el balance del año y el <b>21 de octubre</b> una "
+ "entrada de blog de su adjunto. Las cifras verificadas de la nota: <b>3.027 notificaciones de brecha entre "
+ "enero y junio de 2026</b> frente a 1.271 en el mismo periodo de 2025, un <b>138 por ciento más</b>; y "
+ "<b>4.556 entre enero y agosto</b> frente a 1.728, un <b>163 por ciento más</b>. La frase que conviene llevar "
+ "literal a una reunión: <b>las brechas notificadas en el primer semestre de 2026 superan a las recibidas "
+ "durante todo 2025</b>. Los responsables emitieron además <b>más de 71 millones de comunicaciones a "
+ "interesados</b> en ese semestre por apreciar riesgo alto. Lo importante no son las cifras, sino las causas "
+ "que la propia Agencia identifica: en marzo detectó que <b>un incidente producido en un único encargado del "
+ "tratamiento provocó brechas en múltiples responsables</b>, y recuerda que el encargado debe informarles sin "
+ "dilación indebida; y en julio, el peso de las notificaciones de <b>establecimientos hoteleros y sus "
+ "encargados, generalmente proveedores de software de gestión de reservas</b>, con acceso de terceros no "
+ "legitimados a datos de clientes y reservas que después se usan en fraude. El blog añade dos matices de "
+ "honestidad estadística que casi nadie incluye: que <b>el aumento de notificaciones no permite concluir por "
+ "sí solo que las brechas hayan aumentado en la misma proporción</b>, y que la obligación del artículo 32 "
+ "<b>se extiende a los terceros</b>.",
+ "Este es el dato de mercado del trimestre y tiene tres usos inmediatos. Primero, <b>riesgo de terceros</b>: un "
+ "solo encargado puede arrastrar a decenas de responsables, lo que conecta directamente con las obligaciones "
+ "de cadena de suministro de NIS2 y con el marco de proveedores del ENS. Segundo, <b>cláusulas de "
+ "notificación del encargado al responsable</b>, que la Agencia acaba de señalar como punto de fallo: "
+ "conviértelas en un acuerdo de nivel de servicio con horas, no en un «sin dilación indebida» que nadie puede "
+ "auditar. Y tercero, es el argumento más limpio que existe ahora mismo para justificar presupuesto, porque "
+ "viene del regulador y no de un proveedor. Súmale que la propia Agencia y el INCIBE describieron el mismo "
+ "vector hotelero con nueve días de diferencia: el fraude a huéspedes con datos reales de reservas.",
+ 'La <a href="https://www.aepd.es/prensa-y-comunicacion/notas-de-prensa/la-aepd-recibe-mas-de-3.000-'
+ 'notificaciones-de-brechas-de" @L>nota de prensa de la Agencia de 20 de octubre de 2026</a> y la '
+ '<a href="https://www.aepd.es/prensa-y-comunicacion/blog/incremento-de-las-notificaciones-de-brechas-de-datos-'
+ 'y-medidas-para" @L>entrada de blog de 21 de octubre</a>.',
+ "<b>Advertencia de verificación sobre el informe mensual, y hay que decirla.</b> El <b>informe de brechas de "
+ "septiembre de 2026</b> aparece publicado y fechado el 20 de octubre, y de él circula la cifra de <b>939 "
+ "notificaciones</b>, que serían un 50 por ciento más que agosto y casi cuatro veces septiembre de 2025. "
+ "<b>No se ha podido leer ese documento esta semana:</b> el servidor de la Agencia devolvió error de "
+ "mantenimiento en cinco intentos, así que esa cifra y sus desgloses quedan <b>no reconfirmados en fuente "
+ "primaria esta semana</b>. Lo que sí está verificado abriendo el informe de agosto es la serie contra la que "
+ "encaja: agosto de 2026, 626; septiembre de 2025, 235. Las dos razones cuadran al decimal y el acumulado de "
+ "doce meses también, lo que hace la cifra muy probable, pero probable no es leído. Y no la llames «máximo "
+ "histórico»: el informe solo publica doce meses, y el máximo previo de esa serie es julio de 2026 con 919."),
 
-("es", "CCN y Oficina Nacional de Seguridad · 15 de octubre de 2026", True,
- "Acreditadas infraestructuras de nube pública de Amazon y de Microsoft en España para tratar información "
- "clasificada de difusión limitada y de la OTAN",
- "El Centro Criptológico Nacional y la Oficina Nacional de Seguridad, ambos del CNI, han culminado la "
- "acreditación de infraestructuras de <b>Amazon Web Services y Microsoft situadas en España</b> y la "
- "aprobación de sus servicios de seguridad en el catálogo CPSTIC para tratar información clasificada de grado "
- "<b>NATO RESTRICTED</b> y <b>DIFUSIÓN LIMITADA</b>. El camino que describe la nota es la parte reutilizable: "
- "<b>certificación previa de los proveedores conforme al ENS en categoría ALTA</b>, auditorías de seguridad, "
- "evaluación de los servicios por el equipo del CPSTIC <b>con la metodología CICLON</b>, y revisión de los "
- "centros de datos situados en España por <b>equipos de inspección combinados</b> del CCN y la Oficina "
- "Nacional de Seguridad. El CCN sostiene que España es el primer país en alcanzar ambos hitos y se describe "
- "como nación pionera en la Alianza por disponer de centros de datos capaces de ejecutar estas cargas en nube "
- "pública.",
- "Desbloquea arquitecturas que hasta ahora no eran viables: un organismo público o un contratista de defensa "
- "puede plantearse cargas de difusión limitada en nube pública española con respaldo de acreditación. Pero "
- "para un consultor el valor no está en el titular, está en la <b>cadena de requisitos</b>, que es replicable "
- "y es la que seguirán otros proveedores: ENS categoría ALTA, evaluación CPSTIC con CICLON, inspección física "
- "del centro de datos y acreditación de la Oficina Nacional de Seguridad. Y es, de paso, <b>el mejor argumento "
- "del año para el cliente que sostiene que el ENS en categoría alta es papel</b>: sin esa certificación previa "
- "no se empieza siquiera.",
- 'La nota del CCN sobre la <a href="https://www.ccn.cni.es/es/actualidad-ccn/1395-el-ccn-y-la-ons-acreditan-'
- 'dos-infraestructuras-en-la-nube-publica-para-el-tratamiento-de-informacion-clasificada" @L>acreditación de '
- 'dos infraestructuras en nube pública para información clasificada</a>.',
- "Tres cautelas. La nota <b>no identifica los servicios concretos aprobados ni las regiones o centros de datos "
- "acreditados</b>, ni publica la resolución: habla de «sus infraestructuras en España» y de «numerosos "
- "servicios de seguridad», sin un solo nombre. Así que <b>no se puede tratar como un permiso general</b>, la "
- "acreditación es de infraestructuras y servicios determinados y el alcance exacto hay que pedírselo al "
- "proveedor. Segunda: la frase «primer país de la Alianza» no está en la nota tal cual; el CCN dice que "
- "«nuestro país es el primero en alcanzar ambos hitos» y, por separado, que es «nación pionera en la Alianza». "
- "Tercera, y no menor: esto es <b>el CCN describiéndose a sí mismo</b>, no una verificación de la OTAN."),
+("es", "CCN-CERT · alerta AL 11/26, de 21 de octubre de 2026", True,
+ "El Centro Criptológico Nacional eleva a crítico el aviso por las dos ejecuciones remotas de PHP, y su propio "
+ "texto se deja un identificador por el camino",
+ "Es el <b>único aviso de seguridad del CCN en toda la ventana</b> y el primero posterior al AL 10/26 del 14 de "
+ "octubre, que era de Ivanti Connect Secure. La alerta <b>AL 11/26</b>, «Actualización inmediata de "
+ "vulnerabilidad crítica en PHP», lleva <b>nivel de peligrosidad crítico</b> y afecta a todas las aplicaciones "
+ "basadas en PHP. Sus tres recomendaciones son operativas y se pueden trasladar tal cual: identificar todas las "
+ "aplicaciones basadas en PHP y actualizarlas cuanto antes; mientras no se pueda parchear, <b>aislar las "
+ "aplicaciones conectadas a internet cuyo uso no sea indispensable</b>; y apagar los servicios expuestos no "
+ "indispensables. La otra entrada del CCN en la ventana es institucional: el <b>20 de octubre</b> abrió las "
+ "inscripciones de las <b>XX Jornadas STIC</b>, del 24 al 27 de noviembre en Madrid, bajo el lema «IA ofensiva "
+ "y amenaza cuántica», con módulos específicos de ENS, CPSTIC, red nacional de centros de operaciones de "
+ "seguridad y ciberseguridad industrial.",
+ "Para un sujeto al ENS un aviso de nivel crítico del CCN-CERT es la referencia contra la que un auditor va a "
+ "medir tu ventana de parcheo, y activa de lleno las medidas de mantenimiento y actualización de seguridad del "
+ "anexo II. El uso práctico de esta semana es más concreto: <b>el aviso del CCN es el documento con el que "
+ "justificar ante un comité que se apague algo</b>. Pocas veces un organismo oficial español recomienda por "
+ "escrito desconectar servicios expuestos, y esa frase vale más que una presentación entera cuando hay que "
+ "defender una ventana de indisponibilidad no planificada. Sobre las Jornadas, el detalle que importa no es la "
+ "fecha del evento, es que la inscripción cierra el 20 de noviembre <b>o cuando se complete el aforo</b>, y con "
+ "más de siete mil asistentes previstos el aforo llega antes que el calendario.",
+ 'La <a href="https://www.ccn.cni.es/es/actualidad-ccn/1398-ccn-cert-al-11-26-actualizacion-inmediata-de-'
+ 'vulnerabilidad-critica-en-php" @L>alerta AL 11/26 del CCN-CERT</a> y la convocatoria de las '
+ '<a href="https://www.ccn.cni.es/es/actualidad-ccn/1397-abiertas-las-inscripciones-para-las-xx-jornadas-stic" '
+ '@L>XX Jornadas STIC</a>.',
+ "<b>No uses el aviso del CCN como fuente única de identificadores, porque le falta uno.</b> El texto habla de "
+ "dos vulnerabilidades críticas y a continuación escribe «CVE-2026-109618 y CVE-2026-109618», con el "
+ "<b>mismo identificador repetido</b>. Está comprobado sobre el código fuente de la página, no sobre una "
+ "extracción de texto: el identificador <b>CVE-2026-109619 no aparece ni una vez</b> en todo el documento. El "
+ "segundo es ese, y lo confirman php.net, el CERT francés, CERT-EU, el INCIBE y Siemens. Si tu cliente ha "
+ "montado su inventario de exposición sobre el texto del CCN, le falta la mitad del problema. De paso, el "
+ "aviso atribuye la publicación a «la Fundación PHP»; php.net la firma el <b>equipo de seguridad de PHP</b>."),
 
-("es", "Congreso de los Diputados · fichas verificadas el 19 de octubre de 2026", False,
- "Los tres proyectos siguen oficialmente caducados, y el 17 de octubre se cumplieron dos años exactos del "
- "vencimiento de NIS2 sin que su transposición haya llegado nunca a las Cortes",
- "Reverificado ficha por ficha, porque circula lo contrario. Los tres expedientes figuran literalmente "
- "<b>«Concluido - (Caducado)» desde el 6 de octubre de 2026</b>: el <b>121/000088</b> de entidades críticas, "
- "en la Comisión de Interior y con competencia legislativa plena, es decir que podía haberse aprobado sin "
- "pasar por el Pleno; el <b>121/000105</b>, que entre otras cosas adaptaba DORA y estaba declarado urgente; y "
- "el <b>121/000096</b>, la ley orgánica de gobernanza de la inteligencia artificial. El de entidades críticas "
- "acumuló <b>dieciséis ampliaciones sucesivas</b> del plazo de enmiendas y murió un día antes de que expirara "
- "el último, vigente hasta el 7 de octubre a las 18:00. Y el dato por omisión: rastreado el índice de "
- "iniciativas de la legislatura por título, <b>la transposición de NIS2 nunca llegó a ser proyecto de ley</b>, "
- "así que no estaba entre lo que caducó.",
- "Dieciséis ampliaciones no son el patrón de un texto en negociación activa: son el patrón de un texto "
- "aparcado sin acuerdo. Para el cliente, la consecuencia práctica es que <b>esto no es un retraso, es un "
- "borrado</b>: hace falta nuevo acuerdo del Consejo de Ministros, nueva aprobación, nueva publicación y nuevo "
- "plazo de enmiendas, y el articulado que vuelva puede no ser el mismo. Tres mensajes concretos. Al operador "
- "crítico, que planifique sobre la <b>Ley 8/2011</b> y sobre el contenido de la Directiva, no sobre el texto "
- "caducado. Al cliente financiero, que <b>DORA es directamente aplicable desde enero de 2025 y lo sigue "
- "siendo</b>: no gana margen, solo incertidumbre sobre quién supervisa y sanciona aquí. Y a cualquiera que "
- "esté montando adecuación a NIS2 en España, que la construya sobre la Directiva y sobre el RDL 12/2018 más "
- "el ENS, sin esperar ley nacional.",
- 'Las fichas de tramitación de los expedientes <a href="https://www.congreso.es/es/busqueda-de-iniciativas?'
- 'p_p_id=iniciativas&amp;p_p_lifecycle=0&amp;_iniciativas_mode=mostrarDetalle&amp;_iniciativas_legislatura=XV'
- '&amp;_iniciativas_id=121%%2F000088" @L>121/000088</a>, <a href="https://www.congreso.es/es/busqueda-de-'
- 'iniciativas?p_p_id=iniciativas&amp;p_p_lifecycle=0&amp;_iniciativas_mode=mostrarDetalle&amp;'
- '_iniciativas_legislatura=XV&amp;_iniciativas_id=121%%2F000105" @L>121/000105</a> y '
- '<a href="https://www.congreso.es/es/busqueda-de-iniciativas?p_p_id=iniciativas&amp;p_p_lifecycle=0&amp;'
- '_iniciativas_mode=mostrarDetalle&amp;_iniciativas_legislatura=XV&amp;_iniciativas_id=121%%2F000096" @L>'
- '121/000096</a>.',
- "Dos precisiones de nomenclatura, por si alguien busca pelea. Ni «CER» ni «DORA» son nombres oficiales de "
- "estos proyectos: el título del 121/000105 no menciona DORA, aunque su boletín oficial sí cite el Reglamento "
- "2022/2554, y el proyecto es más amplio, toca también supervisión de aseguradoras y consumidores. Y el "
- "boletín de ese expediente lleva numeración A-106, no A-105: no derivar el número de boletín del número de "
- "expediente. La búsqueda por título no excluye que una transposición vaya embutida en otra norma con título "
- "distinto."),
+("es", "Esquema Nacional de Seguridad · registro de certificaciones", False,
+ "Doce sistemas certificados en cinco días con Indra entre ellos, y el ENS sigue creciendo sin necesidad de "
+ "que NIS2 llegue nunca",
+ "Mientras el BOE no publicaba ni una disposición de ciberseguridad, el registro público de conformidad con el "
+ "ENS sumó <b>doce certificaciones nuevas con fecha entre el 19 y el 22 de octubre</b>. El total del registro "
+ "está en <b>3.848 sistemas certificados</b>, repartidos en 73 de categoría básica, 1.875 media, 1.027 alta y "
+ "873 por perfil de cumplimiento específico, y por tipo de entidad en 2.666 empresas, 886 entidades del sector "
+ "público institucional, 173 entidades locales, 78 comunidades autónomas, 33 de la Administración General del "
+ "Estado y 12 universidades. De las doce de la ventana, tres datos que valen más que el total. <b>Indra "
+ "Sistemas se certificó el 22 de octubre</b> en categoría media por AENOR, y eso afecta a cualquier pliego en "
+ "el que concurra. <b>El propio CCN está certificando ayuntamientos pequeños</b> por perfil de cumplimiento "
+ "específico en categoría básica, dos el mismo 19 de octubre. Y las <b>agencias autonómicas de ciberseguridad "
+ "de Madrid y de Cataluña están actuando ya como entidades de certificación</b>, con un ayuntamiento y una "
+ "fundación hospitalaria en esta ventana. Dos certificaciones más fueron de categoría alta, las dos de empresas "
+ "proveedoras.",
+ "Es el mejor contraargumento disponible para el cliente que sostiene que el ENS es papel mojado o que conviene "
+ "esperar a ver qué dice la ley española de NIS2. <b>El ENS no necesita NIS2 para crecer: crece por "
+ "contratación pública y por descentralización del esquema de certificación.</b> Para un proveedor del sector "
+ "público la lectura es inmediata: la conformidad certificada se está convirtiendo en requisito de concurrencia "
+ "de hecho, y el competidor que ya la tiene no va a esperarte. Y para una entidad local pequeña hay una vía que "
+ "casi nadie conoce: el perfil de cumplimiento específico en categoría básica certificado directamente por el "
+ "CCN, que es el camino de entrada realista cuando no hay presupuesto para una adecuación completa.",
+ 'El <a href="https://gobernanza.ccn-cert.cni.es/certificados" @L>registro público de certificaciones de '
+ 'conformidad con el ENS</a>, del que salen las cifras.',
+ "Dos cautelas al usar este registro, que no es un diario de altas. Primera: va con <b>retraso de carga</b>, y "
+ "en la ventana no hay nada con fecha 23, 24 ni 25 de octubre, así que el recuento de doce puede subir. "
+ "Segunda, y más rara: el registro admite <b>fechas de concesión futuras</b>, hay al menos dos con fecha de "
+ "noviembre de 2026. El campo no siempre es «fecha de publicación en el registro», de modo que para un informe "
+ "a cliente conviene citar el total y la tendencia, no construir una serie temporal fina sobre él."),
 
-("es", "BOE de 15 de octubre de 2026 · Sección III", False,
- "La AESIA delega competencias, pero son de contratación menor y de personal: ni una sola de supervisión, "
- "inspección o sanción en materia de inteligencia artificial",
- "Resolución de 2 de octubre de 2026 de la Dirección de la Agencia Española de Supervisión de Inteligencia "
- "Artificial, publicada en el BOE del 15 de octubre con identificador <b>BOE-A-2026-21517</b> y efectos desde "
- "el 16. Lo que delega, leído: en la Secretaría General, la condición de <b>órgano de contratación para "
- "contratos de valor estimado inferior a 60.000 euros</b> y su gestión económico-financiera, la remisión "
- "telemática al Tribunal de Cuentas, la devolución de garantías y un bloque amplio de gestión de personal, "
- "desde trienios y grado personal hasta excedencias, jubilaciones, teletrabajo y flexibilidad horaria. Y los "
- "permisos y licencias, también en dos subdirecciones. <b>Es la única disposición de la ventana atribuible a "
- "la gobernanza de la IA en España, y es puro ajuste administrativo interno.</b>",
- "Importa por dos razones, y ninguna es la que parece. La primera, práctica: si un cliente va a interactuar "
- "con la Agencia, esta resolución determina <b>quién firma dentro y, por tanto, a quién se dirige y quién "
- "resuelve</b>. La segunda es de lectura de contexto: <b>la Agencia sigue montando su maquinaria interna "
- "aunque la ley orgánica que le daría el régimen sancionador haya caducado</b>. Eso dice algo sobre el "
- "calendario real: la autoridad existe y se organiza, pero el instrumento con el que debería sancionar no "
- "está, y no va a estar antes de bien entrado 2027.",
- 'La <a href="https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-21517" @L>resolución de delegación de '
- 'competencias de la AESIA en el BOE</a>.',
- "Conviene encajarla bien, porque es fácil inflarla. <b>No es una disposición general</b>: va en la Sección "
- "III del BOE, «Otras disposiciones», no en la Sección I. Y <b>no delega ni una sola competencia de "
- "supervisión, inspección o sanción en materia de inteligencia artificial</b>. Si alguien la presenta como "
- "novedad de gobernanza del Reglamento de IA, está exagerando."),
+("es", "Andalucía y País Vasco · 19 y 21 de octubre de 2026", False,
+ "Mientras el Estado está parado, las autoridades autonómicas publican plantillas y refuerzan plantilla "
+ "inspectora",
+ "Dos movimientos pequeños que dibujan el mismo patrón que la circular catalana. El <b>19 de octubre</b> el "
+ "Consejo de Transparencia y Protección de Datos de Andalucía publicó el <b>«Modelo de instrucción interna "
+ "para el establecimiento de la política de protección de datos personales en las entidades del sector público "
+ "andaluz»</b>, que culmina un proceso abierto en julio con más de un centenar de aportaciones. Es un documento "
+ "<b>sin carácter vinculante</b>, concebido como propuesta de máximos adaptable, y se publica <b>en versión "
+ "editable</b> con campos entre corchetes. Lo que lo hace útil fuera de Andalucía es su contenido: delimita "
+ "funciones de responsable, encargado y delegado de protección de datos, prevé un órgano de coordinación "
+ "interna y articula protocolos de registro de actividades, ejercicio de derechos, análisis de riesgos, "
+ "evaluación de impacto, <b>gestión de brechas de seguridad</b> y transferencias internacionales, más un "
+ "informe anual de evaluación del cumplimiento. El <b>21 de octubre</b>, la Autoridad Vasca de Protección de "
+ "Datos convocó la provisión de <b>dos puestos de letrado, instructor e inspector</b>.",
+ "El modelo andaluz es, en la práctica, una <b>plantilla reutilizable de política de protección de datos con "
+ "protocolo de gestión de brechas incluido</b>, publicada en formato editable por una autoridad pública. Para "
+ "cualquier entidad del sector público español, y para el proveedor que deba alinearse con un cliente público, "
+ "eso ahorra semanas de redacción y llega con el respaldo implícito de un regulador. La convocatoria vasca es "
+ "una señal distinta y menos cómoda: una autoridad que refuerza su plantilla instructora e inspectora es una "
+ "autoridad que espera instruir más expedientes. Si tienes clientes con tratamientos en el País Vasco, el "
+ "mensaje es que la capacidad sancionadora local está creciendo justo cuando las notificaciones de brecha se "
+ "han multiplicado.",
+ 'El <a href="https://www.ctpdandalucia.es/noticias/el-consejo-publica-el-modelo-politica-proteccion-datos-'
+ 'para-el-sector-publico-andaluz" @L>modelo de política de protección de datos para el sector público '
+ 'andaluz</a> y el <a href="https://www.avpd.eus/inicio/" @L>portal de la Autoridad Vasca de Protección de '
+ 'Datos</a>.',
+ None),
+
+("es", "Secretaría de Estado de Digitalización e Inteligencia Artificial · 20 de octubre de 2026", False,
+ "Abierta la consulta española sobre el reglamento europeo de entornos digitales para menores, y su "
+ "supervisión se apoyaría en el Reglamento de Servicios Digitales y en el de IA",
+ "El Ministerio publicó el <b>20 de octubre</b> la consulta pública previa sobre la propuesta de Reglamento por "
+ "el que se establecen las condiciones para unos entornos digitales fiables y responsables para los menores, "
+ "abierta desde el día siguiente y <b>hasta el 4 de noviembre a las 23:59</b>. La propuesta la adoptó la "
+ "Comisión el 17 de septiembre de 2026 y su contenido es más ancho de lo que sugiere el titular: prohíbe "
+ "cuentas autónomas en redes sociales y plataformas de vídeo a <b>menores de 15 años</b>, con cuentas de "
+ "funcionalidad limitada entre 13 y 15; impone <b>requisitos de seguridad desde el diseño</b> a redes sociales, "
+ "plataformas de vídeo, <b>juegos en línea, compañeros de IA y chatbots de propósito general</b> y tiendas de "
+ "aplicaciones; limita el diseño adictivo, obliga a ajustar sistemas de recomendación y a configurar por "
+ "defecto la máxima privacidad; y establece un marco armonizado de sistemas de garantía de la edad que debe ser "
+ "proporcionado, eficaz, fiable y respetuoso con la privacidad.",
+ "El dato que convierte esto en asunto de ciber-GRC y no de política de menores es cómo se va a supervisar: "
+ "<b>se apoya en las estructuras de supervisión del Reglamento de Servicios Digitales y del Reglamento de "
+ "IA</b>, y prevé un procedimiento acelerado de control del cumplimiento. No hay regulador nuevo, lo que "
+ "significa que el que ya te supervisa por una cosa te supervisará por esta. Si tu cliente opera plataforma, "
+ "juego, aplicación con chatbot o mercado de aplicaciones con usuarios menores en España, <b>esta quincena es "
+ "la ventana para influir en la posición española</b>, y es barata: una consulta previa se contesta por correo. "
+ "Y la garantía de edad es, técnicamente, un problema de minimización de datos y de verificación sin "
+ "identificación, es decir el mismo debate que ya tuvo la cartera europea de identidad digital.",
+ 'La <a href="https://digital.gob.es/ministerio/participacion-proyectos-normativos/consulta-publica-previa/'
+ 'digitalizacion-e-inteligencia-artificial/2026-10-20" @L>consulta pública previa del Ministerio</a>.',
+ None),
 ]
 
 ITEMS += [
 
-("eu", "Diario Oficial, serie C · los seis asuntos de entidades críticas", True,
- "Seis Estados están demandados por no comunicar la transposición de entidades críticas, pero tres de ellos "
- "ya han notificado medidas: a cero siguen España, Bulgaria y Suecia",
- "Leídos uno a uno los seis avisos del Diario Oficial, con los importes verificados al céntimo. Francia, "
- "asunto C-481/26, 62.546,40 euros diarios y un mínimo de 14.557.000. Bulgaria, C-497/26, 2.284,80 y 532.000. "
- "Países Bajos, C-509/26, 23.990,40 y 5.583.000. Polonia, C-514/26, 18.135,60 y 4.221.000. Suecia, C-529/26, "
- "11.995,20 y 2.792.000. Y España, C-616/26, <b>34.129,20 euros diarios y un mínimo de 7.943.000</b>, el "
- "tercero de mayor exposición tras Francia y Países Bajos. Todos reclaman además multa coercitiva diaria. "
- "Ahora el matiz que cambia la lectura: cruzado el censo de medidas nacionales de ejecución, <b>Francia tiene "
- "ya 22 medidas notificadas, Polonia 7 y Países Bajos 3</b>. Los únicos de los seis que siguen <b>sin "
- "notificar absolutamente nada</b> son España, Bulgaria y Suecia.",
- "Si este cuadro se lee como un semáforo de cumplimiento, <b>los tres que importan son España, Bulgaria y "
- "Suecia</b>, y no los seis. Para Francia, Países Bajos y Polonia el recurso puede quedarse sin objeto o "
- "reducirse al tanto alzado del periodo ya transcurrido, porque la comunicación llegó después de la demanda. "
- "Para un cliente español en sectores del anexo de entidades críticas, el mensaje operativo no cambia y se "
- "endurece: <b>no hay identificación nacional de entidades críticas en la que ampararse</b>, la presión sobre "
- "el legislador es creciente y está cuantificada, y conviene preparar la adecuación por anticipado en lugar de "
- "esperar a la norma.",
- 'Los avisos del Diario Oficial de los asuntos <a href="https://eur-lex.europa.eu/legal-content/ES/TXT/?uri='
- 'CELEX:62026CN0616" @L>C-616/26, España</a>, <a href="https://eur-lex.europa.eu/legal-content/ES/TXT/?uri='
- 'CELEX:62026CN0481" @L>C-481/26, Francia</a> y <a href="https://eur-lex.europa.eu/legal-content/ES/TXT/?uri='
- 'CELEX:62026CN0529" @L>C-529/26, Suecia</a>.',
- "Que un Estado tenga medidas notificadas <b>no equivale a transposición completa ni correcta</b>: varios han "
- "notificado una sola norma parcial. El censo prueba quién no ha comunicado nada, no quién ha cumplido. Y "
- "detalle tipográfico por si se cita entre comillas: el Diario Oficial imprime «34 129,2» y «2 284,8», sin el "
- "cero final; el valor es el mismo."),
+("eu", "Reglamento de Ciberresiliencia · censo europeo a 26 de octubre de 2026", True,
+ "Cero organismos notificados en los veintisiete Estados, a seis semanas de la fecha que la propia norma se "
+ "fijó, y España no está entre los quince que al menos han designado autoridad notificante",
+ "El <b>capítulo IV del Reglamento (UE) 2024/2847</b>, que son sus artículos 35 a 51, es aplicable desde el "
+ "<b>11 de junio de 2026</b>: es el que regula cómo un Estado designa autoridad notificante y cómo notifica a "
+ "la Comisión los organismos autorizados a evaluar la conformidad. Consultado el censo europeo de organismos "
+ "notificados a <b>26 de octubre de 2026</b>, el resultado es <b>cero organismos notificados</b> para ese "
+ "Reglamento, en todos los Estados y en todas las versiones del registro. Autoridades notificantes sí hay: "
+ "<b>dieciséis en quince Estados</b>, que son Bélgica con dos, Alemania, Chipre, Croacia, Eslovaquia, Estonia, "
+ "Finlandia, Francia, Hungría, Irlanda, Lituania, Malta, Países Bajos, Polonia y Suecia. <b>España no "
+ "aparece</b>, ni en ese Reglamento ni en el Reglamento de IA; sí figura en el esquema europeo de "
+ "certificación por criterios comunes, con su autoridad nacional de certificación de la ciberseguridad. Y la "
+ "fecha: el <b>artículo 35.2</b> dice que los Estados «se esforzarán por garantizar, a más tardar el 11 de "
+ "diciembre de 2026, que haya un número suficiente de organismos notificados en la Unión para llevar a cabo "
+ "evaluaciones de la conformidad, con objeto de evitar cuellos de botella y obstáculos para el acceso al "
+ "mercado». Es la única vez que esa fecha aparece en todo el Reglamento.",
+ "Hay que contar este plazo con precisión quirúrgica, porque es fácil sobrevenderlo y queda en evidencia. "
+ "<b>Obliga a los Estados miembros, no a las empresas:</b> ningún fabricante, importador o distribuidor tiene "
+ "nada que entregar el 11 de diciembre de 2026. <b>Es obligación de medios, no de resultado:</b> «se esforzarán "
+ "por garantizar» es exactamente lo que dice el texto, y en inglés «shall strive to ensure». Y <b>el umbral es "
+ "agregado en la Unión</b>, de modo que un Estado sin organismos no incumple por sí solo. Dicho eso, lo que "
+ "para el Estado es una obligación blanda para el cliente es un dato duro de calendario industrial. Si fabrica "
+ "producto de las clases del anexo III o del anexo IV y va a necesitar evaluación por tercero antes del 11 de "
+ "diciembre de 2027, tiene trece meses y medio y <b>hoy no hay a quién acudir</b>. La acción de este trimestre "
+ "es reservar capacidad con un organismo en cuanto haya alguno acreditado, no preparar un expediente. Y para "
+ "España hay una lectura adicional incómoda: la designación de autoridad notificante del <b>artículo 36.1</b> "
+ "no tiene fecha propia porque es exigible desde que el capítulo IV se aplica, es decir desde junio.",
+ 'El <a href="https://webgate.ec.europa.eu/single-market-compliance-space/nando/" @L>censo europeo de '
+ 'organismos notificados</a> y el texto del <a href="https://publications.europa.eu/resource/celex/32024R2847" '
+ '@L>Reglamento (UE) 2024/2847</a>, cuyo artículo 35.2 fija la fecha.',
+ "<b>Nota de método, porque un cero mal medido sería un bulo de manual.</b> La interfaz web del censo no sirve "
+ "para esta consulta; hay que usar la interfaz de búsqueda que emplea el propio frontal, y el campo que enlaza "
+ "con la norma no es el de procedimiento, que devuelve subconjuntos y por tanto ceros falsos. Hecha la prueba "
+ "de control con otras normas, la misma consulta devuelve <b>1.430 registros para la Directiva de máquinas</b> "
+ "y <b>41 vigentes para el esquema europeo de certificación por criterios comunes</b>, que también es un "
+ "reglamento de ciberseguridad de 2024 y en el que España tiene siete organismos. El método ve organismos "
+ "cuando existen. El cero del Reglamento de Ciberresiliencia es real."),
 
-("eu", "Censo europeo de organismos notificados · verificado el 19 de octubre de 2026", False,
- "Sigue sin haber un solo organismo notificado del Reglamento de Ciberresiliencia, a catorce meses de que "
- "lleguen sus obligaciones principales",
- "Comprobado contra el índice de producción del censo europeo, donde el Reglamento de Ciberresiliencia consta "
- "registrado como legislación: <b>cero notificaciones</b>, en cualquier estado. Y se ha hecho el control de "
- "validez, que es lo que separa un cero real de un cero por consulta mal construida: el mismo método devuelve "
- "<b>576 notificaciones para equipos radioeléctricos</b> y <b>58 para el esquema europeo de certificación de "
- "ciberseguridad</b>. El cero es real. Mientras tanto, las obligaciones de <b>notificación</b> del Reglamento "
- "ya están en vigor desde el 11 de septiembre de 2026, con la plataforma única de la agencia europea "
- "desplegada, y las obligaciones principales llegan el <b>11 de diciembre de 2027</b>.",
- "Es el dato que ordena la conversación con cualquier fabricante de producto con elementos digitales. Sin "
- "organismos notificados no hay evaluación de conformidad por tercero disponible, y los productos del anexo "
- "que la requieren no pueden cerrar su ruta de cumplimiento aunque quieran. <b>El cuello de botella no es el "
- "fabricante, es la infraestructura de evaluación</b>, y eso conviene decirlo por escrito en el plan de "
- "adecuación: documenta que el retraso no es imputable a quien se está preparando. Para el consultor, la "
- "consecuencia práctica es que hoy el trabajo útil es el de autoevaluación y expediente técnico, no el de "
- "buscar certificador.",
- 'El <a href="https://webgate.ec.europa.eu/single-market-compliance-space/#/notified-bodies/notified-body-list"'
- ' @L>censo europeo de organismos notificados</a> y la <a href="https://digital-strategy.ec.europa.eu/en/'
- 'policies/cyber-resilience-act" @L>página de política de la Comisión sobre el Reglamento de Ciberresiliencia</a>.',
- "El cero se refiere a organismos notificados del Reglamento de Ciberresiliencia, que es cosa distinta de las "
- "autoridades notificantes que los Estados deben designar. No se ha podido obtener por esta vía el censo "
- "acumulado de normas armonizadas del Reglamento; lo que sí se ha comprobado es que no se publicó ninguna en "
- "la ventana."),
+("eu", "Declaración conjunta de la Comisión, ENISA, CERT-EU, Europol y la red de CSIRT · 21 de octubre de 2026", True,
+ "Cinco instituciones europeas firman el mismo día un aviso por las vulnerabilidades de PHP, y su apartado de "
+ "política es la primera prueba documental de que el Reglamento de Ciberresiliencia ya obliga",
+ "El <b>21 de octubre</b>, el mismo día en que el equipo de seguridad de PHP publicó las correcciones, la "
+ "<b>Comisión Europea</b> a través de su dirección general de redes de comunicación, <b>ENISA</b>, "
+ "<b>CERT-EU</b>, el centro europeo de cibercrimen de Europol y la red de <b>CSIRT</b> nacionales publicaron "
+ "una declaración conjunta instando a acción inmediata. Las recomendaciones son las esperables: identificar "
+ "aplicaciones basadas en PHP, coordinarse con los proveedores de alojamiento, priorizar los sistemas expuestos "
+ "a internet y aislar lo que no se pueda parchear. Lo que no es esperable, y es lo que la convierte en asunto "
+ "regulatorio y no solo técnico, es su apartado de política de la Unión, que dice literalmente que «desde el "
+ "<b>11 de septiembre de 2026</b>, los fabricantes de productos de hardware y software deben notificar las "
+ "vulnerabilidades explotadas activamente a través de la <b>plataforma única de notificación</b> del "
+ "Reglamento de Ciberresiliencia, conforme al Reglamento (UE) 2024/2847», y recuerda que los requisitos "
+ "principales se aplicarán desde el 11 de diciembre de 2027. La declaración advierte además de que <b>muchos "
+ "productos comerciales y de código abierto incorporan PHP de forma no evidente</b>, y remite al repositorio "
+ "de software de terceros afectado que mantiene el equipo nacional neerlandés.",
+ "Es la primera vez que se puede señalar el <b>artículo 14 del Reglamento de Ciberresiliencia</b> funcionando "
+ "sobre un caso real, y eso tiene dos usos. Si tu cliente <b>fabrica o distribuye</b> un producto con "
+ "elementos digitales que incorpore PHP, incluso sin saberlo, y esa vulnerabilidad está siendo explotada, ya "
+ "tiene una obligación jurídica con tres relojes: <b>alerta temprana en 24 horas</b>, notificación de "
+ "vulnerabilidad en <b>72 horas</b> e informe final en <b>catorce días</b> desde que haya medida correctora, "
+ "todo por la plataforma única y simultáneamente al CSIRT coordinador y a ENISA. Y por el <b>artículo 69.3</b>, "
+ "que casi nadie cita, esa obligación alcanza <b>a todos los productos comercializados antes del 11 de "
+ "diciembre de 2027</b>, no solo a los nuevos: un catálogo heredado no te exime. Si tu cliente es <b>comprador</b> "
+ "en vez de fabricante, aquí tiene palanca contractual: exigir el compromiso de notificación conforme al "
+ "Reglamento y la entrega de declaraciones de afectación o de no afectación por producto.",
+ 'La <a href="https://www.enisa.europa.eu/news/joint-statement-on-critical-php-vulnerabilities" @L>declaración '
+ 'conjunta sobre las vulnerabilidades críticas de PHP</a> y la información de la Comisión sobre la '
+ '<a href="https://digital-strategy.ec.europa.eu/en/policies/cra-reporting" @L>notificación del Reglamento de '
+ 'Ciberresiliencia</a>.',
+ "Conviene no confundir dos cosas que esta semana aparecieron juntas. Una es la <b>obligación de notificar</b> "
+ "del artículo 14, que ya existe y es exigible. La otra es la <b>plataforma única de notificación de "
+ "incidentes</b> que unificaría los reportes hoy dispersos entre NIS2, el RGPD, DORA y el Reglamento de "
+ "Ciberresiliencia, que está en la propuesta grande de simplificación digital y <b>sigue sin adoptarse</b>: ni "
+ "un solo acto publicado ha modificado nunca el RGPD. Cualquier plan de cumplimiento que presuponga esa "
+ "ventanilla única está construyendo sobre algo que no existe."),
 
-("eu", "Censo de medidas nacionales de ejecución · verificado el 19 de octubre de 2026", False,
- "Veinticinco Estados han notificado ya alguna medida de NIS2 y veinticuatro de entidades críticas; España "
- "está en los dos grupos de cola",
- "Leído por detrás el mismo conjunto de medidas nacionales que publica el repositorio europeo. En <b>NIS2</b> "
- "hay 304 medidas notificadas y <b>25 Estados con al menos una</b>; los dos únicos sin ninguna son <b>España e "
- "Irlanda</b>. En <b>entidades críticas</b>, 24 Estados con al menos una, y los únicos sin ninguna son "
- "<b>España, Bulgaria y Suecia</b>. Nada se movió en la ventana: la última notificación registrada de NIS2 es "
- "de Finlandia, del 15 de septiembre, y la de entidades críticas de Dinamarca, del 1 de octubre. <b>Ningún "
- "Estado transpuso ni fue demandado entre el 13 y el 18 de octubre</b>, y el aviso de recurso más reciente "
- "publicado corresponde a una demanda del 19 de agosto.",
- "Sirve para dos conversaciones muy distintas. Con un cliente español, para situar el punto de partida sin "
- "dramatismo y sin autoengaño: <b>estamos en el grupo de dos, no en el pelotón</b>. Y con un cliente con "
- "filiales en varios Estados, para explicar por qué su programa de NIS2 no puede ser uno solo: con 83 medidas "
- "notificadas en Chequia, 39 en Hungría y 20 en Alemania frente a ninguna en España, <b>la obligación "
- "operativa real de cada filial la fija hoy su ley nacional, no la Directiva</b>.",
- 'El texto de la <a href="https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32022L2555" @L>Directiva '
- '(UE) 2022/2555, NIS2</a> y el de la <a href="https://eur-lex.europa.eu/legal-content/ES/TXT/?uri='
- 'CELEX:32022L2557" @L>Directiva (UE) 2022/2557, entidades críticas</a>, con sus medidas nacionales asociadas.',
- "Cautela de método que hay que repetir cada vez que se use este censo: <b>medidas notificadas no equivale a "
- "transposición completa y correcta</b>. El dato prueba quién no ha notificado nada; no certifica a nadie."),
+("eu", "Medidas nacionales notificadas · barrido a 26 de octubre de 2026", False,
+ "Una sola notificación de transposición en toda la semana y es húngara; España sigue siendo el único Estado a "
+ "cero en las dos directivas a la vez",
+ "Barrido el registro oficial de medidas nacionales de ejecución de las dos directivas, el movimiento de la "
+ "ventana es exactamente uno: <b>Hungría notificó el 21 de octubre de 2026</b> una medida de transposición de "
+ "<b>NIS2</b>, con referencia <b>MNE(2026)07957</b>. Es el decreto <b>6/2026 SZTFH</b> del presidente de la "
+ "Autoridad de Supervisión de Actividades Reguladas, publicado en el diario oficial húngaro, por el que se "
+ "modifican varios reglamentos en materia de ciberseguridad; es decir, una medida administrativa modificativa, "
+ "no una ley nueva, y lo que cae en la ventana es la notificación, no la aprobación. Nada más se movió: las "
+ "dos notificaciones danesas de entidades críticas son del 1 de octubre y la finlandesa de NIS2 del 15 de "
+ "septiembre. El recuento por Estados confirma lo registrado y añade un matiz: en <b>entidades críticas siguen "
+ "a cero España, Bulgaria y Suecia</b>; en <b>NIS2 siguen a cero España e Irlanda</b>. Verificado con control "
+ "cruzado para descartar error de código de país, porque Bulgaria sí tiene una medida de NIS2 e Irlanda sí "
+ "tiene una de entidades críticas. <b>España es el único de los veintisiete que está a cero en las dos.</b>",
+ "Esa última frase es la que vale en una reunión, y conviene decirla sin dramatismo porque se sostiene sola: "
+ "España no es «uno de los que van tarde», es <b>el único Estado miembro sin ninguna medida notificada en "
+ "ninguna de las dos directivas de ciberseguridad</b>. Para un cliente que esté decidiendo si empieza ahora su "
+ "adecuación o espera a la ley, eso cambia el cálculo: el retraso no es un bache de calendario, es una posición "
+ "estructural, y lo que viene detrás de una posición así suele ser una transposición comprimida. Quien se "
+ "anticipe a la designación tendrá margen; quien espere a que le notifiquen que es entidad crítica tendrá diez "
+ "meses para montar plan de resiliencia, evaluación de riesgos y notificación de incidentes. El caso húngaro, "
+ "por su parte, enseña algo útil sobre el mapa: un Estado con ley en vigor <b>sigue notificando medidas</b> "
+ "durante años, porque el desarrollo reglamentario también se notifica.",
+ 'El registro de medidas nacionales de ejecución del <a href="https://publications.europa.eu/resource/celex/'
+ '32022L2555" @L>Directiva (UE) 2022/2555</a> y de la <a href="https://publications.europa.eu/resource/celex/'
+ '32022L2557" @L>Directiva (UE) 2022/2557</a>, consultado en el repositorio de la Oficina de Publicaciones.',
+ "Aviso de método para quien quiera repetir el barrido, porque hay una trampa que falsea la ventana: la fecha "
+ "que hay que usar es la de <b>notificación de la medida</b>, no la fecha del documento. No coinciden casi "
+ "nunca, y el registro contiene medidas con fecha de documento de 1930, 1964 y 1991 que son textos antiguos "
+ "notificados ahora. Si se filtra por fecha de documento, entran en la semana cosas que no corresponden."),
 
-("eu", "Comisión Europea · propuestas COM(2026) 11 y COM(2026) 13", False,
- "La llamada revisión del Reglamento de Ciberseguridad es en realidad una derogación completa, y arrastra una "
- "modificación de NIS2 antes de que España la haya transpuesto",
- "No es novedad de la semana y por eso va aquí: son dos expedientes vivos del 20 de enero de 2026 que no "
- "deberían faltar en ningún seguimiento. La <b>COM(2026) 11</b> es una propuesta de reglamento sobre la "
- "agencia europea de ciberseguridad, el marco europeo de certificación <b>y la seguridad de las cadenas de "
- "suministro de tecnología</b>, por el que <b>se deroga el Reglamento 2019/881</b>. No es una revisión: es un "
- "texto nuevo que sustituye al anterior. Y la <b>COM(2026) 13</b> es una propuesta de directiva que "
- "<b>modifica NIS2</b> para simplificar y armonizar con el anterior. A esto se suma, por otra vía, la "
- "propuesta <b>COM(2025) 837</b>, todavía pendiente, que modifica entre otros el RGPD y también NIS2 y "
- "entidades críticas.",
- "La pata de cadena de suministro de tecnología es nueva y cae exactamente donde más deuda de control tienen "
- "los clientes: inventario de proveedores, cláusulas contractuales y evaluación de terceros. Pero el mensaje "
- "que hay que dar es de diseño, no de contenido: <b>hay dos vectores de cambio simultáneos sobre NIS2 antes de "
- "que España la haya transpuesto siquiera</b>. Si un cliente está construyendo hoy su programa, conviene "
- "<b>documentar las decisiones de diseño como reversibles</b> y evitar amarrar procesos a un articulado que "
- "tiene dos propuestas de modificación encima de la mesa.",
- 'Las propuestas <a href="https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:52026PC0011" @L>COM(2026) '
- '11, reglamento sobre ciberseguridad y cadenas de suministro</a>, <a href="https://eur-lex.europa.eu/legal-'
- 'content/ES/TXT/?uri=CELEX:52026PC0013" @L>COM(2026) 13, modificación de NIS2</a> y '
- '<a href="https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:52025PC0837" @L>COM(2025) 837</a>.',
- "No se ha podido verificar el estado interinstitucional de ninguna de las tres: ni comisión parlamentaria ni "
- "orientación general del Consejo. Lo único que se puede afirmar es que <b>no hay ningún paso posterior "
- "publicado</b> en el repositorio europeo. Son propuestas legislativas, con años de trámite por delante: nada "
- "exigible hoy."),
+("eu", "Riksdag de Suecia · 20 de octubre de 2026", False,
+ "La comisión de Defensa sueca empieza a tramitar la ley de entidades críticas y ya hay fecha de votación: el "
+ "25 de noviembre",
+ "El <b>20 de octubre de 2026</b>, dentro de la ventana, la <b>Comisión de Defensa del Riksdag</b> inició el "
+ "examen de la proposición <b>2025/26:303</b>, «una nueva ley para una mayor resiliencia de los operadores "
+ "críticos», y dejó el asunto sobre la mesa. Consta en el acta 2026/27:3, apartado 5, aprobada el 22 de "
+ "octubre. El calendario publicado por la propia cámara fija la <b>votación en el pleno el 25 de noviembre de "
+ "2026</b>, y la proposición propone <b>entrada en vigor el 1 de enero de 2027</b>. El texto reconoce "
+ "expresamente el retraso: recuerda que el artículo 26 de la directiva exigía adoptar y publicar las "
+ "disposiciones a más tardar el 17 de octubre de 2024. Dato colateral útil: la misma proposición <b>modifica "
+ "la ley sueca de ciberseguridad de 2025</b> y transpone parcialmente NIS2, lo que explica que Suecia tenga "
+ "trece medidas de NIS2 notificadas y ninguna de entidades críticas.",
+ "Es el único cambio de previsión real del mapa esta semana, y es útil por comparación. Suecia pasa de «sin "
+ "fecha» a un horizonte concreto y verificable: votación el 25 de noviembre, vigor propuesto el 1 de enero de "
+ "2027, obligaciones efectivas para cada entidad diez meses después de que se la identifique, es decir no antes "
+ "de finales de 2027. <b>Si el pleno la aprueba, Suecia deja de estar a cero en el primer trimestre de 2027 y "
+ "España se queda sola con Bulgaria.</b> Para un cliente con actividad en Suecia, el aviso es que el reloj de "
+ "identificación arranca en enero. Y para la conversación española sirve de contraste honesto: Suecia también "
+ "llega dos años tarde, pero llega con un texto en el pleno y una fecha en el calendario, que es exactamente lo "
+ "que España no tiene.",
+ 'La ficha de la proposición <a href="https://data.riksdagen.se/dokument/HD03303.html" @L>2025/26:303 en los '
+ 'datos abiertos del Riksdag</a> y el <a href="https://data.riksdagen.se/dokument/HEC120261125vo.html" @L>orden '
+ 'de votaciones del 25 de noviembre de 2026</a>.',
+ None),
 
-("eu", "Diario Oficial, serie C · 13 de julio de 2026", False,
- "Las directrices de la Comisión sobre medidas de resiliencia de entidades críticas llevan tres meses "
- "publicadas y pasaron desapercibidas, y son el estándar contra el que se medirá a un cliente español",
- "Comunicación de la Comisión con las <b>directrices sobre la aplicación del artículo 13, apartado 5, de la "
- "Directiva de entidades críticas</b>, publicadas como C/2026/3712. Especifican las medidas técnicas, "
- "organizativas y de seguridad que exige el artículo 13.1 en sus letras a) a f). No salieron de la nada: se "
- "consultó al grupo europeo de resiliencia de entidades críticas en tres reuniones de 2025, el texto circuló "
- "en noviembre de ese año, se actualizó en febrero de 2026 y la consulta final fue en marzo.",
- "Es <b>el único material de la Comisión que convierte el artículo 13 en medidas concretas</b>, y eso lo "
- "vuelve muy útil justamente en España, donde no hay ley. Un operador que vaya a quedar identificado como "
- "entidad crítica cuando por fin haya norma nacional puede empezar hoy a trabajar contra este documento, "
- "porque <b>es el estándar de facto contra el que se le va a medir</b> y porque adelantarlo no tiene coste de "
- "reversión: lo que pida la ley española no va a ser menos que esto.",
- 'Las <a href="https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:52026XC03712" @L>directrices de la '
- 'Comisión sobre el artículo 13, apartado 5, de la Directiva de entidades críticas</a>.',
- "Son directrices <b>no vinculantes</b> y el propio texto advierte de que no prejuzgan la interpretación del "
- "Tribunal de Justicia. Se usan como referencia de trabajo, no como norma."),
+("eu", "Tribunal de Justicia de la Unión Europea · barrido de los 328 avisos de 2026", False,
+ "El objeto del recurso del 1 de octubre contra España sigue sin publicarse, y el barrido completo descarta que "
+ "haya aparecido el de NIS2",
+ "La edición pasada señaló el asunto <b>C-1080/26, Comisión contra España</b>, recurso por incumplimiento "
+ "interpuesto el 1 de octubre de 2026, cuyo objeto el Tribunal no había publicado. Sigue sin publicarse, y "
+ "esta vez el barrido es exhaustivo. Recuperados <b>los 328 avisos de recurso interpuesto publicados en el "
+ "Diario Oficial serie C a lo largo de 2026</b>, el número de asunto más alto con aviso publicado es el "
+ "<b>C-970/26</b>; las sondas directas de los expedientes C-1080/26 contra España, C-1076/26 contra Irlanda y "
+ "C-1089/26 contra Francia devuelven <b>documento inexistente</b>. Y leídos los 328 textos completos, "
+ "<b>ninguno menciona la Directiva (UE) 2022/2555</b>. El control de que el método detecta directivas es "
+ "limpio: la Directiva 2022/2557 aparece en <b>seis</b> avisos, que son los seis recursos de entidades críticas "
+ "contra Francia, Bulgaria, Países Bajos, Polonia, Suecia y España.",
+ "Lo que se puede hacer con esto es preparar al cliente sin asustarlo, y evitar el error que va a circular. "
+ "<b>Ausencia de aviso no significa ausencia de recurso.</b> El desfase medido en 2026 entre interponer y "
+ "publicar es de siete a ocho semanas, así que un recurso del 1 de octubre debería publicarse entre finales de "
+ "noviembre y los primeros días de diciembre. Si el aviso confirma entonces que el C-1080/26 es el de NIS2, "
+ "habrá por primera vez cuantías públicas de ese incumplimiento y el contador de este boletín pasará a tener "
+ "dos líneas en vez de una. Hasta entonces, lo correcto es decir que la remisión está decidida y el recurso "
+ "probablemente interpuesto, y que el objeto no es público. Queda además un cabo suelto que conviene no perder: "
+ "la decisión del 8 de julio alcanzaba a <b>cuatro</b> Estados, y solo se conocen tres expedientes posteriores. "
+ "Falta localizar el neerlandés, o bien Países Bajos notificó entre julio y octubre y la Comisión archivó.",
+ 'El repositorio de la Oficina de Publicaciones, donde se publican los avisos de la <a href="https://'
+ 'publications.europa.eu/resource/celex/62026CN0616" @L>serie C del Diario Oficial</a>, consultado por patrón '
+ 'de identificador para los cuatro asuntos.',
+ "Hay un falso positivo que está circulando y que conviene desmontar antes de que llegue a un cuadro de mando. "
+ "El <b>C-866/26, Comisión contra Irlanda</b>, interpuesto el 3 de agosto de 2026, parece el candidato natural "
+ "a ser la remisión irlandesa por NIS2. <b>No lo es.</b> Leído el texto íntegro de su aviso, es un recurso del "
+ "artículo 260.1 del Tratado por inejecución de una sentencia de 2019 sobre la <b>directiva de tratamiento de "
+ "aguas residuales urbanas</b>, referido a ocho aglomeraciones. Nada que ver con ciberseguridad."),
+
+("eu", "ENISA · 22 de octubre de 2026", False,
+ "La agencia europea publica su guía técnica de inventario de componentes de software, y la plantea como "
+ "superficie de ataque además de como obligación",
+ "El <b>22 de octubre</b> ENISA publicó su <b>aviso técnico sobre el inventario de componentes de software</b>, "
+ "dirigido expresamente a <b>microempresas y pymes</b> y a mantenedores de software que quieran establecer "
+ "capacidades iniciales de transparencia en su cadena de suministro. Se alinea con los principios de su "
+ "manual de seguridad desde el diseño y por defecto, y su contenido declarado es tres cosas: una arquitectura "
+ "de implantación con los flujos de datos basada en un ciclo de vida definido; un <b>modelo de amenazas "
+ "indicativo del propio inventario</b>, con sus riesgos específicos; y medidas para abordar los problemas de "
+ "seguridad del ecosistema que rodea al inventario. Es, junto a la declaración conjunta de PHP del día "
+ "anterior, la única publicación de ENISA con fecha en la ventana.",
+ "El inventario de componentes es exigencia del <b>anexo I, parte II, del Reglamento de Ciberresiliencia</b>, "
+ "de modo que esta guía es el material no vinculante más reciente para cumplirlo, y está calibrada para quien "
+ "tiene menos recursos, que es justo quien más lo necesita. Pero el ángulo distintivo, y el que conviene llevar "
+ "a un cliente que ya tenga el inventario resuelto, es el otro: ENISA <b>modela el inventario como superficie "
+ "de ataque en sí misma</b>. Un inventario mal gobernado revela a un atacante la lista exacta de componentes "
+ "vulnerables que tienes dentro. Eso convierte una pregunta de cumplimiento en una decisión de diseño: no solo "
+ "si lo generas, sino <b>a quién le das acceso, con qué granularidad y por qué canal</b>. Y esta semana hay un "
+ "ejemplo perfecto de por qué importa: la declaración conjunta de PHP advierte de que muchos productos "
+ "incorporan PHP sin que se vea. Sin inventario no hay forma de responder a eso.",
+ 'El <a href="https://www.enisa.europa.eu/publications/enisa-technical-advisory-for-software-bill-of-materials" '
+ '@L>aviso técnico de ENISA sobre el inventario de componentes de software</a>.',
+ None),
+
+("eu", "Censo europeo · Bélgica, 23 a 25 de octubre de 2026", False,
+ "Bélgica registra una segunda autoridad notificante y pasa a ser el único Estado de la Unión con autoridad "
+ "notificante del Reglamento de IA",
+ "Dentro de la ventana, el <b>servicio público federal belga de Economía</b> aparece dado de alta en el censo "
+ "europeo como autoridad notificante de tres normas a la vez: el <b>Reglamento de Ciberresiliencia</b>, donde "
+ "pasa a ser la segunda autoridad belga junto al Centro de Ciberseguridad de Bélgica; el <b>esquema europeo de "
+ "certificación por criterios comunes</b>; y el <b>Reglamento (UE) 2024/1689 de IA</b>. Con ese registro, "
+ "<b>Bélgica es el único Estado miembro de los veintisiete con autoridad notificante registrada bajo el "
+ "Reglamento de IA</b>: un solo registro en toda la Unión, y es belga. Organismos notificados del Reglamento de "
+ "IA sigue habiendo cero, igual que del Reglamento de Ciberresiliencia.",
+ "El dato interesa por lo que revela del estado real de los dos reglamentos, más que por Bélgica. Que un año "
+ "después de que fuese exigible designar autoridades del Reglamento de IA solo <b>un</b> Estado conste "
+ "registrado en el censo de notificantes dice bastante sobre cuánta de la arquitectura institucional está "
+ "montada. Y para el cliente que esté decidiendo dónde establecer su punto de contacto europeo o con quién "
+ "hablar de una evaluación de conformidad, la respuesta práctica hoy es que hay un solo interlocutor "
+ "identificado y está en Bruselas. De paso, esto corrige un error de este boletín: la edición pasada atribuía "
+ "a Lituania las dos autoridades notificantes del Reglamento de Ciberresiliencia. <b>Son belgas.</b> Lituania "
+ "tiene una sola en esa norma; las dos que tiene son en el esquema de certificación por criterios comunes.",
+ 'El <a href="https://webgate.ec.europa.eu/single-market-compliance-space/nando/" @L>censo europeo de '
+ 'organismos notificados y autoridades notificantes</a>.',
+ "Cautela honesta sobre la fecha: lo que está fechado entre el 23 y el 25 de octubre es <b>la indexación del "
+ "registro</b> en la plataforma de búsqueda, no necesariamente el día en que Bélgica lo notificó a la Comisión. "
+ "Es el único registro de los dieciséis del Reglamento de Ciberresiliencia con alta en la ventana y el salto es "
+ "inequívoco, pero si hay que citar una fecha de notificación formal, hay que pedirla."),
 ]
 
 ITEMS += [
 
-("fin", "Comité Mixto de las Autoridades Europeas de Supervisión · 13 de octubre de 2026", True,
- "El programa de 2027 confirma que el ciclo de vigilancia ya ha emitido recomendaciones a proveedores "
- "críticos, y que el año que viene toca seguimiento",
- "El Comité Mixto de las tres autoridades europeas publicó su programa de trabajo de 2027, cuyo capítulo de "
- "resiliencia operativa digital compromete: <b>actualizar la lista de proveedores tecnológicos críticos</b> a "
- "nivel de la Unión, hacer la evaluación de riesgo y la planificación anual y plurianual, ejecutar las "
- "actividades de examen de cada proveedor designado y, textualmente, el <b>seguimiento de las recomendaciones "
- "que se hayan emitido en 2026</b>. Entre las salidas esperadas hay dos que importan: un <b>estudio de "
- "viabilidad sobre la recogida de datos maestros de los registros de información</b> y el informe anual sobre "
- "incidentes graves. Y una tercera que es política: <b>apoyo técnico a la Comisión para una posible propuesta "
- "legislativa</b> al amparo de la cláusula de revisión de DORA.",
- "Tres lecturas aprovechables. La primera: esa frase sobre recomendaciones de 2026 <b>confirma que el ciclo de "
- "vigilancia ya ha producido recomendaciones</b>, así que quien dependa de un proveedor designado debería "
- "preguntarle por su estado de remediación, porque en 2027 se le va a hacer seguimiento. La segunda: el "
- "estudio sobre datos maestros anticipa <b>más presión de calidad de dato y posible cambio en la mecánica de "
- "recogida</b> del registro de información, que es justo donde más fricción tienen los clientes. La tercera: "
- "<b>la revisión de DORA deja de ser hipótesis</b>, porque las autoridades ya están asignando recursos a "
- "asesorar a la Comisión.",
- 'La nota conjunta sobre las <a href="https://www.eba.europa.eu/publications-and-media/press-releases/european-'
- 'supervisory-authorities-set-priorities-2027" @L>prioridades de las autoridades europeas de supervisión para '
- '2027</a>.',
- "El documento <b>no fija fechas por entregable</b>: ni cuándo se actualiza la lista de proveedores críticos, "
- "ni cuándo sale el estudio de viabilidad, ni cuándo presentaría la Comisión su propuesta. No venderlo como "
- "calendario. Y un dato que conviene tener a mano: <b>la lista de proveedores designados sigue siendo la de "
- "noviembre de 2025, con 19 nombres</b>, y cualquier alta cambiará obligaciones contractuales y de registro "
- "para quien los use."),
+("fin", "Banco Central Europeo · carta SSM-2026-0301, plazo del 31 de octubre de 2026", True,
+ "El sábado vence el plazo para que las entidades significativas entreguen su plan de acción contra las "
+ "ciberamenazas potenciadas por IA, y el supervisor lo ancló expresamente en DORA",
+ "La carta la firmó <b>Claudia Buch</b> el <b>7 de julio de 2026</b>, va dirigida «al consejero delegado de la "
+ "entidad significativa» y pide un plan de acción concreto frente al cambio que la IA introduce en el "
+ "panorama de ciberamenazas. El plazo es literal: «este plan de acción debe remitirse al <b>Equipo Conjunto de "
+ "Supervisión</b> correspondiente antes del <b>31 de octubre de 2026</b>». Se reconfirmó dentro de la ventana, "
+ "en la entrevista de <b>Frank Elderson</b> publicada el 20 de octubre: «se espera que nos remitan planes de "
+ "acción concretos para tratar los riesgos ciber relacionados con la IA a finales de octubre». La carta dice "
+ "que «los requisitos establecidos en <b>DORA</b> siguen siendo altamente relevantes y válidos», sitúa la "
+ "responsabilidad en el <b>órgano de administración</b> y avisa de que pueden tener que revisarse las "
+ "decisiones estratégicas sobre tecnología, las inversiones, la asignación de recursos y los marcos de "
+ "tolerancia al riesgo tecnológico. Sus tres prioridades a corto plazo son <b>acelerar la gestión de "
+ "vulnerabilidades y el parcheo a escala</b>, <b>mejorar la monitorización, la detección y las capacidades "
+ "defensivas asistidas por IA</b> y <b>verificar que la gestión del riesgo de terceros es adecuada a la "
+ "situación actual</b>, a la vista del papel de los proveedores de servicios tecnológicos en las cadenas de "
+ "suministro críticas. Exige además cerrar sin demora los hallazgos abiertos, incluidos los de la prueba de "
+ "resistencia de ciberresiliencia de 2024.",
+ "Es la obligación supervisora con más exigencia operativa del trimestre y vence esta semana. Lo que hay que "
+ "decirle al cliente, por orden. <b>Primero, qué pasa después del 31:</b> el Equipo Conjunto discutirá el plan "
+ "con la entidad y vigilará su avance, y el Banco Central hará un <b>análisis horizontal de todos los planes "
+ "recibidos</b> para identificar tendencias, cuyas conclusiones compartirá. Es decir, tu plan se va a comparar "
+ "con los de tus competidores. <b>Segundo, que la carta trae un alivio compensatorio</b> que conviene "
+ "aprovechar: desplaza la recogida anual del <b>cuestionario de riesgo tecnológico de septiembre de 2026 a "
+ "febrero de 2027</b>, y abre a valoración caso a caso el ajuste de inspecciones y de remediaciones en áreas "
+ "no prioritarias. <b>Y tercero, lo que viene</b>: la carta anuncia que el Banco Central tratará el riesgo que "
+ "la computación cuántica supone para el cifrado tradicional <b>en una carta separada</b>, que todavía no se "
+ "ha publicado. Quien no tenga inventario criptográfico debería empezarlo ahora, y esta semana hay una señal "
+ "nacional en la misma dirección.",
+ 'La <a href="https://www.bankingsupervision.europa.eu/press/letterstobanks/shared/pdf/2026/ssm.2026_letter_on_'
+ 'AI_enabled_cybersecurity_threats.en.pdf" @L>carta SSM-2026-0301 de 7 de julio de 2026</a> y la '
+ '<a href="https://www.bankingsupervision.europa.eu/press/interviews/date/2026/html/ssm.in261020~41cc1155bb.en.'
+ 'html" @L>entrevista de Frank Elderson publicada el 20 de octubre de 2026</a>.',
+ "Dos precisiones para no sobrevender el plazo. <b>Es expectativa supervisora, no plazo legal:</b> el verbo de "
+ "la carta es «should be submitted» y Elderson dice «se espera que», y su incumplimiento se gestiona por el "
+ "diálogo con el Equipo Conjunto, no por sanción directa. Y <b>alcanza solo a las entidades significativas</b>, "
+ "no a las menos significativas ni a los proveedores. Dicho eso, no es papel: la carta ancla la exigencia en "
+ "DORA, de modo que las deficiencias que afloren son susceptibles de tratarse como incumplimientos del "
+ "Reglamento y no como recomendaciones. Matiz menor de cita: la entrevista de Elderson se <b>realizó el 14 de "
+ "octubre</b> y se publicó el 20, y dice «a finales de octubre», no «el 31». La fuente de la fecha exacta es "
+ "la carta."),
 
-("fin", "Banco Central Europeo · 14 de octubre de 2026", False,
- "El vicepresidente del Consejo de Supervisión descarta el argumento de que faltan datos históricos para "
- "supervisar el riesgo de IA y el riesgo cuántico",
- "En un discurso cuyo cuerpo es clima y naturaleza, Frank Elderson dedica dos párrafos que son de nuestro "
- "ámbito y que se pueden citar tal cual. Dice que los avances rápidos en inteligencia artificial <b>han "
- "aumentado los riesgos de ciberseguridad y de resiliencia operativa</b>, que se trata de una <b>incógnita "
- "conocida clásica para la que la información retrospectiva por sí sola no sirve</b>, y que <b>eso no impide "
- "que los supervisores actúen</b>. Y añade que el riesgo cuántico sobre la criptografía <b>ya es un riesgo "
- "hoy</b>, por la recolección de información cifrada para descifrarla más adelante. La conclusión transversal "
- "es que estas macrotendencias exigen un marco de gestión de riesgos mejorado <b>con la capacidad de "
- "escenarios como pilar central</b>. Se apoya en la carta de Claudia Buch a los consejeros delegados de julio "
- "sobre amenazas de ciberseguridad habilitadas por IA.",
- "Es la señal supervisora más clara de la semana en el Mecanismo Único, y sirve literalmente para llevar al "
- "consejo de administración de un cliente: <b>el argumento de que no hay datos históricos suficientes está "
- "descartado por el vicepresidente del Consejo de Supervisión</b>. Eso justifica meter IA ofensiva y "
- "criptografía poscuántica en el análisis de escenarios y en el proceso de evaluación de la adecuación del "
- "capital, no solo en el plan de ciberseguridad, que es donde suelen quedarse aparcadas.",
- 'El <a href="https://www.bankingsupervision.europa.eu/press/speeches/date/2026/html/ssm.sp261014~02407f2add.'
- 'en.html" @L>discurso de Frank Elderson de 14 de octubre de 2026</a> y la <a href="https://www.'
- 'bankingsupervision.europa.eu/press/letterstobanks/shared/pdf/2026/ssm.2026_letter_on_AI_enabled_cybersecurity'
- '_threats.en.pdf" @L>carta de Claudia Buch de 7 de julio de 2026</a>.',
- "Es un <b>discurso, no una expectativa supervisora formal ni una guía</b>. Se cita como señal de criterio, no "
- "como requisito. La carta de julio queda fuera de ventana y va como respaldo, no como novedad."),
+("fin", "Autoridad Bancaria Europea · 21 y 22 de octubre de 2026", True,
+ "El supervisor bancario europeo se queda sin web por las vulnerabilidades de PHP y tiene que prorrogar cuatro "
+ "consultas públicas",
+ "Es el caso más didáctico de la semana porque le pasó a un supervisor. El <b>21 de octubre de 2026</b> "
+ "CERT-EU alertó a las organizaciones de dos fallos críticos de seguridad en software usado para operar muchos "
+ "sitios web, «incluido el de la Autoridad Bancaria Europea». <b>Como precaución, la EBA retiró su web de "
+ "servicio ese mismo día a las 13:00 CEST</b> mientras aplicaba las actualizaciones necesarias, y la "
+ "restableció el <b>22 de octubre a las 14:00 CEST</b>, veinticinco horas después. Su nota declara "
+ "expresamente que <b>no ha detectado ninguna brecha y que ningún dato se ha visto comprometido</b>. "
+ "Consecuencia práctica: hubo que prorrogar hasta el <b>26 de octubre</b>, es decir hoy, los plazos de cuatro "
+ "consultas públicas que vencían durante la caída, las referencias EBA/CP/2026/12 sobre inversión de recursos "
+ "financieros disponibles, EBA/CP/2026/13 sobre información a depositantes, EBA/CP/2026/14 sobre intercambio de "
+ "información y EBA/CP/2026/02/10 sobre metodología de multas del reglamento de criptoactivos. <b>Ninguna de "
+ "las cuatro es de DORA.</b>",
+ "Llévatelo a un cliente como el ejemplo más limpio que vas a encontrar este año de <b>decisión de apagado "
+ "preventivo bien tomada y bien comunicada</b>, porque la tomó una autoridad que supervisa la resiliencia "
+ "operativa de otros. Tres cosas que hizo bien y que se pueden copiar literalmente. Publicó la <b>hora exacta "
+ "de retirada y de restablecimiento</b>, que es lo que permite a un tercero medir el impacto en vez de "
+ "especular. Declaró <b>qué no pasó</b>, separando «apagamos por precaución» de «nos entraron», que es la "
+ "distinción que casi todo el mundo mezcla en caliente. Y gestionó la <b>consecuencia jurídica del apagón</b>: "
+ "los plazos administrativos que corrían sobre el servicio caído se prorrogaron de oficio y se anunciaron. Esa "
+ "tercera es la que nadie tiene prevista. Pregunta de diagnóstico para tu cliente: si mañana apagas tu portal "
+ "por precaución, <b>qué plazos legales o contractuales se te caen con él y quién está autorizado a "
+ "prorrogarlos</b>.",
+ 'La <a href="https://www.eba.europa.eu/publications-and-media/press-releases/eba-extends-some-consultation-'
+ 'deadlines-due-website-maintenance" @L>nota de la Autoridad Bancaria Europea de 22 de octubre de 2026</a>.',
+ None),
 
-("fin", "ESMA · 16 de octubre de 2026", True,
- "Cerrado el marco de la liquidación en un día, y con él aparece un plazo a siete semanas que obliga a "
- "cambiar sistemas y no es de DORA",
- "ESMA publicó las directrices revisadas sobre procedimientos normalizados y protocolos de mensajería, que son "
- "la última pieza del marco regulatorio de la liquidación en un día hábil. Los hechos con fecha: la Unión pasa "
- "a <b>T+1 el 11 de octubre de 2027</b>, pero el primer plazo es el <b>7 de diciembre de 2026</b>, cuando "
- "empresas de servicios de inversión <b>y sus clientes</b> deben cumplir los requisitos nuevos de asignaciones "
- "y confirmaciones, incluido el <b>uso obligatorio de canales electrónicos normalizados</b>, de estándares "
- "internacionales de mensajería y de <b>métodos legibles por máquina, salvo interrupción técnica temporal</b>. "
- "La presidencia de ESMA pide finalizar preparativos técnicos, evaluar la preparación de todo el ecosistema y "
- "empezar a probar cuanto antes.",
- "Es el único plazo vivo de verdad del sector financiero esta semana, y tiene sustancia tecnológica: cambios "
- "de sistemas, interfaces con custodios y brokers, y una excepción de «interrupción técnica temporal» que hay "
- "que <b>saber documentar antes de necesitarla</b>. Para una empresa de servicios de inversión o una gestora "
- "española esto es gestión del cambio, pruebas y evidencia ante la CNMV, y <b>se solapa de lleno con las "
- "obligaciones de DORA de gestión de cambios y de pruebas</b>. Quien lo trate como proyecto de operaciones y "
- "no lo cruce con su marco de DORA va a hacer el trabajo dos veces.",
- 'La nota de ESMA sobre el <a href="https://www.esma.europa.eu/press-news/esma-news/one-year-go-t1-settlement-'
- 'regulatory-framework-complete-now-lets-make-it" @L>marco regulatorio de T+1, ya completo</a>.',
- "Que quede claro para no confundir al cliente: <b>esto no es DORA</b>. Y las directrices quedan pendientes de "
- "traducción y del procedimiento habitual de cumplir o explicar, de modo que su fecha de aplicación formal "
- "puede moverse aunque el 7 de diciembre no lo haga."),
+("fin", "Banco de España y Banco de Portugal · 23 de octubre de 2026", False,
+ "Los dos bancos centrales firman un programa de cooperación en criptografía poscuántica, y se anticipan a una "
+ "carta del Banco Central Europeo que todavía no existe",
+ "El <b>23 de octubre de 2026</b>, en una reunión de alto nivel celebrada en Lisboa el jueves y el viernes, el "
+ "<b>Banco de España</b> y el <b>Banco de Portugal</b> firmaron un <b>memorando de entendimiento</b> por el que "
+ "se comprometen a desplegar un <b>Programa de Cooperación en Criptografía Post Cuántica</b>. El objetivo "
+ "declarado es hacer frente de forma más eficaz a los riesgos emergentes de ciberseguridad y de estabilidad "
+ "financiera que plantea el desarrollo de la computación cuántica. Es la <b>única novedad sustantiva de "
+ "ciberseguridad producida por un supervisor español en toda la ventana</b>: el índice de circulares del Banco "
+ "de España sigue con la última de diciembre de 2025, y sus otros cuatro elementos de la semana no tienen "
+ "componente tecnológico.",
+ "No crea ninguna obligación jurídica nueva, y hay que decirlo así: es un memorando entre bancos centrales, no "
+ "una circular. Su valor es de <b>anticipación supervisora</b>, y encaja con una pieza que el Banco Central "
+ "Europeo dejó pendiente. La carta del 7 de julio anuncia que tratará el riesgo cuántico sobre el cifrado "
+ "tradicional <b>en una carta separada</b>, y advierte de que la adopción de criptografía poscuántica «puede "
+ "implicar un plazo más largo, pero <b>debe empezar ahora</b>». El movimiento del Banco de España adelanta a "
+ "escala nacional la línea que el Banco Central formalizará por carta, y además se dota de un socio para "
+ "hacerlo. La lectura práctica para una entidad: si no tienes <b>inventario criptográfico</b> ni hoja de ruta "
+ "de migración, empiézalos este trimestre, porque es previsible que el supervisor pregunte y la autoridad "
+ "nacional ya se ha dotado de capacidad. Y el inventario criptográfico es, además, el entregable que sirve para "
+ "las dos cosas: la migración poscuántica y el gobierno de certificados, que esta semana ha dado un susto por "
+ "otro lado.",
+ 'La <a href="https://www.bde.es/wbe/es/noticias-eventos/actualidad-banco-espana/notas-banco-espana/el-banco-de-'
+ 'espana-y-el-banco-de-portugal-refuerzan-la-cooperacion-en-migracion-a-la-criptografia-cuantica-y-riesgos-de-'
+ 'ciberseguridad.html" @L>nota informativa del Banco de España de 23 de octubre de 2026</a>.',
+ None),
 
-("fin", "CNMV · 14 y 15 de octubre de 2026", False,
- "La CNMV no ha incluido el riesgo tecnológico ni la ciberseguridad entre sus prioridades de supervisión del "
- "informe anual de 2026",
- "Dos actuaciones en la ventana. El <b>14 de octubre</b> la CNMV comunicó las <b>prioridades de supervisión "
- "del informe anual de 2026</b> de las sociedades cotizadas, y son dos: el desglose del impacto esperado de la "
- "NIIF 18 en su primera aplicación, y la descripción del modelo de negocio y la cadena de valor en "
- "sostenibilidad. <b>Ninguna de riesgo tecnológico ni de ciberseguridad.</b> El <b>15 de octubre</b> abrió "
- "audiencia pública de un proyecto de circular que amplía el procedimiento de reclamaciones a los servicios de "
- "criptoactivos y de financiación participativa, con plazo de comentarios hasta el 16 de noviembre.",
- "El dato negativo es el aprovechable, y es defendible precisamente porque es negativo: <b>si alguien esperaba "
- "presión de información sobre ciberriesgo por la vía del informe anual, este ejercicio no la hay</b>. A un "
- "cliente cotizado que estuviera dimensionando esfuerzo de desglose, eso le ahorra trabajo este año y le dice "
- "dónde ponerlo: en la NIIF 18 y en la cadena de valor. Y conviene añadir el contexto, porque el riesgo no "
- "desaparece por no estar en esa lista: la obligación de información privilegiada del artículo 17 del "
- "reglamento de abuso de mercado sigue intacta y es la que de verdad se activa el día del incidente.",
- 'Las <a href="https://www.cnmv.es/portal/aldia/notasprensa.aspx?tipoNP=1" @L>notas de prensa de la CNMV</a>, '
- 'con la comunicación de prioridades de 14 de octubre y la consulta de 15 de octubre.',
- "Laguna de cobertura que hay que declarar: <b>no se ha podido consultar el registro de hechos relevantes y de "
- "otra información relevante de la CNMV</b>, cuyo servidor cerró la conexión en dos intentos. Para el sector "
- "cotizado español esta semana <b>no hay barrido primario</b>, de modo que no se puede afirmar que ninguna "
- "cotizada comunicara un incidente entre el 13 y el 18 de octubre."),
+("fin", "Reglamento Delegado (UE) 2026/1536 · publicado el 14 de octubre de 2026", False,
+ "El camino hacia la liquidación en un día ya es derecho vigente con calendario escalonado, y el primer corte "
+ "llega el 7 de diciembre",
+ "Dato que la edición pasada no recogía y que cambia la naturaleza del plazo: la norma que fija los requisitos "
+ "de asignaciones y confirmaciones <b>ya está publicada en el Diario Oficial</b>, el 14 de octubre de 2026, y "
+ "<b>entra en vigor el 3 de noviembre de 2026</b>. Ya no es un proyecto. Su artículo 2 establece un calendario "
+ "en <b>tres tramos</b>: aplicación general desde el <b>7 de diciembre de 2026</b>, un segundo grupo de "
+ "preceptos desde el <b>1 de julio de 2027</b> y un tercero desde el <b>11 de octubre de 2027</b>, que es el "
+ "día en que la Unión pasa a liquidación en un día hábil por el Reglamento (UE) 2025/2075. Lo que entra el 7 "
+ "de diciembre son las asignaciones y confirmaciones escritas por <b>canales electrónicos normalizados y en "
+ "formato legible por máquina</b>, y el detalle operativo que casi nadie ha visto: para clientes profesionales "
+ "el corte es <b>las 23:00 hora central europea del mismo día hábil en que se haya realizado la operación</b>. "
+ "Entran en vigor el mismo 3 de noviembre otros dos reglamentos del paquete, el 2026/1519 y el 2026/1512, sobre "
+ "la información que los depositarios centrales facilitan a su autoridad competente.",
+ "La frase que un responsable de operaciones necesita oír es esta: <b>el corte de las 23:00 llega diez meses "
+ "antes que el T+1</b>. Hay una tendencia natural a tratar todo este expediente como un problema de octubre de "
+ "2027, y no lo es: el <b>7 de diciembre de 2026</b> hay que tener ya los canales electrónicos normalizados, "
+ "los estándares de mensajería y los métodos legibles por máquina funcionando, y una ventana que cierra a las "
+ "23:00 del día de la operación no se cumple con un proceso manual ni con un correo. Desde la perspectiva de "
+ "DORA, además, esto es exactamente la clase de cambio que debería pasar por el marco de gestión del cambio y "
+ "por el análisis de impacto en los procesos críticos: se tocan contratación, confirmación, custodia y "
+ "liquidación a la vez, con plazo de seis semanas y con dependencia de proveedores de mensajería.",
+ 'El <a href="https://publications.europa.eu/resource/celex/32026R1536" @L>Reglamento Delegado (UE) '
+ '2026/1536</a>, cuyo artículo 2 fija los tres tramos, y el <a href="https://publications.europa.eu/resource/'
+ 'celex/32025R2075" @L>Reglamento (UE) 2025/2075</a>, que fija el 11 de octubre de 2027.',
+ None),
+
+("fin", "CNMV · BOE de 19 de octubre de 2026", False,
+ "Publicada una sanción muy grave a una sociedad de valores y a sus tres consejeros en la que la "
+ "externalización de actividades esenciales va dentro del mismo tipo infractor",
+ "El BOE del <b>19 de octubre de 2026</b> publicó las sanciones por tres infracciones muy graves impuestas por "
+ "el Consejo de la CNMV el 25 de junio de 2026 a una sociedad de valores y a <b>sus tres consejeros</b>. La "
+ "primera infracción es la que interesa aquí: incumplimiento de los requisitos organizativos del artículo 176 "
+ "de la Ley 6/2023, «en lo relativo a la salvaguarda y protección de los fondos en efectivo de los clientes, la "
+ "llevanza de los registros, las funciones de control interno, y <b>la externalización de actividades "
+ "esenciales</b>». Las multas de ese solo tipo: <b>300.000 euros</b> a la sociedad y <b>80.000, 80.000 y "
+ "64.000 euros</b> a los tres consejeros a título personal. Las otras dos infracciones son de gobernanza de "
+ "productos y suman otros 100.000 euros a la sociedad y 84.000 a los administradores.",
+ "Es la pieza de precedente que conviene guardar, por dos razones que un consejo entiende a la primera. "
+ "<b>Primera: la externalización no se sanciona como un expediente aparte, va dentro del tipo infractor de "
+ "requisitos organizativos</b>, junto al control interno y a la llevanza de registros. Es decir, un fallo de "
+ "gestión de proveedores no es un hallazgo técnico: es un defecto de organización de la entidad, y se trata "
+ "como tal. <b>Segunda: la sanción alcanza a los miembros del consejo a título personal</b>, con importes de "
+ "cinco cifras cada uno. Cuando haya que explicar por qué el órgano de administración tiene que aprobar y "
+ "revisar la política de terceros, esta resolución vale más que cualquier cita de DORA, porque es española, es "
+ "reciente, está en el BOE y tiene nombres. Encaja además con la prioridad que el Banco Central Europeo ha "
+ "puesto esta misma semana sobre la gestión del riesgo de terceros.",
+ 'La <a href="https://www.boe.es/boe/dias/2026/10/19/pdfs/BOE-A-2026-21776.pdf" @L>resolución de la CNMV '
+ 'publicada en el BOE de 19 de octubre de 2026</a>.',
+ "Precisión de fechas, porque hay tres y es fácil citar la que no toca: la resolución sancionadora es del "
+ "<b>25 de junio de 2026</b>, la resolución que ordena publicarla es del <b>2 de octubre</b>, y el <b>19 de "
+ "octubre</b> es la publicación en el BOE. Lo que cae en la ventana es la publicación. Y conviene no "
+ "extrapolar: el expediente no es de ciberseguridad, es de requisitos organizativos, y la externalización es "
+ "uno de los cuatro elementos citados, no el único ni necesariamente el principal."),
 ]
 
 ITEMS += [
 
-("std", "ISO/IEC JTC 1/SC 27 · 14 de octubre de 2026", True,
- "La ISO publica la 27090, que es la primera norma que baja a amenazas y compromisos concretos de sistemas de "
- "inteligencia artificial",
- "<b>ISO/IEC 27090:2026</b>, «Ciberseguridad, inteligencia artificial, tratamiento de amenazas y compromisos "
- "de seguridad de sistemas de IA», primera edición, del subcomité 27. Consta en estado <b>60.60, publicada</b>, "
- "con fecha de <b>14 de octubre de 2026</b>. Es nueva y no sustituye a ninguna anterior.",
- "Cubre el hueco que ni la 42001 ni la 23894 resuelven. La <b>ISO/IEC 42001 es sistema de gestión</b> y la <b>ISO/IEC 23894 es "
- "gestión de riesgos</b>, pero <b>ninguna de las dos baja a amenazas concretas</b>: envenenamiento de datos, "
- "extracción de modelo, evasión, ataques a la cadena de suministro de modelos. Para un cliente con IA en "
- "producción, esta es la norma que permite construir controles defendibles y es la candidata natural a anexarse "
- "a una Declaración de Aplicabilidad de la 27001 cuyo alcance incluya IA. Y encaja justo con el requisito de "
- "ciberseguridad del artículo 15 del Reglamento de IA, que es <b>precisamente uno de los puntos que sigue sin "
- "norma armonizada europea</b>.",
- 'La ficha de <a href="https://www.iso.org/standard/27090" @L>ISO/IEC 27090:2026 en el catálogo de la ISO</a>.',
- "Tres cautelas. Es norma ISO/IEC, <b>no norma armonizada europea</b>: no da presunción de conformidad con el "
- "Reglamento de IA. <b>No es certificable por sí sola</b>, porque no contiene requisitos de sistema de "
- "gestión. Y la coincidencia de fecha con la decisión europea del mismo día es casualidad, no coordinación: no "
- "presentarlas como paquete. Nota de verificación útil: los buscadores y la propia página explicativa de la "
- "ISO todavía devuelven «en proceso de publicación» para esta norma; <b>son copias desfasadas</b>, la ficha "
- "viva dice 60.60 desde el 14 de octubre. Si alguien enseña una captura que dice lo contrario, no es una "
- "refutación."),
+("std", "ISO/IEC 27028 · etapa de publicación alcanzada el 20 de octubre de 2026", True,
+ "Llega la guía que faltaba para explotar los atributos de los controles del 27002, cuatro años después de que "
+ "esos atributos existan",
+ "El <b>20 de octubre de 2026</b> la norma <b>ISO/IEC 27028</b>, «Guidance on using information security control "
+ "attributes», alcanzó la etapa <b>60.00</b>, que es «norma internacional en publicación», y su ficha declara "
+ "<b>fecha de publicación prevista en noviembre de 2026</b>. Es la noticia más accionable de la semana para "
+ "quien trabaje con ISO/IEC 27001. El contexto: la ISO/IEC 27002:2022 colgó de cada uno de sus controles "
+ "<b>cinco atributos</b>, que son tipo de control, propiedades de seguridad de la información, conceptos de "
+ "ciberseguridad, capacidades operativas y dominios de seguridad. Llevan cuatro años infrautilizados porque "
+ "nadie había publicado cómo explotarlos. El 27028 es esa guía. En la misma ventana se movieron otras cuatro "
+ "normas del mismo subcomité: se publicó <b>ISO/IEC 5181:2026</b> sobre procedencia del dato el 23 de octubre, "
+ "se publicó una enmienda a la 20009-4 el 20 de octubre, y avanzaron de etapa los proyectos de distribución "
+ "cuántica de claves y de credenciales basadas en atributos.",
+ "El impacto es muy concreto y se nota en tres entregables que haces todas las semanas. <b>La Declaración de "
+ "Aplicabilidad</b>: con los atributos bien usados deja de ser una lista plana de 93 controles y pasa a ser "
+ "filtrable por capacidad operativa o por propiedad de seguridad, lo que permite a un cliente ver su cobertura "
+ "por dominio en lugar de por número de control. <b>Las correspondencias</b>: los atributos son el puente "
+ "natural para mapear a NIST CSF 2.0, al anexo II del ENS o a los requisitos de NIS2, y hacerlo por atributo "
+ "en vez de control a control reduce el trabajo y el margen de discusión. Y <b>la justificación de "
+ "exclusiones</b> ante un auditor, que es donde más se pelea: un control excluido se defiende mucho mejor "
+ "demostrando que su capacidad operativa está cubierta por otros. Vigila noviembre: en cuanto se publique, es "
+ "el documento con el que rehacer la plantilla de Declaración de Aplicabilidad.",
+ 'La ficha de <a href="https://www.iso.org/standard/61007.html" @L>ISO/IEC 27028</a> y la de '
+ '<a href="https://www.iso.org/standard/80971.html" @L>ISO/IEC 5181:2026</a> en el catálogo de la ISO.',
+ "Etapa 60.00 no es publicada: es <b>en publicación</b>. La norma no se puede comprar ni citar como vigente "
+ "hasta que alcance la 60.60, y su ficha dice noviembre de 2026 como previsión, no como compromiso. Lo correcto "
+ "es anunciarla como inminente y no construir todavía un entregable de cliente sobre su contenido, que no es "
+ "público. Nota de método: iso.org bloquea el acceso automatizado, y el mismo catálogo sí es consultable por el "
+ "dominio de comités."),
 
-("std", "NIST · plazo al 30 de noviembre de 2026", False,
- "El borrador de la guía de seguridad de tecnología operacional está abierto a comentarios, y es el único "
- "plazo de normalización de la semana con sustancia para un consultor",
- "El NIST no publicó nada entre el 13 y el 18 de octubre: comprobado el listado de publicaciones ordenado por "
- "fecha, lo más reciente es del 8 de octubre. Lo que sí hay son borradores abiertos, y entre ellos uno que "
- "importa: <b>SP 800-82 revisión 4, guía de seguridad de tecnología operacional</b>, con comentarios hasta el "
- "<b>30 de noviembre de 2026</b>. El resto de lo abierto es criptografía y telecomunicaciones: estaciones base "
- "falsas en 5G hasta el 30 de octubre, perfil de redes de acceso radio abiertas hasta el 2 de noviembre y "
- "funciones derivadas de SHA-3 hasta el 7 de diciembre. Cerró dentro de la ventana, el 15 de octubre, el de la "
- "guía rápida sobre uso de IA para analizar el marco de ciberseguridad.",
- "La SP 800-82 es la referencia que más se cita en proyectos industriales y la que muchos clientes usan como "
- "columna vertebral de su programa de tecnología operacional. Una revisión en borrador es la última ocasión de "
- "influir en el texto, y para quien no vaya a comentar sigue siendo útil: <b>leer el borrador es ver con un "
- "año de antelación hacia dónde se mueve el consenso</b> en segmentación, acceso remoto de mantenedores e "
- "inventario, que es exactamente lo que la alerta francesa sobre controladores de refrigeración de esta misma "
- "semana ha puesto a prueba en la práctica.",
- 'El borrador de <a href="https://csrc.nist.gov/pubs/sp/800/82/r4/ipd" @L>NIST SP 800-82 revisión 4, guía de '
- 'seguridad de tecnología operacional</a>.',
- "La ISO no publica fechas de cierre de votación en las páginas públicas de sus normas, solo el código de "
- "etapa alcanzado. Por eso este boletín no da fechas de proyectos ISO: <b>no se inventan</b>."),
+("std", "ISO/IEC JTC 1/SC 42 · 19 a 24 de octubre de 2026", True,
+ "Cuatro proyectos de inteligencia artificial entran en publicación en tres días, y dos de ellos son "
+ "exactamente lo que el Reglamento de IA exige y nadie sabía cómo evidenciar",
+ "Semana densa en el subcomité de inteligencia artificial, con <b>siete movimientos de etapa</b>. Los dos que "
+ "importan de verdad. <b>ISO/IEC 42105</b>, «Guidance for human oversight of AI systems», alcanzó la etapa "
+ "<b>60.00 el 22 de octubre</b>. Y <b>ISO/IEC 24970</b>, «AI system logging», la alcanzó el <b>24 de "
+ "octubre</b>. Las dos están en publicación, es decir a semanas. Entraron también en publicación la "
+ "<b>ISO/IEC TS 22443</b> sobre preocupaciones sociales y consideraciones éticas, el 22 de octubre, y avanzaron "
+ "a fase de aprobación el informe técnico <b>42103</b> sobre datos sintéticos, el 19 de octubre, y la norma "
+ "<b>4213</b> de medición del rendimiento, el 21 de octubre. Fuera de la ventana pero necesario para situarlo: "
+ "la <b>ISO/IEC 27090</b> sobre amenazas específicas a sistemas de IA se publicó el <b>14 de octubre</b>, es "
+ "decir la semana anterior, y no es novedad de esta.",
+ "Aquí está el encaje que convierte una lista de normas en trabajo facturable. La <b>supervisión humana es "
+ "requisito del artículo 14 del Reglamento (UE) 2024/1689</b> para los sistemas de alto riesgo, y hasta ahora "
+ "no existía norma internacional que dijese cómo diseñarla y, sobre todo, cómo <b>evidenciarla</b> en un "
+ "expediente técnico. Eso es la 42105. El <b>registro automático de eventos es obligación del artículo 12</b> "
+ "y pieza de la trazabilidad que exige el anexo IV, y eso es la 24970. Las dos llegan justo cuando los "
+ "clientes con casos de uso del anexo III tienen el 2 de diciembre de 2027 como fecha de aplicación del "
+ "capítulo III. El mensaje a un cliente que esté montando cumplimiento del Reglamento de IA es que <b>lo que "
+ "llega en seis u ocho semanas es el paquete de evidencias</b>, y que conviene no cerrar el diseño de la "
+ "supervisión humana ni del registro antes de ver esos dos textos.",
+ 'Las fichas de <a href="https://www.iso.org/standard/86902.html" @L>ISO/IEC 42105</a> y de '
+ '<a href="https://www.iso.org/standard/88723.html" @L>ISO/IEC 24970</a>, y la de '
+ '<a href="https://www.iso.org/standard/27090" @L>ISO/IEC 27090:2026</a>, publicada el 14 de octubre.',
+ None),
 
-("std", "ENAC · 14 de octubre de 2026", False,
- "La entidad española de acreditación supera la evaluación por pares europea, pero la decisión del acuerdo "
- "multilateral todavía no está tomada",
- "ENAC comunicó que ha finalizado con valoración muy positiva la evaluación por pares de la cooperación "
- "europea de acreditación, realizada <b>entre el 5 y el 9 de octubre de 2026</b> con trece auditores de diez "
- "organismos nacionales, revisión documental, entrevistas y acompañamiento en dieciséis auditorías de "
- "distintos esquemas. Con el cierre de la visita se abre la fase siguiente, que culminará con la decisión del "
- "consejo del acuerdo multilateral.",
- "Es infraestructura, de la que solo se nota cuando falla. El acuerdo multilateral es lo que hace que un "
- "certificado ISO/IEC 27001 emitido por una entidad acreditada por ENAC <b>se acepte fuera de España sin "
- "repetir auditoría</b>. Sirve como argumento ante clientes o licitaciones europeas que cuestionen la validez "
- "transfronteriza de un certificado español, que es una objeción que aparece más de lo que debería.",
- 'La nota de ENAC sobre la <a href="https://www.enac.es/actualidad/evaluacion-enac-ea-2026" @L>evaluación por '
- 'pares de 2026</a>.',
- "<b>No decir que ENAC ha renovado el acuerdo multilateral</b>: la decisión del consejo todavía no está "
- "tomada. Lo que ha hecho es completar la evaluación con resultado positivo. Los hallazgos no son públicos."),
+("std", "Reglamento de Ciberresiliencia · normas armonizadas, a 26 de octubre de 2026", True,
+ "Ninguna norma armonizada del Reglamento citada en el Diario Oficial, y el compromiso de los organismos "
+ "europeos de normalización era entregarlas antes de diciembre de 2026",
+ "Barrido el Diario Oficial de la ventana y el histórico completo, <b>no existe a 26 de octubre de 2026 ninguna "
+ "comunicación de la Comisión que cite normas armonizadas en apoyo del Reglamento (UE) 2024/2847</b>. "
+ "Comprobado por dos vías independientes, actos basados en el Reglamento y actos que lo citan, y con validación "
+ "del método: la misma consulta sí detecta la decisión de ejecución que citó la primera norma armonizada del "
+ "Reglamento de IA el 14 de octubre, y las de equipos a presión y protección individual. El contraste con el "
+ "calendario es el dato: la petición de normalización del Reglamento de Ciberresiliencia, el mandato M/606, "
+ "fue <b>aceptada por CEN, CENELEC y ETSI el 3 de abril de 2025</b>, y las tres se comprometieron a entregar "
+ "las normas armonizadas «<b>al menos un año antes de que el Reglamento entre en aplicación</b>», es decir "
+ "antes de diciembre de 2026. Quedan seis semanas para ese compromiso y trece meses y medio para la obligación "
+ "legal del 11 de diciembre de 2027.",
+ "Este asunto y el de los organismos notificados son la misma historia contada por sus dos extremos, y juntos "
+ "dibujan el riesgo de calendario más serio del ámbito normativo ahora mismo. <b>Sin norma armonizada no hay "
+ "presunción de conformidad</b>, de modo que un fabricante no puede autodeclararse conforme apoyándose en un "
+ "estándar citado, y queda empujado hacia la evaluación por tercero. Y <b>sin organismos notificados no hay "
+ "tercero al que acudir</b>. Las dos cosas a la vez, a trece meses de la aplicación general. Para el cliente, "
+ "la conclusión práctica no es alarmarse, es secuenciar: trabajar ya el expediente técnico y el inventario de "
+ "componentes, que no dependen de la norma armonizada, y dejar la decisión de vía de conformidad para cuando "
+ "exista al menos una de las dos piezas. Y si fabrica equipo radioeléctrico conectado, tener presente que el "
+ "régimen anterior ya se cerró: el Reglamento Delegado (UE) 2026/339 derogó en abril el acto de ciberseguridad "
+ "de la directiva de equipos radioeléctricos.",
+ 'El repositorio del Diario Oficial, consultado por su interfaz de consulta estructurada, y la '
+ '<a href="https://www.cencenelec.eu/news-events/news/2025/newsletter/ots-62-cra/" @L>nota de CEN y CENELEC '
+ 'sobre la aceptación del mandato del Reglamento de Ciberresiliencia</a>.',
+ "Cautela declarada: el listado proyecto a proyecto de los comités que redactan esas normas <b>no se ha podido "
+ "reconfirmar esta semana</b>, porque la base de datos de proyectos de CEN y CENELEC devuelve error de servidor "
+ "y la plataforma de mandatos de la Comisión no sirve los datos sin ejecutar su aplicación. Queda por tanto "
+ "<b>no reconfirmado en fuente primaria esta semana</b> en qué etapa está cada entregable. Lo que sí está "
+ "verificado es lo que de verdad importa: que ninguna norma armonizada del Reglamento ha llegado al Diario "
+ "Oficial, y que ni el comité ni CEN y CENELEC anunciaron nada en la ventana."),
+
+("std", "NIST · 21 y 22 de octubre de 2026", False,
+ "Dos borradores nuevos, y los dos son de gobernanza: el riesgo tecnológico dentro del mapa de riesgos "
+ "corporativo y el manual de seguridad para la dirección reescrito",
+ "El <b>21 de octubre</b> se abrió a comentarios el borrador inicial de <b>SP 800-100 revisión 1</b>, "
+ "«Information Security Handbook: A Guide for Executive Leadership», y el <b>22 de octubre</b> el de <b>SP "
+ "800-221 revisión 1</b>, «Enterprise Impact of Information and Communications Technology Risk: Governing and "
+ "Managing ICT Risk Programs Within an Enterprise Risk Portfolio». Los plazos de comentarios son el <b>4 de "
+ "diciembre</b> y el <b>7 de diciembre de 2026</b>. Lo relevante del 800-100r1 es el por qué de la revisión, "
+ "en palabras del propio anuncio: <b>reestructura el manual para alinearlo con la organización general del "
+ "marco de ciberseguridad 2.0</b> y ofrece resúmenes de alto nivel de gobernanza, gestión de riesgos, "
+ "intercambio de información, concienciación y formación, planificación de contingencias, gestión de la "
+ "configuración y respuesta a incidentes, discutiendo las relaciones entre esos conceptos para la dirección "
+ "ejecutiva, tanto del sector público como del privado.",
+ "Son dos piezas que resuelven el mismo problema desde lados distintos, y es un problema que tienes todas las "
+ "semanas: <b>traducir riesgo tecnológico al lenguaje del consejo</b>. El 800-221r1 es la referencia para "
+ "integrar el riesgo tecnológico en la gestión de riesgos de la empresa, es decir el documento con el que se "
+ "justifica que el riesgo ciber vaya en el mismo mapa que el financiero y el operacional. Eso alimenta "
+ "directamente los informes al órgano de dirección que exige el <b>artículo 20 de NIS2</b> y el marco de "
+ "gobernanza de <b>DORA</b>. Y el 800-100r1 convierte el marco de ciberseguridad 2.0 en narrativa ejecutiva, "
+ "que es material de primera para formar a un comité de dirección sin pasarle un catálogo de controles. "
+ "Ninguno de los dos obliga a nadie en Europa, y los dos van a acabar citados en políticas internas de media "
+ "Europa, así que la ventana de comentarios es la única oportunidad de influir en lo que dentro de dos años "
+ "será estándar de hecho.",
+ 'Los borradores de <a href="https://csrc.nist.gov/pubs/sp/800/221/r1/ipd" @L>SP 800-221 revisión 1</a> y de '
+ '<a href="https://csrc.nist.gov/pubs/sp/800/100/r1/ipd" @L>SP 800-100 revisión 1</a>, y el listado de '
+ '<a href="https://csrc.nist.gov/publications/drafts-open-for-comment" @L>borradores abiertos a comentarios</a>.',
+ "Para completar el cuadro de plazos del NIST, que la tabla de esta edición recoge: siguen abiertos el CSWP "
+ "36G hasta el 30 de octubre, el IR 8623 hasta el 2 de noviembre, el SP 800-82 revisión 4 de seguridad de "
+ "tecnología operacional hasta el 30 de noviembre y el SP 800-185 revisión 1 hasta el 7 de diciembre. Y hay "
+ "<b>tres borradores más con periodo de comentarios abierto sin fecha de cierre</b>, los de verificación de "
+ "identidad personal, que son los que están incorporando los algoritmos poscuánticos. Si alguien dice que los "
+ "plazos del NIST de esta semana son seis, son seis con fecha y tres sin ella."),
+
+("std", "ISO/IEC 27001, 27002 y 42001 · estado del catálogo a 26 de octubre de 2026", False,
+ "Ninguna de las tres normas de referencia tiene revisión abierta, y eso es una buena noticia que conviene "
+ "decirle al cliente",
+ "Revisados los catálogos completos de los dos subcomités que importan, con control explícito de que el método "
+ "ve proyectos cuando existen: <b>no hay ningún proyecto de revisión abierto de ISO/IEC 27001, ni de ISO/IEC "
+ "27002, ni de ISO/IEC 42001</b>. Las tres están en etapa 60.60, publicadas, sin proyecto sucesor declarado en "
+ "su ficha. La única modificación vigente del 27001 sigue siendo la enmienda de 2024 sobre acción climática, ya "
+ "publicada. El control: el catálogo de un subcomité contiene 49 designadores de borrador y el del otro 19, de "
+ "modo que el barrido detecta proyectos; para estas tres no hay ninguno. Lo que sí se mueve es el ecosistema "
+ "de guías alrededor del 27001: el 27003 de aplicación, el 27004 de medición, el 27007 de auditoría y el 27014 "
+ "de gobierno están todos en fases avanzadas, y la nueva edición del vocabulario, la <b>ISO/IEC 27000:2026</b>, "
+ "ya figura en catálogo.",
+ "Es la respuesta directa a la objeción que paraliza más proyectos de certificación: «mejor esperamos a la "
+ "próxima versión». <b>No hay próxima versión en el horizonte.</b> Quien esté certificando o migrando a la "
+ "edición de 2022 no tiene riesgo de cambio de requisitos a corto plazo, y quien esté implantando la 42001 "
+ "tampoco: publicada en diciembre de 2023, su revisión sistemática no le tocaría hasta 2028. Hay, eso sí, un "
+ "hueco que conviene conocer antes de prometer nada sobre gestión de IA: la <b>guía oficial de implantación de "
+ "la 42001</b>, que sería la 42003, lleva <b>diecinueve meses en la primera etapa</b> sin avanzar. No habrá "
+ "guía oficial a corto plazo, así que para implantar hay que seguir apoyándose en la 42005 de evaluación de "
+ "impacto, la 23894 de gestión de riesgos y la 38507 de gobierno. Y un segundo hueco, de acreditación: la ENAC "
+ "<b>sigue sin anunciar esquema sobre la ISO/IEC 42006</b>, que es la que habilita acreditar a quien certifica "
+ "sistemas de gestión de IA, pese a que esa norma se publicó en julio de 2025.",
+ 'Los catálogos de los subcomités <a href="https://www.iso.org/committee/45306/x/catalogue/" @L>ISO/IEC JTC '
+ '1/SC 27</a> y <a href="https://www.iso.org/committee/6794475/x/catalogue/" @L>ISO/IEC JTC 1/SC 42</a>.',
+ None),
 ]
 
 ITEMS += [
 
-("ai", "Diario Oficial, serie L · 14 de octubre de 2026", True,
- "Publicada la primera norma armonizada del Reglamento de IA: la EN 18286 abre la vía de presunción de "
- "conformidad para el sistema de gestión de la calidad",
- "La <b>Decisión de Ejecución (UE) 2026/2274 de la Comisión, de 12 de octubre de 2026</b>, publicada en la "
- "serie L del Diario Oficial el <b>14 de octubre</b>, cita la referencia de la <b>EN 18286:2026</b>, "
- "«Inteligencia artificial, sistema de gestión de la calidad para los fines reglamentarios del Reglamento de "
- "IA de la Unión», de CEN y CENELEC. Su artículo 2 dispone que <b>entra en vigor el día de su publicación</b>, "
- "sin periodo transitorio. Su base jurídica es el artículo 10, apartado 6, del Reglamento 1025/2012, y el "
- "mecanismo de presunción que invoca es el <b>artículo 40 del Reglamento de IA</b>. El objeto se describe por "
- "remisión al <b>punto 9 del anexo I de la petición de normalización C(2025) 3871</b>, que es el de sistemas "
- "de gestión de la calidad de los proveedores, <b>vigilancia poscomercialización incluida</b>. El anexo de la "
- "Decisión contiene <b>una sola norma</b>.",
- "Es la primera vez que un proveedor de IA de alto riesgo tiene una vía normalizada para acreditar el "
- "requisito más de sistema de gestión de todo el Reglamento, y el que más se solapa con lo que los clientes ya "
- "tienen montado. El trabajo pasa de «cumplir como se pueda» a un <b>análisis de brecha contra una norma "
- "europea concreta y auditable</b>. Según la propia Comisión, la EN 18286 se articula <b>en torno al ciclo de "
- "vida del sistema de IA y no al de la organización</b>, y está diseñada para <b>superponerse a la ISO/IEC "
- "42001, la ISO 9001 o un sistema de gestión sectorial, no para sustituirlos</b>. De ahí la lectura comercial: "
- "a quien ya tenga una 42001 se le plantea una extensión, no un proyecto nuevo. Y a partir del 14 de octubre "
- "se puede <b>exigir y ofrecer EN 18286 en contrato</b>, que es lo que cambia de verdad en el día a día.",
- 'La <a href="https://eur-lex.europa.eu/eli/dec_impl/2026/2274/oj" @L>Decisión de Ejecución (UE) 2026/2274 en '
- 'el Diario Oficial</a> y la <a href="https://digital-strategy.ec.europa.eu/en/library/first-harmonised-'
- 'standard-supporting-ai-act-published-official-journal" @L>nota de la Comisión sobre la primera norma '
- 'armonizada del Reglamento de IA</a>.',
- "Cuatro cautelas, y la primera es la que más se va a incumplir por ahí. <b>La Decisión no menciona en ningún "
- "punto el artículo 17 del Reglamento de IA.</b> Invoca el artículo 40 y describe el objeto por remisión a la "
- "petición de normalización; que eso equivalga al artículo 17 es una lectura razonable, pero <b>es lectura, no "
- "texto</b>, y conviene decirlo así. Segunda: la presunción alcanza solo lo que la norma cubre; el resto de la "
- "sección 2 del capítulo III, es decir gestión de riesgos, datos, registros, transparencia, supervisión "
- "humana, exactitud, robustez y ciberseguridad, <b>sigue sin norma armonizada citada</b>. Tercera: <b>la EN "
- "18286 no es la ISO/IEC 42001</b>, y un certificado 42001 no otorga presunción de conformidad; es un error "
- "que conviene desactivar por escrito con los clientes. Y cuarta, de método: el título de la Decisión habla de "
- "normas en plural pero el anexo lista una sola, y que sea «la primera» se sostiene en que no existe acto "
- "anterior, no en una declaración de la fuente. El texto de la norma no se ha leído: es de pago."),
+("ai", "Reglamento de IA en España · estado a 26 de octubre de 2026", True,
+ "Hoy ninguna autoridad española puede imponer las multas del Reglamento de IA, porque el régimen sancionador "
+ "caducó con las Cortes el 6 de octubre",
+ "El Reglamento (UE) 2024/1689 es directamente aplicable en España desde el <b>2 de agosto de 2026</b>, y su "
+ "capítulo de sanciones lo es desde el 2 de agosto de 2025. Pero el vehículo que creaba el régimen sancionador "
+ "español era el <b>Proyecto de Ley Orgánica para el buen uso y la gobernanza de la inteligencia artificial, "
+ "expediente 121/000096</b>, y figura <b>«Concluido - (Caducado)» desde el 6 de octubre de 2026</b> en el "
+ "Congreso, por la disolución de las Cortes. Leído el texto del proyecto, lo que se cayó con él es exactamente "
+ "la arquitectura: su <b>artículo 4</b> designaba autoridad notificante a la Secretaría de Estado de "
+ "Digitalización e Inteligencia Artificial; su <b>artículo 5</b> designaba a la <b>AESIA</b> autoridad de "
+ "vigilancia del mercado, con reparto sectorial al Banco de España, a la autoridad de seguros y al Consejo "
+ "General del Poder Judicial para IA en la justicia; su <b>artículo 6</b> la hacía punto de contacto único; y "
+ "sus <b>artículos 13 a 41</b> contenían todo el régimen sancionador, de la clasificación de infracciones al "
+ "procedimiento y las medidas provisionales. Nada de eso está en vigor. Y el censo europeo confirma el otro "
+ "extremo: <b>España no tiene autoridad notificante registrada bajo el Reglamento de IA</b>.",
+ "Conviene decirlo sin alarmismo y con la frase exacta, porque es la que un cliente va a repetir: <b>el "
+ "Reglamento de IA obliga en España desde agosto de 2026, pero hoy no hay autoridad española que pueda "
+ "imponer las multas de sus artículos 99 y siguientes</b>. Esto no es una ventana de impunidad y hay que "
+ "evitar que se lea así, por tres razones. Las <b>prohibiciones del artículo 5 son directamente aplicables</b> "
+ "y su incumplimiento es ilícito con independencia de quién pueda multarlo. Los contratos, los seguros y las "
+ "exigencias de clientes no esperan al BOE. Y cuando el régimen llegue, llegará con <b>efecto inmediato y sobre "
+ "sistemas ya en producción</b>, porque lo que falta es la norma sancionadora, no la obligación. Lo que sí es, "
+ "y conviene aprovecharlo, es una <b>ventana de preparación voluntaria</b> de unos meses. El reloj de "
+ "reanudación tiene fecha: sesiones constitutivas el 23 de diciembre, investidura después, y un proyecto que "
+ "hay que presentar desde cero.",
+ 'La ficha del expediente <a href="https://www.congreso.es/busqueda-de-iniciativas?p_p_id=iniciativas&amp;'
+ 'p_p_lifecycle=0&amp;_iniciativas_mode=mostrarDetalle&amp;_iniciativas_legislatura=XV&amp;_iniciativas_id='
+ '121/000096" @L>121/000096 en el Congreso de los Diputados</a> y el texto del proyecto en el '
+ '<a href="https://www.congreso.es/public_oficiales/L15/CONG/BOCG/A/BOCG-15-A-97-1.PDF" @L>Boletín Oficial de '
+ 'las Cortes Generales, serie A, número 97-1</a>.',
+ "Una pregunta que te van a hacer y que tiene respuesta clara: no, <b>esto no se puede arreglar por real "
+ "decreto-ley</b>. El vehículo caducado era una <b>ley orgánica</b>, y el artículo 86.1 de la Constitución "
+ "excluye del decreto-ley las materias reservadas a ley orgánica y los derechos y deberes del título I. Para "
+ "las leyes de NIS2 y de entidades críticas, que son ordinarias, la vía rápida sí está disponible y el "
+ "mecanismo está vivo, porque la Diputación Permanente sigue convalidando decretos-leyes. Para el régimen "
+ "sancionador de IA tal como estaba diseñado, no. Y hay que matizar una afirmación que este boletín ha "
+ "arrastrado: decir que la AESIA está «designada y notificada» es generoso. La Agencia existe y opera, pero su "
+ "<b>designación legal como autoridad de vigilancia del mercado no está en vigor</b>."),
 
-("ai", "Reglamento (UE) 2026/1744 · dos plazos al 2 de diciembre de 2026", True,
- "El calendario del Reglamento de IA tras el ómnibus deja dos obligaciones a seis semanas, y casi todo lo "
- "demás aplazado a 2027 y 2028",
- "Verificado sobre el texto del acto modificativo, no sobre resúmenes. El <b>Reglamento (UE) 2026/1744, de 8 "
- "de julio de 2026</b>, en vigor desde el 27 de julio, modificó el artículo 113 y el artículo 111 del "
- "Reglamento de IA, pero <b>no tocó la fecha general de aplicación</b> del 2 de agosto de 2026 ni el régimen "
- "de los modelos de uso general. Lo que deja vivo a corto plazo son dos cosas, las dos el <b>2 de diciembre de "
- "2026</b>: el apartado 4 nuevo del artículo 111, por el que los proveedores de sistemas que generen contenido "
- "sintético y estuvieran <b>en el mercado antes del 2 de agosto de 2026</b> deben cumplir el marcado del "
- "artículo 50.2; y la entrada en aplicación de las <b>prohibiciones nuevas del artículo 5</b> sobre contenido "
- "íntimo o sexualmente explícito no consentido y material de abuso sexual infantil generado con IA. Lo gordo "
- "se aplazó: el capítulo III para alto riesgo del anexo III al <b>2 de diciembre de 2027</b> y para el anexo I "
- "al <b>2 de agosto de 2028</b>.",
- "Es el cuadro que más preguntan los clientes y el que más mal circula. Dos mensajes. El primero: <b>el "
- "aplazamiento no es una amnistía</b>, porque las prohibiciones del artículo 5 originales llevan aplicándose "
- "desde febrero de 2025 y las obligaciones de transparencia desde agosto de 2026. El segundo, y es el que "
- "tiene fecha corta: cualquier cliente con un sistema de IA generativa <b>ya desplegado antes de agosto</b> "
- "tiene seis semanas para resolver el marcado de contenido sintético, y eso no es una política, es trabajo de "
- "producto.",
- 'El <a href="https://eur-lex.europa.eu/eli/reg/2026/1744/oj" @L>Reglamento (UE) 2026/1744</a>, que modifica '
- 'el <a href="https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32024R1689" @L>Reglamento (UE) '
- '2024/1689 de inteligencia artificial</a>.',
- "El artículo 6, apartado 5, queda <b>excluido del aplazamiento</b> del capítulo III: no se beneficia de las "
- "fechas nuevas. Y aviso de método: se ha leído el acto modificativo y se ha reconstruido el calendario a "
- "partir de él, <b>no el texto consolidado</b>. Para un entregable a cliente conviene cotejar con la versión "
- "consolidada del Reglamento de IA."),
+("ai", "Reglamento de IA · el 2 de diciembre de 2026", True,
+ "Dos relojes distintos vencen el mismo día, y uno de los dos no es lo que suele contarse",
+ "El <b>2 de diciembre de 2026</b> concurren dos cosas que conviene no mezclar. La primera: <b>vence el plazo "
+ "del apartado 4 del artículo 111</b>, introducido por el Reglamento (UE) 2026/1744, por el que los proveedores "
+ "de sistemas de IA, incluidos los de uso general, que generen contenido sintético de audio, imagen, vídeo o "
+ "texto y se hayan introducido en el mercado <b>antes del 2 de agosto de 2026</b>, «adoptarán las medidas "
+ "necesarias para cumplir lo dispuesto en el artículo 50, apartado 2, a más tardar el 2 de diciembre de 2026». "
+ "El artículo 50.2 es el marcado <b>en formato legible por máquina</b> que permita detectar que el contenido ha "
+ "sido generado o manipulado artificialmente. La segunda: <b>entran en aplicación las letras b bis) y b ter) "
+ "del artículo 5.1</b>, que prohíben los sistemas que generen o manipulen material realista de las partes "
+ "íntimas de una persona identificable o que la muestren en actividades sexualmente explícitas sin su "
+ "consentimiento explícito, y el material del artículo 2 de la directiva de abuso sexual infantil. Con ellas "
+ "entran los <b>apartados 1 bis y 1 ter</b> del mismo artículo, que son los que de verdad delimitan a quién "
+ "alcanzan.",
+ "Los apartados 1 bis y 1 ter son la parte que casi nadie cuenta y la que cambia el trabajo. El <b>1 bis, letra "
+ "a), inciso ii)</b> dice que la prohibición alcanza a un proveedor <b>aunque esa no sea la finalidad prevista "
+ "del sistema</b>, cuando el diseño, el entrenamiento, la arquitectura o las funcionalidades hagan que ese "
+ "resultado sea «razonablemente previsible y reproducible, sin requerir modificaciones técnicas sustanciales», "
+ "y el sistema <b>no disponga de medidas técnicas de seguridad razonables y adecuadas</b> ni de mecanismos para "
+ "corregir el uso indebido observado o notificado. Traducido a entregables: a 2 de diciembre hay que poder "
+ "acreditar <b>pruebas de intrusión adversarial sobre el modelo, filtros de entrada y de salida, y un circuito "
+ "documentado de tratamiento de avisos de abuso</b>. Para el responsable del despliegue, en cambio, la "
+ "prohibición es más estrecha: solo si usa el sistema con ese fin. La exposición no es menor: el artículo 5 "
+ "está en el tramo sancionador máximo, hasta 35 millones de euros o el 7 por ciento del volumen de negocios "
+ "mundial, y el incumplimiento del artículo 50 hasta 15 millones o el 3 por ciento.",
+ 'El <a href="https://publications.europa.eu/resource/celex/02024R1689-20260727" @L>texto consolidado del '
+ 'Reglamento (UE) 2024/1689</a> a 27 de julio de 2026 y el <a href="https://publications.europa.eu/resource/'
+ 'celex/32026R1744" @L>Reglamento (UE) 2026/1744</a>, que introdujo los apartados nuevos.',
+ "Corrección de precisión jurídica a lo que este boletín publicó la semana pasada, y conviene incorporarla "
+ "porque un lector técnico la detecta. Es inexacto decir que el <b>apartado 4 del artículo 111 «entra en "
+ "aplicación» el 2 de diciembre de 2026</b>: ese apartado es <b>aplicable desde el 2 de agosto de 2026</b>, "
+ "porque el artículo 111 no figura entre las excepciones del artículo 113, y está en vigor desde el 27 de "
+ "julio, fecha de entrada en vigor del Reglamento que lo introdujo. Lo que ocurre el 2 de diciembre es que "
+ "<b>vence el plazo de cumplimiento que ese apartado concede</b>. La diferencia importa: no es que nazca una "
+ "obligación, es que se agota el periodo de gracia de una que ya existe."),
 
-("ai", "Comité Europeo de Protección de Datos · 13 de octubre de 2026", False,
- "La declaración sobre gafas inteligentes fija que el consentimiento posterior a la grabación no vale y que el "
- "fabricante no puede descargar sus obligaciones en el usuario",
- "El Comité adoptó y publicó en su pleno la <b>declaración 1/2026 sobre gafas inteligentes</b>, junto con un "
- "informe de su grupo de expertos. Alcance: dispositivos con cámara, micrófono, altavoces y software, "
- "funciones de IA incluidas. Lo relevante, leído del documento: la <b>excepción doméstica solo cubre la "
- "actividad puramente personal</b>, de modo que compartir públicamente o usar las gafas con fines "
- "profesionales o comerciales puede convertir al usuario en responsable del tratamiento; los <b>fabricantes y "
- "los proveedores de las aplicaciones o servicios de IA asociados pueden ser responsables independientes o "
- "corresponsables, con obligaciones propias que no pueden descargar en el usuario</b>; el <b>consentimiento "
- "debe ser previo</b>, porque el obtenido después de grabar no es válido; y el interés legítimo es difícil de "
- "sostener para usos comerciales o para <b>entrenamiento de IA</b> que los terceros grabados no esperarían.",
- "Afecta a dos perfiles muy concretos. Al que <b>despliega</b> gafas inteligentes en operaciones, es decir "
- "mantenimiento asistido, logística, inspección o sanidad: ahí no hay excepción doméstica, el empleador es "
- "responsable y necesita evaluación de impacto y base jurídica propias. Y al que <b>desarrolla</b> la "
- "aplicación o la capa de IA. Pero el criterio que más viaja es el otro: <b>consentimiento previo y interés "
- "legítimo difícil para entrenamiento</b> es directamente trasladable a cualquier captación de imagen o voz "
- "que alimente un modelo, que es una conversación que casi todos los clientes van a tener este año.",
- 'La <a href="https://www.edpb.europa.eu/documents/statement/statement-of-the-edpb-on-smart-glasses_en" @L>'
- 'declaración del Comité Europeo de Protección de Datos sobre gafas inteligentes</a>.',
- "El propio documento se presenta como <b>reflexiones preliminares, no directrices finales</b>, y el Comité "
- "anuncia que seguirá trabajando el asunto y lo extenderá a otros dispositivos de vídeo. No es vinculante y no "
- "fija controles de seguridad concretos más allá del procesamiento en el dispositivo y los valores por defecto."),
+("ai", "Comité Europeo de Protección de Datos · tres consultas abiertas", False,
+ "Las dos consultas que más afectan a quien entrena modelos cierran el viernes, y hay una trampa de "
+ "navegación que hace creer que no hay ninguna abierta",
+ "Sin novedad propia del Comité en la ventana: <b>ningún elemento publicado entre el 19 y el 25 de octubre</b>, "
+ "ninguna directriz adoptada, ningún dictamen, ninguna decisión vinculante del artículo 65 y ninguna consulta "
+ "nueva. El elemento más reciente de su canal es del 16 de octubre y es una sanción nacional noruega; el último "
+ "documento propio es su declaración sobre gafas inteligentes, del 13 de octubre. Lo vivo son las tres "
+ "consultas ya abiertas, con sus fechas verificadas una a una. Las <b>directrices 02/2026 sobre "
+ "anonimización</b> y las <b>directrices 03/2026 sobre extracción de datos web en el contexto de la IA "
+ "generativa</b>, ambas abiertas el 8 de julio, cierran el <b>30 de octubre de 2026</b>. Las <b>directrices "
+ "04/2026</b>, sobre cuándo se impone multa administrativa en relación con los demás poderes correctivos, "
+ "abiertas el 21 de septiembre, cierran el <b>13 de noviembre de 2026</b>.",
+ "Las dos que cierran el viernes son las que tocan trabajo real. La de <b>anonimización</b> fija cómo se "
+ "evalúa si un dato está de verdad anonimizado, que es la bisagra de la que cuelgan media docena de "
+ "arquitecturas de analítica y de entrenamiento: si el criterio se endurece, los tratamientos que hoy se "
+ "declaran fuera del RGPD vuelven dentro. La de <b>extracción de datos web</b> trata cuándo y cómo puede "
+ "usarse material obtenido de la web para IA generativa, que es exactamente lo que hacen los proveedores a los "
+ "que tu cliente compra modelo. Y la <b>04/2026</b> es la menos llamativa y la más útil para una conversación "
+ "de consejo, porque trata cuándo una autoridad multa y cuándo usa otro poder correctivo: es el documento con "
+ "el que se puede argumentar que una colaboración temprana y una remediación documentada tienen efecto en el "
+ "resultado del expediente.",
+ 'Las consultas de las <a href="https://www.edpb.europa.eu/public-consultations/guidelines-022026-on-'
+ 'anonymisation_en" @L>directrices 02/2026 sobre anonimización</a>, de las <a href="https://www.edpb.europa.eu/'
+ 'public-consultations/guidelines-032026-on-web-scraping-in-the-context-of-generative-ai_en" @L>directrices '
+ '03/2026 sobre extracción de datos web</a> y de las <a href="https://www.edpb.europa.eu/public-consultations/'
+ 'guidelines-042026-on-the-application-of-the-power-to-impose-administrative_en" @L>directrices 04/2026</a>.',
+ "Dos detalles de precisión. Primero, la hora: <b>solo la página de las directrices 02/2026 fija las 23:59 "
+ "CET</b>; las de 03/2026 y 04/2026 publican únicamente el día. Atribuir «23:59 CET» a las tres es extrapolar, "
+ "aunque la fecha sea correcta en las tres. Y segundo, una trampa de navegación que conviene conocer porque "
+ "hace concluir lo contrario de la verdad: el listado de consultas públicas del Comité <b>no ordena por fecha "
+ "ni pone las abiertas primero</b>, de modo que las tres consultas vivas <b>no aparecen en la primera "
+ "página</b>, cuya entrada más reciente visible es de junio. Hay que ir a las fichas individuales o se "
+ "concluye que no hay ninguna consulta abierta."),
 
-("ai", "Autoridad noruega, vía el Comité Europeo · 16 de octubre de 2026", False,
- "Multa de 8,6 millones por apoyarse en el consentimiento recogido por otro: la cadena publicitaria no hereda "
- "bases jurídicas",
- "La autoridad noruega impuso a <b>Xandr</b> una multa administrativa de <b>8.600.000 euros</b> por decisión "
- "de 2 de octubre de 2026, que el Comité Europeo publicó el 16. Infracciones de los <b>artículos 6.1 y 9.1</b> "
- "del RGPD, con el consentimiento invocado considerado inválido. Los datos procedían de usuarios de una "
- "aplicación de citas a través de <b>subastas publicitarias en tiempo real</b>, y se califican como datos "
- "relativos a la <b>orientación sexual</b> del artículo 9.1 aunque lo que circulara fueran identificadores "
- "técnicos y direcciones de red. La empresa actuaba como corresponsable, a la vez como plataforma de oferta y "
- "de demanda, y <b>se apoyó en el consentimiento recabado por la aplicación en lugar de obtener el suyo</b>.",
- "El núcleo es el que más se repite en toda la cadena publicitaria: <b>no se puede heredar el consentimiento "
- "del editor</b>. Cada interviniente con rol de responsable necesita base jurídica propia, y <b>cuando el "
- "contexto de la aplicación revela una categoría especial, el artículo 9 se activa aunque el dato que viaje "
- "sea un identificador técnico</b>. Aplicable a cualquier cliente con monetización publicitaria, con "
- "plataforma de oferta o demanda, con plataforma de gestión de consentimiento, y también a quien compra "
- "inventario.",
- 'La nota del Comité Europeo sobre la <a href="https://www.edpb.europa.eu/news/norwegian-dpa-fines-xandr-eur-8-'
- '600-000-for-unlawful-processing-of-personal-data_en" @L>multa de la autoridad noruega a Xandr</a>.',
- "Dos salvedades. <b>No se ha alcanzado la resolución original</b> de la autoridad noruega: el importe, los "
- "artículos y la fecha vienen de la nota que el Comité publica por cuenta de aquella, y no consta si es firme. "
- "Y Noruega es Espacio Económico Europeo, no Unión Europea. El fundamento es de licitud y categorías "
- "especiales, <b>sin componente de seguridad</b>: no venderlo como sanción por fallo de seguridad."),
+("ai", "Reglamento (UE) 2026/1744 · el perímetro de alto riesgo que se encogió en julio", False,
+ "La modificación de julio redujo el alcance del anexo I del Reglamento de IA, y hay una excepción que cambia "
+ "cómo se cita el calendario de 2027",
+ "Conviene tener localizados los cambios estructurales que el <b>Reglamento (UE) 2026/1744</b> introdujo en el "
+ "Reglamento de IA, porque quien siga trabajando sobre el texto original de 2024 está clasificando mal. Los "
+ "tres <b>apartados nuevos del artículo 6</b> reducen el perímetro: el <b>1 bis</b> establece que un sistema "
+ "usado «únicamente para aspectos no relacionados con la seguridad en los ámbitos de la asistencia al usuario, "
+ "la optimización del rendimiento, la eficiencia del servicio, la automatización, la comodidad o el control de "
+ "calidad» <b>no se considera componente de seguridad</b>; el <b>1 ter</b> lo acota, salvo que su fallo pueda "
+ "poner en peligro la salud y la seguridad; y el <b>1 quater</b> excluye los productos sometidos a evaluación "
+ "de terceros «únicamente debido a riesgos distintos de los riesgos para la salud y la seguridad». Se suprimió "
+ "además el punto 1 de la sección A del anexo I y se añadió el reglamento de máquinas a la sección B. Y en "
+ "sanciones hay dos novedades de proporcionalidad: el artículo 99.1 incluye ahora expresamente «advertencias o "
+ "medidas no pecuniarias» y manda tener en cuenta los intereses de las pymes y su viabilidad económica, y un "
+ "<b>apartado 6 bis nuevo</b> limita las multas a las pequeñas empresas de mediana capitalización aplicando el "
+ "menor de los dos límites.",
+ "Dos usos inmediatos. El primero es de <b>clasificación</b>, y puede ahorrarle a un cliente un proyecto "
+ "entero: si su sistema de IA solo optimiza rendimiento, eficiencia, automatización o control de calidad y no "
+ "toca seguridad, hay base textual para sostener que no es componente de seguridad del anexo I. Eso no es una "
+ "interpretación, está escrito, y el razonamiento hay que documentarlo antes de que lo pregunte un cliente o "
+ "un auditor. El segundo es de <b>cita</b>: el artículo 113 aplica el capítulo III, secciones 1, 2 y 3, «<b>con "
+ "excepción de su artículo 6, apartado 5</b>», el 2 de diciembre de 2027 para el anexo III y el 2 de agosto de "
+ "2028 para el anexo I. Esa excepción está en el texto y suele omitirse; citar las secciones sin ella es "
+ "sobreafirmar. Añade al cuadro un plazo largo que casi nadie tiene: los sistemas de alto riesgo <b>destinados "
+ "a ser utilizados por autoridades públicas</b> deben cumplir a más tardar el <b>2 de agosto de 2030</b>, "
+ "cualquiera que sea su fecha de introducción.",
+ 'El <a href="https://publications.europa.eu/resource/celex/32026R1744" @L>Reglamento (UE) 2026/1744</a> y el '
+ '<a href="https://publications.europa.eu/resource/celex/02024R1689-20260727" @L>texto consolidado del '
+ 'Reglamento de IA</a> a 27 de julio de 2026.',
+ None),
+
+("ai", "AEPD y Autoridad Catalana · 20 y 21 de octubre de 2026", False,
+ "Las dos autoridades de protección de datos más activas de España apuntan la misma semana al mismo riesgo: "
+ "los agentes de IA",
+ "No es normativa, es señal de prioridad supervisora, y se alinea en dos días. El <b>20 de octubre</b>, la "
+ "directora de la <b>Autoridad Catalana de Protección de Datos</b> pidió en un congreso de IA en Barcelona una "
+ "estrategia coordinada ante <b>los riesgos amplificados por la IA agéntica</b>. El <b>21 de octubre</b>, el "
+ "blog de la <b>AEPD</b> publicó su análisis del alza de brechas insistiendo en que la obligación del artículo "
+ "32 <b>se extiende a los terceros</b>. Y conviene traer el antecedente, porque es el que da peso a lo "
+ "anterior: el <b>14 de septiembre de 2026</b> la AEPD publicó la <b>primera notificación de una brecha de "
+ "datos personales causada por un ataque ejecutado mediante un agente de IA</b>, y el 28 de septiembre una "
+ "entrada sobre IA ofensiva. La misma semana, el lema de las Jornadas STIC del CCN se anunció como «IA ofensiva "
+ "y amenaza cuántica».",
+ "Lo aprovechable es el encaje, no cada pieza. <b>Tres organismos españoles distintos están nombrando el mismo "
+ "vector en el mismo mes</b>: la autoridad estatal de protección de datos con un caso real documentado, la "
+ "autoridad catalana pidiendo estrategia, y el Centro Criptológico poniéndolo en el título de su congreso "
+ "anual. Si tu cliente ha desplegado agentes con capacidad de actuar sobre sistemas, correo o navegador, esto "
+ "es el momento de hacer dos cosas muy concretas: inventariarlos, porque casi nunca están en el inventario de "
+ "activos, y decidir <b>qué permisos tienen y quién responde de lo que hacen</b>. Y para la conversación de "
+ "gobernanza, la pieza más útil es la del Banco Central Europeo de la misma semana: los modelos avanzados "
+ "descubren y explotan vulnerabilidades más rápido, y por eso el supervisor pide plan de acción antes del 31 de "
+ "octubre. El argumento ya no es hipotético en ningún frente.",
+ 'La <a href="https://www.apdcat.cat/ca/actualitat/noticies/2026/Borras-demana-estrategia-coordinada-riscos-ia-'
+ 'agentiva" @L>intervención de la directora de la autoridad catalana de 20 de octubre</a> y el '
+ '<a href="https://www.aepd.es/prensa-y-comunicacion/blog/incremento-de-las-notificaciones-de-brechas-de-datos-'
+ 'y-medidas-para" @L>blog de la AEPD de 21 de octubre</a>.',
+ None),
 ]
 
 ITEMS += [
 
-("thr", "CCN-CERT AL 10/26 y análisis de Volexity · 13 y 14 de octubre de 2026", True,
- "La cadena de días cero de Ivanti Connect Secure da ejecución como superusuario sin autenticar sobre un "
- "equipo totalmente parcheado, y parchear no cierra el incidente",
- "<b>CVE-2026-104935</b>, omisión de autenticación en Ivanti Connect Secure, con ejecución remota sin "
- "autenticar. El CCN-CERT emitió la alerta <b>AL 10/26 el 14 de octubre con nivel de peligrosidad ALTO</b> y "
- "la vulnerabilidad entró en el catálogo de explotadas el 13. Lo que convierte esto en el primer asunto de la "
- "semana es el análisis técnico: la explotación real <b>encadena tres fallos</b>, una omisión de autenticación, "
- "una escritura de fichero con condición de carrera y una escalada de privilegios, y el resultado es "
- "<b>ejecución como superusuario, sin autenticar, sobre un equipo totalmente parcheado</b>. La escalada <b>no "
- "tiene identificador asignado</b> y el fabricante seguía trabajando en su corrección. Explotación observada "
- "<b>desde el 3 de octubre</b>. Versiones corregidas: 25.1.1.2, 25.1.3.0 y 25.1.3.1, y 22.8R2.5.",
- "El trabajo no termina con el parche, y esto hay que decirlo literalmente al cliente: el atacante <b>robó "
- "credenciales almacenadas en el equipo, incluidas credenciales de dominio</b>, y consultó el directorio "
- "buscando contraseñas de administrador local y claves de recuperación de cifrado de disco, además de hacer "
- "pulverización de contraseñas y captura de tráfico. <b>Hay que asumir compromiso de credenciales.</b> Las "
- "acciones son tres y en este orden: actualizar; <b>rotar todas las credenciales almacenadas en el "
- "dispositivo y las de servicio de dominio alcanzables desde él</b>; y buscar volumen anómalo de peticiones "
- "contra la ruta de autenticación del portal, en especial cuando la cabecera interna apunta a rutas "
- "temporales, y cualquier discrepancia entre la ruta de la petición y esa cabecera.",
- 'La alerta <a href="https://www.ccn.cni.es/es/actualidad-ccn/1393-ccn-cert-al-10-26-explotacion-activa-de-'
- 'vulnerabilidad-en-ivanti-connect-secure" @L>CCN-CERT AL 10/26</a> y el <a href="https://www.volexity.com/'
- 'blog/2026/10/13/a-series-of-unauthenticated-events-chained-exploitation-of-ivanti-connect-secure-zero-days/"'
- ' @L>análisis de la explotación encadenada publicado por Volexity</a>.',
- "Dos avisos que cambian cómo se investiga. <b>La herramienta de comprobación de integridad del fabricante no "
- "detectó esta actividad</b>, así que no sirve como prueba de ausencia: hace falta forense de red y de "
- "memoria. Y el atacante <b>manipuló los registros</b> y operó por el canal del propio exploit, sin instalar "
- "puerta trasera, de modo que <b>la ausencia de artefactos no es tranquilizadora</b>. Hay además ambigüedad en "
- "los límites de versión entre el registro del identificador y el aviso del fabricante: conviene confirmar la "
- "versión exacta antes de dar una rama por buena."),
+("thr", "PHP · 21 y 23 de octubre de 2026", True,
+ "Dos ejecuciones remotas de código sin autenticar en el núcleo del lenguaje, con la probabilidad de "
+ "explotación más alta que se puede medir y sin estar en el catálogo de vulnerabilidades explotadas",
+ "El <b>21 de octubre de 2026</b> el equipo de seguridad de PHP publicó la corrección de dos vulnerabilidades "
+ "críticas que <b>permiten ejecución remota de código sin autenticar</b>: <b>CVE-2026-109618</b>, por "
+ "corrupción de memoria durante la gestión de falta de memoria, y <b>CVE-2026-109619</b>, por estado global "
+ "obsoleto. Las dos están puntuadas en <b>9,2 crítico</b> por el propio proyecto. Versiones correctoras: "
+ "<b>8.5.12, 8.4.27, 8.3.36 y 8.2.35</b>. En riesgo, en palabras de php.net, «todas las instalaciones de PHP "
+ "que sirvan peticiones web, incluidos PHP-FPM, Apache con mod_php, php-cgi, FrankenPHP y LiteSpeed», y "
+ "<b>consideran el riesgo más alto en mod_php, con un exploit demostrado en el que una petición sin autenticar "
+ "dispara el ataque antes de que se ejecute código de la aplicación</b>. Dada la gravedad, el equipo publicó "
+ "además <b>retroportes mínimos para PHP 7.4, 8.0 y 8.1</b>, que ya no reciben actualizaciones. El <b>23 de "
+ "octubre</b> llegó un segundo aviso, informativo: recomienda desactivar el seguimiento de progreso de subida "
+ "de ficheros en sesión hasta la siguiente versión de corrección de errores, por un tercer vector, "
+ "<b>CVE-2026-115560</b>, que solo se da en una combinación inusual de configuración. PHP <b>no publicará "
+ "versión fuera de ciclo</b> por ese tercero.",
+ "Lo que convierte esto en el asunto de la semana para un consultor no es la gravedad, es la discrepancia entre "
+ "indicadores, y da una lección de gobierno de vulnerabilidades que se puede enseñar en una diapositiva. Estas "
+ "dos vulnerabilidades tienen una <b>probabilidad estimada de explotación de 0,99981 y 0,99997</b>, es decir el "
+ "percentil 99,98 y el 99,99, y el <b>CERT francés confirmó el 22 de octubre que hay pruebas de concepto "
+ "públicas</b> para despliegues concretos. Y <b>no están en el catálogo de vulnerabilidades explotadas</b>, "
+ "comprobado sobre su fichero: no aparecen. Mientras tanto, las ocho altas que ese catálogo sí tuvo esta semana "
+ "tienen probabilidades de entre 0,0097 y 0,1233. Dicho de otro modo: <b>si la política de parcheo de tu "
+ "cliente se dispara solo con el catálogo, esta semana no habría tocado PHP</b>, que es lo único que de verdad "
+ "importaba. Y si se dispara con un umbral de probabilidad del 0,2, habría ignorado las ocho altas. Los dos "
+ "indicadores son útiles y ninguno sirve solo.",
+ 'El <a href="https://www.php.net/archive/2026.php" @L>archivo de avisos de php.net</a>, con la entrada del 21 '
+ 'de octubre y el aviso informativo del 23.',
+ "Precisión de atribución, porque está circulando mal y es citable por terceros: el aviso <b>lo firma «el "
+ "equipo de seguridad de PHP» y «el equipo de desarrollo de PHP»</b>, no «la Fundación PHP». La fórmula "
+ "«Fundación PHP» es la del aviso del CCN-CERT, no la de la fuente primaria. Aviso operativo adicional que "
+ "conviene trasladar: el repositorio voluntario de paquetes que mucha gente usa en entornos de empresa <b>no "
+ "tuvo actualizaciones ese día</b>, así que hay que usar los paquetes de la distribución o compilar desde "
+ "fuente."),
 
-("thr", "Cisco · 14 de octubre de 2026", True,
- "Un 9.8 sin autenticar en la pasarela de correo con explotación confirmada por el propio fabricante, y una "
- "mitigación que no exige reiniciar",
- "<b>CVE-2026-76519</b>, salto de directorio en Cisco Secure Email Gateway, <b>CVSS 9.8</b>, sin autenticación. "
- "El aviso es de primera publicación el 14 de octubre y el texto del fabricante es explícito: <b>«en octubre "
- "de 2026 el equipo de respuesta de Cisco tuvo conocimiento de explotación activa de esta vulnerabilidad»</b>. "
- "Entró en el catálogo de explotadas el mismo 14. Para ser explotable hacen falta <b>dos condiciones a la "
- "vez</b>: que el servicio de reputación de ficheros esté habilitado y asignado a una política de correo, y "
- "que las herramientas de análisis de contenido sean anteriores a la versión 25.3.0.5525. No están afectados "
- "ni el gestor de correo y web ni el dispositivo de navegación.",
- "Esto tiene una acción inmediata y barata que mucha gente no ve: <b>actualizar las herramientas de análisis "
- "de contenido a 25.3.0.5525 o posterior no exige actualizar el sistema ni reiniciar</b>, y rompe una de las "
- "dos condiciones necesarias. Ese es el movimiento de la misma tarde; la actualización del sistema operativo "
- "del dispositivo se programa después con calma. Y la otra mitad del trabajo es de alcance: <b>si el cliente "
- "no usa reputación de ficheros en ninguna política de correo, no es explotable</b>, pero eso hay que "
- "verificarlo documentalmente antes de declarar que no hay exposición, no suponerlo.",
- 'El <a href="https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-esa-afw-'
- 'zqYJkjxp" @L>aviso de seguridad de Cisco sobre la pasarela de correo</a>.',
- "Cisco <b>no publica el rango completo de versiones vulnerables</b>, y para ramas anteriores recomienda "
- "migrar. Y no confundirlo con el aviso del CCN-CERT de septiembre sobre el mismo producto: <b>aquel era una "
- "inyección SQL distinta</b>. Son dos asuntos, no uno."),
+("thr", "eMudhra · 17 a 24 de octubre de 2026", True,
+ "Las claves privadas de ocho autoridades de certificación intermedias se pueden obtener por fuerza bruta en "
+ "segundos, y ningún CERT español ha dicho una palabra",
+ "No es una vulnerabilidad de software y por eso no se parchea. Según el aviso informativo de <b>Cisco</b> del "
+ "<b>23 de octubre de 2026</b>, actualizado el 24 y todavía en estado provisional: «<b>entre el 17 y el 20 de "
+ "octubre de 2026 se descubrió un compromiso crítico de seguridad que afecta a autoridades de certificación "
+ "gestionadas por eMudhra. Un investigador demostró que las claves privadas de ocho certificados intermedios "
+ "de eMudhra estaban fundamentalmente comprometidas por un error sin precedentes en su ceremonia de generación "
+ "de claves de abril de 2025. Esto permite a cualquiera obtener esas claves privadas por fuerza bruta en "
+ "segundos</b>». Cisco tiene <b>decenas de productos en investigación</b>, entre ellos Webex Calling, Webex "
+ "Contact Center, Webex Meetings Server y Secure Client. <b>Oracle</b> emitió dos alertas: el <b>21 de "
+ "octubre</b>, CVE-2026-91403, con 9,1 crítico, que hace que Java desconfíe de las intermedias afectadas; y el "
+ "<b>24 de octubre</b>, CVE-2026-114820, también 9,1, que elimina las raíces. Un fallo latente durante "
+ "<b>dieciocho meses</b>.",
+ "Dos mensajes, y el segundo es el incómodo. <b>Primero: hay riesgos de proveedor que no entran por el canal de "
+ "vulnerabilidades y para los que tu cliente no tiene ni inventario ni procedimiento.</b> La remediación aquí "
+ "no es aplicar un parche, es <b>retirar confianza en almacenes de certificados</b> de sistemas operativos, "
+ "navegadores, máquinas virtuales de Java, dispositivos de red y cualquier cosa que valide TLS. Las dos "
+ "preguntas que se pueden hacer el lunes y que casi nunca tienen respuesta: quién gestiona vuestro almacén de "
+ "certificados raíz, y en cuántos sitios distintos está. <b>Segundo: ni el CCN-CERT ni el INCIBE-CERT han "
+ "publicado nada sobre eMudhra en toda la ventana</b>, verificado recorriendo las seis entradas del CCN de "
+ "octubre y los avisos del INCIBE del 17 al 26. No es un reproche, es un dato de gestión: depender de un único "
+ "CERT nacional como fuente de vigilancia deja huecos, y este es uno medible. Si tu cliente sostiene que con "
+ "seguir al INCIBE va servido, este es el contraejemplo del mes.",
+ 'El <a href="https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-emudhra-'
+ 'info-ScS22A1r" @L>aviso informativo de Cisco sobre la retirada de confianza de las autoridades de eMudhra</a> '
+ 'y las <a href="https://www.oracle.com/security-alerts/" @L>alertas de seguridad de Oracle</a> de 21 y 24 de '
+ 'octubre de 2026.',
+ "El aviso de Cisco está en estado <b>provisional</b> y con decenas de productos «en investigación», de modo "
+ "que la lista de afectados va a crecer. No se puede cerrar un expediente de cliente con la versión de hoy. Y "
+ "conviene no llamarlo «explotación»: nadie ha publicado un uso malicioso confirmado. Lo que es un hecho "
+ "verificado, y basta, es que <b>la capacidad de suplantación existe y es trivial</b>."),
 
-("thr", "Microsoft · 13 de octubre de 2026", True,
- "Un solo día cero explotado en el martes de parches, y es el que evade la marca que distingue los ficheros "
- "descargados de internet",
- "<b>CVE-2026-96951</b>, omisión de característica de seguridad en el intérprete de comandos de Windows, con "
- "<b>CVSS 8.8</b>. El estado literal en el documento de Microsoft es <b>explotación detectada y sin "
- "divulgación pública previa</b>, y es la <b>única del mes marcada como explotada</b>. Lo que evade es la "
- "<b>marca de procedencia de internet</b>. El vector descrito es un fichero manipulado enviado por correo o "
- "mensajería, o un enlace, siempre con interacción del usuario. Afecta a treinta y un productos, desde "
- "versiones de servidor de 2012 hasta las ramas actuales. Entró en el catálogo de explotadas el 13 de octubre. "
- "Solo otras dos llegaron divulgadas públicamente y ninguna de ellas explotada.",
- "Es el único asunto del martes con urgencia real, y el motivo es preciso: <b>evade justo el control en el que "
- "se apoyan muchas defensas contra documentos y ficheros descargados</b>, incluidas las reglas de bloqueo de "
- "macros y buena parte de la cadena de correo. Entra en ventana de parcheo de emergencia. Después, y por "
- "exposición y no por puntuación, van los servicios que solo importan si el rol está instalado y es "
- "alcanzable, como el de colas de mensajes o el servidor de direcciones dinámicas: <b>inventariar antes de "
- "alarmar</b>. Y el bloque de correo y ofimática, que afecta a todo el parque de puesto de trabajo, va por el "
- "canal normal.",
- 'El <a href="https://api.msrc.microsoft.com/cvrf/v3.0/cvrf/2026-Oct" @L>documento de vulnerabilidades de '
- 'Microsoft de octubre de 2026</a> y el <a href="https://www.cisa.gov/sites/default/files/feeds/'
- 'known_exploited_vulnerabilities.json" @L>catálogo de vulnerabilidades explotadas conocidas</a>.',
- "Dos cautelas, y la segunda ahorra trabajo. El volumen del mes es <b>muy superior a lo histórico</b>: el "
- "documento contiene 2.135 entradas, de las que 1.456 tienen a Microsoft como autoridad de numeración. Es la "
- "cifra que da literalmente el documento, <b>no se ha podido cruzar con una segunda fuente primaria</b>, y así "
- "hay que citarla. Y las dos puntuaciones más altas del mes, un 10.0 y un 9.9, son de <b>servicios en la nube "
- "corregidos por Microsoft sin acción del cliente</b>: conviene decírselo para que no las metan en su plan de "
- "parcheo ni en su cuadro de mando."),
+("thr", "Catálogo de vulnerabilidades explotadas · cambio de régimen", True,
+ "Ocho altas en la ventana, tres de ellas explotadas por debajo del umbral de gravedad que usan casi todas las "
+ "políticas de parcheo, y los plazos se han comprimido a tres días",
+ "El catálogo cerró la ventana en la versión <b>2026.10.23</b> con <b>1.756 entradas</b>, de las que <b>26 son "
+ "altas de octubre</b> y <b>ocho caen en la ventana</b>, todas los días 20 y 23. Las dos más relevantes para "
+ "el tejido empresarial europeo vencían <b>hoy</b>: <b>CVE-2026-110447</b>, inyección de comandos en el "
+ "servidor CODE integrado de Collabora Online sobre <b>Nextcloud</b>, con 9,2 crítico y explotación constatada "
+ "en septiembre y octubre, que afecta a versiones anteriores a la 26.4.303 de la aplicación integrada y no al "
+ "Collabora autónomo; y <b>CVE-2026-114625</b>, inyección SQL en el <b>orquestador VeloCloud de Arista</b> en "
+ "instalación propia, con 9,4, por la que cualquier usuario autenticado puede obtener privilegios de operador y "
+ "comprometer el anfitrión del orquestador. Las otras seis son el Software Center de Siemens, un cortafuegos "
+ "de aplicación japonés y cuatro de Plex Media Server. <b>Ninguna de las ocho consta usada en ransomware.</b> "
+ "Y hay dos cambios de régimen medidos sobre el propio fichero: las ocho citan ya la directiva estadounidense "
+ "<b>26-04</b> en lugar de la 22-01, y aparece un campo nuevo de <b>triaje forense</b> que llevan cuatro de "
+ "las ocho.",
+ "Dos lecciones de gobierno, y las dos se pueden convertir en una política. <b>La primera es el umbral de "
+ "gravedad.</b> Entre las ocho hay tres explotadas con puntuación media en la escala de la versión 3.1: dos de "
+ "Plex con 4,3 y el Software Center de Siemens con <b>6,7</b>. Si la política de tu cliente dice «crítico y "
+ "alto en X días, medio en el siguiente ciclo trimestral», esta semana se le han colado tres vulnerabilidades "
+ "explotadas por debajo del umbral. Y hay un problema añadido: los proveedores están publicando "
+ "<b>puntuaciones en dos versiones de la escala</b> que divergen bastante, 6,7 frente a 8,4 en el caso de "
+ "Siemens, de modo que una política anclada a una sola versión clasifica distinto que la otra. <b>La segunda "
+ "es el ritmo.</b> La distribución de plazos de octubre es <b>tres días en veintitrés entradas</b> y catorce "
+ "días en tres. Eso no obliga a ninguna empresa española, pero <b>sí redefine lo que un auditor o un "
+ "suscriptor de ciberseguro va a considerar razonable</b>, y un acuerdo de nivel de servicio de quince días "
+ "naturales para crítico empieza a verse holgado.",
+ 'El <a href="https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json" @L>fichero '
+ 'del catálogo de vulnerabilidades explotadas conocidas</a>, del que salen todas las cifras.',
+ "Un detalle de la tanda anterior que conviene no perder, porque es el patrón que de verdad hay que vigilar: "
+ "<b>esta semana ninguna alta es antigua, pero la del 8 de octubre incorporó cinco vulnerabilidades de entre "
+ "2015 y 2023</b>, incluidas una de BIND y una de Apache Struts de hace diez años. El catálogo sigue "
+ "incorporando material viejo, y eso significa que un inventario que solo mire lo publicado este año se queda "
+ "corto. Y hay un dato estructural útil: de las 1.756 entradas del catálogo, <b>solo cinco tenían plazo "
+ "pendiente a fecha de hoy</b>. Con plazos de tres a catorce días, este catálogo ya no genera vencimientos a "
+ "medio plazo: todo es inmediato o está vencido."),
 
-("thr", "Siemens · 13 de octubre de 2026", True,
- "Ocho vulnerabilidades en el servidor web de los autómatas S7-1500 sin parche disponible, y un boletín que "
- "deja mal fundada la segregación de escritura de medio sector",
- "En su lote mensual de treinta y ocho avisos, dos piezas importan. La primera, <b>SSA-591731</b>, con "
- "<b>CVSS 9.6</b> y <b>ocho identificadores</b>, en el servidor web de los autómatas SIMATIC S7-1500: permite "
- "ejecutar código en la sesión de navegador de un usuario autorizado y operar sobre el autómata con su "
- "autorización. La lista de afectados abarca las familias 1511 a 1518 y variantes, <b>en todas las versiones</b>, "
- "y para todas ellas el aviso dice que <b>no hay corrección disponible</b>. La segunda es <b>SSB-091449</b>, "
- "un boletín sin identificador de vulnerabilidad: los atributos por variable de accesible y escribible desde "
- "panel, protocolo industrial o interfaz web <b>solo se aplican a dos de esas vías y no se imponen en la "
- "comunicación con el panel de operador</b>, que se rige por los niveles de protección del autómata. Siemens "
- "lo califica de comportamiento intencionado y <b>reconoce que su documentación no lo explicaba con "
- "claridad</b>.",
- "Son dos trabajos distintos y ninguno es parchear. Para el primero, al no haber corrección, toca "
- "<b>compensar</b>: deshabilitar el servidor web del autómata donde no sea imprescindible y, donde lo sea, "
- "restringir el acceso a una red de ingeniería segmentada con listas de control, nunca desde la red de oficina "
- "ni desde internet. El segundo es mejor material de consultoría que de ingeniería: <b>si un cliente "
- "justificaba su segregación de escritura sobre variables con esos atributos, su matriz de controles está mal "
- "fundada</b> y hay que rehacerla con niveles de protección o derechos de función. Es exactamente lo que un "
- "auditor del ENS o un evaluador de NIS2 va a pedir evidenciar, y es el tipo de hallazgo que no aparece en "
- "ningún escáner.",
- 'Los avisos <a href="https://cert-portal.siemens.com/productcert/html/ssa-591731.html" @L>SSA-591731, sobre '
- 'el servidor web de los autómatas S7</a> y <a href="https://cert-portal.siemens.com/productcert/html/ssb-'
- '091449.html" @L>SSB-091449, sobre los atributos de acceso por variable</a>.',
- "No se han extraído las puntuaciones individuales de cada uno de los ocho identificadores ni la sección "
- "específica de mitigaciones: hay que leer el aviso completo antes de escribir recomendaciones por producto, y "
- "cruzar la lista de referencias afectadas, que es larguísima, con el inventario real. Hay además un aviso "
- "sobre una herramienta de software del fabricante con <b>tres revisiones en cinco días</b>: merece vigilancia "
- "porque su contenido está cambiando."),
+("thr", "Cisco · 21 de octubre de 2026", False,
+ "Un 9,8 sin autenticar que ejecuta como root en el borde de colaboración, solo en clúster y sin solución "
+ "temporal",
+ "Dieciocho avisos de Cisco con fecha en la ventana, y uno crítico. El aviso "
+ "<b>cisco-sa-vcs-static-cred-hr7EWZ8t</b>, «Cisco Expressway Series Remote Code Execution Vulnerability», "
+ "publicado el <b>21 de octubre de 2026</b> a las 16:00 GMT en versión final: <b>CVE-2026-76466</b>, "
+ "<b>puntuación base 9,8</b> con vector de red, complejidad baja y sin privilegios ni interacción, y debilidad "
+ "de <b>credenciales embebidas</b>. Permite a un <b>atacante remoto no autenticado</b> con acceso de red "
+ "<b>ejecutar comandos arbitrarios del sistema operativo como root</b>. Afecta a Expressway-C y Expressway-E, "
+ "tanto virtual como aparato físico, <b>solo si están configurados en clúster</b>. La causa es cookies "
+ "persistentes más validación insuficiente de certificados de cliente cuando el modo de verificación TLS está "
+ "habilitado para el agrupamiento. Versiones: las X14 y anteriores hay que <b>migrar</b>, y de X15.5.3 y "
+ "anteriores se va a X15.5.20. <b>No hay solución temporal:</b> el propio aviso dice «no hay soluciones "
+ "temporales que aborden esta vulnerabilidad». Cisco declara no tener constancia de uso malicioso.",
+ "Esto es prioridad de esta semana y no del próximo ciclo, por una razón de exposición y no de puntuación. "
+ "<b>Expressway es el borde de colaboración</b>: es lo que publica acceso remoto a telefonía y videoconferencia "
+ "y la interconexión con terceros, de modo que <b>está expuesto a internet por diseño</b>. Un 9,8 sin "
+ "autenticar que ejecuta como root, en un equipo de borde, sin solución temporal y sin más opción que actualizar "
+ "o migrar, es exactamente el perfil que acaba en un informe de incidente. La pregunta de cribado es sencilla y "
+ "la responde cualquier administrador en un minuto: <b>está en clúster</b>. Si lo está, se actualiza; si no lo "
+ "está, no aplica. Y si la versión es X14 o anterior, no es un parche: es un proyecto de migración, con lo que "
+ "eso significa en calendario y en ventana de servicio.",
+ 'El <a href="https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-vcs-static-'
+ 'cred-hr7EWZ8t" @L>aviso de Cisco sobre Expressway</a>.',
+ None),
 
-("thr", "Catálogo de vulnerabilidades explotadas · 16 de octubre de 2026", True,
- "Una vulnerabilidad de puntuación 6.0 publicada en abril entra en el catálogo de explotadas en octubre, y "
- "eso rompe el modelo de priorizar por nota",
- "Nueve altas en el catálogo entre el 13 y el 16 de octubre, y la más instructiva no es la más alta. "
- "<b>CVE-2025-61624</b>, salto de directorio en la línea de comandos de productos Fortinet, viene de un aviso "
- "<b>publicado el 14 de abril de 2026</b>: aviso antiguo, explotación reconocida ahora. Su puntuación es "
- "<b>solo 6.0</b>, severidad media, y exige atacante autenticado con privilegios. Afecta a ramas de FortiOS, "
- "FortiProxy, FortiPAM y FortiSwitchManager, con base instalada enorme en España. En el mismo lote entran "
- "Ivanti, Cisco, Microsoft, Palo Alto, Atlassian, BeyondTrust y dos de una plataforma de copias de seguridad "
- "de proveedores gestionados. <b>Ninguna de las nueve lleva marcado uso conocido en campañas de ransomware.</b>",
- "Esta es la pieza para llevar a una reunión de gobierno, no a una de operaciones. <b>Una vulnerabilidad de "
- "6.0 que la política de parcheo por puntuación del cliente habría dejado en la cola seis meses está hoy "
- "marcada como explotada.</b> De ahí salen dos preguntas concretas: ¿contempla su política el <b>reingreso de "
- "vulnerabilidades antiguas</b> al catálogo de explotadas, o solo mira la nota en el momento de la "
- "publicación? Y si prioriza únicamente por puntuación, <b>está mal diseñada</b>. Añádase un dato de contexto "
- "que casi nadie tiene: el margen que da el catálogo <b>se ha acortado de veintiún días a tres en el curso de "
- "2026</b>, de modo que quien tenga su política anclada en «veintiún días para explotadas», heredada de la "
- "directiva anterior, está desalineado.",
- 'El <a href="https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json" @L>catálogo '
- 'de vulnerabilidades explotadas conocidas, en su fichero de datos</a> y el aviso '
- '<a href="https://fortiguard.fortinet.com/psirt/FG-IR-26-122" @L>FG-IR-26-122 de Fortinet</a>.',
- "<b>Y una corrección que hay que hacer siempre que se use este catálogo en España: sus fechas límite no "
- "obligan a nadie aquí.</b> Invocan una directiva que vincula a las agencias federales civiles de Estados "
- "Unidos, no a entidades españolas ni europeas. Sirven como referencia de acuerdo de nivel de servicio interno "
- "y como evidencia de diligencia frente a la exigencia del ENS y de NIS2 de corregir sin demora indebida, pero "
- "<b>presentarlas como plazo regulatorio en España es un error frecuente y gordo</b>. El acortamiento de "
- "veintiún a tres días es cálculo propio sobre los campos del catálogo; no se ha podido leer el texto de la "
- "directiva."),
+("thr", "Siemens · 19 y 23 de octubre de 2026", False,
+ "El fabricante confirma explotación activa un día antes de que el catálogo lo recoja, y publica el documento "
+ "más útil de la semana: una declaración de productos no afectados",
+ "Dos cosas, y las dos valen. La primera es una secuencia de fechas que conviene tener medida. El aviso "
+ "<b>SSA-580366</b> sobre carga lateral de bibliotecas en el <b>Siemens Software Center</b>, versiones "
+ "anteriores a la V4.0.9.8, se publicó el 15 de octubre, recibió la corrección el 17, y en su <b>versión 3 del "
+ "19 de octubre</b> Siemens añadió la referencia a su propia entrada de bitácora sobre «<b>la explotación "
+ "activa actualmente conocida</b>» y cómo detectarla. El catálogo de vulnerabilidades explotadas lo incorporó "
+ "el <b>20 de octubre</b>: <b>el fabricante lo dijo un día antes</b>. La segunda es de otro tipo. El <b>23 de "
+ "octubre</b> Siemens publicó el aviso <b>SSA-566435</b> cubriendo el estado de impacto de <b>veintiséis "
+ "productos</b> frente a las dos vulnerabilidades de PHP, y para la mayoría la respuesta es que «PHP no está "
+ "presente en este producto» o que «no usa PHP en ninguna parte de su arquitectura». Pero el mismo día publicó "
+ "el <b>SSA-566512</b>, donde sí hay impacto: PAN-OS alojado en aparatos industriales <b>RUGGEDCOM "
+ "APE1808</b>, con 9,8 crítico y 8,1 alto.",
+ "Las dos cosas son material de proceso. <b>La primera reordena de dónde sacas la señal:</b> si tu cliente "
+ "espera a que una vulnerabilidad entre en el catálogo para actuar, va un día por detrás del fabricante como "
+ "mínimo, y el canal del fabricante es gratis y está en formato legible por máquina. Suscribirse al canal de "
+ "avisos de los cinco o seis fabricantes que de verdad tiene instalados es la mejora de vigilancia más barata "
+ "que se puede proponer. <b>La segunda es el documento que nadie pide y todo el mundo necesita:</b> una "
+ "declaración formal del fabricante de que su producto <b>no</b> está afectado. Eso es exactamente la evidencia "
+ "con la que se cierra un expediente de gestión de vulnerabilidades sin parchear a ciegas y sin dejar un hueco "
+ "en el registro de riesgos. Mételo como cláusula en los contratos de suministro de software y de equipo "
+ "industrial: obligación de emitir declaración de afectación o de no afectación ante vulnerabilidad crítica "
+ "publicada, en plazo tasado. Es, de paso, lo que el Reglamento de Ciberresiliencia va a empujar solo.",
+ 'Los avisos <a href="https://cert-portal.siemens.com/productcert/html/ssa-580366.html" @L>SSA-580366</a> y '
+ '<a href="https://cert-portal.siemens.com/productcert/csaf/ssa-566435.json" @L>SSA-566435</a> del equipo de '
+ 'producto de Siemens.',
+ "Matiz técnico que evita exagerar el primer caso: <b>CVE-2026-110936 es local y requiere atacante "
+ "autenticado</b>, y su puntuación base es solo <b>6,7</b> en la versión 3.1 de la escala, puntuada por "
+ "Siemens. Entró en el catálogo por la explotación constatada, no por la gravedad. Es justamente el ejemplo de "
+ "por qué una política de parcheo anclada únicamente a la puntuación se deja fuera lo que de verdad se está "
+ "usando."),
 
-("thr", "BeyondTrust, Atlassian y Palo Alto · del 14 al 16 de octubre de 2026", False,
- "Tres avisos que comparten un patrón: el producto autogestionado no se parchea solo aunque el fabricante diga "
- "que ya lo ha parcheado",
- "<b>BeyondTrust</b>, aviso BT26-05 de 15 de octubre, <b>CVE-2026-102764</b>, <b>CVSS 9.3</b>, omisión de "
- "autenticación sin interacción y por red en su producto de soporte remoto, que afecta a <b>todas las "
- "versiones hasta la 26.2.3</b>. El fabricante indica que aplicó el parche a todos sus clientes de servicio "
- "gestionado el 9 de octubre. <b>Atlassian</b>, <b>CVE-2026-21589</b>, <b>CVSS 9.3</b>, acceso arbitrario a "
- "ficheros en <b>todas las versiones</b> de la gama autogestionada; el aviso es del 5 de octubre pero entró en "
- "el catálogo de explotadas el 15. <b>Palo Alto</b>, <b>CVE-2026-0322</b>, ejecución remota autenticada en la "
- "interfaz de gestión de PAN-OS, con el fabricante reconociendo <b>explotación muy limitada</b> y sin solución "
- "alternativa conocida.",
- "El patrón que los une vale más que los tres por separado: <b>«el fabricante ya lo parcheó» solo vale para el "
- "servicio gestionado</b>. Si el cliente tiene el producto autogestionado y no está suscrito a "
- "actualizaciones automáticas, el parche no se ha aplicado solo. Es el caso típico de falso sentido de "
- "seguridad. Dos acciones concretas: en el producto de soporte remoto, comprobar si es autogestionado y "
- "aplicarlo a mano, porque es una herramienta de acceso remoto privilegiado; y en la gama de gestión del "
- "trabajo, además de actualizar, <b>revisar los registros de acceso</b>, porque el fabricante dice que no "
- "puede confirmar si alguna instancia autogestionada fue afectada. En el cortafuegos, lo inmediato y gratis es "
- "verificar que la interfaz de gestión <b>no es alcanzable desde internet ni desde la red de usuarios</b>, que "
- "baja la urgencia de golpe.",
- 'Los avisos <a href="https://www.beyondtrust.com/trust-center/security-advisories/bt26-05" @L>BT26-05 de '
- 'BeyondTrust</a> y <a href="https://security.paloaltonetworks.com/CVE-2026-0322" @L>CVE-2026-0322 de Palo '
- 'Alto Networks</a>.',
- "Precisión que hay que respetar: <b>BeyondTrust no afirma explotación activa</b> en su aviso, solo describe "
- "lo que un atacante podría hacer. La señal de explotación viene de la entrada en el catálogo. No atribuirle "
- "una afirmación que no hizo. Y en la gama autogestionada, la tabla de versiones corregidas del aviso se "
- "extrae mal: hay que releerla en el original antes de dar números. Nota de encadenamiento útil: hay equipos "
- "industriales que llevan PAN-OS embebido, y ahí el parche <b>no va por el canal del fabricante del "
- "cortafuegos</b> sino por el del fabricante industrial."),
+("thr", "Fortinet · 21 y 23 de octubre de 2026", False,
+ "Hay actualizaciones publicadas y no hay boletín técnico hasta el 10 de noviembre, y la rama 7.2 de FortiMail "
+ "ya no recibe corrección: hay que migrar",
+ "Fortinet ha liberado actualizaciones que corrigen vulnerabilidades críticas y altas <b>identificadas mediante "
+ "pruebas asistidas por inteligencia artificial</b>, y lo ha hecho sin publicar todavía los boletines técnicos. "
+ "El aviso del <b>INCIBE-CERT del 23 de octubre</b>, marcado como <b>preliminar</b> y de criticidad crítica, lo "
+ "dice con todas las letras: «<b>Fortinet prevé publicar los boletines técnicos el 10 de noviembre de 2026</b>» "
+ "y «<b>los identificadores CVE, las puntuaciones CVSS y los impactos individuales están pendientes de "
+ "publicación</b>». Versiones afectadas y correctoras: FortiOS 8.0.0 a 8.0.1, 7.6.0 a 7.6.7, 7.4.0 a 7.4.12 y "
+ "7.2.0 a 7.2.13, que van a 8.0.2, 7.6.8, 7.4.13 y 7.2.14; FortiManager y FortiAnalyzer con el mismo patrón; "
+ "FortiAuthenticator a 8.0.4 y 6.6.11. Y <b>FortiMail</b>: afectadas 8.0.0 a 8.0.1, 7.6.0 a 7.6.6, 7.4.0 a "
+ "7.4.8 y <b>7.2.0 a 7.2.9</b>, con corrección en 8.0.2, 7.6.7 y 7.4.9, pero <b>la rama 7.2 requiere migrar a "
+ "una rama corregida</b>. El único aviso propio del equipo de producto con fecha en la ventana es el del 21 de "
+ "octubre, sobre PHP, con 9,8.",
+ "Dos problemas distintos y los dos de gestión, no técnicos. <b>El primero es que hay que parchear a ciegas.</b> "
+ "Un cliente con un proceso serio de gestión de vulnerabilidades necesita identificador, puntuación e impacto "
+ "para priorizar, abrir el cambio y justificarlo ante el comité, y durante <b>dos semanas y media</b> no los va "
+ "a tener. La decisión correcta es aplicar igual, priorizando lo expuesto a internet, y documentar en el "
+ "registro de cambios que se actúa sobre aviso de fabricante sin boletín, con la fecha del 10 de noviembre "
+ "anotada para completar el expediente. <b>El segundo es más serio y afecta a la planificación:</b> donde antes "
+ "era un parche el que no bajaba a la rama 7.2 de FortiMail, ahora es <b>la rama entera la que queda fuera</b>. "
+ "Eso convierte lo que parecía una tarea de mantenimiento en un <b>proyecto de migración de la pasarela de "
+ "correo</b>, con pruebas, ventana y riesgo de entrega. Si tu cliente está en 7.2, la conversación de esta "
+ "semana no es de parcheo, es de presupuesto. Mientras tanto, Fortinet recomienda restringir la administración "
+ "a direcciones de confianza, aplicar doble factor y no exponer FortiManager a internet.",
+ 'El <a href="https://www.incibe.es/incibe-cert/alerta-temprana/avisos/multiples-actualizaciones-en-productos-'
+ 'de-fortinet" @L>aviso preliminar del INCIBE-CERT de 23 de octubre de 2026</a>.',
+ "Nota de verificación: las páginas del equipo de respuesta de producto de Fortinet <b>no han sido alcanzables "
+ "esta semana</b>, por error de servidor en todas las rutas probadas, de modo que las versiones de arriba "
+ "proceden del canal oficial de Fortinet y del aviso del INCIBE-CERT, no de la página del boletín. Antes de "
+ "lanzar una campaña de parcheo sobre un parque grande conviene reconfirmar matriz de versiones el 10 de "
+ "noviembre, cuando el fabricante publique."),
+
+("thr", "Cadena de suministro industrial · 19 a 23 de octubre de 2026", False,
+ "Tres avisos críticos de control industrial en cuatro días y las vulnerabilidades de PHP aterrizando en "
+ "producto de control de edificios",
+ "El INCIBE-CERT publicó <b>diecinueve avisos en la ventana, diecisiete de ellos críticos</b>, y <b>cuatro de "
+ "sistemas de control industrial</b>. La secuencia que cuenta la historia: el <b>19 de octubre</b>, carga "
+ "lateral de bibliotecas en el Software Center de Siemens, de criticidad alta; el <b>21 de octubre</b>, dos "
+ "críticos, múltiples vulnerabilidades en Festo AX OS por componentes de OpenSSL y ejecución remota de código "
+ "en el software STARe de Mettler-Toledo por intercambio previo a la autenticación; y el <b>23 de octubre</b>, "
+ "el que importa: «<b>impacto de vulnerabilidades críticas de PHP en productos de Johnson Controls</b>», "
+ "criticidad crítica y marcado como <b>aviso preliminar</b>, es decir pendiente de ampliación. Johnson Controls "
+ "es control de edificios: climatización, detección de incendios, control de accesos. El mismo día, los avisos "
+ "de impacto de PHP cubrían QNAP, Synology, Tenable, Mitel, Palo Alto Networks y Cisco.",
+ "Esta es la secuencia que hay que dibujar para un cliente industrial o para un sujeto al ENS con edificios "
+ "instrumentados, porque se explica en tres pasos y se entiende sin ser técnico. <b>Primero</b>, aparece una "
+ "vulnerabilidad en un lenguaje de propósito general. <b>Segundo</b>, dos días después está dentro de producto "
+ "de control de edificios y de un cortafuegos embebido en un aparato industrial. <b>Tercero</b>, el aviso es "
+ "preliminar, o sea que el alcance todavía va a crecer. El trabajo que esto exige no es parchear: es "
+ "<b>inventario de software de terceros embebido</b>, que es justo lo que ningún cliente industrial tiene, "
+ "porque su inventario está hecho de equipos y no de componentes. Y la medida que sí se puede aplicar mientras "
+ "no haya parche de fabricante es la de siempre y sigue siendo la buena: <b>segmentación entre la red de "
+ "tecnología de la información y la de operación, y retirar de internet lo que no tenga que estar</b>. De paso, "
+ "el borrador del NIST de seguridad de tecnología operacional está abierto a comentarios hasta el 30 de "
+ "noviembre, y es el plazo de normalización con más sustancia para este perfil de cliente.",
+ 'El <a href="https://www.incibe.es/incibe-cert/alerta-temprana/avisos-sci/impacto-de-vulnerabilidades-criticas-'
+ 'de-php-en-productos-de-johnson-controls" @L>aviso del INCIBE-CERT sobre el impacto de PHP en productos de '
+ 'Johnson Controls</a>.',
+ "Nota de método sobre la fuente, por si hay que repetir el barrido: la ruta de avisos de seguridad del "
+ "INCIBE-CERT que está enlazada en el propio menú de su sitio <b>devuelve error</b>, y el listado que sí "
+ "funciona es otro. El sitio es además intermitente, y peticiones idénticas alternan respuesta correcta y "
+ "error. No conviene concluir «no hay avisos» en el primer intento fallido."),
 ]
 
 BULOS = [
- ("«La Decisión 2026/2274 da presunción de conformidad con el artículo 17 del Reglamento de IA.»",
-  "Es la lectura que se va a repetir en todas partes y <b>no es lo que dice la fuente</b>. La Decisión no "
-  "menciona el artículo 17 en ningún punto: su base jurídica es el artículo 10, apartado 6, del Reglamento "
-  "1025/2012, el mecanismo que invoca es el <b>artículo 40</b> del Reglamento de IA, y el objeto lo describe "
-  "por remisión al punto 9 del anexo I de la petición de normalización, sobre sistemas de gestión de la "
-  "calidad de los proveedores. Que eso equivalga al artículo 17 es una inferencia correcta de fondo, pero hay "
-  "que presentarla como lectura propia y no como contenido de la Decisión."),
- ("«Un certificado ISO/IEC 42001 da presunción de conformidad con el Reglamento de IA.»",
-  "No. La norma que acaba de citarse en el Diario Oficial es la <b>EN 18286:2026</b>, que es otra cosa: está "
-  "diseñada para superponerse a la 42001, no para equivaler a ella. Un certificado 42001 no otorga presunción "
-  "de conformidad. Conviene desactivarlo por escrito con el cliente antes de que lo dé por hecho en una "
-  "licitación."),
- ("«El proyecto de ley de inteligencia artificial sigue en tramitación.»",
-  "No. La ficha del expediente 121/000096 dice literalmente <b>«Concluido - (Caducado)» desde el 6 de octubre "
-  "de 2026</b>, igual que las de entidades críticas y sector financiero. La afirmación contraria procede de un "
-  "dosier de agosto, anterior a la disolución. Regla general que conviene aplicar estos meses: <b>cualquier "
-  "dato de «en tramitación» sobre la legislatura basado en material anterior al 6 de octubre hay que "
-  "reverificarlo contra la ficha</b> antes de usarlo."),
- ("«Seis Estados miembros están sin transponer la Directiva de entidades críticas.»",
-  "Seis están demandados, que no es lo mismo. Cruzado el censo de medidas nacionales, <b>Francia tiene 22 "
-  "medidas notificadas, Polonia 7 y Países Bajos 3</b>. Los únicos de los seis que siguen sin notificar nada "
-  "son <b>España, Bulgaria y Suecia</b>. Si el cuadro se usa como semáforo de cumplimiento, esos tres son los "
-  "que importan."),
- ("«Las fechas límite del catálogo de vulnerabilidades explotadas obligan en España.»",
-  "No obligan a nadie aquí. El campo de acción requerida invoca una directiva que <b>vincula a las agencias "
-  "federales civiles de Estados Unidos</b>. Para una entidad española son referencia de acuerdo de nivel de "
-  "servicio interno y evidencia de diligencia frente a la exigencia del ENS y de NIS2 de corregir sin demora "
-  "indebida, pero no son un plazo regulatorio. Es uno de los errores más repetidos del año."),
- ("«ISO/IEC 27090 sigue en proceso de publicación.»",
-  "Los buscadores y la propia página explicativa de la ISO lo dicen, y están desfasados. <b>La ficha viva y el "
-  "canal de datos de la norma dicen etapa 60.60, publicada, desde el 14 de octubre de 2026.</b> Si alguien "
-  "enseña una captura que dice lo contrario, no es una refutación: es una copia antigua."),
- ("«El Reglamento de Ejecución (UE) 2026/2266 es un acto de ejecución de NIS2.»",
-  "No. Aparece al cruzar citas de NIS2 porque la menciona de pasada para las garantías de notificación de "
-  "incidentes, pero <b>es un reglamento sobre permisos de conducción móviles</b>. Falso positivo clásico de "
-  "búsqueda por citas."),
- ("«El asunto C-866/26 es el recurso contra Irlanda por no transponer NIS2.»",
-  "Tampoco. Ese asunto, interpuesto el 3 de agosto de 2026, es de <b>aguas residuales urbanas</b>. El "
-  "candidato a recurso de NIS2 contra Irlanda sería el C-1076/26, del 2 de octubre, pero su objeto <b>tampoco "
-  "es público</b> y por tanto tampoco se afirma aquí."),
- ("«BeyondTrust ha confirmado que su vulnerabilidad está siendo explotada.»",
-  "No lo ha dicho. Su aviso describe lo que un atacante podría hacer, sin afirmar explotación activa. <b>La "
-  "señal de explotación viene de la inclusión en el catálogo de explotadas</b>, que es un criterio externo. "
-  "Atribuirle la afirmación al fabricante es ponerle en la boca algo que no dijo."),
- ("«El Colegio de Médicos ha descartado que hubiera fuga de datos.»",
-  "Dice algo distinto y más preciso: que sus equipos de seguridad <b>no han detectado</b> fuga durante el "
-  "incidente. Y a la vez reconoce que apareció una nota aparentemente autogenerada afirmando que los datos "
-  "fueron presuntamente cifrados y robados. Lo correcto es: <b>incidente admitido, exfiltración ni confirmada "
-  "ni desmentida</b>."),
- ("«Unos 700 supermercados europeos sufrieron manipulación de sus cámaras frigoríficas.»",
-  "La campaña está confirmada por el CERT francés, las cifras no. <b>El boletín del CERT no nombra ninguna "
-  "víctima y no da número de entidades afectadas.</b> Las cifras de 700 supermercados, los 50 grados en las "
-  "cámaras y el detalle de la contraseña proceden de prensa y de declaraciones recogidas por agencias. Si se "
-  "le cuenta a un cliente, se cuenta como lo cuenta el CERT."),
- ("Corrección a la edición 008, sobre la fundación alemana de lugares de memoria.",
-  "La edición pasada recogió un ataque de octubre apoyándose explícitamente en una declaración institucional "
-  "recogida por agencia, y advirtió de que el sitio propio devolvía una instantánea antigua. Ahora <b>el sitio "
-  "ya es alcanzable y con contenido actual, y el único aviso de incidente que publica es el del 11 de agosto "
-  "de 2026</b>, sobre el ransomware detectado el 5 de agosto. Esto no desmiente lo publicado, pero el canal "
-  "propio de la entidad no documenta el segundo ataque, y había que decirlo."),
- ("Precisión sobre el estado del Land de Berlín, también de seguimiento.",
-  "El 16 de octubre se publicó que la cancillería considera conjurado el peligro agudo del ciberataque de "
-  "agosto, que se pidieron 30 bitcoins, que no se pagó y que tras vencer el ultimátum se publicaron 1,4 "
-  "millones de registros. <b>Trátese como cambio de estado atribuido y no como comunicado propio:</b> el texto "
-  "está alojado en el dominio del Land pero es un despacho de agencia que recoge declaraciones, y no se ha "
-  "localizado la nota de prensa oficial equivalente."),
+ ("«El Consejo Europeo del 22 y 23 de octubre adoptó conclusiones sobre soberanía digital.»",
+  "<b>No hubo Consejo Europeo esos días.</b> El Consejo Europeo se reunió el <b>15 y 16 de octubre de 2026</b>, "
+  "antes de la ventana, y lo que hubo el 22 y el 23 fue una <b>reunión informal de ministros de Comercio en "
+  "Dublín</b>, que no adopta conclusiones ni actos. Y las conclusiones reales del 15 y 16 de octubre <b>no "
+  "tratan ciberseguridad, nube, IA ni soberanía digital</b>: su única pieza digital es protección de menores. "
+  "Cualquier «conclusión del Consejo Europeo del 22 o 23 de octubre sobre soberanía digital» es un dato "
+  "fabricado."),
+ ("«El C-866/26 es el recurso de la Comisión contra Irlanda por no transponer NIS2.»",
+  "No lo es. Leído el texto íntegro de su aviso, el C-866/26 es un recurso del <b>artículo 260.1 del Tratado "
+  "por inejecución de una sentencia de 2019 sobre la directiva de tratamiento de aguas residuales urbanas</b>, "
+  "referido a ocho aglomeraciones irlandesas. Es el candidato natural por fecha y no tiene nada que ver con "
+  "ciberseguridad. A 26 de octubre de 2026, <b>ninguno de los 328 avisos de recurso publicados en 2026 menciona "
+  "la Directiva 2022/2555</b>."),
+ ("«La Fundación PHP publicó el aviso de las dos vulnerabilidades críticas.»",
+  "El aviso de php.net lo firman <b>«el equipo de seguridad de PHP» y «el equipo de desarrollo de PHP»</b>. "
+  "«Fundación PHP» es la fórmula que usa el aviso del CCN-CERT, no la de la fuente primaria. Es un detalle "
+  "menor hasta que alguien lo cita en un informe y se lo corrigen."),
+ ("«El CCN-CERT identifica las dos vulnerabilidades de PHP como CVE-2026-109618 y CVE-2026-109618.»",
+  "Eso es literalmente lo que dice el aviso <b>AL 11/26</b>, con el <b>mismo identificador repetido</b>. "
+  "Comprobado sobre el código fuente de la página y no sobre una extracción de texto: el identificador "
+  "<b>CVE-2026-109619 no aparece ni una vez</b> en todo el documento. El segundo CVE es ese, y lo confirman "
+  "php.net, el CERT francés, CERT-EU, el INCIBE y Siemens. <b>Es una errata de la fuente oficial</b>: quien "
+  "haya construido su inventario de exposición sobre ese texto le falta la mitad del problema."),
+ ("«El apartado 4 del artículo 111 del Reglamento de IA entra en aplicación el 2 de diciembre de 2026.»",
+  "Corrección a lo que publicó este boletín la semana pasada. Ese apartado es <b>aplicable desde el 2 de agosto "
+  "de 2026</b>, porque el artículo 111 no figura entre las excepciones del artículo 113, y está en vigor desde "
+  "el 27 de julio. Lo que ocurre el 2 de diciembre es que <b>vence el plazo de cumplimiento</b> que el propio "
+  "apartado concede. No nace una obligación: se agota un periodo de gracia."),
+ ("«Lituania tiene dos autoridades notificantes del Reglamento de Ciberresiliencia.»",
+  "Corrección a este boletín, edición 009. <b>Las dos son belgas</b>, el Centro de Ciberseguridad de Bélgica y "
+  "el servicio público federal de Economía, y la segunda se registró dentro de esta ventana. Lituania tiene "
+  "<b>una sola</b> en esa norma. Las dos que sí tiene son en el <b>esquema europeo de certificación por "
+  "criterios comunes</b>, y de ahí viene el cruce. Los quince Estados que daba la edición pasada eran "
+  "correctos; lo que estaba mal era a quién se atribuían las dos."),
+ ("«El Real Decreto 806/2026 es de 6 de octubre.»",
+  "Corrección a este boletín. Es el <b>Real Decreto 806/2026, de 5 de octubre</b>, publicado en el BOE del 6. "
+  "Verificado en el sumario y en el propio texto. Es el tipo de error que un lector técnico detecta y que "
+  "resta credibilidad al resto."),
+ ("«La Autoridad Catalana aprobó la Circular 1/2026 el 19 de octubre.»",
+  "El texto oficial cierra con «Barcelona, <b>14 de octubre de 2026</b>» y la firma de su directora. El <b>19 "
+  "de octubre es la fecha de publicación</b> en el Diario Oficial de la Generalitat, número 9775, y la entrada "
+  "en vigor son veinte días después: el <b>8 de noviembre de 2026</b>. Tres fechas distintas que conviene no "
+  "mezclar."),
+ ("«El CERT francés documentó cerca de 200 violaciones de datos el 20 de octubre.»",
+  "La <b>fecha de publicación</b> del documento es el 20 de octubre y cae de lleno en la ventana, pero <b>las "
+  "casi 200 violaciones son de 2025</b>: el propio texto dice «en 2025, el CERT-FR siguió cerca de 200 "
+  "violaciones de datos procedentes de aplicaciones web». Es un balance con recomendaciones, no una oleada de "
+  "esta semana. Dicho eso, es material de primera para clientes que expongan aplicaciones web con datos "
+  "sensibles: su hallazgo central es que en muchos casos la exfiltración fue posible <b>sin explotar ninguna "
+  "vulnerabilidad técnica</b>."),
+ ("«El informe de brechas de septiembre de la AEPD es el máximo histórico de la serie.»",
+  "Dos cautelas. La primera, de verificación: <b>ese informe no se ha podido leer esta semana</b>, porque el "
+  "servidor de la Agencia devolvió error de mantenimiento en cinco intentos, así que la cifra de 939 "
+  "notificaciones queda <b>no reconfirmada en fuente primaria esta semana</b>, aunque encaje al decimal con la "
+  "serie verificada del informe de agosto. La segunda, de alcance: el informe <b>solo publica doce meses</b> "
+  "más los totales anuales, de modo que lo máximo que se puede afirmar es que sería récord de esa serie de doce "
+  "meses, cuyo máximo previo es julio de 2026 con 919."),
+ ("«El ataque a la ciudad de Eichstätt fue del 10 u 11 de octubre.»",
+  "Corrección a este boletín, y la fuente es la propia entidad: el ransomware «<b>comenzó en la noche del 8 al "
+  "9 de octubre</b>», según la nota municipal del 22 de octubre. También estaba mal nuestra fecha de "
+  "confirmación pública: el primer comunicado propio de la ciudad es del <b>12 de octubre a las 15:40</b>, no "
+  "del 22, y entre medias publicó siete avisos más. Lo que aporta el 22 de octubre es otra cosa: la fecha de "
+  "inicio y el descarte de que fuese un ataque dirigido."),
+ ("«Hospitales neerlandeses y belgas han sufrido fugas de datos esta semana vía su proveedor de software.»",
+  "Las dos historias circulan con fecha de octubre de 2026 y ninguna es de la ventana. El ransomware al "
+  "proveedor del expediente electrónico hospitalario neerlandés es de <b>abril de 2026</b>, confirmado "
+  "entonces por la propia compañía y con más de sesenta notificaciones a la autoridad neerlandesa. Y el "
+  "incidente de los portales de atención de hospitales belgas es de <b>enero de 2026</b>: barrida la sala de "
+  "noticias propia del hospital que se cita, sus doce entradas de octubre de 2026 <b>no contienen ninguna "
+  "referencia a ciberseguridad ni a fuga de datos</b>."),
+ ("«Los apagones preventivos de webs del 21 y 22 de octubre fueron ciberataques.»",
+  "No lo fueron, y la distinción es exactamente la que hay que enseñar a comunicar. Ministerios, hospitales y "
+  "ayuntamientos en Bélgica y Países Bajos, la Autoridad Bancaria Europea y el fondo de pensiones suizo "
+  "PUBLICA retiraron sus webs de servicio <b>por precaución ante una vulnerabilidad</b>, no como consecuencia "
+  "de una intrusión. <b>No hay compromiso confirmado en ninguna de esas entidades.</b> PUBLICA llegó a "
+  "desmentir expresamente que su caída tuviera relación con el ciberataque que sí sufrió su proveedor, que es "
+  "buena práctica: en plena crisis, cualquier caída se te atribuye al ataque si no lo aclaras tú."),
 ]
 
 SILENCIO = [
- ("BOE", "Revisados íntegramente los sumarios del 13, 14, 15, 16 y 17 de octubre por la interfaz de datos "
-  "abiertos, y no solo la Sección I. <b>Ninguna disposición general</b> de ciberseguridad, ENS, Instrucciones "
-  "Técnicas de Seguridad, infraestructuras críticas ni protección de datos. Lo único relacionado está en la "
-  "Sección III y es la resolución de delegación de competencias de la AESIA, que es organización interna. El "
-  "18 fue domingo y no hubo edición. Matiz por precisión: las dos resoluciones del 13 de octubre que crean el "
-  "registro y la sede electrónicos de una sociedad estatal son administración electrónica y se apoyan en el "
-  "ENS, pero no son disposiciones de ciberseguridad."),
- ("Congreso de los Diputados", "Sin movimiento posterior al 6 de octubre en las tres fichas, verificadas una a "
-  "una. <b>No hay sesión convocada de la Diputación Permanente</b>, comprobado hoy, de modo que ni la Comisión "
-  "de Interior ni la de Economía pueden reunirse y no hay orden del día que reportar. Rastreado además el "
-  "índice de iniciativas de la legislatura por diez términos distintos sin encontrar ninguna iniciativa nueva "
-  "de ciberseguridad, cosa por otra parte imposible con las Cámaras disueltas."),
- ("CCN y CCN-CERT", "Alcanzado y con resultado. El archivo del CCN cuenta <b>exactamente cuatro entradas en "
-  "octubre de 2026</b> y las cuatro están en este boletín o descartadas: la guía CCN-STIC 106, la acreditación "
-  "de nube pública, la alerta AL 10/26 y el anuncio de una competición de formación. Lo que no hubo: "
-  "<b>ningún Perfil de Cumplimiento Específico nuevo</b>, ninguna ampliación del catálogo CPSTIC, cuyo último "
-  "anuncio sigue siendo el del 4 de septiembre, y <b>ningún aviso del CCN-CERT posterior al AL 10/26</b>, "
-  "siendo el anterior el AL 09/26 del 28 de septiembre sobre Citrix NetScaler."),
- ("ENS e Instrucciones Técnicas de Seguridad", "<b>Ninguna Instrucción Técnica nueva ni modificada</b>, y "
-  "conviene decir cómo se sostiene: se aprueban por resolución publicada en el BOE, y los cinco sumarios de la "
-  "ventana se han revisado uno a uno sin encontrar ninguna. El portal del ENS tampoco registra ninguna "
-  "declaración de conformidad con fecha de octubre de 2026."),
- ("INCIBE e INCIBE-CERT", "Parcialmente alcanzado, y hay que decirlo así. El listado de avisos de seguridad "
-  "del INCIBE-CERT <b>no se ha podido recorrer</b>, por error del servidor en tres rutas distintas; su "
-  "bitácora se ha cubierto por la versión en inglés, que sí responde. Lo encontrado en ventana son nueve "
-  "avisos técnicos de vulnerabilidad, sin contenido de cumplimiento, y dos entradas de bitácora: la operación "
-  "internacional contra una banda de ransomware y un caso estadounidense fuera de ámbito. Su blog publicó un "
-  "solo artículo divulgativo."),
- ("AEPD", "Alcanzada, sin bloqueo de acceso. <b>Dos elementos en ventana y ninguno de incidentes</b>: una "
-  "convocatoria de artículos para su revista el 15 de octubre y una entrada institucional de blog el 13. "
-  "<b>Ninguna resolución sancionadora con componente de seguridad.</b> Y un dato para vigilar la semana que "
-  "viene: <b>el informe mensual de notificación de brechas de septiembre no estaba publicado al cierre de la "
-  "ventana</b>, el último sigue siendo el de agosto."),
- ("AESIA", "Alcanzada. <b>Nada entre el 13 y el 18 de octubre</b> en su portal de actualidad; lo más reciente "
-  "sigue siendo del 30 de septiembre. Sin guías nuevas y sin designación publicada de autoridades notificantes "
-  "ni de vigilancia del mercado. Nota operativa: el portal ha migrado de dominio y los enlaces internos "
-  "apuntan ya al nuevo."),
- ("Oficina Europea de IA y Comisión", "Revisado hasta hoy el apartado de política y legislación del Reglamento "
-  "de IA. <b>El único elemento normativo nuevo es la Decisión 2026/2274</b> de este boletín. Sin códigos de "
-  "buenas prácticas, actos de ejecución, actos delegados ni consultas nuevas de la Oficina de IA en la ventana."),
- ("Comité Europeo de Protección de Datos", "Revisado hasta el 18 de octubre. En ventana <b>solo los dos "
-  "documentos del 13</b>, la declaración sobre gafas inteligentes y un dictamen sobre normas corporativas "
-  "vinculantes, más la nota de la sanción noruega del 16. <b>Sin decisiones vinculantes del artículo 65 ni "
-  "directrices nuevas adoptadas</b>, y sin consultas nuevas abiertas: siguen las tres que ya estaban, con sus "
-  "plazos en el cuadro."),
- ("Banco Central Europeo y Mecanismo Único de Supervisión", "Alcanzado con profundidad. En ventana solo la "
-  "nota del 15 de octubre sobre el reporte de pérdidas y ganancias y el discurso del 14. <b>Nada de DORA, de "
-  "pruebas guiadas por amenazas, de externalización ni de sanciones por riesgo tecnológico.</b> La última "
-  "carta a los bancos sigue siendo la del 7 de julio sobre amenazas habilitadas por IA, y las prioridades "
-  "supervisoras vigentes siguen siendo las de 2026 a 2028."),
- ("TIBER-EU y TIBER-ES", "Alcanzados los dos y sin novedades. La página del marco europeo mantiene todos sus "
-  "documentos en versiones de 2025, sin ninguna actualización de octubre de 2026, y la del Banco de España "
-  "mantiene su guía de implementación y su proceso de solicitud sin cambios."),
- ("EBA, ESMA y EIOPA", "Revisadas hasta hoy. Lo de ESMA está en el boletín. De la EBA, en ventana, el programa "
-  "conjunto de 2027, una clasificación bajo el reglamento de criptoactivos y un paquete técnico de reporte que "
-  "<b>no incluye ningún componente de DORA</b>. De EIOPA, nada de DORA ni de ciber. Los nuevos documentos de "
-  "preguntas y respuestas de ESMA del 16 de octubre son de criptoactivos y de contrapartidas centrales, <b>no "
-  "de DORA</b>, y su página de vigilancia de proveedores críticos no tiene novedades."),
- ("Banco de España, CNMV y DGSFP", "El Banco de España, alcanzado: cuatro elementos en ventana, ninguno de "
-  "ciberseguridad ni de DORA, y su índice de circulares sigue con la última de diciembre de 2025. La CNMV, en "
-  "el boletín, pero <b>con la laguna declarada de su registro de hechos relevantes</b>. La DGSFP, alcanzada "
-  "por su dominio alternativo porque el habitual tiene el certificado caducado: su última publicación es del "
-  "13 de octubre y no es de ciber."),
- ("Diario Oficial de la Unión Europea", "Barridos los <b>119 actos con título en español</b> publicados del 13 "
-  "al 16 de octubre, más una comprobación previa de que la ventana estaba indexada. <b>Ninguno de materia "
-  "ciber, resiliencia, agencia europea de ciberseguridad ni certificación</b>, salvo la Decisión 2026/2274 de "
-  "este boletín. El 17 y el 18 fueron fin de semana, sin Diario Oficial. Cribados además todos los documentos "
-  "que citan NIS2, entidades críticas y el Reglamento de Ciberresiliencia desde julio, sin nada nuevo en "
-  "ventana."),
- ("Tribunal de Justicia de la Unión Europea", "Comprobados los seis asuntos de entidades críticas: <b>ninguno "
-  "ha pasado del escrito de demanda</b>. Sin sentencias, sin autos y sin conclusiones en ninguno de los seis. "
-  "Y barridos los treinta y seis avisos de recurso interpuesto publicados en 2026 buscando una cita de NIS2, "
-  "sin una sola coincidencia."),
- ("ENISA", "Alcanzada. Única publicación fechada en la ventana: una nota del 16 de octubre sobre el resultado "
-  "de una competición europea de ciberseguridad, <b>sin valor regulatorio</b>. Su último informe sigue siendo "
-  "el panorama de amenazas de septiembre."),
- ("NIST", "<b>Confirmado que no publicó nada entre el 13 y el 18 de octubre.</b> Revisados el canal de "
-  "novedades y el listado de publicaciones ordenado por fecha: lo más reciente es del 8 de octubre. Sin "
-  "novedad tampoco en el marco de ciberseguridad ni en criptografía poscuántica."),
- ("ISO y CEN-CENELEC", "Revisados los catálogos de los dos subcomités que importan. <b>ISO/IEC 27001 y 42001 "
-  "siguen sin proyecto de revisión</b> en el catálogo, y la guía de implantación de la 42001 sigue en etapa "
-  "preparatoria, así que no hay nada utilizable a corto plazo. La página de inteligencia artificial de "
-  "CEN-CENELEC <b>sigue sin actualización de calendario y sin declaración sobre los retrasos</b>, con sus "
-  "entregables clave descritos como en desarrollo: que la EN 18286 sea la primera norma armonizada citada es, "
-  "en sí misma, la medida del retraso."),
- ("Prensa y agregadores, trampas de fecha", "Semana especialmente mala en reciclaje. Comprobadas y descartadas "
-  "por fecha ocho historias que circulan como nuevas y no lo son, entre ellas una brecha educativa que afecta "
-  "a más de nueve mil entidades y es de mayo, dos ciberataques municipales españoles que son de agosto de 2026 "
-  "y de 2025, y una brecha en infraestructura de dispositivos móviles de la Comisión Europea que es de enero. "
-  "<b>Si alguna aparece esta semana en un cuadro de mando, está mal fechada.</b>"),
+ ("BOE", "Revisados íntegramente por la interfaz de datos abiertos los sumarios del 19, 20, 21, 22, 23 y 24 de "
+  "octubre, <b>1.539 asuntos en todas las secciones</b> y no solo en la I. <b>Cero apariciones</b> de "
+  "ciberseguridad, ciberresiliencia, NIS2, entidades críticas, Real Decreto 311/2022, Instrucción Técnica de "
+  "Seguridad, INCIBE, CNI, DORA o servicio universal. El 25 fue domingo y la interfaz confirma que no hubo "
+  "edición. Lo único con pulso digital en la Sección I es una resolución que actualiza el modelo de aceptación "
+  "de apoderamiento del registro electrónico de apoderamientos, y es administración electrónica. Nota de "
+  "método: la ruta heredada por identificador de fecha ya no funciona; el identificador del sumario es "
+  "correlativo de diario."),
+ ("Congreso de los Diputados", "Sin movimiento posterior al 6 de octubre. Verificada la ficha del expediente "
+  "<b>121/000096</b>, la ley orgánica de IA: «Concluido - (Caducado)» desde el 06/10/2026, tras siete "
+  "ampliaciones del plazo de enmiendas y sin haber salido nunca de esa fase. Enumerados además <b>los 110 "
+  "proyectos de ley del Gobierno de la legislatura</b>, con dos hallazgos que conviene registrar: el "
+  "<b>121/000105</b>, que era el vehículo de adaptación a DORA, también figura caducado el 6 de octubre; y "
+  "<b>no existe ningún proyecto de ley de transposición de NIS2</b> en toda la legislatura, de modo que el cero "
+  "español de NIS2 es estructuralmente peor que el de entidades críticas, que al menos llegó al Congreso."),
+ ("Consejo de Ministros", "Hubo reunión el martes 20 de octubre y se ha leído su referencia íntegra. <b>Cero "
+  "ocurrencias</b> de ciber, NIS2, inteligencia artificial, telecomunicaciones o Esquema Nacional. Dato limpio "
+  "y citable: <b>el Ministerio para la Transformación Digital y de la Función Pública no llevó ni un solo "
+  "asunto</b>. Lo aprobado fue un real decreto-ley de Seguridad Social, materias primas fundamentales, "
+  "prevención de riesgos laborales y subvenciones. Único asunto con lectura tecnológica, y es tangencial: la "
+  "autorización a una mutua para externalizar administración de servidores y soporte por 49,3 millones de "
+  "euros, que interesa por riesgo de terceros y no por contenido normativo."),
+ ("CCN y CCN-CERT", "Alcanzado y con resultado cerrado. El archivo del CCN cuenta <b>exactamente seis entradas "
+  "en octubre de 2026</b> y ninguna posterior al 21. En ventana solo dos, las dos en este boletín: la alerta "
+  "AL 11/26 y la convocatoria de las Jornadas STIC. Lo que no hubo: <b>ninguna guía CCN-STIC nueva ni "
+  "actualizada</b>, <b>ningún Perfil de Cumplimiento Específico nuevo</b> (contrastado contra el registro de "
+  "certificados, cuyo perfil más reciente data de octubre de 2025) y <b>nada sobre eMudhra</b>. El listado real "
+  "de guías y el catálogo CPSTIC siguen bloqueados al acceso automatizado, así que esos dos puntos quedan <b>no "
+  "reconfirmados en fuente primaria esta semana</b>. Y un dato que dice mucho: la página doctrinal del CCN "
+  "sobre NIS2 sigue fechada en <b>agosto de 2024</b>."),
+ ("ENS e Instrucciones Técnicas de Seguridad", "<b>Ninguna Instrucción Técnica nueva ni modificada</b>, con "
+  "doble confirmación: siguen siendo las cuatro de siempre en el portal del ENS, y el barrido de los seis "
+  "sumarios del BOE no devuelve ninguna. Lo que sí se movió es la conformidad: doce certificaciones nuevas en "
+  "la ventana, que están en este boletín."),
+ ("INCIBE e INCIBE-CERT", "Alcanzado con rodeo. <b>Diecinueve avisos generales</b> en la ventana, diecisiete de "
+  "ellos críticos, y <b>cuatro de sistemas de control industrial</b>, tres de ellos críticos; cero el 24 y el "
+  "25. El blog <b>no publicó ni actualizó nada</b> en la ventana, y su entrada más reciente sigue siendo la del "
+  "15 de octubre sobre fraude a huéspedes con datos reales de reservas, que converge con lo que la AEPD "
+  "describe sobre proveedores de software hotelero. En la bitácora, dos actualizaciones de incidentes "
+  "anteriores. En la sala de prensa, solo el balance del congreso de León. <b>Nada sobre eMudhra.</b>"),
+ ("AEPD", "Alcanzada en notas de prensa y blog, con tres elementos en ventana, todos en este boletín. <b>Cero "
+  "resoluciones sancionadoras publicadas en la ventana</b>: la más reciente del registro sigue siendo del 6 de "
+  "octubre, con las dos advertencias a ayuntamientos por IA en videovigilancia. <b>Ninguna guía nueva</b>, "
+  "aunque hay que decir que la página de guías devolvió error de servidor de forma persistente y la Agencia "
+  "anuncia siempre sus guías por nota de prensa, que sí se ha leído. El informe mensual de brechas de "
+  "septiembre está publicado pero <b>no ha podido leerse</b>: ver la advertencia del asunto correspondiente."),
+ ("AESIA", "Alcanzada en su dominio actual. <b>Un solo elemento en ventana</b>, del 20 de octubre, y es "
+  "institucional: una reunión con un club empresarial en A Coruña. <b>Ninguna guía nueva:</b> siguen siendo las "
+  "dieciséis del entorno de pruebas regulado, y la propia Agencia advierte de que «serán actualizadas de "
+  "acuerdo al Ómnibus Digital». <b>Ninguna designación publicada</b>, ni en su portal ni en el BOE, donde su "
+  "único rastro de la semana es una corrección de errores de un concurso de personal."),
+ ("Oficina Europea de IA y Comisión", "Revisado el apartado de política del Reglamento de IA, cuya última "
+  "actualización declarada es del 8 de septiembre. <b>Sin códigos de buenas prácticas, actos de ejecución, "
+  "actos delegados ni consultas nuevas en la ventana.</b> Los elementos de octubre de la Oficina de IA son "
+  "todos anteriores al 19. Y una comprobación de fondo que cierra una duda recurrente: la <b>versión "
+  "consolidada vigente del Reglamento de IA sigue siendo la de 27 de julio de 2026</b> y no ha cambiado durante "
+  "la ventana."),
+ ("Comité Europeo de Protección de Datos", "Revisado hasta hoy. <b>Cero elementos publicados entre el 19 y el "
+  "25 de octubre.</b> Sin directrices adoptadas, sin dictámenes, sin decisiones vinculantes del artículo 65, "
+  "sin declaraciones y <b>sin consultas nuevas</b>: siguen las tres que ya estaban, con sus fechas verificadas "
+  "una a una en este boletín. El elemento más reciente de su canal es del 16 de octubre y es una sanción "
+  "nacional noruega."),
+ ("Sanciones de protección de datos con componente de seguridad", "Barrido autoridad por autoridad y "
+  "<b>ninguna sanción del artículo 32 en la ventana</b>. Alcanzadas y sin incidentes ni sanciones de seguridad: "
+  "Francia, con dos elementos ajenos; Italia, con telemarketing y un vademécum; Irlanda, cuya última noticia es "
+  "del 1 de octubre; Países Bajos, cuya última es del 16 de octubre y <b>no publica nada sobre el incidente de "
+  "Ahold Delhaize</b>; Cataluña, con la Circular y una intervención; y Andalucía y País Vasco, en este boletín. "
+  "No barridas: la autoridad federal alemana y las de los Länder más allá de Berlín y Hesse, que es <b>laguna "
+  "de búsqueda y no ausencia comprobada</b>."),
+ ("Diario Oficial de la Unión Europea", "Barridos uno a uno los <b>196 actos publicados del 19 al 23 de "
+  "octubre</b>, 76 de la serie L y 120 de la serie C, más la comprobación de que el 24 y el 25 no hubo edición. "
+  "<b>Cero actos de ciberseguridad horizontal</b>: ni NIS2, ni entidades críticas, ni Reglamento de "
+  "Ciberresiliencia, ni Reglamento de Ciberseguridad, ni ENISA, ni certificación. Verificación cruzada por el "
+  "grafo oficial de citas, que es independiente del título: <b>ningún acto de la ventana cita las Directivas "
+  "2022/2555 ni 2022/2557</b>. Lo único ciber adyacente es una corrección de errores de una decisión del "
+  "Consejo sobre la convención de Naciones Unidas contra la ciberdelincuencia, que no genera obligaciones para "
+  "entidades privadas."),
+ ("Reglamento de Ciberseguridad 2 y modificación de NIS2", "Los dos expedientes legislativos, revisados en el "
+  "observatorio del Parlamento Europeo y <b>sin movimiento en la ventana</b>. El Reglamento de Ciberseguridad "
+  "2, que derogaría el (UE) 2019/881 y rehace el marco de certificación y el mandato de ENISA, está en fase de "
+  "enmiendas en comisión: su último acto registrado es la presentación de enmiendas del <b>13 de octubre</b>, "
+  "seis días antes de la ventana, y acumula dos dictámenes motivados de subsidiariedad, checo y francés. La "
+  "modificación de NIS2 por medidas de simplificación sigue «pendiente de decisión en comisión», con proyecto "
+  "de informe de 24 de septiembre. <b>Ni votación, ni acuerdo provisional, ni informe aprobado.</b>"),
+ ("Comisión Europea, paquetes de infracciones", "<b>No hubo paquete en la ventana</b>, y conviene saber por "
+  "qué: los paquetes son mensuales y el de octubre se publicó el <b>día 1</b>, de modo que buscar uno entre el "
+  "19 y el 25 de cualquier mes dará casi siempre vacío por diseño del calendario. Leído el texto completo del "
+  "paquete de octubre: <b>ninguna decisión sobre NIS2, entidades críticas, DORA, el Reglamento de IA ni el "
+  "Reglamento de Ciberresiliencia</b>. Lo más próximo es una carta de emplazamiento complementaria a Bulgaria "
+  "por el Reglamento de Servicios Digitales, y es citable como precedente: la Comisión persigue ahí "
+  "<b>precisamente el déficit de designación de autoridades y un régimen sancionador mal construido</b>, que es "
+  "el perfil exacto del problema español en IA."),
+ ("ENISA", "Alcanzada. <b>Dos elementos en ventana y los dos en este boletín:</b> la declaración conjunta sobre "
+  "PHP del 21 de octubre y el aviso técnico de inventario de componentes del 22. <b>Ninguna consulta pública "
+  "abierta ni cerrada</b> en la ventana; la más reciente sigue siendo la del esquema de certificación de "
+  "servicios de seguridad gestionados, de julio."),
+ ("Nube y soberanía digital", "Sin novedad en los tres frentes y conviene decir por qué importa el silencio. El "
+  "<b>esquema europeo de certificación de servicios en nube sigue solo «solicitado»</b>, sin reglamento de "
+  "ejecución y sin ningún hito en 2026: verificado barriendo todos los actos desde junio que citan el "
+  "Reglamento de Ciberseguridad, ninguno es un esquema nuevo. La propuesta de reglamento de desarrollo de la "
+  "nube y la IA no se ha movido desde junio, y la de redes digitales desde enero. Mensaje para el cliente que "
+  "espera el esquema de nube para decidir su estrategia: <b>que deje de esperar</b> y planifique con el esquema "
+  "de criterios comunes y los esquemas nacionales, porque el Reglamento de Ciberseguridad 2 va a rehacer el "
+  "marco entero."),
+ ("Banco Central Europeo y Mecanismo Único de Supervisión", "Alcanzado con profundidad. En ventana, un discurso "
+  "sobre pruebas de resistencia del 23 de octubre, la entrevista del 20 que está en este boletín, la lista de "
+  "entidades supervisadas y una entrevista sobre el euro digital. <b>Ninguna sanción, ni por riesgo "
+  "tecnológico ni por otra materia.</b> Dos comprobaciones que cierran dudas de la edición pasada: <b>no se ha "
+  "publicado el boletín de supervisión de otoño</b>, y <b>no hay prioridades supervisoras 2027 a 2029</b>, "
+  "siguen vigentes las de 2026 a 2028. La única carta a los bancos de todo 2026 sigue siendo la del 7 de julio, "
+  "y la carta anunciada sobre riesgo cuántico <b>no existe todavía</b>."),
+ ("DORA, nivel 2 y proveedores críticos", "Resultado rotundo y verificado contra el Diario Oficial: <b>no se ha "
+  "publicado ni adoptado ninguna norma técnica, acto delegado ni acto de ejecución de DORA en todo 2026</b>, ni "
+  "en la ventana. La última es de marzo de 2025. <b>Ninguna designación nueva de proveedor tercero de "
+  "tecnología crítico</b>, ningún nombramiento publicado de equipo de examen conjunto y ninguna recomendación "
+  "emitida. En las páginas de vigilancia de las tres autoridades europeas, sin novedades."),
+ ("TIBER-EU y TIBER-ES", "Alcanzados los dos y sin novedades. El marco europeo mantiene sus documentos en "
+  "versiones anteriores a la ventana, sin ninguna actualización de octubre de 2026, y la página del Banco de "
+  "España mantiene su guía de implementación y su proceso de solicitud sin cambios."),
+ ("EBA, ESMA, EIOPA y JERS", "De la EBA, lo de la ventana está en este boletín, más el nombramiento de una "
+  "nueva vicepresidenta y material administrativo; <b>ninguna publicación con componente de DORA</b>. De "
+  "EIOPA, nada de ciber ni de DORA. De la JERS, nada de riesgo ciber sistémico en la ventana, aunque conviene "
+  "recordar que su aviso de junio sobre ciberriesgos sistémicos derivados de modelos de IA de frontera sigue "
+  "siendo la pieza más citable para clientes financieros. <b>ESMA no se ha podido alcanzar</b>, por bloqueo de "
+  "su red de distribución de contenidos: eso es <b>laguna declarada y no ausencia de novedades</b>."),
+ ("Banco de España, CNMV y DGSFP", "El Banco de España, alcanzado, con el memorando poscuántico en este "
+  "boletín y su índice de circulares todavía con la última de diciembre de 2025. La CNMV, alcanzada por rodeo "
+  "porque su ruta de consultas devuelve error: dos consultas con plazo abierto y una sanción publicada, todo en "
+  "este boletín. La DGSFP, alcanzada por su dominio alternativo porque el habitual sigue con el certificado "
+  "caducado, y <b>sin publicaciones en la ventana</b>."),
+ ("Tribunal de Justicia de la Unión Europea", "Barrido exhaustivo y con control. Descargados y leídos los "
+  "<b>328 avisos de recurso interpuesto publicados en 2026</b>: ninguno menciona NIS2, y el control es que la "
+  "directiva de entidades críticas aparece en seis. En el <b>C-616/26</b>, sondeados los cuatro tipos de "
+  "documento del asunto: solo existe el aviso de recurso. Sin sentencia, sin conclusiones y sin auto. Y los "
+  "expedientes C-1080/26, C-1076/26 y C-1089/26 <b>no existen todavía como documento publicado</b>. Limitación "
+  "declarada: el barrido cubre lo publicado en el Diario Oficial, y la interfaz del Tribunal no es consultable "
+  "de forma automatizada, de modo que una vista señalada no publicada no se vería."),
+ ("NIST", "Alcanzado y con resultado. <b>Dos borradores nuevos en la ventana</b>, los dos en este boletín, y "
+  "ninguna publicación final. Revisado el listado completo de borradores abiertos: seis con fecha de cierre y "
+  "tres sin ella. <b>Sin CSF 2.1 ni 3.0 en consulta</b>: el marco de ciberseguridad evoluciona por guías de "
+  "inicio rápido y perfiles de comunidad, no por revisión del núcleo. Sin novedad en criptografía poscuántica "
+  "más allá de los borradores de verificación de identidad que siguen abiertos."),
+ ("ISO, CEN-CENELEC, ENAC y acreditación europea", "El frente ISO se movió y está en este boletín: <b>doce "
+  "proyectos cambiaron de etapa</b>, cinco en el subcomité de seguridad y siete en el de IA. El frente europeo "
+  "está <b>vacío y verificado como vacío</b>: ninguna norma del comité europeo de IA publicada ni enviada a "
+  "encuesta en la ventana, cuyo último movimiento es del 14 y 15 de octubre con la primera norma armonizada del "
+  "Reglamento de IA, y <b>ninguna declaración nueva sobre el calendario o los retrasos</b>. La ENAC, sin "
+  "novedad: su elemento más reciente es del 14 de octubre y <b>no ha anunciado esquema de acreditación sobre la "
+  "ISO/IEC 42006</b>, la de certificación de sistemas de gestión de IA, pese a que esa norma se publicó en "
+  "julio de 2025."),
+ ("Microsoft, SAP, Schneider Electric y Citrix", "Comprobados los cuatro y <b>sin boletín con fecha en la "
+  "ventana</b>. Microsoft, sin publicación fuera de ciclo de producto instalado en casa del cliente: su martes "
+  "de parches fue el 13 de octubre. SAP, igual, y su próximo día de parches es el <b>10 de noviembre</b>. "
+  "Schneider Electric, con 32 notificaciones en lo que va de año y las dos más recientes del 13 de octubre: "
+  "<b>ninguna entre el 19 y el 25</b>. De Citrix, el listado de boletines <b>no es alcanzable sin ejecutar su "
+  "aplicación</b>, pero sí las páginas estáticas de artículo, y las dos más recientes están fechadas el 8, el 9 "
+  "y el 19 de agosto y de octubre, fuera de ventana."),
+ ("Prensa y agregadores, trampas de fecha", "Semana cargada en reciclaje, con <b>siete trampas comprobadas</b> "
+  "contra la fuente propia y no contra el agregador. Las tres de incidentes están en la sección de "
+  "correcciones, y a ellas se suman dos ayuntamientos españoles cuyos avisos siguen vivos y son de agosto de "
+  "2025 y de agosto de 2026, y una alerta del CERT francés en estado abierto que no se ha actualizado desde el "
+  "16 de octubre. <b>Un estado abierto no es una actualización</b>, y la fecha de publicación de un documento "
+  "no es la fecha de los hechos que describe. Si algo de esto aparece esta semana en un cuadro de mando, está "
+  "mal fechado."),
 ]
 
 counts = {k: 0 for k in SEC}

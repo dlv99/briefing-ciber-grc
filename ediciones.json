@@ -1,5 +1,15 @@
 [
  {
+  "n": 10,
+  "iso": "2026-10-26",
+  "fecha": "26 de octubre de 2026",
+  "titular": "A seis semanas de su propio hito, el Reglamento de Ciberresiliencia no tiene ni un solo organismo notificado en toda la Unión, y España sigue sin autoridad notificante cuatro meses después de que fuese exigible designarla",
+  "entrada": "Semana vacía donde todo el mundo mira y llena donde casi nadie. En el <b>BOE</b> no hubo una sola disposición de ciberseguridad en 1.539 asuntos, y en el <b>Diario Oficial</b> ni uno en 196 actos. Pero el censo europeo de organismos de evaluación de la conformidad dice algo que no se había publicado así: a seis semanas del 11 de diciembre de 2026, fecha que el propio <b>Reglamento de Ciberresiliencia</b> se fijó para tener capacidad suficiente, hay <b>cero organismos notificados</b> en los veintisiete Estados, y <b>España no figura siquiera entre los quince con autoridad notificante</b>. Mientras eso pasa en el papel, el mismo Reglamento mordió por primera vez en la práctica: dos vulnerabilidades críticas de <b>PHP</b> activaron el 21 de octubre una declaración conjunta de cinco instituciones europeas que recuerda, en su propio texto, que notificar ya es obligatorio. Y en supervisión bancaria hay un plazo que vence el sábado.",
+  "periodo": "del 19 al 25 de octubre de 2026",
+  "asuntos": 36,
+  "plazos": 29
+ },
+ {
   "n": 9,
   "iso": "2026-10-19",
   "fecha": "19 de octubre de 2026",

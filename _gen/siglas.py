@@ -76,6 +76,16 @@ EXPANDIR = {
  "AEMET": "Agencia Estatal de Meteorología",
  "LIBE": "comisión de Libertades Civiles, Justicia e Interior del Parlamento Europeo",
  "LOREG": "Ley Orgánica del Régimen Electoral General",
+ "NANDO": "censo europeo de organismos notificados y autoridades notificantes",
+ "SBOM": "inventario de componentes de software",
+ "APDCAT": "Autoridad Catalana de Protección de Datos",
+ "AVPD": "Autoridad Vasca de Protección de Datos",
+ "BSI": "agencia federal alemana de seguridad de la información",
+ "OEN": "organismos europeos de normalización",
+ "RAM": "Reglamento de Abuso de Mercado",
+ "CTPP": "proveedor tercero de servicios tecnológicos crítico, en el sentido de DORA",
+ "DOGC": "Diario Oficial de la Generalitat de Cataluña",
+ "ERM": "gestión del riesgo de la empresa en su conjunto",
 }
 SOLO_ABBR = {
  "TIC": "tecnologías de la información y la comunicación",
