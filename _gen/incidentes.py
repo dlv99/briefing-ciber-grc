@@ -30,461 +30,567 @@ TIPOS = {
 #  quien_confirma, url, obligaciones, leccion)
 INCIDENTES = [
 
+("charite", "Charité Universitätsmedizin Berlin", "Alemania", "san",
+ ["acc", "rgpd"],
+ "La semana del 19 al 25 de octubre la Charité apagó su web de forma preventiva por las vulnerabilidades "
+ "críticas de PHP, y el 27 de octubre el sitio estuvo brevemente inaccesible. El <b>30 de octubre de 2026</b> "
+ "publicó en su propio portal una nota titulada «Ciberataque al servidor web de la Charité», enlazada desde el "
+ "bloque de actualidad de su portada, en la que confirma el acceso y la salida de datos. La entidad <b>no ha "
+ "publicado la fecha del ataque ni la de la detección</b>",
+ "2026-10-30",
+ "Abierto, con servidores aislados y comunicación individual a los afectados anunciada pero no ejecutada",
+ "<b>Confirmado por la entidad:</b> atacantes no identificados accedieron al <b>servidor web que aloja su "
+ "página pública</b> y se llevaron <b>datos personales de contacto</b>; afectados empleados, estudiantes y "
+ "personas externas que usaron el formulario de contacto, por ejemplo para pedir cita; <b>la asistencia a "
+ "pacientes no se vio afectada</b>; servidores afectados aislados y desconectados; causa analizada y medidas "
+ "reforzadas; comunicación individual a los afectados «muy en breve»; contacto estrecho con autoridades de "
+ "supervisión e investigación. Y un deslinde que la propia Charité hace expresamente: <b>este ataque no tiene "
+ "relación con la vulnerabilidad de PHP</b> que la había obligado a apagar la web días antes. Confirmado por "
+ "portavoz a un medio especializado, es decir atribuido a la entidad pero no publicado por ella: las categorías "
+ "son nombre y apellidos, dirección de correo y posiblemente vinculación organizativa; los <b>datos de salud "
+ "del artículo 9 están «expresamente no afectados»</b>; el formulario de cita tenía un <b>campo de texto "
+ "libre</b>, de modo que algunas personas pudieron introducir su dolencia o su historial, y a esas se las "
+ "informará individualmente; se presentó denuncia penal; sin indicios hasta ahora de publicación o uso indebido. "
+ "<b>Desconocido:</b> fecha del ataque y de la detección, vector técnico, número de afectados en fuente "
+ "primaria, qué autoridades concretas se han notificado, y si hay ransomware o sitio de filtración detrás, "
+ "cosa que no se menciona.",
+ "La propia Charité, en una nota con fecha y fecha de revisión de 30 de octubre de 2026 publicada en su portal "
+ "institucional. Comprobación adicional: la nota <b>no nombra</b> ni a la autoridad berlinesa de protección de "
+ "datos ni a la agencia federal de seguridad de la información, aunque habla de «autoridades de supervisión e "
+ "investigación».",
+ "https://www.charite.de/die_charite/themen/cyberangriff_auf_charite_webserver/",
+ "Artículo 33 del RGPD ante la <b>autoridad berlinesa de protección de datos y libertad de información</b>, "
+ "porque la Charité es organismo de derecho público del Land de Berlín; la competencia es inequívoca aunque la "
+ "entidad no la nombre. Artículo 34 ante los interesados: la propia entidad <b>anuncia comunicación "
+ "individual</b>, lo que equivale a reconocer alto riesgo, pero nótese que es un anuncio de futuro y no un paso "
+ "consumado, porque a 1 de noviembre no consta que las cartas se hubieran enviado. <b>NIS2 sí aplica en "
+ "Alemania</b> y la Charité es hospital universitario de gran tamaño, de modo que entra en el sector de salud "
+ "del anexo y además ya era instalación crítica por volumen de casos; pero la duda real no es la sujeción "
+ "subjetiva, es el <b>umbral de incidente significativo</b>, porque el activo comprometido fue el servidor web "
+ "público, la asistencia no se degradó y no hubo interrupción operativa. Un incidente que no degrada el "
+ "servicio esencial puede quedar por debajo del umbral aun habiendo exfiltración de datos personales, y es "
+ "justamente el caso en que conviene <b>documentar por escrito el razonamiento del umbral</b>. DORA no aplica. "
+ "Aplican además el secreto médico del código penal alemán y la normativa hospitalaria del Land, y es relevante "
+ "que la entidad afirme que no hay datos del artículo 9 afectados, porque es lo que evita el salto cualitativo.",
+ "<b>Dos lecciones, y la primera es la que nadie tiene inventariada.</b> El <b>formulario de contacto de la web "
+ "corporativa es un almacén de datos personales</b> que casi ninguna organización ha inventariado nunca. Aquí "
+ "había decenas de miles de personas que habían escrito para pedir cita, y el <b>campo de texto libre</b> "
+ "convirtió un formulario de contacto en un posible repositorio de datos de salud, que es el peor resultado "
+ "posible desde el punto de vista del artículo 9. Pregunta a cada cliente tres cosas: qué hay detrás de sus "
+ "formularios web, cuánto tiempo se retiene y <b>si el campo libre está acotado</b>. Acotar ese campo cuesta "
+ "una hora de desarrollo y cambia la categoría de la brecha. La segunda es de comunicación de crisis y vale "
+ "como patrón: la Charité <b>separó limpiamente su incidente real del apagado preventivo</b> que había hecho "
+ "días antes por la vulnerabilidad de PHP. Ese deslinde explícito es buena práctica, porque cuando hay dos "
+ "eventos próximos en el tiempo, si no los separa la entidad los separará la prensa, y peor. Úsalo con "
+ "cualquier cliente que esté apagando sistemas de forma preventiva estas semanas: conviene dejar constancia "
+ "fechada de qué es prevención y qué es incidente."),
+
+("leipzig", "Universität Leipzig", "Alemania", "edu",
+ ["cont", "acc"],
+ "El <b>28 de octubre de 2026 a las 11:55</b> la universidad publicó en una página propia creada al efecto, "
+ "titulada «Ataque a los sistemas informáticos», que «hoy» se había producido un ataque contra sus sistemas y "
+ "que, para limitar el daño, había <b>retirado por completo sus servicios de la red</b> para poder analizarlos. "
+ "Remite a su web y a su cuenta de una red social para actualizaciones. A 1 de noviembre <b>no había publicado "
+ "ninguna actualización fechada</b> en esa página",
+ "2026-10-28",
+ "Abierto, con los servicios deliberadamente desconectados y análisis en curso",
+ "<b>Confirmado:</b> hubo un ataque contra los sistemas informáticos de la universidad el <b>28 de octubre</b>; "
+ "los servicios se <b>desconectaron por completo de forma deliberada</b> como medida de contención; los "
+ "análisis están en curso. <b>Desconocido, y es prácticamente todo lo demás:</b> la universidad <b>no dice</b> "
+ "qué servicios concretos están afectados, ni si hay datos personales implicados, ni menciona notificación al "
+ "RGPD, ni al responsable sajón de protección de datos, ni a la policía judicial del Land, ni a la agencia "
+ "federal de seguridad de la información, ni <b>califica el ataque</b>, es decir no dice que sea ransomware. "
+ "Tampoco da hora de detección ni hora de desconexión, solo la hora de publicación de la nota.",
+ "La propia universidad, en una página propia publicada el 28 de octubre de 2026 a las 11:55. No hay "
+ "confirmación de ningún regulador ni CERT, y la universidad no los menciona.",
+ "https://www.uni-leipzig.de/angriff-auf-die-it-systeme/",
+ "Artículo 33 del RGPD ante el <b>responsable sajón de protección de datos</b>, <b>si</b> se confirma acceso a "
+ "datos personales. A fecha de cierre la universidad <b>no ha confirmado ni descartado</b> brecha de datos, de "
+ "modo que <b>no puede afirmarse que el artículo 33 se haya disparado</b>: está en el plazo de evaluación, que "
+ "es exactamente el escenario del considerando 87 y de las directrices del Comité Europeo sobre el momento del "
+ "«conocimiento». El artículo 34 no procede todavía, porque sin determinación de datos afectados no hay juicio "
+ "de alto riesgo posible. Sobre <b>NIS2</b> hay un punto fino que conviene no equivocar: el artículo 6, "
+ "apartado 41, de la Directiva define «organismo de investigación» <b>excluyendo expresamente a los centros "
+ "educativos</b>, de modo que una universidad pública alemana <b>no queda cubierta por la ley federal</b> por "
+ "su actividad docente; podría quedarlo por una actividad investigadora singular, o por legislación del Land de "
+ "Sajonia, que es la que decide la cobertura de las entidades públicas estatales. Conclusión práctica para un "
+ "dictamen: <b>presume que no aplica NIS2 federal y verifica la ley del Land</b>, no lo contrario. DORA no "
+ "aplica. Aplican la normativa de datos de investigación y, si hubiera historiales clínicos de la facultad de "
+ "medicina, el régimen sanitario, aunque el hospital universitario es entidad jurídicamente distinta.",
+ "<b>La decisión de apagarlo todo a mediodía de un miércoles es la lección, y es incómoda.</b> Casi todos los "
+ "planes de respuesta que vas a revisar contemplan aislar los sistemas afectados; muy pocos tienen tomada de "
+ "antemano la decisión sobre <b>quién está autorizado a desconectar la totalidad de los servicios, con qué "
+ "criterio y a quién hay que informar</b>, y prácticamente ninguno ha medido qué se rompe cuando se hace. En "
+ "una universidad, apagarlo todo a media mañana significa parar matrículas, exámenes, nóminas, investigación y "
+ "biblioteca a la vez. La pregunta para tu cliente es doble: ¿tiene esa autorización escrita y nominada, y "
+ "sabe cuánto cuesta una hora de apagado total? Si no puede responder lo segundo, la decisión se tomará tarde "
+ "por miedo, que es el peor de los dos errores posibles. Y una observación que merece decirse en positivo: una "
+ "nota de cuatro líneas en una página propia, publicada el mismo día a las 11:55, es más de lo que logra la "
+ "mayoría de las organizaciones. Tener esa plantilla preparada de antemano cuesta una hora y compra días de "
+ "credibilidad. Lo que ya no es tan bueno es que a los cuatro días siga sin actualizarse."),
+
+("copenhague", "Københavns Universitet", "Dinamarca", "edu",
+ ["rgpd", "acc"],
+ "El <b>20 de octubre</b> la universidad detectó la intrusión y la contuvo. El <b>23 de octubre</b> la hizo "
+ "pública: atacantes habían accedido a <b>uno de sus entornos de prueba</b>, con información de unas "
+ "<b>525.000 personas</b>, y restringió el acceso físico a determinadas ubicaciones críticas del campus. El "
+ "<b>25 de octubre</b> amplió la nota: también se habían comprometido los <b>códigos de las tarjetas de "
+ "identificación de unas 20.000</b> personas, a las que se emitieron códigos nuevos, tras lo cual reabrió las "
+ "ubicaciones restringidas. El <b>lunes 26</b> apagó de forma «preventiva y controlada» dos sistemas "
+ "administrativos y lo atribuyó inicialmente a un ataque nuevo de ese mismo día. El <b>martes 27 "
+ "rectificó</b>: no era un ataque nuevo. El <b>28</b> publicó una corrección adicional, y su última entrada "
+ "fechada es del <b>30 de octubre a las 16:25</b>",
+ "2026-10-23",
+ "Abierto, con dos sistemas administrativos apagados y el alcance aún en análisis",
+ "<b>Confirmado por la universidad:</b> intrusión en un <b>entorno de prueba</b>, detectada el 20 de octubre y "
+ "contenida; <b>sin indicios</b> de que se alcanzaran los sistemas de operación diaria; acceso bloqueado; "
+ "<b>525.000 personas</b> afectadas; categorías de datos nombre, <b>número de identidad nacional</b>, teléfonos "
+ "de trabajo y domicilio y correo electrónico personal; <b>20.000 códigos de tarjeta de identificación</b> "
+ "comprometidos y reemitidos; incidente <b>notificado a la autoridad danesa de protección de datos</b>; y una "
+ "corrección propia del 28 de octubre: parte de los datos filtrados es <b>más antigua de lo comunicado al "
+ "principio, se remonta a 2002</b>, sin que eso altere el número de afectados. Rectificación del 27 de octubre: "
+ "el apagado del lunes <b>no se debió a un ataque nuevo</b>, sino a actividad dentro del sistema que al "
+ "principio lo pareció, y se mantiene por estar ligado al ataque original. <b>Desconocido:</b> el vector de "
+ "entrada; <b>por qué un entorno de prueba contenía datos reales de 525.000 personas</b>; el alcance exacto, "
+ "todavía en análisis; si hay denuncia policial, porque la universidad solo dice que mantiene informadas a "
+ "«otras autoridades relevantes»; y la fecha de finalización del apagado administrativo.",
+ "La propia universidad, en una página operativa con entradas fechadas y con hora, la última del 30 de octubre "
+ "a las 16:25, donde además publica sus dos correcciones. Nota de método: su canal de noticias no es alcanzable "
+ "en este entorno; la página operativa sí, y es la que contiene las actualizaciones.",
+ "https://www.ku.dk/en/operational-disruptions-at-ucph",
+ "Artículo 33 del RGPD ante la <b>autoridad danesa de protección de datos</b>, confirmada por la propia "
+ "universidad el 23 de octubre o antes. Artículo 34 <b>inequívocamente disparado</b> por la combinación de "
+ "<b>número de identidad nacional más datos de contacto a escala de 525.000 personas</b>, y agravado por los "
+ "20.000 códigos de tarjeta, que son <b>credenciales de acceso físico</b>; la reemisión de códigos es, en la "
+ "práctica, una medida de mitigación del artículo 34.1 in fine. Sobre <b>NIS2 en Dinamarca</b>, la exclusión de "
+ "los centros educativos de la definición de «organismo de investigación» del artículo 6.41 juega igual que en "
+ "el caso de Leipzig, y Dinamarca transpuso por leyes sectoriales sin que la educación superior sea sector de "
+ "los anexos I ni II: <b>previsiblemente no aplica</b>, y el deber operativo es el del RGPD. DORA no aplica. "
+ "Aplica además el régimen danés propio del número de identidad nacional, que conviene no leer con ojos "
+ "españoles: en Dinamarca es un <b>identificador de uso general</b> en el sector público y privado, de modo que "
+ "su riesgo de suplantación es muy superior al de un documento de identidad europeo medio.",
+ "<b>Tres lecciones, y las tres valen en una conversación con cualquier cliente.</b> La primera es la causa raíz "
+ "y es banal: <b>datos reales en un entorno de pruebas</b>. Pregunta a cada cliente si sus entornos de "
+ "preproducción contienen copias de producción, y exige anonimización o datos sintéticos. Un entorno de prueba "
+ "casi nunca tiene el nivel de endurecimiento, de registro y de vigilancia de producción, pero puede tener "
+ "exactamente los mismos datos, y ahí es donde entra el atacante que no logra entrar por la puerta principal. "
+ "La segunda es un cruce que pocos planes contemplan: <b>credenciales de acceso físico como dato personal</b>. "
+ "Los 20.000 códigos convirtieron una brecha lógica en un riesgo de intrusión física y obligaron a restringir "
+ "el campus; si tu cliente usa el mismo sistema de identificación para la puerta y para la red, ese puente "
+ "existe y hay que modelarlo. La tercera es de comunicación y es la más citable: la universidad anunció el "
+ "lunes un «ataque nuevo» y el martes tuvo que desdecirse. <b>En la fase aguda no se califica la causa de una "
+ "anomalía hasta tenerla.</b> Un apagado preventivo se explica perfectamente sin atribuirlo a nada, y la "
+ "rectificación cuesta mucha más credibilidad que la prudencia inicial."),
+
+("engie", "ENGIE", "Francia", "ene",
+ ["rgpd", "sum"],
+ "En fecha no revelada por la compañía se produjo un acceso no autorizado a <b>una herramienta utilizada por "
+ "entidades asociadas para la prospección y comercialización de ofertas de energía</b>. ENGIE envió "
+ "<b>correos electrónicos individuales de notificación</b> a los clientes franceses afectados, cuyo primer "
+ "rastro público verificable es del <b>23 y 24 de octubre</b>, con el propio correo fechado solo como «octubre "
+ "de 2026». El <b>29 de octubre de 2026</b> la cobertura se generaliza con <b>declaraciones de un portavoz de "
+ "ENGIE</b> que confirman la brecha y con la reproducción del texto de la notificación",
+ "2026-10-29",
+ "Abierto, con accesos cortados y notificación a los afectados ya ejecutada",
+ "<b>Confirmado por ENGIE:</b> «un acto de cibermalevolencia afectó recientemente a una herramienta utilizada "
+ "por algunos de nuestros socios para comercializar ofertas de energía»; «se identificó un <b>acceso no "
+ "autorizado</b> a sus datos personales»; las categorías son <b>nombre y apellidos, dirección postal, correo "
+ "electrónico, teléfono, punto de entrega o punto de cómputo, identificador de cliente y número de "
+ "contrato</b>; <b>ningún dato bancario afectado</b>; el <b>sistema de información interno de ENGIE no fue "
+ "comprometido</b>; accesos no autorizados cortados; notificación individual a los afectados con advertencia "
+ "sobre fraude y suplantación de identidad; afectación <b>limitada a clientes en Francia</b>. "
+ "<b>Desconocido:</b> la fecha del incidente, la de la detección, el <b>número de afectados</b>, la identidad "
+ "del prestador o de la herramienta de comercialización, <b>si se notificó a la CNIL</b>, porque ENGIE habla de "
+ "«autoridades competentes» sin nombrarlas, y si hay reivindicación o publicación de los datos.",
+ "ENGIE, por declaraciones de portavoz y por sus propias notificaciones del artículo 34 a los clientes "
+ "afectados, cuyo texto se ha podido leer. <b>Salvedad explícita que conviene declarar:</b> no se ha localizado "
+ "comunicado propio en el sitio de la compañía, de modo que la confirmación es de la entidad pero <b>sin URL "
+ "primaria</b>. Se toma el 29 de octubre como fecha de confirmación pública verificada y fechada, pero <b>es "
+ "probable que la confirmación real sea del 23 o 24 de octubre</b>, es decir anterior a la ventana, y conviene "
+ "reconfirmarlo en la próxima edición.",
+ "https://particuliers.engie.fr/",
+ "Artículo 33 del RGPD ante la <b>CNIL</b>. ENGIE no lo confirma expresamente, y eso es una <b>omisión notable "
+ "en su propia comunicación</b>: declararse en contacto con «las autoridades competentes» sin nombrar a la "
+ "autoridad de control es justamente lo que genera dudas. Artículo 34 <b>cumplido y documentado</b>: correo "
+ "individual a cada afectado con descripción de las categorías y recomendaciones sobre fraude y suplantación, "
+ "lo que además prueba que ENGIE valoró alto riesgo. Y el núcleo jurídico del caso está en el <b>artículo 28 y "
+ "en la cadena de suministro</b>: los datos estaban en una herramienta usada por <b>entidades asociadas</b> "
+ "para comercializar ofertas de ENGIE, de modo que hay que determinar si esas entidades eran <b>encargadas</b> "
+ "de ENGIE, y entonces ENGIE responde como responsable con deber de auditarlas por los artículos 28.1 y 32, o "
+ "<b>corresponsables o responsables independientes</b>; que ENGIE haya asumido la notificación a los afectados "
+ "apunta a su condición de responsable. Sobre <b>NIS2 en Francia</b>: ENGIE está de lleno en el anexo I, sector "
+ "energía, como entidad esencial, pero el activo comprometido fue <b>una herramienta de comercialización de "
+ "terceros, no el sistema interno ni los sistemas de operación</b>, y la compañía afirma expresamente que su "
+ "sistema interno no se vio comprometido, de modo que el umbral de «incidente significativo» es muy dudoso: no "
+ "hubo interrupción del servicio ni afectación de la red energética. La obligación operativa es la del RGPD, no "
+ "la de NIS2. DORA no aplica.",
+ "<b>Este es el caso de la semana para vender un proyecto de riesgo de terceros, y el argumento se escribe "
+ "solo.</b> Tu cliente puede tener su sistema de información interno impecable, como ENGIE insiste en que tiene "
+ "el suyo, y perder igualmente los datos de sus clientes porque <b>su red comercial de socios trabaja sobre una "
+ "herramienta que él no controla, no audita y probablemente no ha inventariado</b>. Las preguntas son cuatro y "
+ "casi nunca tienen respuesta: ¿qué herramientas usan sus distribuidores, agentes o franquiciados con datos de "
+ "<b>sus</b> clientes? ¿quién es responsable y quién encargado en cada una? ¿ha ejercido alguna vez el derecho "
+ "de auditoría del artículo 28? ¿y sabría notificar en 72 horas una brecha que ocurra en el sistema de un "
+ "socio? Hay además una lección de signo contrario que conviene dar para ser justo: la notificación de ENGIE a "
+ "los afectados <b>está bien hecha</b>, con categorías concretas, mención expresa de qué no se vio afectado y "
+ "advertencia de fraude, y es un buen modelo que enseñar. Pero <b>no nombrar a la autoridad de control</b> "
+ "resta credibilidad gratis. Y un detalle sectorial que vale el aviso: el punto de entrega combinado con el "
+ "identificador de cliente y el número de contrato es exactamente lo que se necesita para <b>suplantar a un "
+ "cliente ante otro comercializador</b>, de modo que el riesgo concreto aquí es el fraude de cambio de "
+ "comercializadora, no el genérico «phishing»."),
+
+("bundestag", "Dispositivos de diputados del Bundestag y de miembros del Gobierno federal", "Alemania", "adm",
+ ["acc"],
+ "Desde el <b>29 de octubre de 2026</b>, titulares de teléfonos entre diputados del Bundestag y miembros del "
+ "Gobierno federal recibieron <b>notificaciones de amenaza del fabricante</b> por un ataque de programa espía "
+ "mercenario. La <b>agencia federal de seguridad de la información notificó por escrito</b> a todas las "
+ "personas afectadas. El <b>domingo 1 de noviembre de 2026</b>, a las 20:26, el ministro federal de "
+ "Digitalización confirmó el ataque en una entrevista de radiotelevisión pública y reapareció en un programa "
+ "político sin dar más detalles",
+ "2026-11-01",
+ "Abierto, sin que se haya confirmado si alguno de los dispositivos fue efectivamente comprometido",
+ "<b>Confirmado por el ministro:</b> hubo un ataque de programa espía contra dispositivos de diputados y de "
+ "miembros del Gobierno; el origen de la alerta es <b>una notificación del fabricante del dispositivo</b>; "
+ "determinados dispositivos <b>pueden</b> haber sido comprometidos; y la <b>agencia federal de seguridad de la "
+ "información informó por escrito a todos los afectados</b>. <b>Desconocido, y es lo esencial:</b> <b>si el "
+ "ataque tuvo éxito</b>, porque las notificaciones del fabricante no lo indican; el número de afectados; qué "
+ "proveedor de programa espía; la atribución; qué datos se habrían obtenido; y si se ha notificado brecha al "
+ "RGPD y ante quién.",
+ "El <b>ministro federal de Digitalización</b>, en una entrevista de radiotelevisión pública recogida por "
+ "agencia el 1 de noviembre de 2026. <b>Advertencia de calidad de fuente, por delante de todo:</b> es "
+ "confirmación de autoridad pública, no filtración ni reivindicación, pero <b>no se ha podido alcanzar "
+ "comunicado escrito ni de la agencia federal ni del ministerio</b>, porque las notas de prensa de la agencia "
+ "no se sirven en este entorno. Su soporte documental es <b>más débil que el de los otros cuatro admitidos</b> "
+ "y se recomienda reconfirmarlo contra fuente escrita en la próxima edición. Dato convergente, de otro CERT: el "
+ "CERT francés mantiene desde el <b>29 de octubre</b> un aviso activo sobre una «nueva campaña de notificación» "
+ "dirigida a teléfonos del mismo fabricante.",
+ "https://www.bsi.bund.de/DE/Service-Navi/Presse/Alle-Meldungen-News/alle-meldungen-news_node.html",
+ "Aquí el reparto de obligaciones está jurídicamente enredado, y por eso es instructivo. <b>Artículos 33 y 34 "
+ "del RGPD:</b> el responsable del tratamiento de los datos del dispositivo de un diputado <b>no es la agencia "
+ "federal de seguridad</b>, que actúa como CERT nacional, sino el propio Bundestag respecto de los datos "
+ "institucionales y el diputado respecto de los suyos. Si se confirmara compromiso, la notificación "
+ "correspondería ante el <b>comisionado federal de protección de datos</b>. Pero a fecha de cierre <b>no hay "
+ "compromiso confirmado</b>, solo notificación de riesgo del fabricante, de modo que <b>no puede afirmarse que "
+ "el artículo 33 se haya disparado</b>. Y hay una distinción que conviene no fundir: la notificación escrita de "
+ "la agencia federal a los afectados es una <b>alerta de ciberseguridad, no una comunicación del artículo "
+ "34</b>. <b>NIS2 no aplica</b>: el artículo 2, apartado 7, de la Directiva permite a los Estados excluir a los "
+ "parlamentos, la ley federal alemana no somete al Bundestag como entidad NIS2, y además no se trata de un "
+ "servicio esencial degradado sino de dispositivos personales de titulares de cargos. El marco operativo es el "
+ "de seguridad de la información de la administración federal y el del propio Bundestag. DORA no aplica. Y "
+ "aplica algo que convierte esto en asunto constitucional y no solo técnico: el <b>secreto de las "
+ "comunicaciones de los diputados</b> y los privilegios parlamentarios de la Ley Fundamental.",
+ "<b>La lección es la notificación de amenaza del fabricante como fuente de detección, y es incómoda para "
+ "cualquier plan de respuesta.</b> Ni la agencia federal ni el Bundestag detectaron esto: lo detectó el "
+ "fabricante del teléfono y lo comunicó <b>directamente al usuario final</b>. Dos consecuencias para un "
+ "cliente. La primera, y es un procedimiento que casi nadie tiene: <b>establece un canal para que un empleado "
+ "que recibe una alerta de amenaza en su dispositivo sepa a quién avisar dentro de la organización, de "
+ "inmediato</b>. Hoy esa alerta muere en el móvil de un directivo que no sabe si es real, no quiere molestar o "
+ "le da vergüenza. La segunda es la más difícil de vender y la más importante: <b>una notificación de riesgo no "
+ "es una brecha confirmada</b>. Resiste la tentación de notificar al regulador por si acaso en cuanto llegue "
+ "una alerta de fabricante; documenta el análisis, fija el momento del «conocimiento» en el sentido del "
+ "artículo 33 y actúa sobre hechos. Para perfiles de alto riesgo, es decir directivos, consejeros y cargos "
+ "públicos, plantea además el modo de confinamiento del dispositivo y la separación entre dispositivo personal "
+ "e institucional, que es la medida que de verdad reduce la superficie."),
+
 ("eichstatt", "Stadt Eichstätt", "Alemania", "adm",
- ["ran", "cont", "sum", "acc"],
- "Ataque iniciado en la noche del 8 al 9 de octubre de 2026 según la propia ciudad; primer comunicado propio "
- "el 12 de octubre a las 15:40, y después un aviso diario; el 20 de octubre volvieron los primeros servidores "
- "a la red, el 22 a las 19:01 la ciudad fijó la fecha de inicio y descartó que fuese dirigido, y el 23 a las "
- "15:01 extendió el régimen de emergencia hasta previsiblemente el 30 de octubre",
+ ["ran", "cont"],
+ "Ataque <b>la noche del 8 al 9 de octubre de 2026</b>; administración cerrada o solo parcialmente accesible "
+ "desde el 12, con primer comunicado propio ese día; reinicio de sistemas desde el 14; primeros servidores de "
+ "vuelta el 21; el 22 la ciudad afirmó que no fue un ataque dirigido; el 23 detalló que los atacantes cifraron "
+ "servidores y que el último respaldo se hizo cuando ya estaban dentro. <b>Dentro de esta ventana:</b> el "
+ "<b>27 de octubre a las 18:04</b> publicó que restablecía el correo gradualmente y que seguía el régimen de "
+ "emergencia; el <b>30 de octubre a las 11:52</b>, que el ayuntamiento volvía a ser accesible por correo y "
+ "teléfono con servicios muy limitados; y su página de preguntas frecuentes, con estado de 30 de octubre, fija "
+ "el dato decisivo: <b>el régimen de emergencia termina el lunes 2 de noviembre</b>",
  "2026-10-12",
- "Abierto, en reconstrucción controlada bajo el principio declarado de «seguridad antes que velocidad»",
- "<b>Dos correcciones a lo que este boletín publicó la semana pasada, y las dos salen de la fuente propia.</b> "
- "El ataque <b>no fue del 10 u 11 de octubre</b>: la nota municipal del 22 dice que el ransomware «comenzó en "
- "la noche del 8 al 9 de octubre». Y el primer comunicado propio es del <b>12 de octubre</b>, no del 22. "
- "Confirmado por la ciudad: fue <b>ransomware con doble extorsión</b>, porque cifraron los servidores y antes "
- "copiaron la mayor parte de los datos municipales a un servidor en el extranjero; <b>los datos no se han "
- "publicado</b> hasta la fecha; <b>no fue un ataque dirigido</b> ni con motivación política; <b>no llegó "
- "ninguna petición expresa de rescate</b>; la entrada se produjo con probabilidad preponderante <b>por una "
- "vulnerabilidad relacionada con un software utilizado por la administración, pese a que el ayuntamiento "
- "trabajaba con doble factor de autenticación</b>; y <b>no hubo phishing</b>, ningún empleado pinchó nada. "
- "Hay copias de seguridad aptas. No afectados: los servicios municipales de energía y sus flujos de pago, la "
- "biblioteca, la escuela de adultos, la casa de la juventud y la oficina de turismo presencial. "
- "<b>Desconocido, y la ciudad lo dice así:</b> si los atacantes pueden abrir o leer los ficheros copiados, "
- "<b>si hay datos personales en la copia</b>, la identidad de los autores y el nombre del proveedor de "
- "software.",
- "La propia ciudad, en una serie de avisos propios fechados y con hora. Investiga la <b>policía judicial del "
- "Land de Baviera</b> con apoyo de la agencia bávara de seguridad de la información, y las autoridades de "
- "protección de datos están informadas. Hay además una empresa externa de ciberseguridad contratada ad hoc.",
- "https://www.eichstaett.de/aktuelles/cyber-attacke_auf_stadtverwalt-2861/",
- "Artículo 33 del RGPD ante el delegado bávaro de protección de datos, que para un ente público del Land es la "
- "autoridad competente y no la agencia estatal. Como la entidad aún no ha establecido si hay datos personales "
- "en la copia, el supuesto típico es la <b>notificación por fases del artículo 33.4</b>. El artículo 34 se "
- "activará en cuanto se identifiquen categorías de datos, y la ciudad se compromete a dirigirse «de forma "
- "dirigida a los grupos especialmente afectados». <b>NIS2 no aplica a esta entidad</b>, y conviene decirlo bien "
- "porque es el error más común del sector: Alemania sí la tiene transpuesta, pero su ley federal <b>no alcanza "
- "a las administraciones municipales</b>, cuya cobertura depende de legislación de Land, y Baviera no la ha "
- "extendido. La cooperación con la agencia bávara es estatutaria del Land, no una obligación NIS2. DORA no "
- "aplica.",
- "<b>Dos cosas, y la primera explica casi todo el retraso.</b> La última copia de seguridad se creó cuando los "
- "atacantes ya estaban dentro, así que el equipo tuvo que peinarla entera buscando indicios y validar servidor "
- "por servidor antes de restaurar. Traducido a requisito de diseño para tu cliente: <b>copias inmutables con "
- "retención suficiente para cubrir el tiempo real de permanencia del atacante</b>, que son días y no horas, y "
- "un procedimiento de validación de integridad de copia escrito <b>antes</b> del incidente. La segunda sirve "
- "para romper una conversación que se repite: <b>Eichstätt tenía doble factor y entraron igual</b>, por una "
- "debilidad del software de un tercero. Úsalo con el cliente que dice «ya tenemos doble factor, estamos "
- "cubiertos», y conviértelo en inventario de software de terceros expuesto y en una cláusula de corte inmediato "
- "de accesos del proveedor, que es justo lo que la ciudad ha ejecutado: cortó todos los accesos a ese software "
- "y ha dado por terminada la relación con el proveedor. Y un añadido gratuito para el libro de respuesta de "
- "cualquier entidad que domicilie cobros: <b>suspender los adeudos y publicar el número de cuenta propio</b> en "
- "cuanto se sabe que los datos salieron. Es la contramedida directa contra la factura falsificada y cuesta "
- "cero."),
+ "En recuperación, con el régimen de emergencia terminando hoy y los servicios aún muy limitados",
+ "<b>Confirmado:</b> ataque criminal; <b>cifrado de servidores</b>; respaldos regulares <b>en servidores en "
+ "distintas ubicaciones de Alemania</b>, de modo que la ciudad <b>no dependió de los atacantes</b> para "
+ "recuperarse; pero <b>el último respaldo se creó cuando los atacantes ya tenían acceso</b>, por lo que cada "
+ "elemento marcado debe verificarse antes de darlo por fiable; régimen de emergencia del 12 de octubre <b>al 2 "
+ "de noviembre</b>; correo y teléfono restablecidos el 30 de octubre; punto de información presencial abierto; "
+ "y una advertencia propia que mide el daño real: los tiempos de espera serán largos <b>porque los correos "
+ "quedaron sin procesar unas dos semanas</b>. <b>Desconocido, y es llamativo después de veintitrés días de "
+ "comunicación pública:</b> la ciudad <b>no ha mencionado en ningún momento datos personales, notificación al "
+ "RGPD, autoridad de protección de datos, policía ni familia de ransomware</b>. La doble extorsión que figuraba "
+ "en el seguimiento de la edición anterior <b>no está confirmada en fuente propia de la ciudad</b>: sus notas "
+ "hablan de cifrado, no de publicación de datos. Tampoco hay cifra de afectados ni de coste.",
+ "La propia ciudad, en una serie de avisos propios fechados y con hora, incluidas las dos entradas de la "
+ "ventana del 27 y del 30 de octubre, y una página de preguntas frecuentes con estado de 30 de octubre de 2026 "
+ "que es donde consta el fin del régimen de emergencia.",
+ "https://www.eichstaett.de/cyberangriff/",
+ "Artículo 33 del RGPD ante la <b>autoridad bávara de protección de datos para el sector privado y los entes "
+ "del Land</b> si hay datos personales afectados. <b>No consta que la ciudad lo haya notificado</b> ni ha dicho "
+ "nada al respecto en veintitrés días, y <b>ese es el punto débil del caso</b>: con servidores municipales "
+ "cifrados, es decir padrón, tributos y licencias, el cifrado es ya de por sí una <b>brecha de "
+ "disponibilidad</b> notificable, con independencia de que haya habido exfiltración. El artículo 34 sigue sin "
+ "pronunciamiento. <b>NIS2 no aplica la ley federal</b>, y es el punto doctrinal que conviene repetir en cada "
+ "edición porque es el error más común del sector: la ley alemana de transposición <b>no alcanza a las "
+ "administraciones municipales</b>, cuya cobertura depende de <b>legislación de Land</b>; en Baviera tendría "
+ "que venir por la normativa bávara de digitalización y seguridad de la información, no por la ley federal. Un "
+ "ayuntamiento alemán paralizado tres semanas puede quedar <b>fuera</b> del deber de notificación de NIS2. DORA "
+ "no aplica. Y aplican el derecho municipal bávaro y, sobre todo, las <b>consecuencias procedimentales del "
+ "retraso</b>: dos semanas de correo sin procesar afectan a cómputos de plazos administrativos de los "
+ "ciudadanos, y eso genera responsabilidad propia.",
+ "<b>El dato más valioso de toda la semana está aquí, y es una cifra que se puede llevar a un comité de "
+ "inversión.</b> La ciudad tenía respaldos buenos, en ubicaciones separadas y en varios sitios de Alemania, y "
+ "eso le permitió <b>no negociar con los atacantes</b>. Y aun así ha tardado <b>tres semanas</b>, del 12 de "
+ "octubre al 2 de noviembre, en salir del régimen de emergencia. El motivo está en su propia nota: <b>el último "
+ "respaldo se tomó cuando el atacante ya estaba dentro</b>, de modo que hubo que peinarlo entero buscando "
+ "indicios y validar servidor por servidor antes de restaurar. Esa es, exactamente, la diferencia entre "
+ "<b>tener respaldos</b> y <b>tener respaldos restaurables con confianza</b>. Lleva a tus clientes esta "
+ "pregunta, que es la que nadie sabe contestar: <b>¿sabría usted decir en qué fecha entró el atacante, para "
+ "saber qué copia es anterior a esa fecha?</b> Sin capacidad de datar el compromiso inicial, cada copia es "
+ "sospechosa y la restauración pasa de automática a manual, elemento por elemento. Traducido a requisitos de "
+ "diseño, son tres y se piden juntos: <b>copias inmutables con retención suficiente para cubrir el tiempo real "
+ "de permanencia del atacante</b>, que son días o semanas y no horas; <b>telemetría retenida</b> el tiempo "
+ "necesario para poder datar la entrada; y un <b>procedimiento escrito de validación de integridad de copia</b> "
+ "redactado antes del incidente. Y añade la cifra, que es el mejor argumento disponible: tres semanas para un "
+ "municipio pequeño <b>con respaldos correctos</b>."),
 
-("kassel", "Kreiskliniken Kassel", "Alemania", "san",
- ["rgpd", "acc", "cont"],
- "Ciberataque detectado el 5 de octubre de 2026; la página propia de preguntas y respuestas para afectados "
- "lleva fecha de estado del 21 de octubre, dentro de la ventana, y es donde la entidad formaliza el envío de "
- "notificaciones individuales por correo postal",
- "2026-10-21",
- "Abierto, en investigación forense, con gabinete de crisis y especialistas externos",
- "Confirmado por la entidad: el <b>5 de octubre de 2026</b> detectó un ciberataque criminal contra sus sistemas "
- "informáticos; según su estado de conocimiento los atacantes <b>obtuvieron ficheros que pueden contener datos "
- "personales de pacientes, de personal y de candidatos a empleo</b>, y <b>amenazan con publicarlos</b>. "
- "<b>La asistencia al paciente no está afectada:</b> las dos sedes están plenamente operativas, los ingresos y "
- "la atención son normales y las citas programadas se mantienen. Notificado a la <b>autoridad de protección de "
- "datos de Hesse</b> y a la <b>agencia federal alemana de seguridad de la información</b>, y presentada "
- "denuncia ante la policía judicial del Land. Las notificaciones del artículo 34 <b>ya se han enviado por "
- "correo postal</b>. Categorías potencialmente afectadas: datos maestros y de contacto, documentación de "
- "tratamiento y de cuidados, datos de medicación, datos de seguro y de facturación, y expedientes de personal y "
- "de candidatura. Perímetro notificado: pacientes atendidos <b>desde el 1 de enero de 2026</b>, más personal "
- "actual y antiguo y candidatos. A la fecha del documento <b>no hay indicios de publicación</b>. "
- "<b>Desconocido:</b> qué datos concretos afectan a cada persona, el número total de afectados, la identidad "
- "de los autores y si aparecerán más afectados, porque la evaluación sigue abierta. La entidad no usa la "
- "palabra ransomware ni afirma cifrado.",
- "La propia entidad, en su página «Ciberataque a las Kreiskliniken Kassel: preguntas y respuestas para "
- "afectados», con fecha de estado del 21 de octubre de 2026 y punto de contacto propio para afectados. "
- "Comprobación adicional: la <b>autoridad de protección de datos de Hesse no ha publicado nada</b> sobre el "
- "caso, cuya última nota de prensa es de julio. La confirmación es de la entidad afectada, no del regulador.",
- "https://kreisklinikenkassel.de/aktuelles/",
- "Artículo 33 del RGPD ante la autoridad de Hesse, ejecutada y declarada. Artículo 34 ante los interesados, "
- "ejecutada por escrito y por correo postal: con <b>datos de salud del artículo 9</b> la presunción de riesgo "
- "alto es prácticamente automática y la entidad no ha intentado esquivarla. Artículo 15, porque ofrece "
- "activamente la vía del derecho de acceso a quien no haya recibido carta. <b>NIS2 sí aplica en Alemania</b> y "
- "los hospitales son sector del anexo de salud: por tamaño, un hospital de estas dimensiones es al menos "
- "entidad importante, y el reporte a la agencia federal que la entidad declara es coherente con el régimen de "
- "notificación alemán de alerta en 24 horas, notificación en 72 e informe final en un mes. Matiz honesto: con "
- "dos sedes pequeñas es probable que <b>no alcance el umbral de infraestructura crítica del régimen anterior</b>, "
- "de modo que sería entidad NIS2 por tamaño y no operador crítico. Aplican además el deber de estado del arte "
- "en seguridad informática para hospitales del código social alemán y su estándar sectorial.",
- "<b>Este documento es la mejor plantilla de notificación del artículo 34 que vas a ver este mes, y se puede "
- "copiar.</b> Resuelve de antemano los cinco problemas que revientan todo envío masivo de cartas y que ningún "
- "plan de respuesta contempla. <b>Uno:</b> cómo distinguir la carta auténtica del phishing, publicando el "
- "remitente postal exacto y declarando que la carta nunca pedirá datos, contraseñas, clics ni pagos. "
- "<b>Dos:</b> el destinatario fallecido, reconociendo que con ese volumen y el deber de notificar sin dilación "
- "no pudo comprobarse caso por caso, pidiendo disculpas y explicando que los datos de personas fallecidas "
- "también sirven para defraudar a los herederos. <b>Tres:</b> las cartas duplicadas, explicando por qué "
- "ocurren, que es ser paciente y empleado a la vez, y que el contenido es idéntico. <b>Cuatro:</b> el "
- "representante legal y el menor. <b>Cinco:</b> quien no recibió carta, al que se le ofrece el derecho de "
- "acceso en lugar de dejarlo sin salida, y además se le pide expresamente que <b>no envíe copias de su "
- "documento de identidad ni datos de salud en la primera solicitud</b>, que es un detalle de diseño "
- "excelente: evita generar una segunda brecha gestionando la primera. Llévatelo a un cliente sanitario como "
- "anexo del plan de respuesta. El ahorro no está en el papel, está en no colapsar el teléfono y en no fabricar "
- "una segunda crisis de confianza. Segundo aprovechable: el <b>perímetro acotado por fecha</b> es una decisión "
- "defendible y comunicable que evita el todo o nada, pero exige haber sabido antes qué datos hay, dónde y desde "
- "cuándo."),
-
-("hszbw", "Hochschulservicezentrum Baden-Württemberg y universidades afectadas", "Alemania", "edu",
- ["sum", "cont", "acc"],
- "Ciberataque detectado la tarde del 7 de octubre de 2026 por el propio centro de servicios compartidos; "
- "primera confirmación en fuente propia de una entidad afectada el 9 de octubre, y el 22 de octubre, dentro de "
- "la ventana, la Escuela Superior de Silvicultura de Rottenburg detalló por primera vez el impacto concreto en "
- "sus servicios",
+("hszbw", "Hochschulservicezentrum Baden-Württemberg", "Alemania", "edu",
+ ["acc", "cont", "sum"],
+ "El centro <b>detectó el ciberataque en la noche del 6 de octubre de 2026</b>, dato que la propia entidad "
+ "precisa ahora, aunque la confirmación pública original fue del 9. Quedaron fuera de servicio portales de "
+ "solicitud de admisión y servicios de administración académica de numerosas universidades del Land, con "
+ "afectación de notas y horarios, y circuló una cifra de 51.000 datos de solicitantes potencialmente robados. "
+ "<b>Dentro de esta ventana:</b> el <b>26 de octubre de 2026 a las 15:46</b> se difundió una <b>declaración "
+ "escrita del propio centro</b> con los resultados de su análisis forense, que corrige a la baja el alcance",
  "2026-10-09",
- "Abierto; sistemas en recuperación con especialistas internos y externos",
- "Confirmado en fuente propia: en la <b>tarde del 7 de octubre de 2026</b> el departamento de informática del "
- "centro de servicios compartidos de las universidades del Land detectó un ciberataque, y adoptó de inmediato "
- "contención total: <b>todos los sistemas fuera de línea, desconexión de la conexión a internet y desactivación "
- "de la central telefónica</b>. Las autoridades de investigación y la <b>agencia de ciberseguridad del Land</b> "
- "fueron informadas esa misma noche. Desde la mañana del 8 de octubre trabaja un gabinete de crisis. Instruyen "
- "la jefatura de policía de Reutlingen y la fiscalía general de Karlsruhe, sección de cibercrimen. El impacto "
- "concreto, declarado por la Escuela Superior de Silvicultura de Rottenburg el 22 de octubre: <b>el sistema de "
- "información de estudiantes y el portal de candidaturas no son accesibles</b>, con desvío a correo "
- "electrónico, mientras que la plataforma docente, los horarios y la biblioteca <b>siguen disponibles con "
- "normalidad</b> porque no cuelgan del centro compartido. Y la consecuencia académica, que es lo que de verdad "
- "cuenta: la candidatura para el <b>semestre de verano 2027</b> queda restringida a un procedimiento "
- "extraordinario por correo electrónico y <b>solo para tres titulaciones</b>; para el resto, la siguiente "
- "ventana es el curso 2027 a 2028. <b>Desconocido:</b> el vector de entrada, si hubo exfiltración de datos "
- "personales, la naturaleza del ataque y el plazo de restablecimiento. <b>Ninguna de las fuentes propias afirma "
- "brecha de datos personales.</b>",
- "Las propias entidades afectadas, en avisos fechados: la academia de bellas artes de Stuttgart el 9 de octubre "
- "de 2026 y la Escuela Superior de Silvicultura de Rottenburg el 22 de octubre. Comprobación negativa "
- "relevante: la <b>agencia de ciberseguridad del Land no ha publicado nada</b> sobre el incidente, pese a estar "
- "involucrada según las entidades, y su última entrada de actualidad es del 5 de octubre.",
- "https://www.hs-rottenburg.net/aktuelles/aktuelle-meldungen/meldungen/aktuell/aktuelle-information-einschraenkungen-bei-it-diensten-der-hochschule-rottenburg/",
- "<b>Artículos 28 y 33.2 del RGPD, que es el núcleo del caso.</b> El centro de servicios presta informática "
- "compartida a las universidades del Land, y en la relación típica actúa como <b>encargado del tratamiento</b>. "
- "El artículo 33.2 le obliga a notificar al responsable sin dilación indebida, y el 28.3.f a asistirle: su "
- "compromiso publicado de informar de inmediato a las instituciones que atiende es exactamente esa obligación. "
- "Cada universidad, como responsable, conserva su propio deber del artículo 33 ante la autoridad del Land. "
- "Ninguna de las fuentes declara haber notificado, y no se afirma aquí. El artículo 34 no procede todavía, "
- "porque ninguna entidad ha establecido afectación de datos personales. <b>NIS2: aplicación dudosa y conviene "
- "ser exacto.</b> Alemania la tiene transpuesta, pero <b>la enseñanza superior no es sector NIS2 como tal</b>, "
- "el anexo cubre organismos de investigación, y la cobertura de entidades del Land depende de legislación "
- "autonómica. Lo que sí es claramente operativo es la <b>ley de ciberseguridad del propio Land</b>, que impone "
- "deberes de notificación hacia su agencia, y eso explica mucho mejor que NIS2 por qué el centro avisó esa "
- "misma noche. DORA no aplica.",
- "<b>El caso de libro de concentración de riesgo en un centro de servicios compartidos, y con una consecuencia "
- "que no se mide en informática.</b> El centro cae y dos semanas después una universidad tiene que cerrar la "
- "admisión del semestre de verano a todas sus titulaciones salvo tres. Eso no es una incidencia de sistemas: es "
- "pérdida de matrícula, es decir de ingresos y de promoción entera, y es <b>irreversible en el calendario</b>. "
- "Lo aprovechable para cualquier cliente que dependa de un proveedor compartido, sea un centro de servicios de "
- "grupo, una mancomunidad, una central de compras o un programa sectorial, son dos exigencias contractuales "
- "concretas y probadas. <b>Primera:</b> el plazo y el canal de notificación del encargado al responsable por "
- "escrito, es decir convertir el «sin dilación indebida» del artículo 33.2 en un acuerdo de nivel de servicio "
- "con horas. <b>Segunda:</b> un procedimiento manual documentado para los procesos con ventana temporal legal o "
- "comercial dura, que son admisiones, convocatorias, plazos de licitación y cierres contables. Y fíjate en el "
- "acierto involuntario de Rottenburg: la plataforma docente, los horarios y la biblioteca siguieron en pie "
- "porque no colgaban del proveedor compartido. Esa segmentación no fue suerte, y es exactamente lo que hay que "
- "mapear antes: <b>qué procesos mueren si cae el proveedor compartido y cuáles no</b>. Un análisis de impacto "
- "que no distinga eso no sirve."),
-
-("ahold", "Koninklijke Ahold Delhaize y Albert Heijn", "Países Bajos", "com",
- ["acc", "cont"],
- "Primera comunicación pública del grupo el lunes 12 de octubre de 2026 a las 08:29, calificada expresamente "
- "de información privilegiada; actualización el 19 de octubre a las 17:04 con denuncia policial presentada ese "
- "mismo día, y actualizaciones propias de Albert Heijn los días 20, 21 y 23",
- "2026-10-12",
- "Abierto, en investigación, con restauración por fases muy avanzada y todas las tiendas abiertas en todo "
- "momento",
- "Confirmado por el grupo: detectó actividad sospechosa en su infraestructura informática, y la investigación "
- "<b>confirmó que resultaba de acciones maliciosas de terceros</b>; desconectó proactivamente sistemas, "
- "incluidas webs y aplicaciones de la mayoría de sus marcas en Europa y Estados Unidos, <b>como medida de "
- "precaución</b>; notificó al <b>centro nacional de ciberseguridad neerlandés dentro de las 24 horas</b> "
- "siguientes al descubrimiento, y ha seguido actualizándole junto a las fuerzas de seguridad y «otras "
- "autoridades reguladoras relevantes»; el 19 de octubre <b>presentó denuncia formal ante la policía "
- "neerlandesa</b>; la web y la aplicación volvieron a estar en línea y las entregas a domicilio se reanudaron "
- "<b>desde el viernes 23 de octubre</b>; y los saldos y puntos de fidelización <b>se conservaron íntegramente</b> "
- "precisamente porque el apagado fue preventivo. Sobre datos, la formulación exacta y conviene no mejorarla: "
- "«<b>no tenemos pruebas en este momento que sugieran que se hayan sustraído datos sensibles de clientes, "
- "empleados o socios</b>». <b>Desconocido:</b> el vector de entrada, la naturaleza técnica del ataque, si hubo "
- "cifrado y la identidad de los autores; el grupo declara expresamente que no comparte más detalles para no "
- "comprometer medidas de seguridad ni interferir en la respuesta. Y un dato que <b>el grupo no publica</b>: "
- "<b>ni la nota del 12 ni la del 19 dan fecha u hora de inicio del incidente</b>.",
- "El propio grupo, en dos notas de su sala de prensa: la del 12 de octubre de 2026 a las 08:29 y la "
- "actualización del 19 de octubre a las 17:04, esta última con declaración de su presidente y consejero "
- "delegado. Albert Heijn mantiene además su propio registro de actualizaciones fechadas. Comprobación negativa: "
- "la <b>autoridad neerlandesa de protección de datos no ha publicado nada</b> sobre el caso.",
- "https://newsroom.aholddelhaize.com/ahold-delhaize-update-on-status-of-cybersecurity-incident/",
- "<b>NIS2 sí está transpuesta y sí estaba en vigor durante la ventana en Países Bajos:</b> su ley de "
- "ciberseguridad entró en vigor el 15 de agosto de 2026 y obliga a notificar lo antes posible y en todo caso "
- "<b>dentro de 24 horas</b> al equipo de respuesta y al supervisor. El grupo afirma haber notificado dentro de "
- "ese plazo, lo que encaja exactamente. La producción, procesamiento y distribución de alimentos es sector del "
- "anexo II, y por tamaño sería entidad regulada. En Bélgica la ley de transposición está en vigor desde octubre "
- "de 2024 y alcanzaría a las marcas belgas del grupo. <b>Artículo 33 del RGPD, con una advertencia:</b> ojo con "
- "la lectura rápida, porque <b>una indisponibilidad también es una brecha de seguridad de datos personales</b> "
- "por pérdida de disponibilidad del artículo 4.12, y aquí hubo apagado prolongado de portales de cliente con "
- "datos de cuenta, saldos y pedidos. El análisis del artículo 33 no se resuelve con «no se han robado datos». "
- "Y el que casi nadie cuenta: <b>artículo 17 del Reglamento de Abuso de Mercado</b>. DORA no aplica.",
- "<b>Tres cosas, y la tercera es la mejor pieza de concienciación para un consejo que vas a encontrar este "
- "año.</b> <b>Primera, la compensación automática como contención de daño y no como marketing.</b> Albert Heijn "
- "publicó un cuadro cerrado y automático de compensaciones y declaró que se liquida solo, sin que el cliente "
- "tenga que hacer nada, con las mismas condiciones para clientes empresariales. Eso desactiva de golpe la ola "
- "de reclamaciones individuales, que es el segundo incidente que siempre llega detrás del primero. Si asesoras "
- "a un comercio o a cualquier negocio con suscripción o saldo de cliente, <b>el cuadro de compensación hay que "
- "tenerlo escrito y aprobado antes</b>, con su coste estimado: improvisarlo en caliente sale más caro y "
- "comunica peor. <b>Segunda, el apagado preventivo salvó los saldos.</b> La propia compañía explica que los "
- "puntos y saldos se conservaron precisamente porque se apagó la web y la aplicación por precaución. Úsalo para "
- "defender ante un comité la decisión de tirar del cable: el coste visible del apagón compró la integridad de "
- "los datos de fidelización, que es lo que habría sido irreparable. <b>Tercera, la secuencia de los relojes en "
- "una cotizada</b>, y aquí hay un detalle verificable que vale oro: la nota del <b>12 de octubre lleva la "
- "mención expresa de que contiene información privilegiada en el sentido del artículo 7.1 del Reglamento de "
- "Abuso de Mercado</b>, y <b>la del 19 no la lleva</b>. Es decir, la compañía calificó el incidente como "
- "información privilegiada desde el primer momento y publicó en consecuencia. Dibuja el cronograma completo "
- "para tu cliente: abuso de mercado el día 12, notificación al equipo nacional de respuesta en 24 horas, "
- "denuncia penal el día 19 y análisis del RGPD todavía abierto. Cuatro obligaciones, cuatro plazos, cuatro "
- "destinatarios distintos, y en una cotizada el más corto de los cuatro suele ser el de abuso de mercado."),
-
-("cpr", "Registro central de personas de Dinamarca y Charity Guard ApS", "Dinamarca", "adm",
- ["rgpd", "acc", "sum"],
- "Brecha notificada a la autoridad danesa el 4 de octubre de 2026 y comunicado propio del registro el 5; el 23 "
- "de octubre, dentro de la ventana, la autoridad abrió investigación formal y envió cartas de audiencia a las "
- "dos partes, nombrando a la empresa",
- "2026-10-05",
- "Abierto, con investigación formal del regulador en curso más investigación policial",
- "Confirmado por el responsable del tratamiento y por el regulador. El mecanismo es lo que hace al caso "
- "excepcional: <b>mediante el abuso del acceso legal de una empresa danesa</b> para consultar datos en el "
- "sistema, terceros no autorizados obtuvieron nombres, direcciones, números de identificación personal y otros "
- "datos de <b>aproximadamente 8,8 millones de ciudadanos registrados</b>. <b>No hubo intrusión técnica en el "
- "registro.</b> La cifra está en el comunicado propio del responsable, de modo que se admite. El registro "
- "<b>cortó el acceso de la empresa</b>, notificó la brecha el 4 de octubre y trabaja con especialistas y "
- "autoridades para reconstruir la secuencia. Un dato que conviene no perder: la revisión efectuada muestra que "
- "el acceso no autorizado <b>no alcanza los nombres y direcciones de las personas que optaron por la protección "
- "de nombre y dirección</b>. Y desde el 23 de octubre se conoce la identidad de la empresa, nombrada por la "
- "propia autoridad. <b>Desconocido, y es justo lo que el regulador quiere esclarecer:</b> cómo pudieron "
- "producirse exactamente las consultas masivas y qué medidas de seguridad había en su lugar; si hubo "
- "publicación o uso posterior de los datos; si habrá sanción.",
- "El registro central de personas, en su comunicado propio del 5 de octubre de 2026, y la <b>autoridad danesa "
- "de protección de datos</b>, que el 23 de octubre de 2026 publicó la apertura de investigación formal con "
- "cartas de audiencia <b>tanto al registro como a la empresa</b>, y declaración de su especialista en "
- "seguridad informática. Nota de método: el comunicado del registro remite a una nota ministerial cuya "
- "dirección ya no resuelve, por una fusión de ministerios de junio de 2026; se declara como enlace roto en la "
- "fuente oficial y no como fuente verificada.",
- "https://www.datatilsynet.dk/presse-og-nyheder/nyhedsarkiv/2026/okt/datatilsynet-indleder-formel-undersoegelse-af-cpr-sagen",
- "Artículo 33 del RGPD, ejecutada el 4 de octubre y confirmada por el propio regulador. Artículo 34: con 8,8 "
- "millones de afectados y números de identificación nacional en juego el riesgo alto es evidente, y la "
- "autoridad publicó además una guía al ciudadano; la notificación individual masiva no consta. <b>Artículos "
- "5.1.f, 24, 25 y 32, que son el corazón del caso:</b> no falló un cortafuegos, falló el <b>control de un "
- "acceso legítimo</b>, y lo que el regulador va a examinar es detección de anomalías, limitación de volumen de "
- "consultas, registro y revisión efectiva de accesos, y minimización por diseño de la interfaz de consulta. "
- "<b>Artículos 26 y 28:</b> la relación jurídica entre las dos entidades, si es responsable, corresponsable o "
- "encargado, determinará el reparto de responsabilidad, y que el regulador haya abierto audiencia <b>a las dos "
- "partes</b> indica que no da por resuelto quién responde de qué. Aplica además la ley danesa del registro de "
- "población, en particular su régimen de acceso de entidades privadas. NIS2: Dinamarca la tiene transpuesta y "
- "la administración central es sector del anexo I, pero el eje regulatorio real aquí es el RGPD y la ley del "
- "registro.",
- "<b>El mejor caso del trimestre para la conversación que ningún cliente quiere tener: tu mayor riesgo de fuga "
- "masiva no es que te entren, es a quién le has dado una llave legítima.</b> Casi nueve millones de personas "
- "expuestas <b>sin una sola vulnerabilidad explotada</b>, mediante una cuenta de consulta autorizada. Lo "
- "accionable es muy concreto y se puede proponer el lunes: para cada interfaz de consulta que un cliente "
- "exponga a terceros, sea una interfaz de verificación, una consulta de padrón, un servicio de puntuación o un "
- "portal de proveedores, exigir <b>límite de volumen por unidad de tiempo con alerta por desviación respecto "
- "del patrón contratado</b>, registro completo y revisión periódica efectiva de ese registro, y <b>revisión del "
- "propósito contra el volumen real</b>: una entidad que contrató consultas para verificar donantes no tiene un "
- "caso de uso que explique millones de consultas. El segundo aprovechable es más fino y es la mejor defensa de "
- "la minimización que vas a poder enseñar: <b>la protección de nombre y dirección funcionó</b>, y las personas "
- "con esa marca quedaron fuera del alcance. Es la demostración empírica de que una medida de minimización "
- "implantada en el diseño del propio registro <b>reduce el perímetro de una brecha que ya ha ocurrido</b>. Y un "
- "tercer punto para el lado del proveedor: cualquier cliente que ostente un acceso autorizado a un registro "
- "público debe asumir que <b>el regulador le abrirá audiencia a él también</b>, y tener documentado el control "
- "de uso de ese acceso es la diferencia entre colaborar y responder."),
-
-("publica", "Pensionskasse des Bundes PUBLICA y PK Softech AG", "Suiza", "fin",
- ["sum", "rgpd", "acc"],
- "El proveedor de software informó a la entidad a finales de septiembre de 2026 de que había sido víctima de un "
- "ciberataque; primer estado público con contenido sustantivo el 8 de octubre, y actualizaciones propias el 20 "
- "y el 22 de octubre, dentro de la ventana",
- "2026-10-08",
- "Abierto, con investigación conducida por especialistas de la Confederación junto con el proveedor",
- "Confirmado por la entidad: el ataque fue al <b>proveedor de software, no a ella</b>; <b>los sistemas de la "
- "caja de pensiones no están afectados</b> y las operaciones son normales, con el patrimonio seguro y las "
- "pensiones pagándose con normalidad. Y el punto decisivo: el sistema productivo de la solución de pensiones "
- "lo opera la propia entidad en su infraestructura, y <b>el entorno de pruebas alojado en el proveedor está "
- "separado de ese sistema productivo</b> y es el relevante en el incidente. Categorías que <b>podrían</b> estar "
- "afectadas: apellido, nombre, fecha de nacimiento, número de seguridad social, dirección, teléfonos y correos "
- "profesionales y privados, datos de pensión incluidos salario y patrimonio acumulado, estado civil, datos del "
- "cónyuge o pareja y número de cuenta bancaria; las copias de documentos de identidad <b>en principio no están "
- "afectadas</b> porque no forman parte del sistema de administración de pensiones. Los antiguos asegurados "
- "pueden estar afectados y se les ha escrito. Sin indicios de publicación en la red oculta al 20 y al 22 de "
- "octubre. <b>Desconocido, y la entidad lo dice sin rodeos:</b> <b>si realmente se filtraron datos y, en su "
- "caso, de quién</b>; el alcance; si habrá notificación individual; y, lo más revelador, <b>cómo se "
- "almacenaban y protegían los datos de sus asegurados en los servidores del proveedor</b>, que declara estar "
- "investigando ahora.",
- "La propia entidad, en su página dedicada con un registro de estados fechados que incluye los del 20 y el 22 "
- "de octubre de 2026, además de un extenso apartado de preguntas y respuestas. Ha presentado denuncia penal "
- "contra personas desconocidas ante la fiscalía general el 15 de octubre y ha notificado al supervisor federal "
- "suizo de protección de datos.",
- "https://www.publica.ch/en/cyber-attack-software-supplier",
- "<b>Aquí la precisión importa porque es el caso donde más se equivoca el sector: ni NIS2 ni DORA aplican.</b> "
- "Suiza no es Estado miembro de la Unión ni del Espacio Económico Europeo, de modo que <b>NIS2 no le es "
- "aplicable</b>. Y una caja de pensiones suiza <b>no es entidad financiera a efectos del artículo 2 de "
- "DORA</b>, así que DORA tampoco aplica, ni directamente ni como entidad; a lo sumo sería relevante si el "
- "proveedor prestara servicios tecnológicos a entidades financieras de la Unión, supuesto del que no hay "
- "constancia. <b>Si alguien te vende DORA en este caso, está vendiendo humo.</b> Lo que sí aplica: la ley suiza "
- "de protección de datos revisada, cuyo artículo 24 obliga a comunicar al supervisor federal lo antes posible "
- "las violaciones que presumiblemente conlleven riesgo elevado, más sus artículos de seguridad de los datos y "
- "de tratamiento por encargado; y la obligación suiza de <b>notificar ciberataques a la oficina federal de "
- "ciberseguridad en 24 horas</b> para operadores de infraestructuras críticas, con las autoridades de la "
- "Confederación en el perímetro. El RGPD solo entraría por la vía del artículo 3.2 si hubiera interesados en la "
- "Unión, que es marginal aquí.",
- "<b>Dos lecciones, y la primera es la mejor de la ronda: el entorno de pruebas del proveedor contenía datos "
- "reales de producción.</b> El sistema productivo no se tocó; lo que se filtró, presumiblemente, salió del "
- "entorno de test alojado en casa del proveedor. Y el reconocimiento es demoledor por honesto: la entidad dice "
- "que <b>está investigando ahora cómo se almacenaban y protegían los datos de sus asegurados en los servidores "
- "del proveedor</b>. Es decir, no lo sabía antes. Llévate esto como la pregunta única y devastadora de "
- "cualquier diligencia debida de proveedor tecnológico: <b>con qué datos se puebla tu entorno de pruebas, y "
- "quién los ha visto</b>. Y como cláusula: prohibición de datos personales reales en entornos distintos de "
- "producción, o anonimización verificable con derecho de auditoría. Se vende solo, cuesta poco y evita "
- "exactamente este incidente. <b>Segunda, la separación entre producción y pruebas salvó el servicio.</b> La "
- "entidad pudo decir desde el primer día que el patrimonio está seguro, que la pensión está segura y que el "
- "sistema productivo no está afectado, y eso impidió que una brecha de datos se convirtiera en una crisis de "
- "confianza financiera. La segmentación no fue solo higiene técnica: fue el activo de comunicación. Y un tercer "
- "detalle pequeño y muy útil: la entidad <b>publica el remitente exacto y el asunto exacto</b> de sus correos "
- "legítimos sobre el incidente, y los distingue de los de su portal de asegurados. Es un control antiphishing "
- "de coste cero que debería estar en todos los libros de comunicación de crisis."),
+ "Abierto, con análisis forense concluido o avanzado y alcance corregido a la baja",
+ "<b>Confirmado por el centro en su declaración del 26 de octubre:</b> detección en la noche del <b>6 de "
+ "octubre</b>; análisis forense concluido o avanzado; hubo una <b>salida de datos relativamente pequeña, de en "
+ "torno a 1 gigabyte</b>; y la probabilidad de que haya datos personales afectados es <b>«muy pequeña», aunque "
+ "no se puede excluir por completo</b>. <b>Desconocido:</b> <b>qué contenía ese gigabyte</b>; si la cifra de "
+ "51.000 solicitantes queda descartada, porque la declaración <b>no la desmiente expresamente</b> y solo rebaja "
+ "la probabilidad general; el vector de entrada; el estado de restablecimiento de cada universidad; y si se "
+ "notificó al responsable de protección de datos de Baden-Wurtemberg.",
+ "El propio centro, en declaración escrita de 26 de octubre de 2026 con hora. <b>Advertencia de fuente que se "
+ "declara:</b> el sitio del centro <b>no es alcanzable</b> en este entorno, de modo que la declaración se ha "
+ "verificado a través de un despacho de agencia que <b>la atribuye expresamente a una declaración escrita del "
+ "centro</b> y le pone fecha y hora. Es confirmación de la entidad, pero <b>no se ha podido leer en su propio "
+ "soporte</b>, y conviene reconfirmarla cuando el sitio sea accesible.",
+ "https://www.hsz-bw.de/",
+ "Artículo 33 del RGPD ante el <b>responsable de protección de datos de Baden-Wurtemberg</b>, y aquí hay un "
+ "punto fino que merece explotarse porque se repite mucho: el centro dice que la afectación de datos personales "
+ "es «muy improbable pero no excluible». Esa formulación <b>no permite desistir de la notificación</b>: el "
+ "artículo 33 exige notificar <b>salvo</b> que sea improbable que la brecha entrañe un riesgo, y la carga de "
+ "<b>documentar</b> esa valoración recae en el responsable por el artículo 33.5. Con un gigabyte exfiltrado de "
+ "cuyo contenido no se informa, lo prudente es haber notificado y, en su caso, retirar. El artículo 34 no "
+ "procede si se confirma la valoración de riesgo bajo, pero eso depende por entero de qué había en ese "
+ "gigabyte. Sobre <b>NIS2</b>, el encaje es la zona gris más interesante de esta edición: el centro <b>no es "
+ "una universidad</b>, es un <b>centro de servicios compartidos de las universidades del Land</b>, y esa "
+ "condición lo acerca mucho más a un <b>proveedor de servicios TIC gestionados</b> del anexo I que a la "
+ "categoría educativa excluida, lo que <b>puede sujetarlo</b> como entidad importante; y como entidad del Land, "
+ "su cobertura depende también de la legislación de Baden-Wurtemberg. Es exactamente el supuesto que merece un "
+ "dictamen escrito y no una presunción. DORA no aplica.",
+ "<b>Dos cosas, y la segunda es estructural.</b> La primera es de gestión de crisis: el alcance inicial "
+ "comunicado, 51.000 solicitantes, era <b>mucho peor que el verificado</b>, un gigabyte con datos personales "
+ "improbables. Es el patrón habitual y tiene un coste reputacional asimétrico, porque el titular alarmista se "
+ "difunde y la corrección no. Recomienda a tus clientes <b>no comunicar cifras de afectados hasta tener "
+ "forense</b>, y cuando haya que decir algo, decir «estamos determinando el alcance» en lugar de avanzar un "
+ "número que luego habrá que corregir hacia abajo sin que nadie lo lea. La segunda es la importante y conecta "
+ "con un riesgo que está creciendo en España: un <b>centro de servicios compartidos concentra el riesgo de "
+ "decenas de entidades</b>. Cuando cae este centro, caen a la vez los portales de admisión, las notas y los "
+ "horarios de muchas universidades. Si tu cliente externaliza a un centro compartido sectorial, o <b>es</b> uno "
+ "de ellos, el análisis de impacto en el negocio tiene que modelar <b>la caída del centro y no la de cada "
+ "cliente por separado</b>, y la calificación del propio centro como proveedor de servicios gestionados a "
+ "efectos de NIS2 debe resolverse por escrito y no presumirse. Es un patrón que se repite en España en "
+ "consorcios sanitarios, mancomunidades y centros de servicios compartidos universitarios."),
 ]
 
 DESCARTADOS = [
- ("Las cifras de afectados de PUBLICA",
-  "Circula una cifra de decenas de miles de asegurados en prensa suiza. <b>La página propia de la entidad no da "
-  "ningún número</b>, y además declara que todavía no se sabe <b>si</b> se filtraron datos ni de quién. "
-  "Incidente admitido, cifra descartada."),
- ("Las cifras del ciberataque al Land de Berlín",
-  "Se repite la cifra de 1,4 millones de registros publicados. La página oficial del Senado berlinés, cuya "
-  "última actualización es del 16 de octubre y <b>no se movió en la ventana</b>, no contiene esa cifra ni "
-  "ninguna otra: declara expresamente que no puede pronunciarse sobre documentos o contenidos concretos de los "
-  "que informan los medios mientras no concluyan los análisis. Incidente admitido en su día, cifra descartada."),
- ("La afectación de datos personales en Eichstätt",
-  "No es un desmentido, es una ausencia de confirmación, y conviene decirlo así. La ciudad dice literalmente "
-  "que <b>no está aclarado si hay datos personales en la copia</b> y que tampoco está claro si los atacantes "
-  "pueden abrir o leer los ficheros. Incidente admitido como ransomware con doble extorsión; la calificación "
-  "como brecha de datos personales queda pendiente."),
- ("El número de afectados de las Kreiskliniken Kassel",
-  "La entidad notifica a un perímetro definido, que son los pacientes atendidos desde el 1 de enero de 2026 más "
-  "personal actual y antiguo y candidatos, pero <b>no publica ninguna cifra</b> y declara la evaluación "
-  "abierta. Incidente admitido, sin cifra."),
- ("«Ahold Delhaize confirma que no hubo robo de datos»",
-  "La compañía dice «no tenemos pruebas <b>en este momento</b> que sugieran que se hayan sustraído datos "
-  "sensibles», que es una negación <b>condicionada al estado de la investigación</b> y no un desmentido "
-  "definitivo. Y hay dos datos que circulan y que <b>no están en ninguna de sus dos notas</b>, comprobado sobre "
-  "el documento: la fecha de inicio del incidente y el porcentaje de capacidad de reparto durante la "
-  "restauración. Si se citan, hay que citar la fuente que los dé."),
- ("La cifra de 8,8 millones del registro danés, que SÍ se admite",
-  "Es la excepción de la ronda y conviene señalarla, porque demuestra que la regla no es un sesgo contra las "
-  "cifras sino un requisito de fuente: <b>esa cifra está en el comunicado propio del responsable del "
-  "tratamiento</b> y el regulador ha confirmado la notificación. Entra."),
- ("Los apagones preventivos de webs del 21 y 22 de octubre",
-  "<b>Fuera de esta sección: es mitigación preventiva, no incidente.</b> Afectó a webs de ministerios, "
-  "hospitales y medios en Bélgica, a webs municipales y hospitalarias en Países Bajos, a la Autoridad Bancaria "
-  "Europea y a la caja de pensiones suiza. <b>No hay compromiso confirmado en ninguna de esas entidades</b>: el "
-  "apagado fue precautorio ante una vulnerabilidad, no consecuencia de una intrusión. Pertenece a la sección de "
-  "amenaza. El único elemento confirmado en fuente propia es la declaración de la caja de pensiones sobre su "
-  "propia caída, que además <b>desmiente</b> la relación con su incidente."),
- ("Las cifras de afectados de Adif y de Renfe",
-  "Quinta semana consecutiva. Barrido el canal propio de notas de prensa de Adif, cuyos tres elementos de la "
-  "ventana son de accesibilidad, licitaciones y pantallas de información al viajero: <b>ninguna nota sobre el "
-  "incidente y ninguna cifra</b>. De Renfe hay que declarar laguna: su sala de prensa <b>no sirve contenido sin "
-  "ejecutar su aplicación</b> y no se ha podido leer el listado. Circula una cifra de hasta 150 millones de "
-  "usuarios: es de prensa y ninguna de las dos entidades la ha publicado. Incidentes dentro, cifras fuera."),
- ("«Cinco hospitales neerlandeses notifican una brecha por precaución»",
-  "<b>Fuera por no alcanzado.</b> La fuente que lo reporta bloquea el acceso automatizado y no se ha localizado "
-  "comunicado propio de ninguno de los hospitales. Y hay un problema de formulación que obligaría a mucho "
-  "cuidado aunque se alcanzara la fuente: sería una <b>notificación confirmada sobre un incidente no "
-  "confirmado</b>, porque lo que se dice es que no se puede descartar que haya pasado algo."),
- ("El documento del CERT francés sobre casi 200 violaciones de datos en aplicaciones web",
-  "<b>Fuera de la sección: no es un incidente</b>, es un balance con recomendaciones y sin entidad afectada "
-  "identificada. Y ojo a la fecha: se publicó el 20 de octubre, dentro de la ventana, pero <b>las violaciones "
-  "son de 2025</b>. Dicho eso, es material de primera para la sección de amenaza y para clientes que expongan "
-  "aplicaciones web con datos sensibles: su hallazgo central es que en muchos casos la exfiltración fue posible "
-  "con acciones de atacante de baja complejidad, <b>sin explotar ninguna vulnerabilidad técnica</b>, y propone "
-  "diez vías de reducción de riesgo con ejemplos de implantación."),
- ("La nota de la AEPD sobre el alza de notificaciones de brechas",
-  "<b>Fuera como incidente, dentro como contexto de regulador</b>: no hay entidad afectada. Está en la sección "
-  "de España, y es la publicación de regulador más relevante de la ventana."),
- ("Fundación de la Universidad Autónoma de Madrid y Universitat de Barcelona",
-  "Fuera las dos, y por motivos distintos que conviene distinguir. La primera, <b>por no verificado y sin fecha "
-  "en ventana</b>: aparece solo en prensa y no se ha localizado comunicado propio. La segunda, <b>por fecha</b>: "
-  "la referencia localizada es de agosto de 2026 y es prensa."),
- ("Los dos ayuntamientos españoles cuyos avisos de ciberataque siguen vivos",
-  "Fuera los dos por fecha, y son trampas activas porque sus páginas están publicadas y aparecen en búsquedas "
-  "de octubre de 2026. Uno es de <b>agosto de 2025</b>: su propio comunicado dice que notificó a la AEPD el 27 "
-  "de agosto de 2025 y pide volver a presentar documentación remitida entre febrero y agosto de ese año. El "
-  "otro es de <b>agosto de 2026</b>, con comunicado fechado el 28 de agosto sobre un incidente del 21. Dato "
-  "aprovechable del segundo, eso sí: notificó a la Guardia Civil, informó al CCN y notificó la brecha a la "
-  "AEPD, además de cerrar accesos comprometidos y desactivar credenciales."),
- ("Proveedor del expediente electrónico hospitalario neerlandés y portales de hospitales belgas",
-  "Fuera los dos por fecha, y son las dos trampas más peligrosas de la semana porque encajan con el relato de "
-  "cadena de suministro. El ransomware al proveedor neerlandés es de <b>abril de 2026</b>, confirmado entonces "
-  "por la propia compañía, con más de sesenta notificaciones relacionadas a la autoridad neerlandesa. El de los "
-  "portales de atención belgas es de <b>enero de 2026</b>, y la comprobación concluyente es que se barrió la "
-  "sala de noticias propia del hospital que se cita: sus doce entradas de octubre de 2026 <b>no contienen "
-  "ninguna referencia a ciberseguridad ni a fuga de datos</b>."),
+ ("Las cifras de afectados de la Charité",
+  "El incidente entra; <b>la cifra no</b>. El desglose que circula, con unos 46.000 empleados y estudiantes, "
+  "1.500 destinatarios de prensa y boletín y 90.000 personas que usaron el formulario de contacto, procede de "
+  "respuestas de <b>un portavoz a la consulta de un medio</b>, y el total «casi 140.000» es una <b>suma "
+  "redondeada hecha por el medio</b>, no una cifra publicada por la entidad. La página propia de la Charité "
+  "<b>no da ninguna cifra</b>. Atribución a la entidad sí, validación en fuente primaria no."),
+ ("La cifra de 51.000 solicitantes del centro de servicios de Baden-Wurtemberg",
+  "Cifra de la fase inicial que la <b>propia entidad ha rebajado implícitamente</b> el 26 de octubre, con su "
+  "«salida relativamente pequeña, en torno a 1 gigabyte» y «datos personales muy improbables», pero <b>sin "
+  "desmentirla expresamente</b>. Ni la cifra antigua ni ninguna nueva están validadas. Lo único validado es el "
+  "volumen: aproximadamente <b>1 gigabyte</b>."),
+ ("El número de afectados de ENGIE",
+  "<b>ENGIE no ha dado ninguna cifra</b> y ningún número circulante tiene respaldo de la entidad. Lo único "
+  "confirmado es el perímetro, y es relevante por sí mismo: <b>solo clientes en Francia</b>."),
+ ("Las cifras de la Universidad de Copenhague, que SÍ se admiten",
+  "<b>Excepción, y conviene explicar por qué.</b> Las 525.000 personas y los 20.000 códigos de tarjeta <b>sí "
+  "entran</b>: las publica la propia universidad en su página operativa, y además las ha matizado por su cuenta "
+  "con la corrección del 28 de octubre sobre la antigüedad de los datos, que se remontan a 2002, sin cambio en "
+  "el número. Es el contraste exacto con la Charité: misma semana, dos entidades públicas, una publica y "
+  "sostiene sus cifras y la otra no publica ninguna."),
+ ("«Hubo un segundo ataque a la Universidad de Copenhague el 26 de octubre»",
+  "<b>Desmentido por la propia entidad.</b> La universidad anunció el lunes 26 un ataque nuevo que motivó el "
+  "apagado de dos sistemas administrativos, y el <b>27 rectificó</b>: no era un ataque nuevo, sino actividad "
+  "dentro del sistema que inicialmente lo pareció; el apagado se mantenía por estar ligado al ataque original. "
+  "<b>No existe un segundo incidente.</b> Quien lo cuente como dos está contando uno de más."),
+ ("Investigación formal del supervisor suizo sobre el proveedor de software de las cajas de previsión",
+  "<b>Trampa de fecha.</b> La comunicación del supervisor está <b>publicada el 23 de octubre de 2026</b>, con "
+  "una cronología propia que va del 8 de octubre, cuando el proveedor notifica, al 22, cuando se abre la "
+  "investigación formal. <b>Todo anterior a la ventana.</b> La prensa especializada suiza lo replicó el 26, lo "
+  "que lo hace parecer noticia de la semana. <b>Sin cambio verificado en la ventana</b>, y la nota del propio "
+  "proveedor sigue sin fecha ni aviso de actualización, de modo que no puede datarse ningún cambio."),
+ ("Investigación formal de la autoridad danesa sobre el caso del registro central de personas",
+  "<b>Trampa de fecha.</b> La nota de la autoridad danesa está fechada el <b>23 de octubre de 2026</b>, con la "
+  "notificación de brecha recibida el 4 de octubre. <b>Anterior a la ventana y sin cambio verificado</b> entre "
+  "el 26 de octubre y el 1 de noviembre. Es el segundo caso de la semana en que un regulador publica el 23 y la "
+  "prensa del sector lo recoge el 26."),
+ ("Las cajas de previsión suizas y su proveedor, seguimiento",
+  "<b>Sin cambio verificado en la ventana.</b> Era el único caso del sector financiero en sentido amplio que "
+  "este boletín seguía, y no se ha movido: lo de la ventana es la replicación del 26 de una actuación del "
+  "regulador del 22 y 23. Consecuencia que merece decirse en voz alta: <b>cero entidades financieras de la "
+  "Unión en esta sección esta semana</b>, y por tanto <b>DORA no se ha disparado en ningún incidente</b>."),
+ ("Robo de datos de contacto de la administración municipal de Leipzig a través de su proveedor de informática",
+  "<b>Trampa de fecha de libro, y especialmente peligrosa esta semana.</b> El artículo es del <b>20 de julio de "
+  "2026</b>. Aparece junto al ataque a la <b>Universidad</b> de Leipzig del 28 de octubre y es un incidente "
+  "<b>distinto, de otra entidad y de otro trimestre</b>: uno es el ayuntamiento y su proveedor de informática, "
+  "el otro la universidad. Son dos incidentes en Leipzig que no deben confundirse ni sumarse."),
+ ("Ciberataque a la administración municipal de Potsdam",
+  "<b>Trampa de fecha.</b> Toda la cobertura localizada es de <b>2023</b>, incluida una pieza de enero de ese "
+  "año sobre la red que lo ejecutó. Nada en la ventana."),
+ ("Ciberataque a la infraestructura en la nube de la plataforma de la Comisión Europea",
+  "<b>Trampa de fecha, y con siete meses de desplazamiento.</b> Las alarmas internas fueron el <b>24 de marzo "
+  "de 2026</b> y la confirmación de la Comisión el <b>27 de marzo</b>. Fuera de ventana."),
+ ("Ciberataque a la administración municipal de Ellwangen",
+  "<b>Trampa de fecha.</b> Es del <b>4 de mayo de 2025</b>, con irregularidades detectadas el 24 de abril de "
+  "2025. Caso instructivo, porque es uno de los pocos que documenta expresamente la notificación al responsable "
+  "de protección de datos del Land <b>y</b> el aviso a la aseguradora de ciberriesgo, pero no es de esta "
+  "ventana."),
+ ("Acceso no autorizado y copia de base de datos en un proveedor polaco de facturación",
+  "<b>Fuera de ventana.</b> El acceso fue el 27 y 28 de <b>septiembre de 2026</b>, constatado el 28, notificado "
+  "a la autoridad polaca el 29 y con avisos individuales a usuarios desde el 1 de octubre. Bien gestionado y "
+  "bien documentado, pero del mes anterior."),
+ ("Brecha de datos médicos de cerca de diecinueve millones de personas en Polonia",
+  "<b>Fuera de ventana.</b> Los atacantes contactaron el <b>5 de agosto de 2026</b>, la empresa anunció "
+  "investigación el 10 y confirmó el ataque el <b>13 de agosto</b>, fecha en que la autoridad polaca inició "
+  "inspección. Que un artículo divulgativo se <b>actualizara el 25 de octubre</b> no es una actualización de "
+  "los hechos: es el aviso de método de siempre, la fecha del documento no es la fecha de lo que describe."),
+ ("Exposición de datos vinculados a los servicios de información portugueses",
+  "<b>Doble motivo de descarte:</b> está <b>fuera de ventana</b>, es del 8 de octubre de 2026, y además está "
+  "<b>reivindicado por los atacantes</b>, que afirman haber robado 120 gigabytes, <b>sin confirmación de la "
+  "entidad</b>. No cumple la regla de admisión por los dos lados."),
+ ("Ciberataque a hospitales belgas con cancelación de cirugías",
+  "<b>Fuera de ventana:</b> es de <b>febrero de 2026</b>. Reaparece insistentemente en las búsquedas de 2026 y "
+  "conviene tenerlo fichado para no readmitirlo por error en semanas sucesivas."),
+ ("Multa de la AEPD a una mutua por filtración de datos por envío erróneo",
+  "<b>Trampa de fecha.</b> La resolución es de <b>marzo de 2025</b>. Nada que ver con esta ventana."),
+ ("Sanción de la CNIL de siete millones de euros a FNAC",
+  "<b>No es un incidente de seguridad</b>, y por eso no entra en esta sección aunque sea del 29 de octubre y "
+  "sea relevante: es cumplimiento en materia de rastreadores y consentimiento. Está tratada en la sección de "
+  "IA y datos, que es donde corresponde."),
+ ("Levantamiento de la supervisión reforzada a una provincia neerlandesa",
+  "<b>Doble motivo.</b> Primero, el hecho subyacente es de <b>septiembre de 2023</b>, cuando la provincia "
+  "descubrió que sus empleados podían acceder a datos que no les correspondían en un sistema interno de unos "
+  "cincuenta millones de documentos, y lo de la ventana es <b>el cierre de una medida de supervisión</b>, no un "
+  "incidente. Segundo, <b>no se ha podido alcanzar la publicación propia del regulador</b>, de modo que lo "
+  "verificado es un despacho de agencia sin URL primaria. <b>Candidato recomendado para la próxima edición</b> "
+  "si se logra la nota: es un caso excelente sobre autorizaciones de acceso excesivas y sobre cuánto cuesta "
+  "salir de la supervisión reforzada, que fueron dos años."),
+ ("Resumen operativo de la agencia italiana de ciberseguridad, 27 de octubre",
+  "<b>Estadística agregada sin entidad nombrada</b>, con 3.271 eventos en nueve meses y eventos en aumento con "
+  "impacto estable. Es material de panorama de amenaza, no de esta sección, que exige una entidad concreta y "
+  "una obligación disparada."),
+ ("Apagados preventivos de sitios web por la vulnerabilidad de PHP",
+  "<b>Prevención, no incidente.</b> Numerosos sitios públicos alemanes, incluida la propia Charité y una "
+  "radiotelevisión regional, se apagaron de forma preventiva por las vulnerabilidades de PHP, y además antes de "
+  "la ventana. Es materia de la sección de amenaza. Precisamente por eso la Charité tuvo que <b>deslindar "
+  "expresamente</b> su incidente real de ese apagado."),
+ ("Clínicas comarcales de Kassel, seguimiento",
+  "<b>Comprobado y sin cambio.</b> Su página de información y preguntas frecuentes conserva estado de <b>21 de "
+  "octubre de 2026</b>, anterior a la ventana. Sigue confirmando la detección el 5 de octubre y que se "
+  "informará a los posibles afectados conforme al artículo 34, sin fecha para esas notificaciones, y dice que "
+  "«esta página se actualizará cuando haya nuevos conocimientos». <b>Un estado abierto no es una "
+  "actualización.</b>"),
+ ("Grupo de distribución neerlandés, seguimiento",
+  "<b>Sin cambio verificado en la ventana.</b> La última actualización propia de su sala de prensa es del <b>12 "
+  "y 13 de octubre de 2026</b>: sin pruebas de robo de datos, denuncia presentada e investigación policial en "
+  "curso. No se ha localizado comunicación propia posterior."),
+ ("Adif y Renfe, seguimiento",
+  "<b>Sin cambio verificado, y con laguna de fuente declarada.</b> Toda la cobertura localizable sigue siendo "
+  "de finales de <b>septiembre de 2026</b>, cuando confirmaron un acceso con datos de clientes. Llevan "
+  "<b>cinco semanas</b> sin actualizar públicamente. Y la <b>sala de prensa del grupo Renfe no es alcanzable</b> "
+  "en este entorno, de modo que aquí la ausencia no es tan sólida como en otros seguimientos."),
  ("Colegio Oficial de Médicos de Santa Cruz de Tenerife, seguimiento",
-  "Sigue igual y por eso no repite como asunto. Su nota continúa fechada el <b>15 de octubre de 2026</b> y "
-  "<b>no ha sido actualizada</b>: sin cierre, sin cifras, sin sanción, sin cambio de estado. En la ventana el "
-  "colegio publicó dos entradas, las dos ajenas al incidente. Recordatorio de lo que sí dice la nota, porque "
-  "sigue siendo una buena plantilla de comunicación: incidente admitido, nota aparentemente autogenerada que "
-  "<b>afirma</b> cifrado y robo, y equipos de seguridad que <b>no han detectado</b> fuga. Esas tres cosas no "
-  "son la misma, y «no hemos detectado fuga» no es «no hubo fuga»."),
- ("Campaña del CERT francés sobre controladores de instalaciones de refrigeración, seguimiento",
-  "Sigue en estado de alerta abierta, lo que invita a presentarla como novedad, pero <b>no hubo ninguna "
-  "actualización en la ventana</b>: su propia tabla de versiones fija la última el <b>16 de octubre de 2026</b>. "
-  "Un estado abierto no es una actualización. Lo que sí conviene retener del documento, porque es aviso de "
-  "gobierno y no técnico: el CERT recomienda <b>verificar las condiciones contractuales del seguro antes de "
-  "cortar la telemetría hacia el prestador frigorista</b>, y advierte de que una restauración de fábrica es "
-  "insuficiente en equipos sin soporte, porque volverán a ser comprometidos."),
+  "<b>Comprobado y sin cambio, y esta vez la ausencia es sólida.</b> Su notificación de incidente de seguridad "
+  "<b>sigue fechada el 15 de octubre de 2026</b>. Lo que refuerza la conclusión es que la web <b>sí publicó "
+  "entradas el 19, el 22 y el 27 de octubre</b>, ninguna sobre el incidente: es decir, el colegio ha seguido "
+  "comunicando otras cosas y no ha actualizado este expediente, de modo que no es un problema de la fuente. "
+  "Recordatorio de lo que sí dice la nota, porque sigue siendo una buena plantilla: ciberataque el martes 13 de "
+  "octubre, nota automática en los sistemas que <b>afirma</b> cifrado y robo, equipos que <b>no han "
+  "detectado</b> fuga, y notificación a la AEPD y al INCIBE. Esas tres cosas no son la misma, y «no hemos "
+  "detectado fuga» no es «no hubo fuga»."),
  ("Land de Berlín y fundación alemana de lugares de memoria, seguimiento",
-  "Los dos sin cambio verificado, comprobado en la fuente propia. La página oficial del Senado berlinés "
-  "conserva su estado del <b>16 de octubre a las 12:00</b> y el índice de notas de la cancillería no tiene "
-  "ninguna entrada sobre el ciberataque en la ventana. La fundación <b>no tiene ninguna entrada en la ventana</b> "
-  "relativa al incidente, y la última sigue siendo la del 11 de agosto de 2026 sobre el ransomware detectado el "
-  "5 de agosto."),
+  "<b>Sin cambio verificado en la ventana.</b> El último registro es del <b>8 de octubre de 2026</b>, sobre el "
+  "nuevo ciberataque a la fundación de lugares de memoria, con trabajo en régimen de emergencia y datos "
+  "presuntamente extraídos de la red de los lugares de memoria de Brandeburgo."),
 ]
 
 LAGUNAS = (
- "<b>España, cero incidentes nuevos confirmados por entidad española en toda la ventana, y es ausencia "
- "comprobada y no laguna de búsqueda.</b> El barrido más sólido de la ronda es el del mercado cotizado: "
- "recorrido el registro de otra información relevante de la CNMV paginando hasta cubrir íntegramente del 19 al "
- "25 de octubre, y revisadas todas las comunicaciones de esos días, que son resultados trimestrales, programas "
- "de recompra, fondos de titulización, convocatorias de junta, calificaciones crediticias y requisitos "
- "prudenciales de capital. <b>Cero comunicaciones de incidente, ciberataque, brecha o indisponibilidad.</b> "
- "Repetido el ejercicio sobre el registro de información privilegiada, con solo tres elementos en la ventana y "
- "ninguno de ciber. Conclusión utilizable: <b>ninguna cotizada española comunicó un incidente de "
- "ciberseguridad al mercado</b>. Alcanzadas y sin incidentes además la AEPD, con dos notas y ninguna de "
- "incidentes; el CCN-CERT, con dos contenidos y ninguno de entidad; y el blog y la bitácora del INCIBE-CERT, "
- "cuyas únicas entradas de la ventana son actualizaciones de casos anteriores al 19 de octubre. "
- "<b>Banca y seguros, nada en España, y hay una razón estructural que conviene repetirle al cliente.</b> "
- "Ninguna entidad de crédito ni aseguradora española confirmó nada, y el único caso del ámbito financiero en "
- "sentido amplio es suizo y por proveedor. El motivo es que <b>bajo DORA las notificaciones de incidentes "
- "graves van a la autoridad competente y no son públicas</b>, igual que no lo son las del Mecanismo Único de "
- "Supervisión ni las del Banco de España y la Dirección General de Seguros. Ausencia de noticias no es "
- "ausencia de incidentes. "
- "<b>Energía y agua, telecomunicaciones, transporte y tecnología y defensa: sin nada nuevo confirmado.</b> En "
- "energía conviene el matiz de que el ataque a Eichstätt <b>no</b> alcanzó a sus servicios municipales de "
- "energía, cosa que la propia ciudad se encargó de aclarar. En transporte, Adif y Renfe siguen abiertos y mudos "
- "por quinta semana. Y en tecnología y defensa hay un patrón que merece comentario propio: lo publicado afecta "
- "a <b>proveedores</b>, y en los cuatro casos de cadena de suministro de esta ronda <b>el proveedor no "
- "comunica, comunica el cliente</b>. "
- "<b>Autoridades de protección de datos de otros Estados: barrido con resultado negativo donde se pudo.</b> "
- "Alcanzadas y sin brechas en la ventana las de Francia, Italia, Irlanda y Países Bajos, esta última sin "
- "publicar nada sobre el incidente del grupo de distribución neerlandés. Alcanzadas y sin incidentes las de "
- "Cataluña, Andalucía y País Vasco. <b>No barridas la autoridad federal alemana y las de los Länder más allá "
- "de Berlín y Hesse</b>, y eso sí es laguna de búsqueda, no ausencia comprobada. "
- "<b>Fuentes que no se han podido alcanzar, y se declaran.</b> El equipo de respuesta belga y el centro "
- "nacional portugués bloquean el acceso automatizado, de modo que <b>Bélgica y Portugal quedan sin barrer</b>, "
- "y la laguna belga pesa porque allí hubo apagones preventivos el 21 de octubre. Tampoco se han podido leer la "
- "sala de prensa del grupo Renfe, el canal de actualidad de la agencia catalana de ciberseguridad ni las notas "
- "de prensa de la agencia federal alemana de seguridad de la información, las tres por servir su contenido solo "
- "mediante aplicación en el navegador o devolver error. Y una limitación de método que afecta a dos fechas de "
- "esta sección: el archivo histórico de internet está bloqueado en este entorno, así que <b>no se ha podido "
- "datar de forma independiente la primera publicación</b> de las páginas de Kassel, y su fecha de confirmación "
- "pública está anclada en el documento fechado que sí se ha leído."
+ "<b>España, cero incidentes nuevos confirmados por entidad española en toda la ventana, y esta semana la "
+ "afirmación está completa.</b> La laguna grave de la edición pasada queda cerrada: se han recorrido "
+ "íntegramente los dos registros de comunicaciones al mercado de la <b>CNMV</b> con el rango del 26 de octubre "
+ "al 1 de noviembre y paginando hasta el final, <b>152 comunicaciones en el registro de otra información "
+ "relevante y 33 en el de información privilegiada, 185 en total</b>, con barrido literal por ciber, "
+ "ciberataque, brecha, incidente, indisponibilidad, interrupción, ransomware, intrusión, acceso no autorizado y "
+ "fuga de datos: <b>cero coincidencias</b>. Lo comunicado son resultados trimestrales, programas de recompra, "
+ "fondos de titulización, convocatorias de junta, operaciones corporativas y calificaciones crediticias. De "
+ "modo que ahora sí puede afirmarse sin reservas: <b>ninguna cotizada española comunicó al mercado un incidente "
+ "de ciberseguridad en la ventana</b>. Alcanzadas y sin incidentes de entidad nombrada, además: el <b>CCN</b>, "
+ "con tres publicaciones en la ventana y ninguna de incidente; la <b>AEPD</b>, con una sola entrada, el "
+ "decálogo de agentes de IA del 27; el <b>blog y la bitácora del INCIBE-CERT</b>, cuyas dos entradas de la "
+ "ventana son las vulnerabilidades de PHP y un acceso no autorizado a una compañía japonesa de videojuegos; y "
+ "la <b>Autoridad Catalana</b>. Los dos casos españoles vivos, el colegio de médicos de Tenerife y Adif y "
+ "Renfe, <b>no se han movido</b>. "
+ "<b>Banca y seguros, cero en toda la Unión, y hay una razón estructural que conviene repetir.</b> Ninguna "
+ "entidad financiera europea confirmó nada, y el único caso del ámbito en sentido amplio, las cajas de "
+ "previsión suizas y su proveedor, no tuvo cambio en la ventana. Son <b>once ediciones</b> y el régimen de "
+ "notificación de <b>DORA</b> sigue sin aparecer una sola vez en esta sección: no es laguna de búsqueda, es que "
+ "<b>bajo DORA las notificaciones de incidentes graves van a la autoridad competente y no son públicas</b>, "
+ "igual que no lo son las del Mecanismo Único de Supervisión ni las del Banco de España o la Dirección General "
+ "de Seguros. Ausencia de noticias no es ausencia de incidentes, y conviene decírselo así a cualquier cliente "
+ "que deduzca tranquilidad de este silencio. "
+ "<b>Sectores sin nada nuevo confirmado:</b> telecomunicaciones, transporte y logística, distribución y "
+ "comercio, y tecnología y defensa. En <b>energía y agua</b> el único caso es ENGIE, y por una herramienta de "
+ "comercialización de socios, <b>no por sus sistemas energéticos</b>, cosa que la propia compañía se encargó de "
+ "precisar. En <b>administración pública</b>, los dos casos son alemanes y <b>ningún ayuntamiento, diputación "
+ "ni comunidad autónoma española</b> confirmó nada. "
+ "<b>Una concentración geográfica que hay que explicar y no presentar como hallazgo:</b> de los cinco "
+ "incidentes nuevos, <b>tres son alemanes</b>, uno danés y uno francés, y Alemania aporta además los dos "
+ "arrastres con cambio. Puede ser señal real, pero es muy probable que sea <b>sesgo de alcanzabilidad de "
+ "fuentes</b>: el ecosistema alemán de comunicados municipales y de entidades públicas es, con diferencia, el "
+ "más accesible y el más transparente de los barridos, mientras que Bélgica, Portugal, Italia y Reino Unido "
+ "están bloqueados. <b>No debe leerse como que en Alemania pasan más cosas.</b> "
+ "<b>Países comprobados y sin nada:</b> Suecia, con una sola entrada en la ventana y ninguna brecha de entidad "
+ "nombrada; Irlanda, sin nada desde el 1 de octubre; Francia, cuya autoridad no publicó ninguna brecha ni "
+ "sanción por incidente, y donde lo de ENGIE <b>no pasó por la autoridad de control</b> públicamente. "
+ "<b>Fuentes que no se han podido alcanzar, y se declaran una a una, porque no alcanzar no es que no haya "
+ "nada:</b> el listado y el archivo de noticias de la <b>autoridad danesa</b>, cuyas entradas no se renderizan, "
+ "de modo que las dos notas de octubre sobre el caso del registro de personas se han verificado "
+ "individualmente pero <b>no se ha podido enumerar el archivo completo</b> de la ventana; el canal de noticias "
+ "de la <b>autoridad neerlandesa</b>; el <b>Garante italiano</b> más allá de su boletín, y los comunicados de "
+ "la <b>agencia italiana de ciberseguridad</b>, de modo que <b>Italia queda sin barrer</b> en incidentes; la "
+ "<b>Autoridad Vasca</b> y la <b>autoridad andaluza</b>; la autoridad británica, cuyo canal de medios sirve "
+ "contenido de <b>2024</b> y por tanto <b>Reino Unido no puede considerarse barrido</b>; el <b>equipo de "
+ "respuesta belga</b> y el <b>centro nacional portugués</b>, con lo que <b>Bélgica y Portugal quedan sin "
+ "barrer</b>; las <b>notas de prensa de la agencia federal alemana de seguridad de la información</b>, y esta "
+ "laguna tiene efecto directo sobre la calidad de un admitido, porque es la razón de que el caso del programa "
+ "espía en dispositivos del Bundestag se apoye en una declaración ministerial recogida por agencia y no en un "
+ "comunicado escrito; el <b>sitio del centro de servicios de Baden-Wurtemberg</b>, cuya declaración del 26 de "
+ "octubre se ha verificado por despacho de agencia que la atribuye y la fecha; la <b>sala de prensa del grupo "
+ "Renfe</b> y el canal de noticias institucionales de la <b>agencia catalana de ciberseguridad</b>, de la que "
+ "sí se han leído sus dos alertas de la ventana, las dos de fraude a la ciudadanía y ninguna de incidente de "
+ "entidad. Y una limitación transversal de método que afecta a dos fechas de esta sección: el <b>archivo "
+ "histórico de internet está bloqueado</b> en este entorno, de modo que <b>no se ha podido datar de forma "
+ "independiente la primera publicación</b> de la nota sin fecha del proveedor suizo ni del correo de "
+ "notificación de ENGIE, fechado solo como «octubre de 2026», y por eso la fecha de confirmación de ENGIE se "
+ "ancla en el 29 con la salvedad declarada en su ficha. "
+ "<b>Seis casos abiertos para la próxima edición</b>, que hay que volver a comprobar en fuente propia: "
+ "<b>Eichstätt</b>, donde el régimen de emergencia termina precisamente hoy y donde el silencio sobre datos "
+ "personales y sobre la autoridad bávara es el dato más llamativo del expediente; la <b>Charité</b>, si envía "
+ "las comunicaciones individuales anunciadas y si publica cifra propia; la <b>Universidad de Leipzig</b>, si "
+ "determina afectación de datos personales, porque su nota del 28 no ha tenido continuidad; la <b>Universidad "
+ "de Copenhague</b>, por el fin del apagado administrativo y el alcance definitivo; el <b>centro de servicios "
+ "de Baden-Wurtemberg</b>, para reconfirmar su declaración en soporte propio y aclarar qué había en ese "
+ "gigabyte; y los <b>dispositivos del Bundestag</b>, para buscar confirmación escrita de la agencia federal."
 )

@@ -86,6 +86,11 @@ EXPANDIR = {
  "CTPP": "proveedor tercero de servicios tecnológicos crítico, en el sentido de DORA",
  "DOGC": "Diario Oficial de la Generalitat de Cataluña",
  "ERM": "gestión del riesgo de la empresa en su conjunto",
+ "OWASP": "proyecto abierto de seguridad de aplicaciones web, que publica guías de referencia de pruebas de seguridad",
+ "PSIRT": "equipo de respuesta a incidentes de seguridad de producto de un fabricante",
+ "DPIA": "evaluación de impacto relativa a la protección de datos, la del artículo 35 del Reglamento General de Protección de Datos",
+ "FRIA": "evaluación de impacto sobre los derechos fundamentales, la que el Reglamento de IA exige para los sistemas de alto riesgo",
+ "PCE-RFS": "Perfil de Cumplimiento Específico de Requisitos Fundamentales de Seguridad del Esquema Nacional de Seguridad",
 }
 SOLO_ABBR = {
  "TIC": "tecnologías de la información y la comunicación",
@@ -93,6 +98,7 @@ SOLO_ABBR = {
  "RGPD": "Reglamento General de Protección de Datos",
  "BOE": "Boletín Oficial del Estado",
  "IA": "inteligencia artificial",
+ "VPN": "red privada virtual",
 }
 TODAS = {**EXPANDIR, **SOLO_ABBR}
 _RX = re.compile(r"\b(" + "|".join(sorted(TODAS, key=len, reverse=True)) + r")\b")
