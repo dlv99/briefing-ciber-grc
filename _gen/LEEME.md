@@ -177,7 +177,7 @@ Desde la edición 009 cuenta solo los que llevan el indicador de vivo, con `VIVO
 `web.py`. Las entradas de `ediciones.json` anteriores a la 009 conservan el número antiguo, que
 era el total: no se han reescrito porque no se pueden reverificar sus plazos a posteriori.
 
-## Pendiente para la edición 011 o posterior (actualizado el 26/10/2026)
+## Pendiente para la edición 012 o posterior (actualizado el 02/11/2026)
 
 Tres cosas detectadas al revisar el mapa después de publicar la 009. Las dos primeras son de datos
 y le tocan a la tarea del lunes. La tercera es un cambio de diseño y **no se hace sin que David lo
@@ -239,6 +239,93 @@ La nota del CRA afirma que **el plazo para que los Estados tengan organismos not
 es el 11 de diciembre de 2026**. Si es correcto, es un plazo vivo y no entró en la tabla de la
 edición 009. **Verificar contra el articulado del Reglamento (UE) 2024/2847 antes de publicarlo**, no
 darlo por bueno desde esta nota.
+
+### 6. Banco histórico de incidentes desde 2015 (pedido por David el 02/11/2026, NO empezar un lunes)
+
+David quiere que la sección de incidentes deje de ser solo semanal y pase a ser **un banco consultable**
+desde 2015. La idea es buena y el filtro de la sección ya está construido para soportarlo: tiene rango de
+fechas por `conf` y los contadores se calculan solos, así que **la maqueta no necesita cambios** para alojar
+cientos de fichas; lo que no está resuelto es el volumen de la página, que hoy va por 500 KB con 7 incidentes.
+
+**Hay un conflicto con el método que David planteó y hay que resolverlo antes de empezar.** Él dijo «mirar en
+todos los periódicos». Eso rompe la regla de admisión 3, que es la que hace que un dato de esta sección se
+pueda repetir delante de un cliente. Si el banco se rellena con prensa, nace contaminado y pierde justo lo
+que lo haría valioso. La versión que sí sostiene el método, y que es lo que hay que proponerle:
+
+- **Fuentes de relleno admisibles:** archivos de resoluciones y notas de AEPD, CCN-CERT, INCIBE-CERT,
+  autoridades autonómicas, CNIL, Garante, BfDI y los Länder, Datatilsynet, AP neerlandesa, UODO, DPC
+  irlandesa, IMY sueca, EDÖB suizo, ICO; comunicaciones de incidente a la CNMV; y las 11 ediciones ya
+  publicadas de este boletín, que son la parte más fácil porque ya cumplen la regla.
+- **Lo que NO entra:** prensa, agregadores y sitios de filtración, igual que ahora. Si un caso solo existe en
+  prensa, va a `DESCARTADOS` con el motivo, y así el banco documenta también lo que se descartó.
+- **Riesgo de método ya medido esta semana:** el archivo histórico de internet está bloqueado en este
+  entorno, de modo que **no se puede datar de forma independiente la primera publicación** de una página.
+  Para un banco histórico eso es grave, porque muchas notas antiguas no llevan fecha. Hay que decidir qué se
+  hace con los casos sin fecha de confirmación verificable: la opción honesta es **no admitirlos**, porque
+  `conf` es obligatoria y `web.py` aborta sin ella.
+- **Coste realista:** no es una tarea de un lunes. Es una pasada aparte, por tramos (un año o un regulador
+  por sesión), escribiendo a un fichero propio para no inflar `incidentes.py` de la edición.
+- **Decisión pendiente de David:** si el banco vive en la misma página de incidentes o en una pestaña
+  separada con su propio fichero. Recomendación: **fichero y pestaña aparte**, porque mezclar 10 años con la
+  semana rompe la lectura y el peso de la página.
+
+### 7. Dos automatizaciones de correo (pedidas por David el 02/11/2026)
+
+- **Aviso al publicar la edición**, con resumen incrustado, por Gmail. Montada el 02/11/2026.
+- **Correo diario de vulnerabilidades críticas**, CVSS 9,0 o más, con descripción. Montada el 02/11/2026.
+  Criterio acordado con David: además del umbral de 9,0 se incluye **el catálogo de vulnerabilidades
+  explotadas de CISA con independencia de la puntuación**, porque es el que de verdad anticipa. Esta semana lo
+  ha demostrado: la de PHP entró en el catálogo el 26/10 con tres días de plazo, y la del núcleo de Linux que
+  encadenaba hasta root puntúa **7,8** y se habría perdido con un filtro de 9,0 a secas.
+- **Destinatarios: pendiente de que David complete la lista.** Dijo «jaimecalleja99@gmail.com y algunos más».
+  No inventar destinatarios: añadir solo los que él confirme.
+
+### Trampas de fecha y de método aprendidas el 02/11/2026
+
+- **La legislatura en curso es la XV, no la XVI.** El desplegable del propio Congreso dice «XV Legislatura
+  (2023-Actualidad)» y su valor de formulario es `15`. Pasar `legislatura=XVI` en la URL de la ficha devuelve
+  **la cáscara de la página sin datos y con HTTP 200**, que es un falso negativo perfecto: parece que el
+  expediente no existe.
+- **La ficha individual del Congreso no es necesaria.** La ruta que funciona y que cierra el apartado es
+  `https://www.congreso.es/proyectos-de-ley`, que se renderiza con navegador tras aceptar las cookies y sirve
+  **el listado completo de la legislatura con la situación de cada expediente**, paginado con un control
+  «siguiente» que avanza de cinco en cinco. De ahí salen los 115 expedientes y los 89 caducados.
+- **Los registros de la CNMV sí se pueden barrer, y esta semana se ha cerrado la laguna.** El formulario es
+  ASP.NET y el POST no sirve resultados, pero la página de resultados **es direccionable por URL** y se
+  renderiza con navegador: `resultado-oir.aspx?fechaDesde=DD/MM/AAAA&fechaHasta=DD/MM/AAAA&page=N`, con
+  **`page` empezando en 0** y el mismo patrón en `resultado-ip.aspx`. El parámetro `pagina=` **se ignora** y
+  devuelve siempre la página 1, que es el falso negativo que tumbó el barrido de la edición 010. Una página
+  puede devolver cuerpo vacío de forma intermitente: reintentar esa sola.
+- **El universo de avisos del DOUE serie C son 1.207 si se cuenta por fecha de publicación en 2026**, no los
+  328 de la edición 010, que eran los asuntos del Tribunal de Justicia incoados en 2026. Fijar el criterio por
+  fecha de publicación, que es el correcto para detectar novedades.
+- **El aviso de recurso por incumplimiento SÍ indexa la directiva invocada** en el grafo de citas de Cellar,
+  con el predicado `cdm:communication_case_new_requests_establishment_of_failure_of_obligation_resource_legal`.
+  Esto corrige el aviso anterior: no hace falta abrir el texto de cada aviso, aunque conviene contrastar.
+- **Para las medidas nacionales de ejecución, el predicado de enlace es
+  `cdm:measure_national_implementing_implements_resource_legal`**, no `..._transposes_resource_legal`, que
+  devuelve cero. La fecha sigue siendo `cdm:measure_national_implementing_date_notification`.
+- **El censo NANDO se consulta mejor por el PDF oficial de listas de la Comisión**, que no necesita clave, va
+  autofechado con su fecha de generación y es más primario que el endpoint de búsqueda interno, el cual exige
+  una `apiKey` incrustada en el frontal. Prueba de control obligatoria igualmente.
+- **Los paquetes de infracciones no son mensuales ni caen los días 1 y 2.** Fechas de decisión de 2026: 29
+  ene, 10 mar, 28 abr, 3 jun, 7 jul y 30 sep, con comunicado **al día siguiente**. Cadencia de seis a ocho
+  semanas en día variable.
+- **El feed RSS de catálogo por comité de la ISO no funciona como feed:** redirige y sirve el catálogo del
+  comité en HTML con las etapas actuales pero **sin fechas**. La única vía con fechas es abrir el bloque de
+  ciclo de vida de cada ficha, una por una, en el espejo `committee.iso.org`.
+- **curia.europa.eu no es consultable de forma automatizada:** devuelve 200 con la cáscara de una aplicación
+  JavaScript sin dato del asunto, y su calendario judicial da 403. Consecuencia precisa: Cellar es
+  concluyente para **documentos publicados**, pero una vista o una fecha de sentencia señaladas y no
+  publicadas no se verían desde aquí.
+- **El JSON de sumarios del BOE anida asuntos bajo claves `texto`.** Un recorrido superficial del árbol pierde
+  unos 28 asuntos; hay que recorrerlo de forma recursiva. Esta semana: 1.576 y no 1.548.
+- **IAF e ILAC cesaron el 1 de enero de 2026** y son Global ACI. Sus documentos siguen válidos por las
+  resoluciones 2025-25 y 2025-29. Dejar de escribir «documentos obligatorios del IAF».
+
+> **Corrección pendiente de arrastre.** La edición 010 publicó en `TITS` que «la ISO publica la 27028». **No
+> está publicada:** está en etapa 60.00 desde el 20/10/2026. Corregido en la sección de correcciones de la 011.
+> Si vuelve a aparecer, es que se copió de `TITS` y no de la ficha.
 
 ### Trampa de nombres de clase (aprendida el 20/10/2026)
 
