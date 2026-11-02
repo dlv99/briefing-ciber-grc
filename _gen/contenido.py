@@ -49,9 +49,13 @@ ENTRADA = ("Dos relojes que nadie había puesto en hora juntos coincidieron esta
            "26 de octubre en el catálogo estadounidense de vulnerabilidades explotadas con tres días de plazo, y "
            "el INCIBE-CERT documentó que <b>el primer intento de explotación es del 17 de octubre, cuatro días "
            "antes de la divulgación pública y de las correcciones</b>. La tesis del supervisor se verificó sola. "
-           "En España, con las Cortes disueltas, la producción normativa siguió en cero y el movimiento real fue "
-           "del <b>CCN</b>, que publicó metodología de evaluación de seguridad de productos con IA; el único "
-           "plazo normativo duro es un dictamen urgente del Consejo de Estado que vence el jueves.")
+           "Y en incidentes, el mayor robo de criptoactivos de la historia: <b>6.300 millones de dólares</b> a "
+           "<b>Binance</b> el 29 de octubre, confirmado por la entidad y atribuido por el <b>FBI</b>, que "
+           "empezó en el portátil de un ingeniero y que <b>no disparó ni una notificación europea</b>, porque "
+           "la entidad no figura en el registro de criptoactivos de la <b>ESMA</b> y queda por tanto fuera de "
+           "<b>DORA</b>. En España, con las Cortes disueltas, la producción normativa siguió en cero y el "
+           "movimiento real fue del <b>CCN</b>; el único plazo normativo duro es un dictamen urgente del "
+           "Consejo de Estado que vence el jueves.")
 
 CLAVE_1 = ("La primera clave es una coincidencia que conviene saber contar, porque es el mejor argumento "
            "disponible para justificar un presupuesto de gestión de vulnerabilidades. El <b>7 de julio de "
@@ -272,8 +276,8 @@ TITS = {
         f"puede afirmar con fuente primaria que NIS2 nunca tuvo proyecto de ley",
  "eu":  "Cero organismos notificados del Reglamento de Ciberresiliencia a 39 días de su propio hito, "
         "reverificado contra el censo europeo esta misma mañana",
- "fin": "Venció el plazo del Banco Central Europeo y el supervisor calla: la única voz de la semana dice que "
-        "la evaluación de fondo llega ahora",
+ "fin": "Venció el plazo del Banco Central Europeo, y 6.300 millones robados a Binance no generaron ni una "
+        "notificación europea porque la entidad está fuera del perímetro de DORA",
  "std": "El NIST cierra en firme la guía de transición a la criptografía poscuántica, y las normas "
         "armonizadas del Reglamento de IA se van a febrero de 2027",
  "ai":  "El 2 de diciembre concentra dos hitos del Reglamento de IA, no uno, y solo uno de ellos crea "
@@ -905,6 +909,52 @@ ITEMS += [
 ]
 
 ITEMS += [
+
+("fin", "Registro de criptoactivos de la ESMA · comprobado el 2 de noviembre de 2026", True,
+ "El mayor robo de criptoactivos de la historia, 6.300 millones de dólares, no generó ni una sola notificación "
+ "a un supervisor europeo, y la razón está en un fichero público que se comprueba en dos minutos",
+ "Hallazgo propio de esta edición, hecho en fuente primaria y con prueba de control. El <b>29 de octubre</b> "
+ "<b>Binance</b> sufrió el compromiso de sus carteras calientes y la pérdida de unos <b>6.300 millones de "
+ "dólares</b>, confirmado por la entidad en cinco comunicados propios y atribuido por el <b>FBI</b> el 31 de "
+ "octubre a un actor estatal. La pregunta de cumplimiento que todo el mundo da por supuesta es qué notificó a "
+ "los supervisores europeos, y la respuesta es <b>nada, y no por un vacío legal</b>. Descargados los ficheros "
+ "oficiales del registro de proveedores de servicios de criptoactivos de la <b>ESMA</b>, con última "
+ "actualización declarada de <b>30 de octubre de 2026</b>: hay <b>460 entidades autorizadas</b> bajo el "
+ "<b>Reglamento de Mercados de Criptoactivos</b> y <b>Binance no figura entre ellas</b>, probadas todas sus "
+ "denominaciones; tampoco figura en el fichero de <b>188 entidades no conformes</b>, de modo que ninguna "
+ "autoridad nacional la ha listado formalmente como tal. La prueba de control valida el negativo: en ese mismo "
+ "fichero <b>sí</b> aparecen Coinbase, Kraken, Bybit, OKX, Crypto.com y Gemini, y constan dieciséis "
+ "proveedores con Estado miembro de origen España.",
+ "La cadena de consecuencias es la pieza aprovechable, y conviene recorrerla entera porque casi nadie la hace. "
+ "Si la entidad <b>no está autorizada</b> bajo el Reglamento de Mercados de Criptoactivos, entonces <b>no es "
+ "entidad financiera del artículo 2 de DORA</b> por la vía del proveedor de criptoactivos; si no lo es, <b>no "
+ "tiene autoridad competente europea</b>; y si no la tiene, el incidente <b>no disparó la notificación de "
+ "incidente grave del artículo 19</b>, ni el plazo inicial, ni el intermedio, ni el informe final. La <b>CNMV "
+ "no es su autoridad competente</b> aunque sea la autoridad de criptoactivos en España. Para un consultor esto "
+ "se convierte en una pregunta de diligencia debida que cuesta dos minutos y que nadie está haciendo: antes de "
+ "contratar un proveedor de servicios de criptoactivos, o de aceptar que un cliente opere con él, "
+ "<b>comprueba si figura en el registro de la ESMA</b>. No es una formalidad: de ahí depende que exista un "
+ "supervisor al que reclamar, un régimen de notificación que te alcance cuando el proveedor sufra un "
+ "incidente, y un interlocutor distinto del servicio de atención al cliente. Esta semana ese fichero separa a "
+ "seis casas de cambio conocidas de una, y la que queda fuera es la que ha perdido 6.300 millones. Y hay un "
+ "segundo uso, para quien asesore a entidades que <b>sí</b> están dentro: el mismo registro es la forma de "
+ "comprobar si un socio comercial está en el perímetro, lo que importa para el riesgo de terceros de los "
+ "artículos 28 a 30 de DORA.",
+ 'El <a href="https://www.esma.europa.eu/esmas-activities/digital-finance-and-innovation/markets-crypto-assets-'
+ 'regulation-mica" @L>registro de proveedores de servicios de criptoactivos de la ESMA</a>, cuyos dos ficheros '
+ 'de entidades autorizadas y de entidades no conformes se descargan directamente desde esa página, y la '
+ '<a href="https://www.fbi.gov/investigate/cyber/alerts/2026/north-korea-responsible-for-6-billion-binance-'
+ 'attack" @L>alerta de atribución del FBI de 31 de octubre de 2026</a>.',
+ "Dos cautelas. La primera, sobre el alcance de lo que aquí se afirma: lo verificado es la <b>ausencia en el "
+ "registro</b> y la cadena jurídica que de ella se sigue. <b>Por qué</b> no está autorizada es otra cuestión, y "
+ "ahí lo único primario es el contexto general, es decir la declaración pública de la ESMA de junio de 2026 "
+ "instando a los proveedores no autorizados a cesar su actividad y el fin del régimen transitorio del artículo "
+ "143.3 el 1 de julio de 2026. Lo que circula en prensa sobre registros nacionales caducados y sobre atención a "
+ "clientes europeos al amparo de la solicitud inversa <b>no se ha verificado en fuente primaria</b> y no se "
+ "publica aquí como hecho. La segunda: <b>ningún regulador europeo ni ningún CERT oficial ha publicado una sola "
+ "línea</b> sobre este incidente, comprobado abriendo ESMA, EBA, CNMV, Banco de España, la autoridad maltesa, "
+ "CERT-EU, CERT-FR, INCIBE-CERT y CCN-CERT. La autoridad francesa no se ha podido alcanzar y queda declarada "
+ "como laguna, aunque pesa poco porque no es su autoridad competente."),
 
 ("fin", "BCE · venció el 31 de octubre de 2026 el plazo de la carta SSM-2026-0301", True,
  "Las entidades significativas ya han entregado su plan contra la ciberamenaza potenciada por IA, el "
