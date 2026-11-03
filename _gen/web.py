@@ -7,7 +7,9 @@ from contenido import (SEC, SEC_DARK, HOT, HOTBG, ITEMS, PLAZOS, BULOS,
                        NUM, FECHA_ISO, FECHA_TXT, PERIODO, TITS)
 from glosario import entradas as GLOS, CATS as GCATS
 from mapa import EST, REJILLA, PAIS, NORMAS, D as MAPA
-from incidentes import INCIDENTES, DESCARTADOS, LAGUNAS, SECTORES, TIPOS
+from incidentes import (INCIDENTES, FICHAS, TABLA, BULOS, LAGUNAS,
+                        SECTORES, TIPOS, VECTORES,
+                        NIVELES_HECHO, NIVELES_CAUSA, ORIGENES)
 
 # Plazos vivos: los marcados como tales, no todos. Se cuenta, no se escribe a mano.
 VIVOS = sum(1 for _p in PLAZOS if _p[1])
@@ -58,6 +60,10 @@ IC = {
  "s-tel":'<path d="M8 11.4V14"/><circle cx="8" cy="9.2" r="1.5"/><path d="M5.2 6.4a4 4 0 0 0 0 5.6M10.8 6.4a4 4 0 0 1 0 5.6"/><path d="M3.2 4.4a6.8 6.8 0 0 0 0 9.6M12.8 4.4a6.8 6.8 0 0 1 0 9.6"/>',
  "s-san":'<path d="M2 8.4h3l1.4-3 2.4 6 1.4-3H14"/>',
  "s-edu":'<path d="M1.8 5.8L8 3l6.2 2.8L8 8.6z"/><path d="M4.4 7v3.6c0 .9 1.6 1.8 3.6 1.8s3.6-.9 3.6-1.8V7"/><path d="M13.4 6.2v3.4"/>',
+ "s-ind":'<path d="M2 13.2V6.8l3.6 2.1V6.8l3.6 2.1V5.9l4.6 2.8v4.5z"/><path d="M1.2 13.6h13.6"/><path d="M4.6 11.2v1.1M7.9 11.2v1.1M11.2 11.2v1.1"/>',
+ "s-def":'<path d="M8 1.9l5 1.9v4c0 3-2 5.3-5 6.3-3-1-5-3.3-5-6.3v-4z"/><path d="M5.9 7.9l1.6 1.6 2.7-3"/>',
+ "t-ot":'<circle cx="8" cy="8" r="2.3"/><path d="M8 1.5v2.1M8 12.4v2.1M1.5 8h2.1M12.4 8h2.1M3.4 3.4l1.5 1.5M11.1 11.1l1.5 1.5M12.6 3.4l-1.5 1.5M4.9 11.1l-1.5 1.5"/>',
+ "t-frau":'<circle cx="6.4" cy="6.4" r="4.1"/><path d="M4.9 6.4h3M6.4 4.9v3"/><path d="M10.1 10.1l3.4 3.4"/><path d="M10.9 13.8h3v-3"/>',
  "s-com":'<path d="M2 2.6h1.8l1.9 7.6h6.1"/><path d="M4.2 5h9.4l-1.2 4.2"/><circle cx="6.4" cy="12.8" r="1.1"/><circle cx="11.4" cy="12.8" r="1.1"/>',
  # tipos de incidente
  "t-ran":'<rect x="3.2" y="7" width="9.6" height="6.6" rx="1.2"/><path d="M5.4 7V5.2a2.6 2.6 0 0 1 5.2 0V7"/><path d="M8.6 9.4l-1.2 1.6h1.6l-1.2 1.6"/>',
@@ -343,6 +349,62 @@ flex:1;min-width:0}}
 .inc{{border:1px solid var(--rule);border-radius:4px;background:var(--paper);
 padding:23px 25px;margin:0 0 13px}}
 .inc[data-oculto],.gl[data-oculto]{{display:none}}
+.nivs{{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 13px}}
+.niv{{display:inline-flex;align-items:center;gap:5px;font:600 9.5px/1 var(--san);
+ letter-spacing:.07em;text-transform:uppercase;padding:5px 8px;border-radius:3px;
+ border:1px solid var(--nv);color:var(--nv);background:transparent}}
+.niv i{{width:6px;height:6px;border-radius:50%;background:var(--nv);display:block;flex:none}}
+.niv em{{font-style:normal;opacity:.72;font-weight:500;letter-spacing:.02em;
+ text-transform:none}}
+.cif{{display:flex;flex-wrap:wrap;gap:6px 20px;margin:0 0 15px;
+ font:600 14px/1.4 var(--san);color:var(--ink2)}}
+.cif b{{font-variant-numeric:tabular-nums;color:var(--ink)}}
+.cif span{{font-weight:400;color:var(--ink3)}}
+#tabla-inc{{max-width:none}}
+.envol{{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:8px}}
+.tabi{{width:100%;border-collapse:collapse;table-layout:fixed;min-width:820px;
+ font:400 13.5px/1.45 var(--san);text-align:left}}
+.tabi col.c1{{width:20%}}.tabi col.c2{{width:19%}}.tabi col.c3{{width:20%}}
+.tabi col.c4{{width:15%}}.tabi col.c5{{width:14%}}.tabi col.c6{{width:12%}}
+.tabi th{{font:700 9px/1.2 var(--san);letter-spacing:.14em;text-transform:uppercase;
+ color:var(--ink3);text-align:left;padding:0 14px 9px 0;border-bottom:1px solid var(--rule);
+ white-space:nowrap}}
+.tabi td{{padding:13px 14px 13px 0;border-bottom:1px solid var(--hair);vertical-align:top;
+ text-align:left;hyphens:none}}
+.tabi tr[data-oculto],.tabi tr.det[data-oculto]{{display:none}}
+.tabi td.ent{{font:600 14.5px/1.35 var(--ser);color:var(--ink);width:24%;min-width:155px}}
+.tabi td.ent em{{display:block;font:500 12px/1.4 var(--san);color:var(--ink3);
+ font-style:normal;margin-top:3px}}
+.tabi td.ci b{{display:block;font-weight:600;color:var(--ink)}}
+.tabi td.ci i{{display:block;font:400 11.5px/1.4 var(--san);color:var(--ink3);
+ font-style:normal;margin:1px 0 7px}}
+.tabi td.ci .nada{{display:block;color:var(--ink3);margin-bottom:7px}}
+.tabi td.cf span{{display:flex;align-items:flex-start;gap:6px;font:500 12px/1.45 var(--san);
+ color:var(--ink2);margin-bottom:5px}}
+.tabi td.cf i{{margin-top:5px}}
+.tabi td.cf i{{width:7px;height:7px;border-radius:50%;background:var(--nv);flex:none}}
+.tabi th:last-child,.tabi td:last-child{{padding-right:0}}
+.tabi td.pt{{white-space:nowrap;color:var(--ink3);font-variant-numeric:tabular-nums}}
+.tabi td.pt a{{display:block;margin-top:5px}}
+.tabi .mini{{display:inline-block;font:600 10px/1.35 var(--san);padding:3px 6px;
+ border-radius:3px;border:1px solid var(--tg);color:var(--tg);margin:0 4px 4px 0;
+ white-space:normal;max-width:100%}}
+.tabi tr.det td{{padding-top:0;border-bottom:1px solid var(--hair)}}
+.hst summary{{cursor:pointer;font:600 10.5px/1.3 var(--san);color:var(--es);
+ letter-spacing:.09em;text-transform:uppercase;list-style:none;display:inline-block;
+ padding:3px 0}}
+.hst summary::-webkit-details-marker{{display:none}}
+.hst summary::before{{content:"+";font-weight:700;margin-right:5px}}
+.hst[open] summary::before{{content:"-"}}
+.hst p{{margin:7px 0 0;font:400 13.5px/1.6 var(--san);color:var(--ink2);
+ border-left:2px solid var(--es);padding-left:12px;max-width:62em;
+ text-align:left;hyphens:none}}
+.hst time{{font-weight:600;font-variant-numeric:tabular-nums;color:var(--ink);
+ margin-right:5px}}
+.act-l{{border-left:2px solid var(--es);padding-left:14px;margin:15px 0 0}}
+.act-l p{{margin:0 0 8px;font:400 14.5px/1.55 var(--san);color:var(--ink2)}}
+.act-l p:last-child{{margin-bottom:0}}
+.act-l time{{font-weight:600;font-variant-numeric:tabular-nums;color:var(--ink)}}
 .inc-h{{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin-bottom:12px}}
 .tag{{font:700 9.5px/1 var(--san);letter-spacing:.09em;text-transform:uppercase;
 padding:5px 9px;border-radius:2px;color:#fff}}
@@ -581,32 +643,58 @@ def render(eds, permalink=False):
 
 
     # ── INCIDENTES ──
-    # Fecha de confirmacion: obligatoria y legible por maquina. Alimenta el filtro
-    # de rango. Si falta o esta mal, se aborta: es dato de entrada, no de salida.
+    # Registro acumulado. La validacion de cada campo vive en incidentes.py y
+    # aborta alli: aqui ya llegan datos buenos. Dos niveles de presentacion,
+    # fichas desarrolladas y tabla larga, y los dos obedecen al mismo filtro.
     _MES = ("enero","febrero","marzo","abril","mayo","junio","julio","agosto",
             "septiembre","octubre","noviembre","diciembre")
     def fecha_es(iso):
         a, m, d = iso.split("-")
         return "%d de %s de %s" % (int(d), _MES[int(m) - 1], a)
-    import datetime as _dt
-    _confs = []
-    for _i in INCIDENTES:
-        _c = _i[6]
-        try:
-            _dt.date(*(int(x) for x in _c.split("-")))
-        except Exception:
-            raise SystemExit("incidentes.py: el incidente '%s' no tiene fecha de "
-                             "confirmacion valida en formato AAAA-MM-DD (vino %r). "
-                             "Es obligatoria: el filtro de fechas depende de ella."
-                             % (_i[0], _c))
-        _confs.append(_c)
+    def fecha_corta(iso):
+        a, m, d = iso.split("-")
+        return "%s/%s/%s" % (d, m, a)
+    _confs = [r["conf"] for r in INCIDENTES]
     CMIN, CMAX = (min(_confs), max(_confs)) if _confs else ("", "")
+
+    def datos(r):
+        eds = sorted({r["ed"]} | {u["ed"] for u in r["act"]})
+        return (f'data-inc data-id="{r["id"]}" data-sector="{r["sec"]}" '
+                f'data-tipo="{",".join(r["tips"])}" ' 
+                f'data-vec="{",".join(r["vec"])}" data-hecho="{r["hecho"]}" '
+                f'data-ed="{",".join(str(e) for e in eds)}" '
+                f'data-conf="{r["conf"]}"')
+
+    def badges(r):
+        hn, hc, _ = NIVELES_HECHO[r["hecho"]]
+        cn, cc, _ = NIVELES_CAUSA[r["causa"]]
+        return (f'<div class="nivs">'
+                f'<span class="niv" style="--nv:{hc}"><i></i>Hecho <em>{hn}</em></span>'
+                f'<span class="niv" style="--nv:{cc}"><i></i>Causa <em>{cn}</em></span>'
+                f'</div>')
+
+    def cifras(r):
+        tr = []
+        if r["cifra"].strip():
+            tr.append(f'<span>Importe:</span> <b>{r["cifra"]}</b> '
+                      f'<span>({ORIGENES[r["cifra_org"]]})</span>')
+        if r["afec"].strip():
+            tr.append(f'<span>Afectados:</span> <b>{r["afec"]}</b> '
+                      f'<span>({ORIGENES[r["afec_org"]]})</span>')
+        if not tr:
+            return '<p class="cif"><span>Sin cifra publicada de importe ni de afectados.</span></p>'
+        return '<p class="cif">' + '&nbsp;&nbsp;'.join(tr) + '</p>'
+
     A(f'<section id="t-incidentes" hidden><div class="col izq no-busca">'
       f'<p class="ante" style="color:#B71C1C">Casos reales</p>'
-      f'<h2 class="tit">Últimos incidentes</h2>'
-      f'<p class="entradilla">Incidentes del periodo <b>confirmados por la entidad afectada, '
-      f'un regulador o un CERT oficial</b>. Lo reivindicado por atacantes o publicado solo en prensa '
-      f'sin confirmación se queda fuera, y se lista aparte al final para que sepas que existe.</p></div>'
+      f'<h2 class="tit">Registro de incidentes</h2>'
+      f'<p class="entradilla">Registro <b>acumulado</b>: un caso entra cuando se conoce y '
+      f'se <b>actualiza</b> después, en lugar de caducar. El filtro de fechas viene puesto en '
+      f'esta edición; quítalo y tienes todo el histórico. '
+      f'<b>Nada se queda fuera por no estar confirmado oficialmente</b>: cada incidente declara '
+      f'dos niveles, uno para <b>el hecho</b> y otro para <b>la causa</b>, que son preguntas '
+      f'distintas. Las cifras llevan su propia procedencia. Lo comprobado y desmentido no está '
+      f'aquí: está al final, en bulos.</p></div>'
       f'<div class="col filtros no-busca">'
       f'<div class="filtros-h"><span class="ft">Filtrar incidentes</span>'
       f'<span class="fr"><span id="cuenta" aria-live="polite"></span>'
@@ -617,7 +705,7 @@ def render(eds, permalink=False):
       f'{icono("chev")}</button>'
       f'<div class="pop" id="p-sec" role="group" aria-labelledby="b-sec" hidden>')
     for sk, (sn, sc) in SECTORES.items():
-        n = sum(1 for i in INCIDENTES if i[3] == sk)
+        n = sum(1 for r in INCIDENTES if r["sec"] == sk)
         if n: A(f'<button class="opt" data-f="sector" data-v="{sk}" aria-pressed="false" '
                 f'style="--cc:{sc}"><span class="ok">{icono("check")}</span>'
                 f'<span class="oi">{icono("s-" + sk)}</span>'
@@ -628,53 +716,130 @@ def render(eds, permalink=False):
       f'{icono("chev")}</button>'
       f'<div class="pop" id="p-tip" role="group" aria-labelledby="b-tip" hidden>')
     for tk, (tn, tc) in TIPOS.items():
-        n = sum(1 for i in INCIDENTES if tk in i[4])
+        n = sum(1 for r in INCIDENTES if tk in r["tips"])
         if n: A(f'<button class="opt" data-f="tipo" data-v="{tk}" aria-pressed="false" '
                 f'style="--cc:{tc}"><span class="ok">{icono("check")}</span>'
                 f'<span class="oi">{icono("t-" + tk)}</span>'
                 f'<span class="on">{tn}</span><b>{n}</b></button>')
+    # Vector o causa raiz: el filtro que convierte el registro en argumento de venta.
+    A(f'</div></div>'
+      f'<div class="dd"><button class="ddb" id="b-vec" aria-expanded="false" aria-controls="p-vec">'
+      f'{icono("f-tip")}<span>Vector</span><span class="ddn" id="n-vec" hidden></span>'
+      f'{icono("chev")}</button>'
+      f'<div class="pop" id="p-vec" role="group" aria-labelledby="b-vec" hidden>')
+    for vk, (vn, vc) in VECTORES.items():
+        n = sum(1 for r in INCIDENTES if vk in r["vec"])
+        if n: A(f'<button class="opt" data-f="vec" data-v="{vk}" aria-pressed="false" '
+                f'style="--cc:{vc}"><span class="ok">{icono("check")}</span>'
+                f'<span class="on">{vn}</span><b>{n}</b></button>')
+    A(f'</div></div>'
+      f'<div class="dd"><button class="ddb" id="b-niv" aria-expanded="false" aria-controls="p-niv">'
+      f'{icono("f-sec")}<span>Confirmación</span><span class="ddn" id="n-niv" hidden></span>'
+      f'{icono("chev")}</button>'
+      f'<div class="pop" id="p-niv" role="group" aria-labelledby="b-niv" hidden>')
+    for nk, (nn, nc, _d) in NIVELES_HECHO.items():
+        n = sum(1 for r in INCIDENTES if r["hecho"] == nk)
+        if n: A(f'<button class="opt" data-f="hecho" data-v="{nk}" aria-pressed="false" '
+                f'style="--cc:{nc}"><span class="ok">{icono("check")}</span>'
+                f'<span class="on">{nn}</span><b>{n}</b></button>')
     A(f'</div></div>'
       f'<div class="dd"><button class="ddb" id="b-fec" aria-expanded="false" aria-controls="p-fec">'
       f'{icono("f-fec")}<span>Fecha</span><span class="ddn" id="n-fec" hidden></span>'
       f'{icono("chev")}</button>'
       f'<div class="pop pop-f" id="p-fec" role="group" aria-labelledby="b-fec" hidden>'
-      f'<span class="pl">Confirmado en</span>'
+      f'<span class="pl">Se conoció en</span>'
       f'<div class="pers" id="fp">'
-      f'<button class="per" data-p="ed" aria-pressed="false">Esta edición</button>'
+      f'<button class="per" data-p="ed" aria-pressed="true">Esta edición</button>'
       f'<button class="per" data-p="30" aria-pressed="false">Últimos 30 días</button>'
       f'<button class="per" data-p="90" aria-pressed="false">Últimos 90 días</button>'
-      f'<button class="per" data-p="all" aria-pressed="true">Todo</button></div>'
+      f'<button class="per" data-p="all" aria-pressed="false">Todo el histórico</button></div>'
       f'<span class="pl">O un intervalo</span>'
       f'<div class="rango">'
       f'<label for="d1">Desde <input type="date" id="d1" min="{CMIN}" max="{CMAX}"></label>'
       f'<label for="d2">Hasta <input type="date" id="d2" min="{CMIN}" max="{CMAX}"></label>'
       f'</div></div></div>'
       f'</div></div><div class="col" id="lista-inc">')
-    for iid, ent, pais, sec, tips, fecha, conf, estado, sabe, quien, url, obl, lec in INCIDENTES:
-        sn, sc = SECTORES[sec]
+    for r in FICHAS:
+        sn, sc = SECTORES[r["sec"]]
         v = set()
-        ctx = " ".join([sabe, quien, obl, lec])
-        A(f'<div class="inc" id="i-{iid}" data-sector="{sec}" data-tipo="{",".join(tips)}" '
-          f'data-conf="{conf}">'
+        ctx = " ".join([r["sabe"], r["quien"], r["obl"], r["lec"]])
+        A(f'<div class="inc" id="i-{r["id"]}" {datos(r)}>'
           f'<div class="inc-h"><span class="tag sec" style="--tg:{sc}">{sn}</span>')
-        for t in tips:
+        for t in r["tips"]:
             tn, tc = TIPOS[t]
             A(f'<span class="tag tip" style="--tg:{tc}">{tn}</span>')
-        A(f'</div><h4>{ent}</h4>'
-          f'<p class="meta"><b>{pais}</b> &nbsp;·&nbsp; confirmado el '
-          f'<time datetime="{conf}">{fecha_es(conf)}</time> &nbsp;·&nbsp; {estado}</p>'
-          f'<p class="meta crono">{fecha}</p>'
-          f'<dl><dt>Qué se sabe</dt><dd><p>{marcar(sabe, v, contexto=ctx)}</p></dd>'
-          f'<dt>Quién lo confirma</dt><dd><p>{marcar(quien, v, contexto=ctx)} '
-          f'<a href="{url}">Fuente</a>.</p></dd>'
-          f'<dt>Qué obligaciones dispara</dt><dd><p>{marcar(obl, v, contexto=ctx)}</p></dd>'
-          f'<div class="lec"><dt>Qué te llevas</dt><dd><p>{marcar(lec, v, contexto=ctx)}</p></dd></div>'
-          f'</dl></div>')
-    A('<p class="vacio" id="vacio" hidden>Ningún incidente encaja con ese filtro.</p></div>'
-      f'<div class="col panel no-busca" style="background:var(--hair);margin-top:26px">'
-      f'<span class="et" style="color:var(--ink3)">No admitidos, y por qué</span>')
-    for t, r in DESCARTADOS:
-        A(f'<p style="margin:0 0 13px"><b>{t}.</b> {r}</p>')
+        for vv in r["vec"]:
+            vn, vc = VECTORES[vv]
+            A(f'<span class="tag tip" style="--tg:{vc}">{vn}</span>')
+        A(f'</div><h4>{r["ent"]}</h4>'
+          f'<p class="meta"><b>{r["pais"]}</b> &nbsp;·&nbsp; se conoció el '
+          f'<time datetime="{r["conf"]}">{fecha_es(r["conf"])}</time> &nbsp;·&nbsp; {r["estado"]}</p>'
+          f'<p class="meta crono">{r["fecha"]}</p>'
+          + badges(r) + cifras(r) +
+          f'<dl><dt>Qué se sabe</dt><dd><p>{marcar(r["sabe"], v, contexto=ctx)}</p></dd>'
+          f'<dt>Quién lo sostiene</dt><dd><p>{marcar(r["quien"], v, contexto=ctx)} '
+          f'<a href="{r["url"]}">Fuente</a>.</p></dd>'
+          f'<dt>Qué obligaciones dispara</dt><dd><p>{marcar(r["obl"], v, contexto=ctx)}</p></dd>'
+          f'<div class="lec"><dt>Qué te llevas</dt><dd><p>{marcar(r["lec"], v, contexto=ctx)}</p></dd></div>'
+          f'</dl>')
+        if r["act"]:
+            A('<div class="act-l">')
+            for u in r["act"]:
+                A(f'<p><time datetime="{u["fecha"]}">{fecha_es(u["fecha"])}</time>, '
+                  f'edición {u["ed"]}: {u["nota"]}</p>')
+            A('</div>')
+        A('</div>')
+    A('<p class="vacio" id="vacio" hidden>Ningún incidente encaja con ese filtro.</p></div>')
+    # Tabla larga: el resto del registro. Seis columnas, no diez: con diez no
+    # cabe y el lector no lee lo que tiene que arrastrar. El historial va en su
+    # propia fila, sincronizada con la de arriba por data-det.
+    if TABLA:
+        A(f'<div class="col" id="tabla-inc" style="margin-top:30px">'
+          f'<span class="et" style="color:var(--ink3)">El resto del registro</span>'
+          f'<div class="envol"><table class="tabi">'
+          f'<colgroup><col class="c1"><col class="c2"><col class="c3">'
+          f'<col class="c4"><col class="c5"><col class="c6"></colgroup>'
+          f'<thead><tr><th>Entidad</th><th>Sector y tipo</th><th>Vector</th>'
+          f'<th>Cifras</th><th>Confirmación</th><th>Se conoció</th></tr></thead><tbody>')
+        for r in TABLA:
+            sn, sc = SECTORES[r["sec"]]
+            hn, hc, _d = NIVELES_HECHO[r["hecho"]]
+            cn, cc, _d = NIVELES_CAUSA[r["causa"]]
+            tn = "".join(f'<span class="mini" style="--tg:{TIPOS[t][1]}">{TIPOS[t][0]}</span>'
+                         for t in r["tips"])
+            vn = "".join(f'<span class="mini" style="--tg:{VECTORES[x][1]}">{VECTORES[x][0]}</span>'
+                         for x in r["vec"])
+            ci = (f'<b>{r["cifra"]}</b><i>{ORIGENES[r["cifra_org"]]}</i>'
+                  if r["cifra"].strip() else '<span class="nada">sin importe</span>')
+            af = (f'<b>{r["afec"]}</b><i>{ORIGENES[r["afec_org"]]}</i>'
+                  if r["afec"].strip() else '<span class="nada">sin recuento</span>')
+            A(f'<tr {datos(r)}>'
+              f'<td class="ent">{r["ent"]}<em>{r["pais"]}</em></td>'
+              f'<td><span class="mini" style="--tg:{sc}">{sn}</span>{tn}</td>'
+              f'<td>{vn}</td>'
+              f'<td class="ci">{ci}{af}</td>'
+              f'<td class="cf"><span><i style="--nv:{hc}"></i>Hecho: {hn}</span>'
+              f'<span><i style="--nv:{cc}"></i>Causa: {cn}</span></td>'
+              f'<td class="pt"><time datetime="{r["conf"]}">{fecha_corta(r["conf"])}</time>'
+              f'<a href="{r["url"]}">Fuente</a></td></tr>')
+            if r["act"]:
+                n = len(r["act"])
+                A(f'<tr class="det" data-det="{r["id"]}"><td colspan="6">'
+                  f'<details class="hst"><summary>{n} '
+                  + ("actualización" if n == 1 else "actualizaciones")
+                  + '</summary>'
+                  + "".join(f'<p><time datetime="{u["fecha"]}">{fecha_corta(u["fecha"])}</time> '
+                            f'{u["nota"]}</p>' for u in r["act"])
+                  + '</details></td></tr>')
+        A('</tbody></table></div>'
+          '<p class="vacio" id="vacio-t" hidden>Ninguna fila encaja con ese filtro.</p></div>')
+    A(f'<div class="col panel no-busca" style="background:var(--hair);margin-top:30px">'
+      f'<span class="et" style="color:var(--ink3)">Bulos y trampas de fecha</span>'
+      f'<p style="margin:0 0 15px;font-size:15px;color:var(--ink3)">Esto no es la papelera de '
+      f'lo no confirmado, que ahora entra al registro con su etiqueta. Aquí solo lo que está '
+      f'<b>comprobado y desmentido</b>, y lo que circula como actual sin serlo.</p>')
+    for t, rz in BULOS:
+        A(f'<p style="margin:0 0 13px"><b>{t}.</b> {rz}</p>')
     A(f'</div><div class="col" style="margin-top:22px"><p class="warn">{LAGUNAS}</p></div></section>')
 
 
@@ -813,22 +978,36 @@ def render(eds, permalink=False):
       'const _dsum=(iso,n)=>{const p=iso.split("-");'
       'const x=new Date(Date.UTC(+p[0],+p[1]-1,+p[2]));x.setUTCDate(x.getUTCDate()+n);'
       'return x.toISOString().slice(0,10);};'
-      'const selS=new Set(),selT=new Set();let fD1="",fD2="";'
+      'const selS=new Set(),selT=new Set(),selV=new Set(),selN=new Set();'
+      'let fD1="",fD2="",fEd=false;'
+      f'const NUM="{NUM}";'
+      'const SETS={sector:selS,tipo:selT,vec:selV,hecho:selN};'
       'const inD1=document.getElementById("d1"),inD2=document.getElementById("d2");'
-      'function filtra(){let n=0,tot=0;document.querySelectorAll(".inc").forEach(c=>{tot++;'
-      'const cf=c.dataset.conf||"";'
-      'const ok=(!selS.size||selS.has(c.dataset.sector))'
-      '&&(!selT.size||c.dataset.tipo.split(",").some(t=>selT.has(t)))'
-      '&&(!fD1||(cf&&cf>=fD1))&&(!fD2||(cf&&cf<=fD2));'
-      'ok?c.removeAttribute("data-oculto"):c.setAttribute("data-oculto","");if(ok)n++;});'
-      'const v=document.getElementById("vacio");if(v)v.hidden=n>0;'
+      'function casa(c){const cf=c.dataset.conf||"";'
+      'if(fEd&&!(c.dataset.ed||"").split(",").includes(NUM))return false;'
+      'return (!selS.size||selS.has(c.dataset.sector))'
+      '&&(!selT.size||(c.dataset.tipo||"").split(",").some(t=>selT.has(t)))'
+      '&&(!selV.size||(c.dataset.vec||"").split(",").some(t=>selV.has(t)))'
+      '&&(!selN.size||selN.has(c.dataset.hecho))'
+      '&&(!fD1||(cf&&cf>=fD1))&&(!fD2||(cf&&cf<=fD2));}'
+      # Fichas y filas de la tabla obedecen al mismo filtro: si no, el contador
+      # miente y el lector cree que un incidente no esta.
+      'function filtra(){let n=0,tot=0,nf=0,nt=0;'
+      'document.querySelectorAll("[data-inc]").forEach(c=>{tot++;const ok=casa(c);'
+      'ok?c.removeAttribute("data-oculto"):c.setAttribute("data-oculto","");'
+      'if(ok){n++;if(c.tagName==="TR")nt++;else nf++;}});''document.querySelectorAll("tr.det").forEach(d=>{''const p=document.querySelector(\'tr[data-inc][data-id="\'+d.dataset.det+\'"]\');''const oc=p?p.hasAttribute("data-oculto"):true;''oc?d.setAttribute("data-oculto",""):d.removeAttribute("data-oculto");});'
+      'const v=document.getElementById("vacio");if(v)v.hidden=nf>0;'
+      'const vt=document.getElementById("vacio-t");if(vt)vt.hidden=nt>0;'
+      'const tb=document.getElementById("tabla-inc");'
+      'if(tb){const t=tb.querySelector("table");if(t)t.hidden=nt===0;}'
       'const cu=document.getElementById("cuenta");'
       'if(cu)cu.innerHTML=n===tot?"<b>"+tot+"</b> incidentes":"<b>"+n+"</b> de "+tot;'
       'const lp=document.getElementById("limpiar");'
-      'if(lp)lp.hidden=!(selS.size||selT.size||fD1||fD2);'
+      'if(lp)lp.hidden=!(selS.size||selT.size||selV.size||selN.size||fD1||fD2||fEd);'
       'if(typeof pintaDD==="function")pintaDD();}'
       'function pintaDD(){const g=[["n-sec","b-sec",selS.size],["n-tip","b-tip",selT.size],'
-      '["n-fec","b-fec",(fD1||fD2)?1:0]];'
+      '["n-vec","b-vec",selV.size],["n-niv","b-niv",selN.size],'
+      '["n-fec","b-fec",(fD1||fD2||fEd)?1:0]];'
       'g.forEach(([ni,bi,n])=>{const e=document.getElementById(ni),b=document.getElementById(bi);'
       'if(e){e.textContent=n;e.hidden=!n;}if(b)b.classList.toggle("act",!!n);});}'
       'function cierraDD(menos){document.querySelectorAll(".dd").forEach(d=>{'
@@ -842,25 +1021,27 @@ def render(eds, permalink=False):
       'document.addEventListener("click",()=>cierraDD(null));'
       'document.addEventListener("keydown",e=>{if(e.key==="Escape")cierraDD(null);});'
       'document.querySelectorAll(".opt").forEach(c=>c.onclick=()=>{'
-      'const st=c.dataset.f==="sector"?selS:selT,vv=c.dataset.v;'
+      'const st=SETS[c.dataset.f],vv=c.dataset.v;if(!st)return;'
       'if(st.has(vv)){st.delete(vv);c.setAttribute("aria-pressed","false");}'
       'else{st.add(vv);c.setAttribute("aria-pressed","true");}filtra();});'
       'function marcaPer(p){document.querySelectorAll("#fp .per")'
       '.forEach(b=>b.setAttribute("aria-pressed",b.dataset.p===p));}'
-      'function ponPer(p){if(p==="all"){fD1="";fD2="";}'
-      'else if(p==="ed"){fD1=_dsum(IED,-7);fD2=IED;}'
+      'function ponPer(p){fEd=(p==="ed");'
+      'if(p==="all"||p==="ed"){fD1="";fD2="";}'
       'else{fD1=_dsum(IED,-parseInt(p));fD2=IED;}'
       'if(inD1)inD1.value=fD1;if(inD2)inD2.value=fD2;marcaPer(p);filtra();}'
       'document.querySelectorAll("#fp .per").forEach(b=>b.onclick=()=>ponPer(b.dataset.p));'
-      'if(inD1)inD1.onchange=()=>{fD1=inD1.value;marcaPer(fD1||fD2?"":"all");filtra();};'
-      'if(inD2)inD2.onchange=()=>{fD2=inD2.value;marcaPer(fD1||fD2?"":"all");filtra();};'
+      'if(inD1)inD1.onchange=()=>{fEd=false;fD1=inD1.value;marcaPer(fD1||fD2?"":"all");filtra();};'
+      'if(inD2)inD2.onchange=()=>{fEd=false;fD2=inD2.value;marcaPer(fD1||fD2?"":"all");filtra();};'
       'const lpB=document.getElementById("limpiar");'
-      'if(lpB)lpB.onclick=()=>{selS.clear();selT.clear();'
+      'if(lpB)lpB.onclick=()=>{selS.clear();selT.clear();selV.clear();selN.clear();'
       'document.querySelectorAll(".opt").forEach(c=>c.setAttribute("aria-pressed","false"));'
       'cierraDD(null);ponPer("all");};'
-      'filtra();'
+      # El registro es acumulado, asi que por defecto se abre en esta edicion.
+      # Quitar el filtro da el historico completo.
+      'ponPer("ed");'
       'const q=document.getElementById("q"),res=document.getElementById("res");'
-      'const piezas=[...document.querySelectorAll("article[data-sec], .inc, .gl")];'
+      'const piezas=[...document.querySelectorAll("article[data-sec], .inc, .gl, tr[data-inc]")];'
       'q.addEventListener("input",()=>{const t=q.value.trim().toLowerCase();'
       'if(!t){document.body.classList.remove("buscando");res.textContent="";'
       'piezas.forEach(p=>p.removeAttribute("data-oculto"));'
@@ -873,7 +1054,7 @@ def render(eds, permalink=False):
       'document.querySelectorAll("main>section").forEach(s=>{const h=s.querySelector(".sec-h");'
       'if(h){const vis=[...s.querySelectorAll("article")].some(a=>!a.hasAttribute("data-oculto"));'
       'vis?h.removeAttribute("data-oculto"):h.setAttribute("data-oculto","");}'
-      'const alguno=s.querySelector("article:not([data-oculto]), .inc:not([data-oculto]), .gl:not([data-oculto])");'
+      'const alguno=s.querySelector("article:not([data-oculto]), .inc:not([data-oculto]), .gl:not([data-oculto]), tr[data-inc]:not([data-oculto])");'
       'if(!alguno&&s.id!=="t-portada")s.hidden=true;});'
       'res.textContent=n===0?"sin resultados":n===1?"1 resultado":n+" resultados";});'
       'q.addEventListener("keydown",e=>{if(e.key==="Escape"){q.value="";q.dispatchEvent(new Event("input"));}});'

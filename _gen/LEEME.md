@@ -10,7 +10,8 @@ haría que fuese degradándose.
 | Fichero | Frecuencia | Qué contiene |
 |---|---|---|
 | `contenido.py` | **Cada lunes, entero** | `NUM`, `FECHA_ISO`, `FECHA_TXT`, `PERIODO`, titular, entradilla, claves, plazos, `TITS` (titulares de las tarjetas de portada), asuntos, correcciones y «comprobado y sin novedad» |
-| `incidentes.py` | **Cada lunes, entero** | Incidentes confirmados, descartados y lagunas. Cada incidente lleva `conf`, la fecha de confirmación pública en `AAAA-MM-DD`: es obligatoria |
+| `banco.json` | **Cada lunes, SE AÑADE, nunca se vacía** | El registro acumulado de incidentes. Se añaden incidentes nuevos y se añaden entradas al campo `act` de los que ya estaban. Vaciarlo o reescribir entradas antiguas destruye el histórico |
+| `incidentes.py` | Cada lunes, solo `BULOS` y `LAGUNAS` | Taxonomías, cargador y validador del banco, más los bulos y las lagunas de la semana. Las taxonomías solo cambian al añadir un sector, un tipo o un vector nuevos |
 | `mapa.py` | Cada lunes, al menos la previsión | Estado de las 5 normas en los 27 Estados y previsión de los que no tienen ley |
 | `siglas.py` | Al añadir siglas nuevas | Despliegue de siglas |
 | `glosario.py` | Al añadir siglas nuevas | Explicaciones largas del glosario |
@@ -45,7 +46,9 @@ descárgalo antes desde el repositorio.
 
 1. **Nada de guiones largos ni medios.** `web.py` lo comprueba y aborta si aparece alguno.
 2. **Las cifras se calculan**, nunca se escriben a mano. El total de asuntos sale de contar.
-3. **Incidentes: solo lo confirmado** por la entidad afectada, un regulador o un CERT oficial.
+3. **Incidentes: entra todo, con etiqueta.** Desde el 03/11/2026 la confirmación oficial ya
+   no es una puerta sino una etiqueta, y van dos: una para el hecho y otra para la causa.
+   Lo estricto se mantiene solo en el campo de obligaciones. Ver la sección del registro.
 4. **No uses `%%` en el texto.** Solo el campo «qué leer» de `contenido.py` convierte `%%` en `%`;
    en el resto sale tal cual. Escribe `%` directamente. (Corregido el 17/08/2026: la edición 001
    se publicó con «2 %%» visible en tres incidentes.)
@@ -126,48 +129,139 @@ Si España transpone, por ley o por decreto-ley, el bloque **no desaparece**: pa
 decir cuánto se acumuló hasta la fecha de notificación a la Comisión, que es lo que
 seguirá pidiéndose como tanto alzado.
 
-## Filtros de la sección de incidentes (añadido el 19/10/2026)
+## El registro de incidentes (rehecho el 03/11/2026, lee esto antes de tocarlo)
 
-La sección de incidentes lleva un panel de filtros con tres controles, y los tres se
-construyen solos a partir de los datos de `incidentes.py`:
+Hasta la edición 011 la sección de incidentes era **una foto semanal**: `incidentes.py` se
+reescribía entero cada lunes y lo de la semana anterior desaparecía. Desde la 012 es un
+**registro acumulado y vivo** que persiste en `_gen/banco.json`.
 
-1. **Sector y Tipo**, cada uno en su propio desplegable, con casillas, icono de color e
-   indicador del número de incidentes. Son de **selección múltiple**: marcar «Banca y
-   seguros» y «Sanidad» muestra los de los dos. Dentro de un grupo la condición es «o»;
-   entre los dos grupos, «y». Ninguna casilla marcada equivale a todas. Solo aparecen las
-   opciones con al menos un incidente.
-2. **Fecha de confirmación**, en un tercer desplegable, con cuatro atajos («Esta edición»,
-   «Últimos 30 días», «Últimos 90 días» y «Todo») y dos campos de calendario para un rango
-   a medida.
-   Los atajos se calculan **desde `FECHA_ISO` de la edición, no desde el día en que se
-   lee la página**: así una edición archivada sigue diciendo lo mismo dentro de un año.
-   La aritmética de fechas va en UTC a propósito; con horas locales, un lector al este
-   de Greenwich veía el rango desplazado un día.
-3. **Contador y botón de limpiar**, que aparecen y se actualizan solos.
+### Por qué cambió, que es lo que no hay que olvidar
 
-### El campo `conf`, y por qué el generador aborta sin él
+David lo planteó el 2 y el 3 de noviembre de 2026, y tenía razón. El boletín existe para que
+no le pillen desprevenido delante de un cliente, y dos casos demostraron que el diseño
+trabajaba en contra:
 
-Cada incidente lleva una fecha de confirmación pública legible por máquina:
+1. **El robo a Binance** (6.300 millones de dólares, el mayor de la historia) no entró en la
+   edición 011 en su primera versión.
+2. **La campaña contra controladores de refrigeración** se seguía como amenaza y no como
+   incidente, y cuando se materializó no se podía enlazar con sus capítulos anteriores.
 
-```python
-("cpr", "Registro central de personas de Dinamarca", "Dinamarca", "adm",
- ["acc","rgpd","sum"],
- "Accesos durante unos diez días de septiembre; actividad irregular detectada el 2 de octubre...",
- "2026-10-05",          # <- conf: AAAA-MM-DD, obligatoria
- "Abierto, con revisión de seguridad ordenada por el ministerio", ...)
-```
+Al migrar los 26 descartados de la 011 apareció el motivo de fondo, y **no era la regla de
+admisión** como se creyó al principio: **era la ventana de una semana**. En la papelera había
+una brecha de datos médicos de **diecinueve millones de personas en Polonia**, descartada por
+«fuera de ventana»; hospitales belgas con cirugías canceladas, descartados por ser de febrero;
+y un caso de Ellwangen anotado como «instructivo, porque documenta expresamente la notificación
+al responsable de protección de datos del Land y el aviso a la aseguradora de ciberriesgo»,
+tirado por ser de 2025.
 
-`conf` es **la fecha en que la entidad afectada, el regulador o el CERT lo confirmaron**,
-que es justamente la que exige la regla de admisión del boletín: si un incidente entra,
-esa fecha existe. No es la fecha del ataque ni la de la detección, que muchas veces no se
-declaran o son un rango de días.
+Una historia que se desarrolla a lo largo de meses **no se podía contar nunca**: cada lunes
+estaba o demasiado vieja o todavía sin confirmar. El caso de la refrigeración lo ilustra
+entero: agosto de 2026, economatos de siete bases militares de Estados Unidos, con el hecho
+confirmado por el Departamento de Defensa y la causa sin determinar; octubre, distribución
+francesa; noviembre, resto de Europa.
 
-El campo largo de texto se mantiene y es donde va la cronología completa en prosa, que es
-lo que se lee. `conf` solo alimenta el filtro y la línea «confirmado el …».
+### Las cuatro decisiones de David del 03/11/2026
 
-`web.py` **aborta** si falta o no es una fecha válida, igual que aborta con un guion largo.
-Es deliberado: se parchea la entrada, no la salida. Un filtro de fechas que silenciosamente
-se come los incidentes sin fecha es peor que un generador que no compila.
+1. **Alcance mundial con umbral**: todo lo de España y la UE, y del resto del mundo lo que
+   tenga cifra grande, sector crítico, técnica novedosa o víctima reconocible.
+2. **Dos niveles de presentación**: entre cinco y ocho fichas desarrolladas y el resto en tabla
+   larga filtrable.
+3. **Cifras con etiqueta de origen**, siempre publicadas, nunca sin procedencia.
+4. **Cambio completo en la edición 012**, no por fases.
+
+### El contrato de datos
+
+Cada incidente de `banco.json` es un objeto con estas claves. `_gen/incidentes.py` las valida
+al importar y **aborta** ante cualquiera que esté mal: se parchea la entrada, no la salida.
+
+| Clave | Qué es |
+|---|---|
+| `id` | Identificador único y estable. Es lo que permite actualizar un incidente en ediciones posteriores |
+| `ent`, `pais`, `sec` | Entidad, país y clave de `SECTORES` |
+| `tips` | Lista de claves de `TIPOS`, al menos una |
+| `vec` | Lista de claves de `VECTORES`, al menos una. **Si no se conoce va `["desc"]`**, que no es lo mismo que vacío. NO se infiere |
+| `hecho` | Nivel de confirmación **del hecho**: `oficial`, `proveedor`, `prensa` o `atribuido` |
+| `causa` | Nivel de confirmación **de la causa**: los mismos más `desconocida` |
+| `cifra`, `cifra_org` | Importe y su procedencia. Una sin la otra aborta |
+| `afec`, `afec_org` | Personas o entidades afectadas y su procedencia. Idem |
+| `conf` | `AAAA-MM-DD` en que se conoció públicamente. Alimenta el filtro de fechas |
+| `ed` | Número de edición en la que entró |
+| `detalle` | `ficha` o `tabla`. Si es `ficha`, los campos de prosa son obligatorios |
+| `estado`, `fecha`, `sabe`, `quien`, `obl`, `lec` | La prosa de siempre. Solo obligatoria en las fichas |
+| `url` | **Obligatoria siempre**, también en las filas de tabla. David la pidió expresamente |
+| `act` | Lista de actualizaciones `{ed, fecha, nota}`. Es lo que convierte el registro en vivo |
+
+### Hecho y causa son dos campos, y es lo más importante de todo esto
+
+Confundirlos fue el error de fondo. El caso que lo explica: en agosto de 2026 el Departamento
+de Defensa de Estados Unidos confirmó por escrito «a possible refrigeration disruption at some
+Defense Commissary Agency commissaries» y Fort Huachuca publicó en su propio canal que «ALL
+freezers went into defrost mode, ALL frozen food has spoiled». **Hecho oficial.** La causa no
+la sostuvo nadie hasta que Reuters publicó el 29 de octubre, con cuatro funcionarios, que el
+Pentágono la trataba como presunto ciberataque. **Causa, prensa.** Con un solo campo esa
+entrada no se podía escribir, y era la mejor entrada posible: habría hecho legible en agosto
+todo lo que pasó en octubre.
+
+El nivel `proveedor` se añadió el mismo día porque hacía falta: Danfoss y Copeland no son la
+entidad afectada ni una autoridad, pero son quienes más detalle técnico dieron.
+
+### Lo estricto se mantiene en un sitio
+
+En el campo `obl`, el de obligaciones. Ahí no se afirma que algo dispara un plazo de
+notificación sobre una noticia de prensa, porque es donde un cliente actúa. En el resto del
+registro, etiquetar; en obligaciones, rigor.
+
+### BULOS ya no es la papelera
+
+`BULOS`, en `incidentes.py`, es **solo** lo comprobado y desmentido y las trampas de fecha que
+circulan como actuales. Lo no confirmado ya no se tira: entra al banco con su etiqueta.
+
+### Los filtros de la web
+
+Cinco desplegables, todos construidos solos a partir de los datos: **Sector**, **Tipo**,
+**Vector**, **Confirmación** (por el nivel del hecho) y **Fecha**. Los cuatro primeros son de
+selección múltiple; dentro de un grupo la condición es «o», entre grupos «y»; ninguna casilla
+marcada equivale a todas; solo aparecen las opciones con al menos un incidente.
+
+El desplegable de fecha tiene «Esta edición», «Últimos 30 días», «Últimos 90 días», «Todo el
+histórico» y un intervalo a medida. **«Esta edición» filtra por el campo `ed`, no por una
+ventana de siete días.** Se probó con fechas y escondía incidentes de la propia edición, porque
+un caso puede conocerse semanas antes de que entre al boletín. Un incidente aparece en «esta
+edición» si entró en ella **o si se actualizó en ella**, que es lo que hace visible el
+seguimiento. Los atajos de 30 y 90 días sí se calculan desde `FECHA_ISO` de la edición y no
+desde el día en que se lee la página, en UTC a propósito.
+
+**Fichas y filas de la tabla obedecen al mismo filtro**, y la fila de historial (`tr.det`) se
+oculta con la suya. Si se rompe esa sincronización el contador miente y el lector cree que un
+incidente no está, que es exactamente el problema que todo esto venía a resolver.
+
+### Cola de reingreso al banco (pendiente)
+
+Al reclasificar los 26 descartados de la edición 011, cuatro pasaron a `BULOS` y **veintidós
+quedaron pendientes de reingreso**. Ya no se caen por antigüedad, pero necesitan sus metadatos
+y, sobre todo, su enlace, que la nota de descarte no conserva. Hay que reingresarlos con
+investigación, no de memoria. Los de más valor:
+
+- Brecha de datos médicos de cerca de diecinueve millones de personas en Polonia (confirmada
+  por la empresa el 13/08/2026, inspección de la autoridad polaca ese mismo día).
+- Ciberataque a hospitales belgas con cancelación de cirugías (febrero de 2026).
+- Exposición de datos vinculados a los servicios de información portugueses (08/10/2026,
+  reivindicado sin confirmar: entra con `hecho: "atribuido"`).
+- Acceso no autorizado y copia de base de datos en un proveedor polaco de facturación
+  (27 y 28/09/2026, bien documentado).
+- Ciberataque a la administración municipal de Ellwangen (mayo de 2025), por documentar la
+  notificación al delegado de protección de datos **y** el aviso a la aseguradora.
+- Sanción de la CNIL de siete millones de euros a FNAC y multa de la AEPD a una mutua: entran
+  como `judicial` o `regulador` en el origen de la cifra.
+
+Y dos del hilo de la refrigeración que **no se dieron de alta por no tener fecha o enlace
+verificados**, y que no se inventan:
+
+- Supermercados en Rusia e Israel atacados en 2022 con controladores de frío obsoletos, que
+  Danfoss cuenta en su propia web. Falta la fecha exacta de publicación.
+- Planta cárnica en Estados Unidos, 2024, con más de 900 kilos de carne perdidos: la fiscalía
+  federal de Los Ángeles acusó a una persona en diciembre de 2025. Hay actuaciones judiciales,
+  o sea fuente primaria, pero falta localizar el documento.
 
 ## El recuento de plazos vivos (corregido el 19/10/2026)
 
@@ -186,11 +280,11 @@ alimentaria diciendo «es super clave». Se investigó el 03/11/2026 y **el dosi
 el proyecto, en `banco-incidentes/refrigeracion-distribucion-2026.md`**. Resumen de lo que hay
 que hacer y de las trampas:
 
-- **Cumple la regla de admisión**, pero solo en su núcleo estrecho: incidentes en controladores de
+- **Confirmado oficialmente en su núcleo estrecho**: incidentes en controladores de
   refrigeración de la distribución alimentaria, confirmados por **CERT-FR** (ALE-012, 12 a 16 oct),
   **CERT-SE y NCSC Suecia** (02/11/2026 17:40 y 17:39) y **NCSC-NL** (02/11/2026), y por
   **Delhaize en su propia web** (02/11/2026 14:00). Esa última es la que habilita la admisión.
-- **No cumple y va a DESCARTADOS con el motivo**: el recuento de países (la prensa oscila entre
+- **Entra con etiqueta de prensa, no como hecho confirmado**: el recuento de países (oscila entre
   siete y nueve), el recuento de cadenas y tiendas, y **todas las cifras de pérdidas millonarias**.
   La única cifra monetaria verificada en toda la cobertura son 15.000 euros de carne en una
   carnicería belga, a Reuters. La premisa de «pérdidas millonarias» no la sostiene nadie.
@@ -287,34 +381,48 @@ es el 11 de diciembre de 2026**. Si es correcto, es un plazo vivo y no entró en
 edición 009. **Verificar contra el articulado del Reglamento (UE) 2024/2847 antes de publicarlo**, no
 darlo por bueno desde esta nota.
 
-### 6. Banco histórico de incidentes desde 2015 (pedido por David el 02/11/2026, NO empezar un lunes)
+### 6. Banco histórico de incidentes desde 2015 (pedido el 02/11/2026, RESUELTO EN PARTE el 03/11/2026)
 
-David quiere que la sección de incidentes deje de ser solo semanal y pase a ser **un banco consultable**
-desde 2015. La idea es buena y el filtro de la sección ya está construido para soportarlo: tiene rango de
-fechas por `conf` y los contadores se calculan solos, así que **la maqueta no necesita cambios** para alojar
-cientos de fichas; lo que no está resuelto es el volumen de la página, que hoy va por 500 KB con 7 incidentes.
+**El conflicto que había aquí está resuelto, y al revés de como se había planteado.** Esta nota
+decía que rellenar el banco con prensa «rompe la regla de admisión 3» y que había que
+proponerle a David limitarse a archivos de reguladores y CERT. David lo rechazó expresamente el
+3 de noviembre, con razón: el boletín existe para que esté informado, y un banco que solo
+recoge lo que publican los reguladores recoge, en sus palabras, «la mitad de la mitad de la
+mitad». La prensa entra; lo que cambia es que va etiquetada. Ver la sección del registro.
 
-**Hay un conflicto con el método que David planteó y hay que resolverlo antes de empezar.** Él dijo «mirar en
-todos los periódicos». Eso rompe la regla de admisión 3, que es la que hace que un dato de esta sección se
-pueda repetir delante de un cliente. Si el banco se rellena con prensa, nace contaminado y pierde justo lo
-que lo haría valioso. La versión que sí sostiene el método, y que es lo que hay que proponerle:
+**Lo que sí sigue en pie de aquella nota, porque es método y no criterio:**
 
-- **Fuentes de relleno admisibles:** archivos de resoluciones y notas de AEPD, CCN-CERT, INCIBE-CERT,
-  autoridades autonómicas, CNIL, Garante, BfDI y los Länder, Datatilsynet, AP neerlandesa, UODO, DPC
-  irlandesa, IMY sueca, EDÖB suizo, ICO; comunicaciones de incidente a la CNMV; y las 11 ediciones ya
-  publicadas de este boletín, que son la parte más fácil porque ya cumplen la regla.
-- **Lo que NO entra:** prensa, agregadores y sitios de filtración, igual que ahora. Si un caso solo existe en
-  prensa, va a `DESCARTADOS` con el motivo, y así el banco documenta también lo que se descartó.
-- **Riesgo de método ya medido esta semana:** el archivo histórico de internet está bloqueado en este
-  entorno, de modo que **no se puede datar de forma independiente la primera publicación** de una página.
-  Para un banco histórico eso es grave, porque muchas notas antiguas no llevan fecha. Hay que decidir qué se
-  hace con los casos sin fecha de confirmación verificable: la opción honesta es **no admitirlos**, porque
-  `conf` es obligatoria y `web.py` aborta sin ella.
-- **Coste realista:** no es una tarea de un lunes. Es una pasada aparte, por tramos (un año o un regulador
-  por sesión), escribiendo a un fichero propio para no inflar `incidentes.py` de la edición.
-- **Decisión pendiente de David:** si el banco vive en la misma página de incidentes o en una pestaña
-  separada con su propio fichero. Recomendación: **fichero y pestaña aparte**, porque mezclar 10 años con la
-  semana rompe la lectura y el peso de la página.
+- La maqueta ya soporta el volumen: el filtro tiene rango de fechas por `conf`, los contadores
+  se calculan solos y desde el 03/11/2026 hay además dos niveles de detalle, así que los casos
+  antiguos entran como `tabla` y no inflan la página como lo haría una ficha.
+- **El peso de la página sí es un problema real** y no está resuelto: va por 520 KB con trece
+  incidentes, de los cuales ocho son fichas. Con cientos de entradas hay que medirlo antes de
+  seguir cargando. La tabla pesa mucho menos que una ficha, pero no pesa cero.
+- **Riesgo de método ya medido:** el archivo histórico de internet está bloqueado en este
+  entorno, de modo que no se puede datar de forma independiente la primera publicación de una
+  página. Para un banco histórico es grave, porque muchas notas antiguas no llevan fecha.
+  `conf` es obligatoria y el validador aborta sin ella, así que **un caso sin fecha de
+  publicación verificable no entra**. Eso se mantiene: es una regla de datos, no de criterio.
+- Fuentes de relleno que siguen siendo las más rentables, porque son las que menos trabajo de
+  verificación exigen: archivos de resoluciones y notas de AEPD, CCN-CERT, INCIBE-CERT,
+  autoridades autonómicas, CNIL, Garante, BfDI y los Länder, Datatilsynet, AP neerlandesa,
+  UODO, DPC irlandesa, IMY sueca, EDÖB suizo, ICO; comunicaciones de incidente a la CNMV; y las
+  once ediciones ya publicadas de este boletín. A eso se le suma ahora prensa de agencia y
+  prensa sectorial, con su etiqueta.
+
+**Las cuatro decisiones que David dejó sin contestar el 02/11/2026 siguen abiertas**, y dos de
+ellas ya no son urgentes pero las otras dos sí:
+
+1. Importe nominal frente a importe pagado, en las multas (la AEPD reduce un 20 y un 40 por
+   ciento por pronto pago y reconocimiento). **Sigue abierta.** Propuesta: publicar el nominal
+   en `cifra` y el pagado en la prosa, porque el nominal es el que se cita.
+2. Francia: admitir o no las filas anónimas, porque la CNIL anonimiza unos 6,5 millones de
+   euros de sanciones de seguridad de 2025. **Sigue abierta.**
+3. Criterio de ventana, «incidentes de 2025» frente a «cifras publicadas en 2025».
+   **Resuelta de hecho por el registro acumulado**: `conf` es la fecha en que se conoció, y el
+   filtro permite las dos lecturas sin tener que elegir.
+4. Si el banco vive en una pestaña aparte. **Resuelta: no.** Es la misma sección, con el filtro
+   de fecha puesto por defecto en «esta edición».
 
 ### 7. Dos automatizaciones de correo (pedidas por David el 02/11/2026)
 
