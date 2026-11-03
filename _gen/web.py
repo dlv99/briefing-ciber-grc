@@ -63,6 +63,7 @@ IC = {
  "s-ind":'<path d="M2 13.2V6.8l3.6 2.1V6.8l3.6 2.1V5.9l4.6 2.8v4.5z"/><path d="M1.2 13.6h13.6"/><path d="M4.6 11.2v1.1M7.9 11.2v1.1M11.2 11.2v1.1"/>',
  "s-def":'<path d="M8 1.9l5 1.9v4c0 3-2 5.3-5 6.3-3-1-5-3.3-5-6.3v-4z"/><path d="M5.9 7.9l1.6 1.6 2.7-3"/>',
  "t-ot":'<circle cx="8" cy="8" r="2.3"/><path d="M8 1.5v2.1M8 12.4v2.1M1.5 8h2.1M12.4 8h2.1M3.4 3.4l1.5 1.5M11.1 11.1l1.5 1.5M12.6 3.4l-1.5 1.5M4.9 11.1l-1.5 1.5"/>',
+ "t-mul":'<path d="M2.6 13.4h10.8"/><path d="M4.4 11.2h7.2"/><path d="M5.2 2.6h5.6l1.4 3.2a3.6 3.6 0 0 1-8.4 0z"/><path d="M8 5.8v5.4"/>',
  "t-frau":'<circle cx="6.4" cy="6.4" r="4.1"/><path d="M4.9 6.4h3M6.4 4.9v3"/><path d="M10.1 10.1l3.4 3.4"/><path d="M10.9 13.8h3v-3"/>',
  "s-com":'<path d="M2 2.6h1.8l1.9 7.6h6.1"/><path d="M4.2 5h9.4l-1.2 4.2"/><circle cx="6.4" cy="12.8" r="1.1"/><circle cx="11.4" cy="12.8" r="1.1"/>',
  # tipos de incidente
@@ -373,12 +374,21 @@ padding:23px 25px;margin:0 0 13px}}
  text-align:left;hyphens:none}}
 .tabi tr[data-oculto],.tabi tr.det[data-oculto]{{display:none}}
 .tabi td.ent{{font:600 14.5px/1.35 var(--ser);color:var(--ink);width:24%;min-width:155px}}
+.tabi .arch{{display:inline-block;margin-left:7px;padding:2px 5px;border-radius:2px;
+ background:var(--hair);color:var(--ink3);font:600 9px/1.3 var(--san);
+ letter-spacing:.1em;text-transform:uppercase;vertical-align:1px}}
 .tabi td.ent em{{display:block;font:500 12px/1.4 var(--san);color:var(--ink3);
  font-style:normal;margin-top:3px}}
-.tabi td.ci b{{display:block;font-weight:600;color:var(--ink)}}
+.tabi td.ci b{{display:block;font:600 13px/1.4 var(--san);color:var(--ink)}}
+.tabi td.ci .nada,.tabi td.ci i,.tabi td.ci u{{font-family:var(--san)}}
 .tabi td.ci i{{display:block;font:400 11.5px/1.4 var(--san);color:var(--ink3);
  font-style:normal;margin:1px 0 7px}}
 .tabi td.ci .nada{{display:block;color:var(--ink3);margin-bottom:7px}}
+.tabi td.ci u{{display:block;text-decoration:none;font:500 11.5px/1.4 var(--san);
+ color:var(--hot);margin:-5px 0 7px}}
+.tabi td.pt abbr{{border-bottom:1px dotted var(--ink3);text-decoration:none;
+ cursor:help;font-variant-numeric:normal}}
+.hst p.rec{{border-left-color:var(--ink3);color:var(--ink3);font-style:italic}}
 .tabi td.cf span{{display:flex;align-items:flex-start;gap:6px;font:500 12px/1.45 var(--san);
  color:var(--ink2);margin-bottom:5px}}
 .tabi td.cf i{{margin-top:5px}}
@@ -654,6 +664,11 @@ def render(eds, permalink=False):
     def fecha_corta(iso):
         a, m, d = iso.split("-")
         return "%s/%s/%s" % (d, m, a)
+    # Una fecha deducida no se presenta como exacta. Si se calla, es un dato falso.
+    def fecha_marca(r):
+        f = fecha_corta(r["conf"])
+        return ("<abbr title=\"Fecha deducida del texto de la edición en que se "
+                "publicó, no capturada en su día\">hacia</abbr> " + f) if r["conf_aprox"] else f
     _confs = [r["conf"] for r in INCIDENTES]
     CMIN, CMAX = (min(_confs), max(_confs)) if _confs else ("", "")
 
@@ -690,7 +705,8 @@ def render(eds, permalink=False):
       f'<h2 class="tit">Registro de incidentes</h2>'
       f'<p class="entradilla">Registro <b>acumulado</b>: un caso entra cuando se conoce y '
       f'se <b>actualiza</b> después, en lugar de caducar. El filtro de fechas viene puesto en '
-      f'esta edición; quítalo y tienes todo el histórico. '
+      f'esta edición; quítalo y tienes todo el histórico, incluidos los casos marcados '
+      f'como <b>archivo</b>, que no llegaron a publicarse en ninguna edición. '
       f'<b>Nada se queda fuera por no estar confirmado oficialmente</b>: cada incidente declara '
       f'dos niveles, uno para <b>el hecho</b> y otro para <b>la causa</b>, que son preguntas '
       f'distintas. Las cifras llevan su propia procedencia. Lo comprobado y desmentido no está '
@@ -809,28 +825,52 @@ def render(eds, permalink=False):
                          for t in r["tips"])
             vn = "".join(f'<span class="mini" style="--tg:{VECTORES[x][1]}">{VECTORES[x][0]}</span>'
                          for x in r["vec"])
-            ci = (f'<b>{r["cifra"]}</b><i>{ORIGENES[r["cifra_org"]]}</i>'
+            pag = (f'<u>{r["cifra_pag"]} pagados tras reducciones</u>'
+                   if r["cifra_pag"].strip() else "")
+            ci = (f'<b>{r["cifra"]}</b><i>{ORIGENES[r["cifra_org"]]}</i>{pag}'
                   if r["cifra"].strip() else '<span class="nada">sin importe</span>')
             af = (f'<b>{r["afec"]}</b><i>{ORIGENES[r["afec_org"]]}</i>'
                   if r["afec"].strip() else '<span class="nada">sin recuento</span>')
+            arch = ('<span class="arch">Archivo</span>' if r["ed"] == 0 else "")
             A(f'<tr {datos(r)}>'
-              f'<td class="ent">{r["ent"]}<em>{r["pais"]}</em></td>'
+              f'<td class="ent">{r["ent"]}<em>{r["pais"]}{arch}</em></td>'
               f'<td><span class="mini" style="--tg:{sc}">{sn}</span>{tn}</td>'
               f'<td>{vn}</td>'
               f'<td class="ci">{ci}{af}</td>'
               f'<td class="cf"><span><i style="--nv:{hc}"></i>Hecho: {hn}</span>'
               f'<span><i style="--nv:{cc}"></i>Causa: {cn}</span></td>'
-              f'<td class="pt"><time datetime="{r["conf"]}">{fecha_corta(r["conf"])}</time>'
+              f'<td class="pt"><time datetime="{r["conf"]}">{fecha_marca(r)}</time>'
               f'<a href="{r["url"]}">Fuente</a></td></tr>')
-            if r["act"]:
+            cuerpo = ""
+            if r["ed"] == 0:
+                cuerpo += ('<p class="rec">Entrada de archivo: este caso no se publicó en '
+                           'ninguna edición del boletín. Se dio de alta el 3 de noviembre de '
+                           '2026 al reconstruir el registro, con sus fuentes verificadas '
+                           'entonces.</p>')
+            if r["retro"]:
+                cuerpo += ('<p class="rec">Ficha reconstruida el 3 de noviembre de 2026 a '
+                           f'partir de la edición {r["ed"]:03d}, donde se publicó y se '
+                           'verificó en su día. El vector de entrada y la fecha exacta no '
+                           'se registraban entonces como campo propio.</p>')
+            if r["sabe"].strip():
+                cuerpo += f'<p><b>Qué se sabe.</b> {r["sabe"]}</p>'
+            if r["quien"].strip():
+                cuerpo += f'<p><b>Quién lo sostiene.</b> {r["quien"]}</p>'
+            if r["obl"].strip():
+                cuerpo += f'<p><b>Qué obligaciones dispara.</b> {r["obl"]}</p>'
+            if r["lec"].strip():
+                cuerpo += f'<p><b>Qué te llevas.</b> {r["lec"]}</p>'
+            cuerpo += "".join(
+                f'<p><time datetime="{u["fecha"]}">{fecha_corta(u["fecha"])}</time> '
+                f'{u["nota"]}</p>' for u in r["act"])
+            if cuerpo:
                 n = len(r["act"])
+                rot = "Ver el detalle" if not n else (
+                    "Ver el detalle y 1 actualización" if n == 1
+                    else f"Ver el detalle y {n} actualizaciones")
                 A(f'<tr class="det" data-det="{r["id"]}"><td colspan="6">'
-                  f'<details class="hst"><summary>{n} '
-                  + ("actualización" if n == 1 else "actualizaciones")
-                  + '</summary>'
-                  + "".join(f'<p><time datetime="{u["fecha"]}">{fecha_corta(u["fecha"])}</time> '
-                            f'{u["nota"]}</p>' for u in r["act"])
-                  + '</details></td></tr>')
+                  f'<details class="hst"><summary>{rot}</summary>{cuerpo}</details>'
+                  f'</td></tr>')
         A('</tbody></table></div>'
           '<p class="vacio" id="vacio-t" hidden>Ninguna fila encaja con ese filtro.</p></div>')
     A(f'<div class="col panel no-busca" style="background:var(--hair);margin-top:30px">'

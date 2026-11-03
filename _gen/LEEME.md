@@ -235,33 +235,99 @@ desde el día en que se lee la página, en UTC a propósito.
 oculta con la suya. Si se rompe esa sincronización el contador miente y el lector cree que un
 incidente no está, que es exactamente el problema que todo esto venía a resolver.
 
-### Cola de reingreso al banco (pendiente)
+### El banco histórico (hecho el 03/11/2026)
 
-Al reclasificar los 26 descartados de la edición 011, cuatro pasaron a `BULOS` y **veintidós
-quedaron pendientes de reingreso**. Ya no se caen por antigüedad, pero necesitan sus metadatos
-y, sobre todo, su enlace, que la nota de descarte no conserva. Hay que reingresarlos con
-investigación, no de memoria. Los de más valor:
+El banco se reconstruyó ese mismo día y ya no está vacío. Tiene **73 incidentes**, de julio de
+2026 a noviembre de 2026 más un caso de 2024, en **veinte países**. Vino de dos sitios:
 
-- Brecha de datos médicos de cerca de diecinueve millones de personas en Polonia (confirmada
-  por la empresa el 13/08/2026, inspección de la autoridad polaca ese mismo día).
-- Ciberataque a hospitales belgas con cancelación de cirugías (febrero de 2026).
-- Exposición de datos vinculados a los servicios de información portugueses (08/10/2026,
-  reivindicado sin confirmar: entra con `hecho: "atribuido"`).
-- Acceso no autorizado y copia de base de datos en un proveedor polaco de facturación
-  (27 y 28/09/2026, bien documentado).
-- Ciberataque a la administración municipal de Ellwangen (mayo de 2025), por documentar la
-  notificación al delegado de protección de datos **y** el aviso a la aseguradora.
-- Sanción de la CNIL de siete millones de euros a FNAC y multa de la AEPD a una mutua: entran
-  como `judicial` o `regulador` en el origen de la cifra.
+**1. El historial de git, que es donde estaba el tesoro.** Las ediciones 002 a 011 llevaban sus
+incidentes escritos y verificados en su día dentro de `incidentes.py`. Se extrajeron de los
+commits de cada edición y se dedujo lo que faltaba. Son **54 fichas**, marcadas con `retro`.
+Reglas que se siguieron, y conviene respetarlas si se vuelve a hacer:
 
-Y dos del hilo de la refrigeración que **no se dieron de alta por no tener fecha o enlace
-verificados**, y que no se inventan:
+- Las ediciones 002 a 008 usaban tupla de **doce campos sin fecha de confirmación**. Esa fecha se
+  **dedujo** del texto del campo «quién lo confirma», que por convención del boletín era donde
+  iba, y si no, del campo de cronología, y si tampoco, de la fecha de la edición. **Las 48 fichas
+  con fecha deducida llevan `conf_aprox` y la página las muestra como «hacia el …», con la
+  explicación al pasar el ratón.** Una fecha deducida que no se declara como tal es un dato falso.
+- **El vector no se infirió nunca.** Todas las reconstruidas llevan `["desc"]`. Deducirlo de la
+  prosa habría contaminado justo el filtro que tiene que ser fiable.
+- `hecho` va `oficial` porque la regla de admisión de entonces lo garantizaba por construcción:
+  nada entraba sin confirmación de la entidad, un regulador o un CERT.
+- Van como `detalle: "tabla"` para no inflar la página, pero **su prosa completa se conserva** y
+  se despliega en la fila. No se perdió nada.
+- Claves heredadas que hubo que traducir: el sector `ret` («Retail y consumo») es el actual `com`,
+  y el tipo `san` («Sanción firme») se renombró a **`mul`** para que no chocara de nombre con el
+  sector `san` (Sanidad). Si aparece una edición antigua más, hay que repetir esa traducción.
+- **Duplicado corregido**: la campaña de refrigeración estaba dos veces, como `refrigeracion`
+  (edición 009) y como `frio-francia` (dada de alta el 3 de noviembre). Se fusionaron en la
+  primera, que es la que tenía la prosa publicada. Quedan tres parecidos sin tocar y conviene
+  mirarlos algún día: `adif`, `adifrenfe` y `renfe` pueden ser el mismo caso contado tres veces.
+
+**2. Los descartados de la edición 011, reinvestigados.** De los 26, cuatro eran bulos de verdad
+y veintidós estaban tirados por antigüedad o por la regla vieja. De esos, la mayoría eran
+seguimientos de casos que ya estaban en el banco, y **siete eran incidentes nuevos de verdad**,
+que se verificaron el 3 de noviembre con sus fuentes abiertas y se dieron de alta con
+**`ed: 0`**, que significa archivo: no se publicaron en ninguna edición. La página los marca con
+una etiqueta «Archivo» y nunca aparecen en el filtro «esta edición».
+
+**Correcciones de fecha que salieron al verificarlos**, y que son el argumento de por qué esto no
+se hace de memoria:
+
+- La multa española no es de marzo de 2025: el acuerdo de inicio es del 3 de febrero y el pago
+  voluntario del 17 de febrero de 2025. Marzo es cuando lo recogió la prensa.
+- La sanción francesa a Fnac es de **22 de octubre** de 2026, deliberación SAN-2026-015. El 29 de
+  octubre es la fecha de publicación. Y son **dos sociedades y dos sanciones**, 6 y 1 millón.
+- El caso polaco de los diecinueve millones es **MyDr**, y es **distinto** del de Qbusoft y su
+  aplicación Medyc, que ya estaba en el banco como `medyc`. Se confirmó con la nota del propio
+  regulador polaco, que los trata como incidentes separados. De paso se corrigió la fecha de
+  `medyc` a 25/09/2026, que era la de su comunicado y no la de la edición.
+- Los atacantes de MyDr no contactaron con la empresa el 5 de agosto: contactaron con **un medio**
+  el 8, y el 12 de agosto es cuando el Gobierno polaco confirmó el acceso y la escala.
+
+### Las dos cifras de las multas, y el aviso sobre Francia
+
+Decisión de David del 03/11/2026: en la columna de importe va el **nominal**, que es el que se
+cita, y debajo el **efectivamente pagado** tras las reducciones, en el campo `cifra_pag`. El
+ejemplo que lo enseña es `ibermutua`: 1.000.000 de euros nominales y 600.000 pagados, por
+acumular la reducción del 20 por ciento por reconocimiento de responsabilidad y otra del 20 por
+ciento por pago voluntario, del artículo 85 de la Ley 39/2015. En Francia ese mecanismo no
+existe, así que allí la nominal es la real.
+
+**Aviso que corrige una premisa, y hay que decírselo a David si vuelve a salir:** se le preguntó
+qué hacer con «las sanciones anónimas de la autoridad francesa», y él eligió admitirlas marcadas
+como anónimas. **Resulta que no existen como tales.** Al verificarlo: de las 83 sanciones
+francesas de 2025, **solo diez se hicieron públicas**; las 73 restantes del procedimiento
+simplificado **no se publican en absoluto**, ni con nombre ni anonimizadas. Lo único que consta
+es que **catorce organismos** fueron sancionados por un incumplimiento relativo a la seguridad de
+los datos, **sin importe desglosado y sin lista**. El tope legal de ese procedimiento es de
+20.000 euros por sanción. O sea: no hay nada que dar de alta, y la cifra de «6,5 millones» que se
+le planteó no está sostenida por ninguna publicación del regulador. No se construye sumando
+noticias sueltas.
+
+### Lo que sigue pendiente de reingreso
+
+Dos casos del hilo de la refrigeración **no se dieron de alta por no tener fecha o enlace
+verificados**, y no se inventan:
 
 - Supermercados en Rusia e Israel atacados en 2022 con controladores de frío obsoletos, que
   Danfoss cuenta en su propia web. Falta la fecha exacta de publicación.
 - Planta cárnica en Estados Unidos, 2024, con más de 900 kilos de carne perdidos: la fiscalía
   federal de Los Ángeles acusó a una persona en diciembre de 2025. Hay actuaciones judiciales,
   o sea fuente primaria, pero falta localizar el documento.
+
+Y queda **una laguna de fuente declarada**: el sitio de la Agencia Española de Protección de
+Datos bloquea el acceso automatizado y devuelve error, de modo que el texto de la resolución de
+`ibermutua` se leyó en una copia alojada por un tercero, que es la que enlaza la ficha. Está
+dicho en la propia ficha. Si alguna vez se puede abrir el original, conviene cambiar el enlace.
+
+### El peso de la página, que ahora sí es un problema medido
+
+Con 73 incidentes la página va por **730 KB**, frente a 520 KB con trece. La tabla pesa mucho
+menos que una ficha, pero no pesa cero, y la prosa completa de las 54 reconstruidas va dentro del
+HTML aunque esté plegada. **Antes de pasar de unos 150 incidentes hay que decidir** si la prosa
+de las entradas antiguas se carga aparte en lugar de ir incrustada. No se ha tocado todavía
+porque a 730 KB la página sigue cargando bien.
 
 ## El recuento de plazos vivos (corregido el 19/10/2026)
 

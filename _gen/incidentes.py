@@ -74,6 +74,7 @@ TIPOS = {
  "acc": ("Acceso no autorizado",   "#AD1457"),
  "ot":  ("Sabotaje industrial",    "#00695C"),
  "frau":("Fraude y robo de fondos","#00796B"),
+ "mul": ("Sanción firme",          "#4527A0"),
 }
 
 # Vector o causa raiz. Es el filtro que convierte el registro en argumento
@@ -156,6 +157,11 @@ def _valida(r):
     if r.get("causa") not in NIVELES_CAUSA:
         _mal(iid, "tiene el nivel de confirmación de la causa %r. Válidos: %s."
                   % (r.get("causa"), ", ".join(NIVELES_CAUSA)))
+    # cifra_pag: lo efectivamente pagado tras reducciones. La columna lleva el
+    # nominal, que es el que se cita, y esto va debajo. Decisión de David del
+    # 03/11/2026.
+    if str(r.get("cifra_pag", "")).strip() and not str(r.get("cifra", "")).strip():
+        _mal(iid, "trae importe pagado pero no trae el nominal.")
     for campo, org in (("cifra", "cifra_org"), ("afec", "afec_org")):
         val = str(r.get(campo, "")).strip()
         o = r.get(org)
@@ -193,6 +199,13 @@ def _carga():
     vistos = set()
     for r in rs:
         r.setdefault("act", [])
+        r.setdefault("cifra_pag", "")
+        # retro: ficha reconstruida el 03/11/2026 desde ediciones ya
+        # publicadas. conf_aprox: la fecha se dedujo del texto, no se
+        # capturó en su día. Las dos se enseñan en la página: un dato
+        # derivado que no se declara como tal es un dato falso.
+        r.setdefault("retro", False)
+        r.setdefault("conf_aprox", False)
         _valida(r)
         if r["id"] in vistos:
             _mal(r["id"], "está dos veces en el banco.")
