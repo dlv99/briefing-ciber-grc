@@ -177,7 +177,54 @@ Desde la edición 009 cuenta solo los que llevan el indicador de vivo, con `VIVO
 `web.py`. Las entradas de `ediciones.json` anteriores a la 009 conservan el número antiguo, que
 era el total: no se han reescrito porque no se pueden reverificar sus plazos a posteriori.
 
-## Pendiente para la edición 012 o posterior (actualizado el 02/11/2026)
+## Pendiente para la edición 012 o posterior (actualizado el 03/11/2026)
+
+### 0. Encargo de David del 02/11/2026: los ataques a la refrigeración de supermercados (prioritario)
+
+David mandó una noticia de prensa sobre ciberataques a sistemas de frío de la distribución
+alimentaria diciendo «es super clave». Se investigó el 03/11/2026 y **el dosier completo está en
+el proyecto, en `banco-incidentes/refrigeracion-distribucion-2026.md`**. Resumen de lo que hay
+que hacer y de las trampas:
+
+- **Cumple la regla de admisión**, pero solo en su núcleo estrecho: incidentes en controladores de
+  refrigeración de la distribución alimentaria, confirmados por **CERT-FR** (ALE-012, 12 a 16 oct),
+  **CERT-SE y NCSC Suecia** (02/11/2026 17:40 y 17:39) y **NCSC-NL** (02/11/2026), y por
+  **Delhaize en su propia web** (02/11/2026 14:00). Esa última es la que habilita la admisión.
+- **No cumple y va a DESCARTADOS con el motivo**: el recuento de países (la prensa oscila entre
+  siete y nueve), el recuento de cadenas y tiendas, y **todas las cifras de pérdidas millonarias**.
+  La única cifra monetaria verificada en toda la cobertura son 15.000 euros de carne en una
+  carnicería belga, a Reuters. La premisa de «pérdidas millonarias» no la sostiene nadie.
+- **Trampa de fecha ya detectada en la 010 y que sigue viva**: la ALE-012 figura como «Alerte en
+  cours» con `closed_at: null`, pero su última versión es del **16 de octubre**. Abierta no es
+  actualizada. Comprobar cada lunes si por fin se ha movido.
+- **La alerta no cita ningún CVE**: `cves` y `vendor_advisories` vacíos en el JSON y «Risque: non
+  spécifié par l'éditeur». **No vincular la campaña a los CVE de Danfoss de 2025 ni de 2023.**
+- **Danfoss no ha publicado nada propio** sobre esta campaña, y **no existe ningún aviso de Danfoss
+  para la serie AK-SC**, que es uno de los cuatro productos que nombra CERT-FR.
+- **Copeland y Dixell sí**: boletín de 14/10/2026, alojado en el dominio del distribuidor francés,
+  que admite la vulnerabilidad en XWEB EVO **sin CVE y sin parche** (la remediación es migrar) y
+  que **publica las credenciales de fábrica Admin/Admin para toda la gama**. Documento de dos
+  capas: la fecha del boletín original de Copeland no consta más allá de «octubre de 2026».
+- **Delhaize dice «IT-incident», no «ciberataque»**, no da número de tiendas y no menciona
+  pérdidas ni seguridad alimentaria. Y su misma página de preguntas frecuentes **separa dos
+  incidentes distintos**: el de servicios de TI del 11/10/2026 y el de refrigeración del
+  02/11/2026. No confundirlos.
+- **El ángulo regulatorio corrige una premisa del encargo y es el titular**: el anexo II.4 de NIS2
+  exige **distribución al por mayor o producción y transformación industriales**, de modo que una
+  tienda minorista **no encaja en el literal**; entra por plataformas logísticas, producción propia
+  o designación nacional del artículo 2.2.c) por salud pública. Al estar en el anexo II y no en el
+  I, una cadena es **entidad importante y no esencial** (artículo 3.2), con multas del 34.5 (7
+  millones o 1,4 %) y no del 34.4. Y el anexo de CER dice **«exclusivamente»** mayorista y
+  logística, así que el minorista queda **fuera de CER**. El gancho real es el artículo 21.2.d) y
+  **21.3** de cadena de suministro, porque los controladores los gestiona por telemetría un
+  frigorista externo, más el aviso de CERT-FR de que **cortar el envío de datos al frigorista puede
+  romper condiciones del seguro**.
+- **Lagunas que hay que cerrar**: el aviso del CCB belga **existe** (título indexado) pero el
+  dominio da 403 de Akamai, así que **no citarlo con fecha**; la página de avisos del INCIBE-CERT
+  que cubre **del 16 al 20 de octubre** devolvió 404 en cinco intentos y el listado **no tiene
+  nada posterior al 30 de octubre**, de modo que no se puede afirmar que INCIBE no haya publicado
+  nada; y la Recomendación 2003/361/CE de umbrales de pyme **no está reverificada en primaria**.
+
 
 Tres cosas detectadas al revisar el mapa después de publicar la 009. Las dos primeras son de datos
 y le tocan a la tarea del lunes. La tercera es un cambio de diseño y **no se hace sin que David lo
