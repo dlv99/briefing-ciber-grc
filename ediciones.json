@@ -1,5 +1,15 @@
 [
  {
+  "n": 12,
+  "iso": "2026-11-09",
+  "fecha": "9 de noviembre de 2026",
+  "titular": "La Unión activó su red de crisis por los ataques a la refrigeración y los llamó de gran escala, mientras el CERT del país donde empezó la campaña lleva veinticuatro días sin tocar su alerta y el fabricante del equipo que un CERT nacional nombra no tiene aviso porque lo retiró en 2016",
+  "entrada": "Esta semana el caso de la refrigeración dejó de ser un expediente francés. El <b>4 de noviembre</b>, <b>ENISA</b>, la <b>Comisión</b>, el centro de ciberdelincuencia de <b>Europol</b>, la Red de CSIRT y, por primera vez, <b>EU-CyCLONe</b>, que es la red de enlace para crisis del artículo 16 de NIS2, firmaron una declaración conjunta que fecha el arranque el 11 de octubre, confirma <b>una nueva oleada el 1 y el 2 de noviembre</b> y califica los incidentes de <b>gran escala</b>. Y trae el gancho regulatorio que faltaba, porque recuerda que <b>desde el 11 de septiembre de 2026 los fabricantes deben notificar incidentes graves y vulnerabilidades explotadas por la plataforma única del Reglamento de Ciberresiliencia</b>: en esta campaña no hay ni un CVE, ni un aviso de fabricante que enlazar, y <b>Danfoss sigue sin publicar nada propio</b> sobre un producto que retiró del mercado en 2016. En el extremo opuesto del rigor, la declaración conjunta <b>no da una sola cifra</b>, y la única que existe de una autoridad son los <b>más de 300 sistemas expuestos</b> que Grecia dice haber detectado el 14 de octubre. En España el movimiento real fue del <b>CCN</b>, que publicó el primer dato oficial de madurez frente a la IA ofensiva: <b>618 organismos evaluados, nota media de 47,5 sobre 100 y ninguno llega al nivel adecuado</b>. En la Unión, la Comisión aprobó su programa de trabajo para 2027 y <b>dejó fuera su propia propuesta de reforma de NIS2</b>. Y en infracciones hay un hallazgo que conviene tener a mano: <b>España acumula tres expedientes ciber</b>, porque al de NIS2 y al asunto de entidades críticas se suma una carta de emplazamiento por <b>DORA</b> que casi nadie ha contado.",
+  "periodo": "del 2 al 8 de noviembre de 2026",
+  "asuntos": 35,
+  "plazos": 32
+ },
+ {
   "n": 11,
   "iso": "2026-11-02",
   "fecha": "2 de noviembre de 2026",

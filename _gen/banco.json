@@ -38,6 +38,11 @@
      "ed": 12,
      "fecha": "2026-11-02",
      "nota": "La entidad habla de «un incidente de TI que afecta a sus sistemas de refrigeración», <b>no de ciberataque</b>, y no atribuye. No da número de tiendas, ni pérdidas, ni menciona seguridad alimentaria. Las cuarenta tiendas que circulan son de prensa."
+    },
+    {
+     "ed": 12,
+     "fecha": "2026-11-06",
+     "nota": "Delhaize actualizo su pagina de preguntas frecuentes el <b>6 de noviembre de 2026 a las 16:00</b>, y a esa fecha <b>no contiene ninguna referencia a la refrigeracion</b>: cero ocurrencias de koel, frigo, 2 november y cyberaanval, recontadas en las dos versiones, neerlandesa y francesa. La pagina habla solo del incidente de servicios de TI del <b>11 de octubre de 2026</b>, y sigue sin decir ciberataque: mantiene IT-incident en neerlandes e incident informatique en frances. <b>Cautela de metodo, y es importante:</b> la mencion al incidente de frio se leyo en esa misma pagina el 3 de noviembre, pero <b>no se puede demostrar que se haya retirado</b>, porque el unico archivo historico alcanzable de esa pagina es del 23 de octubre, anterior al incidente, y la consulta al indice del archivo esta bloqueada en este entorno. Lo publicable es que a 6 de noviembre la pagina ya no la contiene. <b>Y la correccion que importa: los 250 millones de euros de Ahold Delhaize no son de este incidente.</b> Ver la actualizacion de la ficha del grupo."
     }
    ]
   },
@@ -149,7 +154,13 @@
    "url": "https://www.bsi.bund.de/DE/Service-Navi/Presse/Alle-Meldungen-News/alle-meldungen-news_node.html",
    "obl": "Aquí el reparto de obligaciones está jurídicamente enredado, y por eso es instructivo. <b>Artículos 33 y 34 del RGPD:</b> el responsable del tratamiento de los datos del dispositivo de un diputado <b>no es la agencia federal de seguridad</b>, que actúa como CERT nacional, sino el propio Bundestag respecto de los datos institucionales y el diputado respecto de los suyos. Si se confirmara compromiso, la notificación correspondería ante el <b>comisionado federal de protección de datos</b>. Pero a fecha de cierre <b>no hay compromiso confirmado</b>, solo notificación de riesgo del fabricante, de modo que <b>no puede afirmarse que el artículo 33 se haya disparado</b>. Y hay una distinción que conviene no fundir: la notificación escrita de la agencia federal a los afectados es una <b>alerta de ciberseguridad, no una comunicación del artículo 34</b>. <b>NIS2 no aplica</b>: el artículo 2, apartado 7, de la Directiva permite a los Estados excluir a los parlamentos, la ley federal alemana no somete al Bundestag como entidad NIS2, y además no se trata de un servicio esencial degradado sino de dispositivos personales de titulares de cargos. El marco operativo es el de seguridad de la información de la administración federal y el del propio Bundestag. DORA no aplica. Y aplica algo que convierte esto en asunto constitucional y no solo técnico: el <b>secreto de las comunicaciones de los diputados</b> y los privilegios parlamentarios de la Ley Fundamental.",
    "lec": "<b>La lección es la notificación de amenaza del fabricante como fuente de detección, y es incómoda para cualquier plan de respuesta.</b> Ni la agencia federal ni el Bundestag detectaron esto: lo detectó el fabricante del teléfono y lo comunicó <b>directamente al usuario final</b>. Dos consecuencias para un cliente. La primera, y es un procedimiento que casi nadie tiene: <b>establece un canal para que un empleado que recibe una alerta de amenaza en su dispositivo sepa a quién avisar dentro de la organización, de inmediato</b>. Hoy esa alerta muere en el móvil de un directivo que no sabe si es real, no quiere molestar o le da vergüenza. La segunda es la más difícil de vender y la más importante: <b>una notificación de riesgo no es una brecha confirmada</b>. Resiste la tentación de notificar al regulador por si acaso en cuanto llegue una alerta de fabricante; documenta el análisis, fija el momento del «conocimiento» en el sentido del artículo 33 y actúa sobre hechos. Para perfiles de alto riesgo, es decir directivos, consejeros y cargos públicos, plantea además el modo de confinamiento del dispositivo y la separación entre dispositivo personal e institucional, que es la medida que de verdad reduce la superficie.",
-   "act": []
+   "act": [
+    {
+     "ed": 12,
+     "fecha": "2026-11-02",
+     "nota": "<b>Aparece la confirmacion escrita que faltaba, y es del BSI, pero dice menos de lo que se esta contando.</b> La agencia federal alemana de seguridad de la informacion mantiene una pagina titulada «Programa espia mercenario en dispositivos Apple. Encuadre y recomendaciones (noviembre de 2026)», cuya ultima modificacion consta en los metadatos de la propia pagina como <b>2 de noviembre de 2026</b>. Afirma por escrito que <b>desde el 29 de octubre de 2026</b> varios miembros del Bundestag y otras personas de la vida publica han recibido una notificacion de amenaza del fabricante, y que el <b>30 de octubre el BSI escribio a los diputados</b>. <b>Tres precisiones que corrigen el relato.</b> Primera, el BSI dice expresamente que <b>no sabe si esas notificaciones significan compromiso efectivo o solo intento de ataque</b>, y recomienda asumir que el dispositivo puede estarlo. Segunda, <b>no da ninguna cifra</b>. Tercera, y es la que importa: la palabra Gobierno federal <b>no aparece en toda la pagina</b>, de modo que la extension a dispositivos de miembros del Gobierno descansa solo en la declaracion oral del ministro del 1 y el 2 de noviembre, sin soporte escrito de la agencia. <b>Y la cifra de seis dispositivos infectados que circula atribuida a la Administracion del Bundestag queda no reconfirmada en fuente primaria esta semana:</b> la nota oficial que la sostendria, hib 899/2026 del 5 de noviembre, devuelve HTTP 404 en todos los intentos y por dos herramientas distintas. El indice de busqueda del propio Bundestag confirma numero, fecha y titulo de esa nota, «La comision se ocupa del ataque de programa espia y de bombardeo de correo», pero no su contenido. No se publica como dato oficial."
+    }
+   ]
   },
   {
    "id": "charite",
@@ -183,7 +194,13 @@
    "url": "https://www.charite.de/die_charite/themen/cyberangriff_auf_charite_webserver/",
    "obl": "Artículo 33 del RGPD ante la <b>autoridad berlinesa de protección de datos y libertad de información</b>, porque la Charité es organismo de derecho público del Land de Berlín; la competencia es inequívoca aunque la entidad no la nombre. Artículo 34 ante los interesados: la propia entidad <b>anuncia comunicación individual</b>, lo que equivale a reconocer alto riesgo, pero nótese que es un anuncio de futuro y no un paso consumado, porque a 1 de noviembre no consta que las cartas se hubieran enviado. <b>NIS2 sí aplica en Alemania</b> y la Charité es hospital universitario de gran tamaño, de modo que entra en el sector de salud del anexo y además ya era instalación crítica por volumen de casos; pero la duda real no es la sujeción subjetiva, es el <b>umbral de incidente significativo</b>, porque el activo comprometido fue el servidor web público, la asistencia no se degradó y no hubo interrupción operativa. Un incidente que no degrada el servicio esencial puede quedar por debajo del umbral aun habiendo exfiltración de datos personales, y es justamente el caso en que conviene <b>documentar por escrito el razonamiento del umbral</b>. DORA no aplica. Aplican además el secreto médico del código penal alemán y la normativa hospitalaria del Land, y es relevante que la entidad afirme que no hay datos del artículo 9 afectados, porque es lo que evita el salto cualitativo.",
    "lec": "<b>Dos lecciones, y la primera es la que nadie tiene inventariada.</b> El <b>formulario de contacto de la web corporativa es un almacén de datos personales</b> que casi ninguna organización ha inventariado nunca. Aquí había decenas de miles de personas que habían escrito para pedir cita, y el <b>campo de texto libre</b> convirtió un formulario de contacto en un posible repositorio de datos de salud, que es el peor resultado posible desde el punto de vista del artículo 9. Pregunta a cada cliente tres cosas: qué hay detrás de sus formularios web, cuánto tiempo se retiene y <b>si el campo libre está acotado</b>. Acotar ese campo cuesta una hora de desarrollo y cambia la categoría de la brecha. La segunda es de comunicación de crisis y vale como patrón: la Charité <b>separó limpiamente su incidente real del apagado preventivo</b> que había hecho días antes por la vulnerabilidad de PHP. Ese deslinde explícito es buena práctica, porque cuando hay dos eventos próximos en el tiempo, si no los separa la entidad los separará la prensa, y peor. Úsalo con cualquier cliente que esté apagando sistemas de forma preventiva estas semanas: conviene dejar constancia fechada de qué es prevención y qué es incidente.",
-   "act": []
+   "act": [
+    {
+     "ed": 12,
+     "fecha": "2026-10-30",
+     "nota": "<b>No se ha movido, y sigue sin publicar cifra propia.</b> Su pagina dedicada, leida integra el 9 de noviembre, sigue fechada el <b>30 de octubre de 2026</b>, sin historial de actualizaciones ni fecha posterior. Las comunicaciones individuales <b>siguen anunciadas en futuro</b> y no hay confirmacion de envio en su canal propio. Sobre la autoridad dice estar en estrecho contacto con las autoridades de supervision e investigacion competentes <b>sin nombrar ninguna</b>, de modo que <b>no puede afirmarse que notificara a la autoridad berlinesa de proteccion de datos</b>. Y la fecha de descubrimiento sigue sin constar. <b>Trampa que hay que marcar, porque es facil de cometer:</b> las cifras de «unos 500 registros, unos 80 con posibles datos medicos» que circulan asociadas a la Charite son de <b>otro incidente</b>, el del proveedor de facturacion de mayo de 2026, que esta ahora en el registro con su propia ficha. Son dos incidentes distintos de la misma entidad en el mismo ano, y sus cifras no son intercambiables."
+    }
+   ]
   },
   {
    "id": "binance",
@@ -217,7 +234,13 @@
    "url": "https://www.binance.com/en/support/announcement/detail/d3306d9dca5243548c813b605e1d1751",
    "obl": "Y aquí está lo que convierte este caso en el más instructivo de la edición, porque la respuesta es contraria a la que todo el mundo da por supuesta. <b>Ninguna obligación europea se disparó, y no por un vacío legal sino porque la entidad está fuera del perímetro.</b> Comprobado en fuente primaria y con prueba de control: descargados los ficheros oficiales del <b>registro de proveedores de servicios de criptoactivos de la ESMA</b>, con <b>460 entidades autorizadas</b> bajo el Reglamento de Mercados de Criptoactivos, <b>Binance no figura</b>, con ninguna de sus denominaciones; y tampoco figura en el fichero de <b>188 entidades no conformes</b>. La prueba de control valida el negativo: en ese mismo fichero <b>sí</b> aparecen Coinbase, Kraken, Bybit, OKX, Crypto.com y Gemini. Consecuencia encadenada: si no está autorizada bajo ese Reglamento, <b>no es entidad financiera del artículo 2 de DORA</b> por la vía del proveedor de criptoactivos; por tanto <b>no existe ninguna autoridad competente europea a la que notificar</b> y el incidente <b>no disparó notificación de incidente grave</b> en el sentido del artículo 19 de DORA, ni las 4 horas, ni las 72, ni el informe final. La <b>CNMV no es su autoridad competente</b> aunque lo sea de los criptoactivos en España. Sobre el RGPD, ningún comunicado menciona datos personales, de modo que no puede afirmarse que los artículos 33 y 34 se hayan disparado. <b>NIS2 no aplica.</b> Lo único oficial que hay en el expediente es estadounidense.",
    "lec": "<b>Dos lecciones, y la segunda es la que vale dinero en una conversación de consejo.</b> La primera es de control y es demoledora por su banalidad: <b>el mayor robo de criptoactivos de la historia empieza, según la propia entidad, en el portátil de un ingeniero de DevOps</b>, y desde ahí llega a un contenedor de servicio capaz de emitir órdenes de retirada. No hubo criptografía rota: la entidad niega expresamente que se filtraran claves privadas. Lo que falló fue el camino entre un puesto de trabajo y el plano de ejecución, que es exactamente el mismo patrón que las cuatro explotaciones de perímetro de esta semana. La pregunta para cualquier cliente es la misma: <b>qué puede ordenar, desde el portátil de un administrador, un atacante que ya esté dentro, y qué segunda autorización independiente se lo impide</b>. Si la respuesta es «ninguna», ahí está el hallazgo, y no hace falta tener criptoactivos para que aplique: valen transferencias, altas de proveedor y cambios de domiciliación. Y añade el matiz de madurez, que es lo que separa este caso de un desastre: <b>la entidad tenía un fondo de reserva y lo desplegó</b>, repuso el 95 por ciento en tres días y absorbió la pérdida sin pasarla a los usuarios. Eso es tratamiento del riesgo financiado por anticipado, es decir exactamente lo que un plan de continuidad debería prever y casi nunca cuantifica. La segunda lección es de perímetro regulatorio y es la que conviene llevar a cualquiera que compre servicios de criptoactivos: <b>una pérdida de 6.300 millones no generó ni una sola notificación a un supervisor europeo</b>, porque la entidad no está autorizada en la Unión. Traducido a diligencia debida, la pregunta que hay que hacer antes de contratar no es si el proveedor es grande, es <b>si figura en el registro de la ESMA</b>, porque de ahí depende que exista alguien a quien reclamar y un régimen de notificación que te alcance. Es una comprobación de dos minutos sobre un fichero público y esta semana separa a seis casas de cambio de una.",
-   "act": []
+   "act": [
+    {
+     "ed": 12,
+     "fecha": "2026-11-07",
+     "nota": "<b>Cuatro hechos con fecha, y la causa raiz sigue sin declararse.</b> El <b>1 de noviembre de 2026</b>, en la actualizacion de recuperacion numero 4 publicada en su centro de publicacion propio, Binance reanudo por fases los reintegros sobre <b>15 redes</b> y declaro repuesto <b>aproximadamente el 95 por ciento</b> del importe afectado, frente al 90 por ciento de la actualizacion anterior, con diez activos respaldados al 100 por cien. Reitera que absorbe el impacto con fondos de la compania y <b>se compromete a publicar un informe posterior al incidente</b> cuando concluya la investigacion: ese es el documento que cerrara la causa raiz y el que hay que pedir. El <b>2 de noviembre</b> completo una prueba de reservas de conocimiento cero sobre diez activos. El <b>7 de noviembre</b> anuncio el relevo de su director financiero, y <b>niega vinculacion</b> con el ataque, sosteniendo que la transicion estaba planificada desde hacia mas de seis meses: hecho material, negativa de la entidad, y <b>no se sugiere causalidad</b>. La atribucion del FBI a Corea del Norte del 31 de octubre se mantiene. <b>Aviso de metodo que hay que reforzar, no relajar:</b> el blog de Binance no es que este vacio de 2026, es que <b>sirve contenido de mayo de 2019 con apariencia de actual</b>. Ver la seccion de bulos. La reposicion al 98 por ciento que circula con fecha de 4 de noviembre <b>no se ha podido verificar</b>: su pagina no se abre y la publicacion en la red social esta bloqueada por el propio sitio. El ultimo porcentaje leido en fuente propia es el 95 por ciento del 1 de noviembre."
+    }
+   ]
   },
   {
    "id": "engie",
@@ -250,7 +273,13 @@
    "url": "https://particuliers.engie.fr/",
    "obl": "Artículo 33 del RGPD ante la <b>CNIL</b>. ENGIE no lo confirma expresamente, y eso es una <b>omisión notable en su propia comunicación</b>: declararse en contacto con «las autoridades competentes» sin nombrar a la autoridad de control es justamente lo que genera dudas. Artículo 34 <b>cumplido y documentado</b>: correo individual a cada afectado con descripción de las categorías y recomendaciones sobre fraude y suplantación, lo que además prueba que ENGIE valoró alto riesgo. Y el núcleo jurídico del caso está en el <b>artículo 28 y en la cadena de suministro</b>: los datos estaban en una herramienta usada por <b>entidades asociadas</b> para comercializar ofertas de ENGIE, de modo que hay que determinar si esas entidades eran <b>encargadas</b> de ENGIE, y entonces ENGIE responde como responsable con deber de auditarlas por los artículos 28.1 y 32, o <b>corresponsables o responsables independientes</b>; que ENGIE haya asumido la notificación a los afectados apunta a su condición de responsable. Sobre <b>NIS2 en Francia</b>: ENGIE está de lleno en el anexo I, sector energía, como entidad esencial, pero el activo comprometido fue <b>una herramienta de comercialización de terceros, no el sistema interno ni los sistemas de operación</b>, y la compañía afirma expresamente que su sistema interno no se vio comprometido, de modo que el umbral de «incidente significativo» es muy dudoso: no hubo interrupción del servicio ni afectación de la red energética. La obligación operativa es la del RGPD, no la de NIS2. DORA no aplica.",
    "lec": "<b>Este es el caso de la semana para vender un proyecto de riesgo de terceros, y el argumento se escribe solo.</b> Tu cliente puede tener su sistema de información interno impecable, como ENGIE insiste en que tiene el suyo, y perder igualmente los datos de sus clientes porque <b>su red comercial de socios trabaja sobre una herramienta que él no controla, no audita y probablemente no ha inventariado</b>. Las preguntas son cuatro y casi nunca tienen respuesta: ¿qué herramientas usan sus distribuidores, agentes o franquiciados con datos de <b>sus</b> clientes? ¿quién es responsable y quién encargado en cada una? ¿ha ejercido alguna vez el derecho de auditoría del artículo 28? ¿y sabría notificar en 72 horas una brecha que ocurra en el sistema de un socio? Hay además una lección de signo contrario que conviene dar para ser justo: la notificación de ENGIE a los afectados <b>está bien hecha</b>, con categorías concretas, mención expresa de qué no se vio afectado y advertencia de fraude, y es un buen modelo que enseñar. Pero <b>no nombrar a la autoridad de control</b> resta credibilidad gratis. Y un detalle sectorial que vale el aviso: el punto de entrega combinado con el identificador de cliente y el número de contrato es exactamente lo que se necesita para <b>suplantar a un cliente ante otro comercializador</b>, de modo que el riesgo concreto aquí es el fraude de cambio de comercializadora, no el genérico «phishing».",
-   "act": []
+   "act": [
+    {
+     "ed": 12,
+     "fecha": "2026-11-09",
+     "nota": "<b>No se ha movido.</b> Barridas la ventana y los canales propios, <b>cero piezas nuevas</b>: toda la cobertura localizada sigue siendo del 29 y 30 de octubre. ENGIE <b>sigue sin dar numero de afectados</b> y la cifra de 110.000 clientes que circula es de prensa, no de la entidad. La reivindicacion de un grupo de extorsion sigue siendo solo del atacante y <b>no hay confirmacion de la entidad de que haya ransomware</b>. De la autoridad francesa de control <b>no consta notificacion en ninguna fuente leida</b>, y no se afirma."
+    }
+   ]
   },
   {
    "id": "leipzig",
@@ -283,7 +312,13 @@
    "url": "https://www.uni-leipzig.de/angriff-auf-die-it-systeme/",
    "obl": "Artículo 33 del RGPD ante el <b>responsable sajón de protección de datos</b>, <b>si</b> se confirma acceso a datos personales. A fecha de cierre la universidad <b>no ha confirmado ni descartado</b> brecha de datos, de modo que <b>no puede afirmarse que el artículo 33 se haya disparado</b>: está en el plazo de evaluación, que es exactamente el escenario del considerando 87 y de las directrices del Comité Europeo sobre el momento del «conocimiento». El artículo 34 no procede todavía, porque sin determinación de datos afectados no hay juicio de alto riesgo posible. Sobre <b>NIS2</b> hay un punto fino que conviene no equivocar: el artículo 6, apartado 41, de la Directiva define «organismo de investigación» <b>excluyendo expresamente a los centros educativos</b>, de modo que una universidad pública alemana <b>no queda cubierta por la ley federal</b> por su actividad docente; podría quedarlo por una actividad investigadora singular, o por legislación del Land de Sajonia, que es la que decide la cobertura de las entidades públicas estatales. Conclusión práctica para un dictamen: <b>presume que no aplica NIS2 federal y verifica la ley del Land</b>, no lo contrario. DORA no aplica. Aplican la normativa de datos de investigación y, si hubiera historiales clínicos de la facultad de medicina, el régimen sanitario, aunque el hospital universitario es entidad jurídicamente distinta.",
    "lec": "<b>La decisión de apagarlo todo a mediodía de un miércoles es la lección, y es incómoda.</b> Casi todos los planes de respuesta que vas a revisar contemplan aislar los sistemas afectados; muy pocos tienen tomada de antemano la decisión sobre <b>quién está autorizado a desconectar la totalidad de los servicios, con qué criterio y a quién hay que informar</b>, y prácticamente ninguno ha medido qué se rompe cuando se hace. En una universidad, apagarlo todo a media mañana significa parar matrículas, exámenes, nóminas, investigación y biblioteca a la vez. La pregunta para tu cliente es doble: ¿tiene esa autorización escrita y nominada, y sabe cuánto cuesta una hora de apagado total? Si no puede responder lo segundo, la decisión se tomará tarde por miedo, que es el peor de los dos errores posibles. Y una observación que merece decirse en positivo: una nota de cuatro líneas en una página propia, publicada el mismo día a las 11:55, es más de lo que logra la mayoría de las organizaciones. Tener esa plantilla preparada de antemano cuesta una hora y compra días de credibilidad. Lo que ya no es tan bueno es que a los cuatro días siga sin actualizarse.",
-   "act": []
+   "act": [
+    {
+     "ed": 12,
+     "fecha": "2026-10-29",
+     "nota": "<b>No se ha movido.</b> Sus dos paginas propias, leidas integras el 9 de noviembre, siguen fechadas el <b>28 de octubre de 2026 a las 11:55</b> y el <b>29 de octubre a las 17:51</b>, sin ninguna actualizacion. Doce dias despues del ataque la universidad <b>no ha determinado ni publicado nada</b> sobre afectacion de datos personales, no da cifra de afectados y no menciona notificacion a ninguna autoridad. El contraste con Eichstatt, que en el mismo plazo publico un inventario detallado de categorias, es el dato. <b>Cifra que no debe malinterpretarse:</b> los 30.000 estudiantes que menciona su pagina de preguntas frecuentes son el tamano del cuerpo estudiantil al que se dirige, <b>no un numero de afectados</b>."
+    }
+   ]
   },
   {
    "id": "copenhague",
@@ -317,7 +352,13 @@
    "url": "https://www.ku.dk/en/operational-disruptions-at-ucph",
    "obl": "Artículo 33 del RGPD ante la <b>autoridad danesa de protección de datos</b>, confirmada por la propia universidad el 23 de octubre o antes. Artículo 34 <b>inequívocamente disparado</b> por la combinación de <b>número de identidad nacional más datos de contacto a escala de 525.000 personas</b>, y agravado por los 20.000 códigos de tarjeta, que son <b>credenciales de acceso físico</b>; la reemisión de códigos es, en la práctica, una medida de mitigación del artículo 34.1 in fine. Sobre <b>NIS2 en Dinamarca</b>, la exclusión de los centros educativos de la definición de «organismo de investigación» del artículo 6.41 juega igual que en el caso de Leipzig, y Dinamarca transpuso por leyes sectoriales sin que la educación superior sea sector de los anexos I ni II: <b>previsiblemente no aplica</b>, y el deber operativo es el del RGPD. DORA no aplica. Aplica además el régimen danés propio del número de identidad nacional, que conviene no leer con ojos españoles: en Dinamarca es un <b>identificador de uso general</b> en el sector público y privado, de modo que su riesgo de suplantación es muy superior al de un documento de identidad europeo medio.",
    "lec": "<b>Tres lecciones, y las tres valen en una conversación con cualquier cliente.</b> La primera es la causa raíz y es banal: <b>datos reales en un entorno de pruebas</b>. Pregunta a cada cliente si sus entornos de preproducción contienen copias de producción, y exige anonimización o datos sintéticos. Un entorno de prueba casi nunca tiene el nivel de endurecimiento, de registro y de vigilancia de producción, pero puede tener exactamente los mismos datos, y ahí es donde entra el atacante que no logra entrar por la puerta principal. La segunda es un cruce que pocos planes contemplan: <b>credenciales de acceso físico como dato personal</b>. Los 20.000 códigos convirtieron una brecha lógica en un riesgo de intrusión física y obligaron a restringir el campus; si tu cliente usa el mismo sistema de identificación para la puerta y para la red, ese puente existe y hay que modelarlo. La tercera es de comunicación y es la más citable: la universidad anunció el lunes un «ataque nuevo» y el martes tuvo que desdecirse. <b>En la fase aguda no se califica la causa de una anomalía hasta tenerla.</b> Un apagado preventivo se explica perfectamente sin atribuirlo a nada, y la rectificación cuesta mucha más credibilidad que la prudencia inicial.",
-   "act": []
+   "act": [
+    {
+     "ed": 12,
+     "fecha": "2026-11-06",
+     "nota": "<b>Siete actualizaciones en la ventana, pero el apagado no ha terminado y el alcance no es definitivo.</b> El hito es del <b>6 de noviembre de 2026 a las 15:15</b>: vuelven a estar en linea los sitios web externos. Siguen afectados, segun sus propias entradas del 3, el 5 y el 6, el sistema de identidad, la plataforma de movilidad, el autoservicio de resultados de examen y el portal externo de empleo, y la propia pagina mantiene que el cierre sigue provocando perturbaciones. <b>Vector corregido con fuente propia:</b> la universidad declara que el atacante aprovecho <b>un error de configuracion en un entorno de pruebas</b> y califica de error propio que ese conjunto de datos estuviera ahi, de modo que el vector pasa de sin determinar a error de configuracion, y asi se ha corregido en el registro. Deteccion el <b>20 de octubre de 2026</b>. Alcance declarado: <b>unos 525.000 usuarios</b>, que es la palabra que usa la entidad, es decir identidades con cuenta, no personas en sentido estricto. Los numeros de identificacion personal estaban cifrados, pero la universidad estima <b>riesgo considerable de que puedan descifrarse porque la informacion de descifrado tambien quedo comprometida</b>. Notificado a la policia y a la autoridad danesa de proteccion de datos, declarado por la entidad. Es, con diferencia, el caso mejor documentado por su propia entidad de todos los abiertos."
+    }
+   ]
   },
   {
    "estado": "Firme en vía administrativa, con requerimiento y multa coercitiva de 10.000 euros por día de retraso",
@@ -480,7 +521,13 @@
    "url": "https://medicostenerife.es/news/notificacion-de-incidente-de-seguridad/",
    "obl": "Artículo 33 del RGPD, notificación a la Agencia en 72 horas, que el aviso da por hecha. Artículo 34: la nota a colegiados es comunicación preventiva por canal público; si se confirma exfiltración habrá que reevaluar la comunicación individual, y el alto riesgo será difícil de discutir tratándose de un colectivo sanitario. NIS2 no aplica en España porque no está transpuesta, y un colegio profesional encaja mal como operador de servicio esencial del RDL 12/2018: la vía correcta es la que ha usado.",
    "lec": "<b>Llévatelo como plantilla de comunicación, porque separa tres registros que casi todo el mundo mezcla:</b> lo confirmado (hubo ataque, desconectamos), lo presunto a partir de la nota del atacante (cifrado y robo) y lo no detectado (no hemos visto fuga). Enséñale a tu cliente la frase «no han detectado fuga de datos» y explícale que <b>no es lo mismo que «no hubo fuga»</b>. Esa distinción hay que dejarla preescrita en el plan de respuesta, porque en caliente la tentación es decir lo segundo y luego no se puede recoger.",
-   "act": []
+   "act": [
+    {
+     "ed": 12,
+     "fecha": "2026-11-09",
+     "nota": "<b>No reconfirmado, y con sospecha de identidad equivocada.</b> Las busquedas dirigidas al colegio de medicos de la provincia y a prensa canaria <b>no han devuelto ninguna pieza</b> sobre un ciberataque o una brecha en esa entidad. Lo que si existe en la misma provincia y puede ser el origen de la anotacion es una pieza de junio de 2026 sobre el <b>colegio de enfermeria</b> de Santa Cruz de Tenerife, y otra de mayo de 2026 sobre el ayuntamiento de Santa Cruz. <b>Hay que resolver la identidad de esta ficha antes de volver a citarla</b>, y si lo que se ficho fue el colegio de enfermeria, corregir nombre, sector y fecha. Se deja la entrada en el registro, con este aviso, porque borrarla destruiria el rastro del error."
+    }
+   ]
   },
   {
    "id": "eichstatt",
@@ -492,7 +539,7 @@
     "cont"
    ],
    "vec": [
-    "desc"
+    "ter"
    ],
    "hecho": "oficial",
    "causa": "desconocida",
@@ -523,6 +570,11 @@
      "ed": 11,
      "fecha": "2026-10-12",
      "nota": "Ficha desarrollada en la edición 011."
+    },
+    {
+     "ed": 12,
+     "fecha": "2026-11-03",
+     "nota": "<b>El movimiento mas sustantivo de la semana en administracion publica europea, y reclasifica el caso.</b> El <b>3 de noviembre de 2026 a las 19:31</b> el ayuntamiento publico que <b>debe presumir</b> que los atacantes se llevaron tambien datos personales. Nota de precision: el titular dice <b>presuntamente</b>, no robo confirmado, y conviene no endurecerlo. <b>Vector ahora publicado, y cambia la naturaleza del caso:</b> los atacantes entraron el <b>8 de octubre</b> a traves de «una brecha de seguridad de un proveedor de software de la administracion municipal». No nombra al proveedor ni la vulnerabilidad. Deja de ser un ataque generico a un municipio y pasa a ser <b>cadena de suministro</b>, y asi se ha corregido el vector en el registro. Hay que casarlo con su propia nota del 22 de octubre, donde afirmaba que el ataque <b>no fue dirigido</b>: juntas dibujan explotacion oportunista de un fallo de proveedor. <b>Alcance declarado, todo de la entidad:</b> unos <b>1,4 terabytes</b> copiados en dos carpetas de aproximadamente 1 TB y 400 GB, que el propio ayuntamiento cifra en «algo mas de un cuarto del conjunto de datos» sobre unos 5 TB almacenados. De la carpeta grande solo conoce el contenido por los nombres de fichero y estima datos personales afectados en casos aislados; en la de 400 GB <b>los atacantes borraron sus rastros, de modo que no se puede reconstruir que habia</b>. Categorias potencialmente afectadas: datos de candidatos a empleo y antiguos empleados, solicitantes de subvenciones, vivienda y licencias de obra, datos de documento de identidad y de empadronamiento, datos financieros con mandatos SEPA y datos tributarios, registros de embargos, asesoramiento de pensiones, transporte escolar, planos de infraestructuras y documentacion de sesiones y licitaciones <b>incluidos valores de contrato e importes de oferta</b>. No afectados: registro civil, administracion escolar y guarderias, y tampoco escaneos de documentos de identidad ni huellas. <b>Cifra de personas afectadas: no hay ninguna.</b> Es exactamente el patron que este registro viene a documentar: el municipio describe con enorme detalle y no cuantifica personas. <b>Obligacion, y es la afirmacion de notificacion mas explicita de toda la tanda:</b> comunico el incidente al delegado bavaro de proteccion de datos <b>en plazo conforme al articulo 33 del RGPD</b>, y lo dice la entidad, no la prensa. <b>Sobre el regimen de emergencia que vencia el 2 de noviembre:</b> ninguna nota propia declara su fin ni fija fecha. El 6 de noviembre a las 12:34 el ayuntamiento amplio servicios y su rotulo general declara ahora normalidad. Conclusion honesta: <b>el regimen termino de hecho, no hay acto publicado que lo declare y la fecha del 2 de noviembre no se puede confirmar en la fuente propia</b>."
     }
    ]
   },
@@ -561,6 +613,11 @@
      "ed": 10,
      "fecha": "2026-10-26",
      "nota": "Seguido en la edición 010."
+    },
+    {
+     "ed": 12,
+     "fecha": "2026-11-04",
+     "nota": "<b>Primera cifra propia, y es de las grandes.</b> El <b>4 de noviembre de 2026 a las 07:30</b> hora de Amsterdam, Ahold Delhaize publico su comunicado de resultados del tercer trimestre y cuantifico el impacto: reduccion de las <b>ventas netas del cuarto trimestre de entre 200 y 250 millones de euros</b> y del resultado operativo subyacente y NIIF de <b>entre 75 y 100 millones</b>, mas costes incrementales de respuesta y remediacion con impacto marginal en el resultado NIIF de 2026. Revisa las previsiones del ejercicio: margen operativo subyacente acercandose al 4 por ciento, crecimiento del beneficio por accion de digito simple bajo y flujo de caja libre en torno a 2.100 millones frente a los al menos 2.300 anteriores. <b>Encuadre literal del propio comunicado, que es lo que impide un error de bulto:</b> situa el incidente <b>en octubre</b>, despues del cierre del trimestre, y describe el dano sobre «principalmente las capacidades en linea en el Benelux y Estados Unidos, asi como las operaciones de cadena de suministro del Benelux», y anade que «Bol no se vio afectada». <b>La palabra refrigeracion no aparece ni una vez en todo el comunicado</b>, recontado. Un teletipo de agencia del mismo dia presenta estas cifras junto a los ataques a los frigorificos: <b>es un error, y hay que no heredarlo</b>. La campana de refrigeracion sigue sin una sola cifra economica publicada por un CERT, un regulador o una cadena."
     }
    ]
   },
@@ -614,6 +671,11 @@
      "ed": 12,
      "fecha": "2026-10-14",
      "nota": "Boletín de Copeland sobre los supervisores XWEB: reconoce la vulnerabilidad en el XWEB EVO, <b>sin CVE y sin parche</b>, porque está en fin de servicio y la remediación es migrar. En el mismo documento publica las credenciales de fábrica de toda la gama, <b>Admin/Admin</b>."
+    },
+    {
+     "ed": 12,
+     "fecha": "2026-11-04",
+     "nota": "<b>La campana sube a nivel de la Union y tiene segunda oleada.</b> El <b>4 de noviembre de 2026</b>, ENISA, la Comision (DG CNECT), el Centro Europeo de Ciberdelincuencia de Europol, la Red de CSIRT de la Union y <b>EU-CyCLONe</b> publicaron una declaracion conjunta que fecha el arranque el <b>11 de octubre</b> y confirma <b>una nueva oleada el 1 y el 2 de noviembre</b>, calificando los incidentes de <b>gran escala</b>. Es la primera vez que firma EU-CyCLONe, la red de enlace para crisis del articulo 16 de NIS2: en la declaracion conjunta del 21 de octubre sobre PHP no estaba. La declaracion <b>no nombra ningun Estado, ninguna cadena, ningun fabricante, ningun CVE y no da una sola cifra</b>. <b>Cuatro hechos nuevos verificados.</b> Uno, <b>CERT-FR no ha tocado su alerta</b>: la ALE-012 sigue con tres revisiones y la ultima es del 16 de octubre, veinticuatro dias, mientras ese mismo CERT publicaba y revisaba otras alertas el 2 y el 5 de noviembre. Dos, aparece un <b>cuarto fabricante que CERT-FR nunca listo, Carel</b>, por dos vias independientes: el comunicado griego del 3 de noviembre y la telemetria de una casa de seguridad. Tres, la autoridad griega dice que ya el <b>14 de octubre</b> habia detectado <b>mas de 300 sistemas expuestos</b> de Danfoss, Copeland/Dixell y Carel, primera cifra de una autoridad en toda la campana, aunque su texto <b>no dice donde</b>. Cuatro, <b>Danfoss sigue sin publicar nada propio</b> y sigue sin existir aviso suyo para la serie AK-SC, y el boletin de Copeland y Dixell sigue en la version del 18 de octubre alojada por el distribuidor frances, sin CVE y sin parche. Lo que sigue en descartados, con el motivo afinado: el recuento de paises, de cadenas y de tiendas, y las perdidas millonarias. La unica novedad es que las <b>decenas de millones</b> tienen ya eco en una bitacora del INCIBE-CERT del 20 de octubre, pero el propio INCIBE las atribuye a prensa en sus referencias."
     }
    ]
   },
@@ -692,6 +754,11 @@
      "ed": 11,
      "fecha": "2026-10-09",
      "nota": "Ficha desarrollada en la edición 011."
+    },
+    {
+     "ed": 12,
+     "fecha": "2026-11-09",
+     "nota": "<b>No reconfirmado en fuente primaria esta semana, y es laguna, no ausencia.</b> No se ha localizado canal propio del centro de servicios con publicacion en la ventana. Lo unico disponible es prensa sectorial educativa cuya fecha solo consta por la ruta de la direccion web, de modo que <b>no esta verificada</b>. Hallazgo colateral que puede ser el mismo caso o no: la <b>Hochschule Heilbronn</b> tiene pagina propia de preguntas frecuentes sobre un ciberataque, y la relacion con este expediente <b>esta sin determinar</b>. Queda pendiente, y se nombra para que no se pierda, la lectura del informe anual de 2026 del Tribunal de Cuentas de Baden-Wurtemberg, que dedica una contribucion a la seguridad de la informacion y podria ser la fuente oficial de este caso y del conjunto del sistema universitario del Land."
     }
    ]
   },
@@ -1604,6 +1671,11 @@
      "ed": 6,
      "fecha": "2026-09-28",
      "nota": "Seguido en la edición 006."
+    },
+    {
+     "ed": 12,
+     "fecha": "2026-09-03",
+     "nota": "<b>Reconfirmado en fuente propia del Land y con el detalle que faltaba.</b> La oficina de prensa e informacion del Land publico su nota el <b>3 de septiembre de 2026</b>, actualizada el 4, sobre el ataque a la <b>red del Estado de Berlin</b>: datos personales de empleados, ciudadanos y empresas «pueden estar afectados», sin indicios de que la red siguiera infiltrada, con intervencion de la policia judicial del Land, la fiscalia de Berlin y la agencia federal de seguridad de la informacion. El director digital del Land declaro que <b>el Land de Berlin no se deja extorsionar</b>, y <b>no consta pago</b>. Cifras, y con su procedencia separada: los <b>5,7 terabytes</b> son <b>del atacante</b> y nadie los ha verificado; la <b>puja minima de 30 bitcoins</b>, unos dos millones de euros, en la subasta de los datos, es de <b>prensa</b>, y la nota oficial recoge la cifra sin atribuirla. <b>La administracion no ha publicado ningun numero de personas ni de registros.</b> Movimientos posteriores que la prensa describe, entre ellos publicacion efectiva de datos y problemas por credenciales filtradas, <b>no estan reconfirmados en primaria y sus fechas no se datan aqui</b>. Es el mayor incidente de administracion publica alemana del ano y conviene seguirlo."
     }
    ]
   },
@@ -1752,6 +1824,11 @@
      "ed": 12,
      "fecha": "2026-10-29",
      "nota": "Reuters publica, citando a cuatro funcionarios, que el Pentágono trata los cortes como <b>presunto ciberataque</b>, y que la división de investigación criminal del Ejército trabaja con las autoridades francesas. La causa sigue sin confirmarse oficialmente."
+    },
+    {
+     "ed": 12,
+     "fecha": "2026-11-09",
+     "nota": "Sin movimiento propio en la ventana. Se mantiene como el primer capitulo conocido de la campana, con el hecho confirmado por escrito por el Departamento de Defensa en agosto de 2026 y la causa sostenida por prensa desde el 29 de octubre. La declaracion conjunta de la Union del 4 de noviembre <b>no menciona Estados Unidos ni este episodio</b>, de modo que el enlace entre capitulos sigue siendo del boletin y no de una autoridad."
     }
    ]
   },
@@ -2386,7 +2463,7 @@
    "detalle": "tabla",
    "estado": "Recuperada, investigación policial abierta",
    "fecha": "Del 2 al 23 de julio de 2026",
-   "sabe": "La universidad detectó actividad compatible con una intrusión de ransomware y desconectó servicios preventivamente. En la actualización del 23 de julio precisa que el cifrado <b>afectó a uno solo de los tres nodos</b> de un clúster de unos 80 servidores virtuales, con unas 20 aplicaciones comprometidas y el 95 %% del entorno operativo. Sostiene que no se comprometió información. No hay reivindicación pública verificada ni se conoce la familia de ransomware.",
+   "sabe": "La universidad detectó actividad compatible con una intrusión de ransomware y desconectó servicios preventivamente. En la actualización del 23 de julio precisa que el cifrado <b>afectó a uno solo de los tres nodos</b> de un clúster de unos 80 servidores virtuales, con unas 20 aplicaciones comprometidas y el 95 % del entorno operativo. Sostiene que no se comprometió información. No hay reivindicación pública verificada ni se conoce la familia de ransomware.",
    "quien": "La propia Universidad de Alicante, en dos comunicados de su portal oficial.",
    "url": "https://web.ua.es/es/actualidad-universitaria/2026/julio2026/20-26/la-universidad-de-alicante-confirma-que-el-ciberataque-afecto-solo-a-uno-de-los-nodos-de-virtualizacion-y-que-el-95-del-entorno-esta-operativo.html",
    "obl": "ENS de aplicación plena con notificación al CCN-CERT. Artículo 33 del RGPD: la universidad declaró que su delegado de protección de datos notificaría a la AEPD, lo que activa el plazo de 72 horas aunque se concluya que no hubo afectación.",
@@ -2709,6 +2786,456 @@
    "causa": "oficial",
    "conf": "2024-04-11",
    "url": "https://www.autoriteitpersoonsgegevens.nl/uploads/2024-04/Brief%20aan%20provincie%20Zuid-Holland.pdf"
+  },
+  {
+   "id": "efs-sangre",
+   "ent": "Etablissement francais du sang",
+   "pais": "Francia",
+   "sec": "san",
+   "tips": [
+    "ot",
+    "sum",
+    "cont"
+   ],
+   "vec": [
+    "ter"
+   ],
+   "hecho": "prensa",
+   "causa": "proveedor",
+   "cifra": "",
+   "cifra_org": "ninguna",
+   "cifra_pag": "",
+   "afec": "Tres emplazamientos de almacenamiento en frio de plasma",
+   "afec_org": "prensa",
+   "conf": "2026-11-04",
+   "conf_aprox": false,
+   "ed": 12,
+   "retro": false,
+   "detalle": "ficha",
+   "url": "https://efs.sante.fr/actualites",
+   "estado": "Abierto, con investigaciones tecnicas en curso y sin comunicado propio de la entidad alcanzable",
+   "fecha": "En la noche del domingo al lunes, <b>1 al 2 de noviembre de 2026</b>, se elevaron los umbrales de temperatura y de desescarche en tres emplazamientos de almacenamiento en frio de plasma del operador publico frances de la sangre. La anomalia la detecto la monitorizacion y un trabajador de guardia, y los productos se trasladaron o protegieron. El <b>martes 3 de noviembre por la noche</b> la entidad se pronuncio, y el <b>miercoles 4</b> el Ministerio de Sanidad frances. Investigan la agencia nacional francesa de ciberseguridad y el ministerio",
+   "sabe": "<b>Lo que se sostiene:</b> hubo manipulacion de consignas de temperatura y de ciclos de desescarche en tres emplazamientos de frio de plasma; la deteccion fue por monitorizacion y alarma; y el gabinete del ministerio afirma que la seguridad de las reservas se preservo. El <b>proveedor</b> de las instalaciones frigorificas, Coolworld, declara que solo se vio afectado un numero limitado de sus unidades y que la vulnerabilidad <b>afecta a un componente de un proveedor tercero</b>, y la entidad afirma que no fue atacada directamente sino el proveedor que mantiene las instalaciones. <b>Lo desconocido, que es casi todo:</b> autoria, motivo, nombre de los centros, numero de camaras, y si hubo o no afectacion efectiva de producto. <b>Una afirmacion que esta sin cerrar y por eso no se da por buena:</b> una de las coberturas recoge que la entidad declaro despues al semanario que dio la noticia que tambien se vio afectado plasma congelado destinado a transfusion, lo que choca con el «ningun producto comprometido» que circula. Hasta que haya comunicado propio, <b>este boletin no afirma que no se comprometiera ningun producto</b>",
+   "quien": "<b>Advertencia de calidad de fuente, por delante de todo:</b> <b>no se ha podido leer ni un comunicado propio de la entidad ni uno del ministerio</b>. El listado de actualidad del operador de la sangre responde y su entrada mas reciente es del 1 de octubre de 2026, sin nada sobre el incidente; su sala de prensa sirve una redireccion por guion sin contenido legible; y el canal de comunicados del ministerio frances devuelve respuesta vacia. De modo que el hecho entra con etiqueta de <b>prensa</b>, no de confirmacion oficial, aunque las declaraciones citadas sean de la entidad y del ministerio. Quien si habla en soporte propio es el <b>proveedor</b>, y es el unico que aporta causa y acotacion tecnica",
+   "obl": "Aqui hay que ser especialmente estricto, porque es el caso mas facil de sobrevender de la semana. El operador de la sangre encaja en el <b>sector sanitario del anexo I de NIS2</b>, que produce entidad <b>esencial</b> por la via del articulo 3.1.a) y multas del articulo 34.4, de diez millones de euros o el 2 por ciento, y no del 34.5. Francia tiene la directiva transpuesta, de modo que el articulo 23 es plausible. <b>Pero ninguna fuente publica notificacion alguna</b>, y la propia entidad sostiene que no hubo consecuencias sanitarias ni interrupcion de recogida y distribucion, que es justo el hecho que decide si hay «graves perturbaciones operativas» del articulo 23.3. <b>No se afirma que se disparara el plazo de veinticuatro horas.</b> Dos precisiones del articulado, verificadas: el anexo I, punto 5, de NIS2 enumera prestadores de asistencia sanitaria, laboratorios de referencia, investigacion y desarrollo de medicamentos y fabricantes de productos sanitarios esenciales, y <b>la palabra sangre no aparece en todo el texto de NIS2</b>, de modo que el encaje concreto seria por prestador de asistencia sanitaria o por designacion nacional, y <b>no esta establecido</b>",
+   "lec": "Que la campana de la refrigeracion ha salido de la alimentacion. Si este caso se confirma en soporte propio, deja de ser un problema del anexo II y pasa al anexo I, es decir de entidad importante a entidad esencial y de siete millones a diez. Para un cliente con cadena de frio critica, la pregunta operativa no es si el controlador esta parcheado, es <b>quien puede cambiar una consigna de temperatura por telemetria, con que credencial, y si la alarma de umbral la vigila alguien ajeno al que puede moverla</b>. Y la leccion espanola es la medida preventiva: la agencia catalana ordeno desconectar la conexion centralizada de los equipos que controlan la temperatura del banco de sangre y tejidos, y el director clinico explico que no altero mucho el trabajo porque ya habia tres comprobaciones independientes. Eso es redundancia de verificacion, y es lo que separa un susto de una perdida"
+  },
+  {
+   "id": "laguna",
+   "ent": "Ayuntamiento de San Cristobal de La Laguna",
+   "pais": "Espana",
+   "sec": "adm",
+   "tips": [
+    "cont",
+    "acc"
+   ],
+   "vec": [
+    "desc"
+   ],
+   "hecho": "oficial",
+   "causa": "oficial",
+   "cifra": "5.000.000 de euros exigidos",
+   "cifra_org": "prensa",
+   "cifra_pag": "",
+   "afec": "",
+   "afec_org": "ninguna",
+   "conf": "2026-11-02",
+   "conf_aprox": false,
+   "ed": 12,
+   "retro": false,
+   "detalle": "ficha",
+   "url": "https://rtvc.es/incidente-ciberseguridad-afecta-varios-sistemas-servicios-digitales-ayuntamiento-la-laguna-2-noviembre-2026/",
+   "estado": "Abierto, con servicios restablecidos de forma parcial y plazos administrativos ampliados",
+   "fecha": "Detectado la <b>tarde del lunes 2 de noviembre de 2026</b> y comunicado por el propio consistorio ese mismo dia. El <b>3 de noviembre</b> mantuvo la atencion presencial, acordo una <b>ampliacion general de los plazos administrativos</b> hasta resolver y restablecio el certificado de empadronamiento automatico y el de viaje. El <b>4 de noviembre</b> la prensa local publico una cifra de rescate. El <b>7 de noviembre</b> el ayuntamiento pidio extremar las precauciones y lanzo una advertencia a los vecinos sobre sus datos personales",
+   "sabe": "<b>Confirmado por la entidad:</b> quedo afectada parte de su infraestructura tecnologica, con impacto en la web municipal, la <b>sede electronica</b>, el <b>gestor de expedientes administrativos</b> y las aplicaciones de <b>gestion tributaria y contable</b>; los hechos se pusieron en conocimiento del <b>Centro Criptologico Nacional</b>; y se contrato con urgencia una consultora internacional. <b>Desconocido:</b> si hubo cifrado, si hubo exfiltracion, el vector, el grupo y el alcance. El rescate de <b>cinco millones de euros en bitcoins</b> es de <b>prensa</b>, y el propio medio advierte de que no existe confirmacion oficial de que ese sea el procedimiento utilizado; una peticion en criptomoneda <b>no prueba ransomware</b>, y por eso el tipo no se declara como tal. <b>No consta notificacion a la Agencia Espanola de Proteccion de Datos</b>",
+   "quien": "El propio ayuntamiento, en comunicados de los dias 2, 3 y 7 de noviembre. <b>Advertencia de calidad de fuente, y es doble.</b> Primera: el <b>canal propio del ayuntamiento no se ha podido abrir</b> en ninguno de los intentos, ni por su dominio con cifrado, que cierra la conexion, ni sin el, que devuelve error de servidor, ni por su sede electronica. Los comunicados se han leido a traves de la radiotelevision publica canaria y de prensa local, que los citan y reproducen, y el contenido del 7 de noviembre solo se tiene por titular. Segunda, y es un dato en si mismo: <b>que el dominio del ayuntamiento siga sin responder nueve dias despues</b> dice algo del estado de su infraestructura, aunque no sea el comunicado",
+   "obl": "Lo unico documentado es la <b>comunicacion al Centro Criptologico Nacional</b>, que es la via natural en el sector publico espanol: el Esquema Nacional de Seguridad y la notificacion al CCN-CERT por su sistema de gestion de incidentes. Si se confirmara afectacion de datos personales se abriria el <b>articulo 33 del RGPD</b>, con setenta y dos horas, <b>pero no esta confirmado y no se afirma sobre prensa</b>. La advertencia del 7 de noviembre a los vecinos es indicio de que el ayuntamiento considera el riesgo, <b>no es una notificacion</b>, y no debe presentarse como tal. Y la ampliacion general de plazos administrativos, que es la decision mas visible, no es una obligacion de ciberseguridad sino el ejercicio de una potestad de la ley de procedimiento: conviene saberlo distinguir cuando un cliente del sector publico pregunte que puede hacer el primer dia",
+   "lec": "Es el caso espanol de la semana y sirve para tres cosas. Una, la lista de sistemas afectados es el inventario minimo de continuidad de cualquier ayuntamiento: sede electronica, gestor de expedientes y tributaria. Si no hay plan de continuidad para esos tres, no hay plan. Dos, <b>la ampliacion de plazos administrativos es la medida de contingencia mas barata y la que menos se prepara</b>: tenerla redactada de antemano ahorra dias. Tres, el silencio sobre datos personales a los siete dias, con una advertencia a los vecinos pero sin notificacion conocida, es exactamente la zona gris en la que un cliente necesita criterio antes de que llegue el incidente, no despues"
+  },
+  {
+   "id": "unimed-clinicas",
+   "ent": "Unimed y once hospitales universitarios alemanes",
+   "pais": "Alemania",
+   "sec": "san",
+   "tips": [
+    "sum",
+    "rgpd"
+   ],
+   "vec": [
+    "desc"
+   ],
+   "hecho": "oficial",
+   "causa": "oficial",
+   "cifra": "",
+   "cifra_org": "ninguna",
+   "cifra_pag": "",
+   "afec": "Mas de 100.000 pacientes segun la suma de las cifras por hospital, sin total confirmado",
+   "afec_org": "entidad",
+   "conf": "2026-05-21",
+   "conf_aprox": false,
+   "ed": 12,
+   "retro": false,
+   "detalle": "ficha",
+   "url": "https://www.aerzteblatt.de/news/cyberangriff-daten-zehntausender-uniklinik-patienten-entwendet-70314d03-4a55-40f5-9ecf-1111c29dfd22",
+   "estado": "Cerrado en cuanto a la intrusion, con comunicaciones a pacientes ejecutadas por cada hospital",
+   "fecha": "Ataque a mediados de <b>abril de 2026</b> contra <b>Unimed</b>, proveedor externo de facturacion que trabaja para clinicas de toda Alemania. Los cuatro hospitales universitarios de Baden-Wurtemberg lo hicieron publico el <b>21 de mayo de 2026</b> y el resto el <b>22 de mayo</b>, cada uno en su propio canal",
+   "sabe": "<b>Confirmado, y por once entidades distintas con cifra propia cada una:</b> Friburgo unas 54.000 personas, con datos de facturacion en unos 900 casos; Heidelberg unas 11.000, con facturacion en unos 2.700; Tubinga unas 5.000, con datos de salud en unos 1.200 y facturacion de 3.800; Ulm unas 1.600, con facturacion en unos 300; Colonia unos 30.000 pacientes, con datos de salud en mas de 800; el hospital universitario de Schleswig-Holstein al menos unos 9.000 registros, provisional; Maguncia unos 2.800; Dusseldorf mas de 3.000; el Sarre algo menos de 1.300; la <b>Charite unos 500 registros en revision, de los que unos 80 con posibles datos medicos</b>; y Wurzburgo sin cifra. El proveedor confirma el ataque y el tipo de datos y afirma que intentaron cifrar sus sistemas sin conseguirlo, que robaron datos de un area limitada antes de ser repelidos, y que afecta <b>exclusivamente a pacientes privados y de pago directo</b>. La agencia federal alemana de seguridad de la informacion confirma estar informada de un incidente de seguridad relacionado con varias clinicas en Alemania y afirma que, a su juicio, <b>no existe peligro inmediato para la asistencia a la poblacion</b>. <b>Desconocido:</b> el vector, que ninguna de las doce entidades publica, y <b>el total</b>: ni el proveedor ni la agencia federal confirman una cifra agregada y no se sabe si los recuentos se solapan, de modo que <b>el total de mas de cien mil que circula en prensa no se usa como dato de entidad</b>",
+   "quien": "Cada hospital en su canal propio y el proveedor en el suyo, mas la agencia federal de seguridad de la informacion. Es, por numero de entidades que cuantifican, el caso mejor documentado de cadena de suministro sanitaria europea del ano",
+   "obl": "<b>Obligaciones declaradas por las propias entidades</b>, y por eso es el mejor material de formacion de este registro: dejaron de enviar datos al proveedor, <b>informaron a la autoridad de proteccion de datos y a la agencia federal de seguridad</b>, Heidelberg presento denuncia contra personas desconocidas, y anunciaron contacto personal con los pacientes. Lo relevante en clave de encargo: el responsable del tratamiento es cada hospital, no el proveedor, y por eso la notificacion del articulo 33 la hacen once veces once entidades distintas por un solo incidente en un tercero. En clave de NIS2, los hospitales son sector sanitario del anexo I y entidades esenciales, y Alemania tiene la directiva transpuesta, pero <b>ninguna entidad publica haber notificado por la via del articulo 23</b>, y no se afirma",
+   "lec": "Es el caso que hay que poner encima de la mesa cuando un cliente pregunta por que el articulo 21.2.d) de NIS2 y el encargo del articulo 28 del RGPD no son papeleo. Un proveedor de facturacion, que no trata datos clinicos como negocio principal, acaba generando once notificaciones de brecha, once comunicaciones a pacientes y una denuncia penal. Y explica algo que de otro modo se cuenta mal: <b>la Charite tiene dos incidentes distintos en 2026</b>, este de mayo por su proveedor de facturacion, con unos 500 registros, y el del 30 de octubre en su servidor web, sin cifra publicada. Atribuir las cifras de uno al otro es un error de bulto y es facil de cometer, porque las dos piezas conviven en los resultados de busqueda"
+  },
+  {
+   "id": "poznan-wsl",
+   "ent": "Wyzsza Szkola Logistyki w Poznaniu",
+   "pais": "Polonia",
+   "sec": "edu",
+   "tips": [
+    "mul",
+    "rgpd"
+   ],
+   "vec": [
+    "hum"
+   ],
+   "hecho": "oficial",
+   "causa": "oficial",
+   "cifra": "64.652 zlotys",
+   "cifra_org": "regulador",
+   "cifra_pag": "",
+   "afec": "964 estudiantes",
+   "afec_org": "regulador",
+   "conf": "2026-11-02",
+   "conf_aprox": false,
+   "ed": 12,
+   "retro": false,
+   "detalle": "ficha",
+   "url": "https://uodo.gov.pl/pl/138/4648",
+   "estado": "Sancion impuesta, con requerimiento de adecuacion del tratamiento",
+   "fecha": "Publicada por la autoridad polaca de proteccion de datos el <b>2 de noviembre de 2026</b>, expediente <b>DKN.5131.15.2022</b>. <b>La fecha de la decision no consta</b> en la nota del regulador y las dos rutas de su base de resoluciones devuelven error, de modo que no se publica fecha de deliberacion",
+   "sabe": "<b>Los hechos, publicados por el regulador:</b> una empleada de la secretaria academica adjunto por error un fichero con datos personales detallados de <b>964 estudiantes</b> admitidos el curso anterior a un comunicado sobre la asignacion a grupos de especialidad e idioma, y el fichero quedo disponible en la plataforma en linea de la secretaria. Y una metrica de exposicion efectiva que casi nunca se publica: el fichero fue <b>abierto por 125 de las 388 personas con acceso y descargado 361 veces</b>. La propia universidad notifico la brecha. Importe: <b>64.652 zlotys</b>, unos quince mil euros al cambio corriente, cifra orientativa porque <b>el regulador solo publica el importe en moneda nacional</b>. <b>Importe efectivamente pagado: no consta</b>, y el derecho polaco no preve reducciones por reconocimiento ni por pago voluntario equivalentes a las espanolas",
+   "quien": "La propia autoridad polaca, en su nota y con numero de expediente. Es la unica sancion pecuniaria nueva de una autoridad europea de proteccion de datos con componente de seguridad de los datos publicada en toda la ventana",
+   "obl": "Infracciones declaradas: <b>articulos 24.1, 25.1 y 32.1 y 32.2</b> del Reglamento General de Proteccion de Datos, mas los principios de integridad y confidencialidad y de responsabilidad proactiva. Y una medida adicional que vale mas que la multa: el requerimiento de adecuar las operaciones de tratamiento <b>previa realizacion de un analisis de riesgos</b> que tenga en cuenta el estado de la tecnica, el coste de implantacion, la naturaleza, ambito, contexto y fines del tratamiento y el riesgo para los derechos y libertades",
+   "lec": "<b>La multa no es por el error humano, y eso es lo aprovechable.</b> El regulador constata que el analisis de riesgos previo contemplaba fallo de hardware, dano del sistema, virus y acceso no autorizado o traslado a soporte externo, <b>pero no contemplaba la revelacion de datos por error</b>. Y anade el agravante decisivo: <b>ni siquiera despues de notificar el incidente, al repetir el analisis de riesgos, actualizo el catalogo de amenazas</b>. Hay un tercer reproche igual de util: la entidad alego haber hecho controles selectivos del modo de envio de informacion a los estudiantes sin encontrar irregularidades, pero <b>no documento ni la realizacion de la prueba ni el metodo</b>, de modo que la declaracion quedo sin prueba. Tres preguntas directas para cualquier cliente: su catalogo de amenazas, contempla el envio erroneo; lo actualizo despues del ultimo incidente; y puede ensenar la evidencia de los controles que dice hacer"
+  },
+  {
+   "id": "enel-med",
+   "ent": "Centrum Medyczne Enel-Med",
+   "pais": "Polonia",
+   "sec": "san",
+   "tips": [
+    "rgpd",
+    "acc"
+   ],
+   "vec": [
+    "desc"
+   ],
+   "hecho": "oficial",
+   "causa": "oficial",
+   "cifra": "",
+   "cifra_org": "ninguna",
+   "cifra_pag": "",
+   "afec": "Como maximo en torno al 3 por ciento de su base de pacientes, sin cifra absoluta",
+   "afec_org": "entidad",
+   "conf": "2026-09-29",
+   "conf_aprox": false,
+   "ed": 12,
+   "retro": false,
+   "detalle": "ficha",
+   "url": "https://www.benchmark.pl/enel-med-wykryl-cyberatak-hakerzy-dostali-sie-do-danych-7334587362076928a",
+   "estado": "Comunicado y notificado por multiples vias, sin cifra absoluta de afectados",
+   "fecha": "Detectado el <b>24 de septiembre de 2026</b>, con aviso al consejo esa misma tarde, y hecho publico el <b>29 de septiembre de 2026</b>. Es el <b>tercer</b> gran caso sanitario polaco de la serie y es distinto de los otros dos del registro",
+   "sabe": "<b>Confirmado por la entidad:</b> acceso no autorizado a datos de pacientes, con un alcance declarado de <b>como maximo en torno al 3 por ciento de toda su base de pacientes</b>. <b>Desconocido:</b> la cifra absoluta, que no da ni en el primer comunicado ni en la aclaracion posterior, el tipo exacto de datos y el vector",
+   "quien": "La propia entidad, en comunicado y aclaracion. Y, a diferencia de casi todo lo demas de este registro, tambien por el canal regulado de mercado",
+   "obl": "<b>Esto es lo que convierte el caso en material de referencia: cuatro notificaciones declaradas y un quinto canal.</b> La entidad notifico al <b>buro central de lucha contra la ciberdelincuencia</b>, al equipo de respuesta del <b>centro de salud digital</b>, a <b>CERT Polska</b> y al <b>presidente de la autoridad de proteccion de datos</b>. Y presento <b>informe corriente tratando el asunto como informacion privilegiada al amparo del articulo 17.1 del Reglamento de abuso de mercado</b>. Todas declaradas por la entidad, ninguna inferida",
+   "lec": "Es el ejemplo mas completo del mapa de notificaciones que un incidente sanitario puede disparar en un Estado que tiene NIS2 transpuesta: autoridad sectorial, CERT nacional, policia especializada, autoridad de proteccion de datos y, si la entidad cotiza, el canal de abuso de mercado. Ese ultimo es el que casi ningun plan de respuesta de cliente contempla, y es el que tiene el plazo mas corto en la practica. Para un consultor, el ejercicio util es coger este caso y preguntar a quien llamaria el cliente en cada uno de los cinco canales, con nombre y telefono, a las tres de la madrugada"
+  },
+  {
+   "id": "casinos-austria",
+   "ent": "Casinos Austria, tienda en linea de vales",
+   "pais": "Austria",
+   "sec": "com",
+   "tips": [
+    "rgpd",
+    "sum",
+    "acc"
+   ],
+   "vec": [
+    "desc"
+   ],
+   "hecho": "oficial",
+   "causa": "oficial",
+   "cifra": "",
+   "cifra_org": "ninguna",
+   "cifra_pag": "",
+   "afec": "Unos 150.000 clientes",
+   "afec_org": "entidad",
+   "conf": "2026-11-07",
+   "conf_aprox": false,
+   "ed": 12,
+   "retro": false,
+   "detalle": "ficha",
+   "url": "https://www.gamblee.com/articles/casinos-austria-150000-customers-cyberattack-2026/",
+   "estado": "Vulnerabilidad cerrada segun la entidad, con notificacion a clientes y a la autoridad en curso",
+   "fecha": "Ventana de acceso no autorizado del <b>2 al 5 de noviembre de 2026</b>, cuatro dias integramente dentro de la ventana de esta edicion. La entidad lo hizo publico el <b>7 de noviembre</b>, en declaraciones a la radiotelevision publica austriaca, y notifico por correo a los clientes",
+   "sabe": "<b>Confirmado por la entidad:</b> quedo afectada la <b>tienda en linea de vales, no los sistemas de juego</b>; el sistema lo opera un <b>proveedor externo</b>; la vulnerabilidad identificada ya esta cerrada; y pueden haber quedado expuestos nombres, correos electronicos, registros de compra y codigos de vales de <b>unos 150.000 clientes</b>. La entidad afirma que <b>no habia datos bancarios ni de tarjeta</b> porque el sistema no los almacenaba. <b>Desconocido:</b> el vector, que la compania no publica, y <b>que registros se sustrajeron efectivamente</b>, que la propia entidad dice no haber establecido",
+   "quien": "La entidad, por portavoz, a la radiotelevision publica austriaca, mas la notificacion por correo a los clientes. El proveedor que opera la tienda no estaba identificado en la informacion original y lo nombran otras coberturas, de modo que <b>su identidad entra con etiqueta de prensa</b>",
+   "obl": "<b>Dato duro, y por eso esta ficha vale:</b> la entidad <b>declara haber notificado a la autoridad austriaca de proteccion de datos</b>. Es artículo 33 del RGPD afirmado por el responsable, no inferido ni deducido de la prensa, que es exactamente lo que este registro exige en el campo de obligaciones. En clave de NIS2, una tienda en linea de vales de un operador de juego no encaja en los anexos por si misma, y no se construye un encaje que no existe",
+   "lec": "Dos cosas. La primera es de perimetro: lo que se rompio no es el nucleo del negocio sino un canal accesorio operado por un tercero, y aun asi son 150.000 clientes y una notificacion al regulador. El inventario de tratamientos que un cliente mantiene suele cubrir bien el sistema principal y mal la tienda de vales, el portal de promociones o el formulario de la campana del verano pasado. La segunda es de comunicacion: la entidad dice que no se almacenaban datos de tarjeta y a la vez que <b>no ha establecido que registros se sustrajeron</b>. Las dos frases son compatibles, pero juntas son la plantilla de lo que hay que poder decir el primer dia sin prometer lo que no se sabe"
+  },
+  {
+   "id": "bbt-brennero",
+   "ent": "BBT SE, sociedad del tunel de base del Brennero",
+   "pais": "Italia y Austria",
+   "sec": "tra",
+   "tips": [
+    "acc"
+   ],
+   "vec": [
+    "desc"
+   ],
+   "hecho": "oficial",
+   "causa": "oficial",
+   "cifra": "",
+   "cifra_org": "ninguna",
+   "cifra_pag": "",
+   "afec": "812 GB",
+   "afec_org": "atacante",
+   "conf": "2026-11-07",
+   "conf_aprox": false,
+   "ed": 12,
+   "retro": false,
+   "detalle": "tabla",
+   "url": "https://uk.lapresse.it/news-en/2026/11/07/security-cyberattack-on-brenner-tunnel-company-investigations-ongoing/",
+   "estado": "Abierto, con sistemas aislados y analisis forense en curso",
+   "fecha": "Intrusion a mediados de <b>octubre de 2026</b>, sin fecha precisa de intrusion ni de deteccion. El grupo atacante reclamo el caso el <b>17 de octubre</b>, la prensa austriaca lo recogio el 6 de noviembre y la sociedad lo confirmo en comunicado propio el <b>7 de noviembre de 2026</b>",
+   "sabe": "<b>Confirmado por la entidad, en comunicado propio reproducido integro:</b> fue objeto de un «ciberataque dirigido» y «personas no autorizadas accedieron a datos accesibles a traves de Internet»; los sistemas afectados se aislaron; se contrataron especialistas externos para el analisis forense; <b>sin impacto en la operativa</b> segun la informacion disponible; y «se ha informado a las autoridades competentes», sin nombrarlas. <b>Desconocido:</b> el vector, el alcance y la naturaleza de los datos. Los <b>812 GB</b> los afirma <b>el atacante</b> y <b>nadie los ha verificado</b>: la entidad no cuantifica.",
+   "quien": "La propia sociedad binacional, en comunicado propio del 7 de noviembre de 2026. El volumen de datos es reivindicacion del atacante en su propio canal de extorsion.",
+   "obl": "Con cautela maxima, porque es el caso mas facil de encajar mal. Es infraestructura transfronteriza cofinanciada por la Union, pero <b>la sociedad es la constructora de una obra que no entra en servicio antes de 2034</b>, no un operador en explotacion. Esa distincion decide la aplicabilidad del anexo I de NIS2, que cubre administradores de infraestructuras y empresas ferroviarias, y del anexo de la Directiva de entidades criticas. <b>No se resuelve sobre una noticia.</b> La entidad dice haber informado a las autoridades competentes y no dice a cuales, de modo que no se afirma que notificara por la via del articulo 23.",
+   "lec": "Que la condicion de infraestructura critica de un gran proyecto en construccion se va a discutir sola, y conviene tener la respuesta antes de que la pregunte un regulador. Para cualquier cliente que construya infraestructura regulada, la pregunta util es si su sociedad vehiculo esta dentro o fuera del perimetro mientras la obra no opera, y quien lo ha decidido por escrito."
+  },
+  {
+   "id": "frio-italia",
+   "ent": "Distribucion alimentaria y cadena del frio en Italia, sin entidad nombrada",
+   "pais": "Italia",
+   "sec": "com",
+   "tips": [
+    "ot",
+    "cont"
+   ],
+   "vec": [
+    "eol",
+    "exp",
+    "cred"
+   ],
+   "hecho": "oficial",
+   "causa": "oficial",
+   "cifra": "",
+   "cifra_org": "ninguna",
+   "cifra_pag": "",
+   "afec": "",
+   "afec_org": "ninguna",
+   "conf": "2026-11-03",
+   "conf_aprox": false,
+   "ed": 12,
+   "retro": false,
+   "detalle": "tabla",
+   "url": "https://www.acn.gov.it/portale/w/misure-urgenti-di-verifica-e-mitigazione-per-operatori-della-distribuzione-alimentare-e-della-filiera-del-freddo",
+   "estado": "Medidas urgentes de la autoridad nacional vigentes, re-destacadas dos veces en dos dias",
+   "fecha": "Boletin publicado el <b>13 de octubre de 2026</b> a las 12:44, <b>version 1.1 el 3 de noviembre</b> y <b>version 1.2 el 4 de noviembre de 2026</b>, con ultima actualizacion a las 18:37 de ese dia",
+   "sabe": "<b>Confirmado por la autoridad nacional de ciberseguridad italiana, que es a la vez autoridad competente de NIS2 y punto de contacto unico:</b> las dos revisiones de la ventana se motivan literalmente en «<b>recientes sucesos detectados en el territorio nacional</b>» y en «<b>ulteriores sucesos detectados en el territorio nacional</b>». Es la unica confirmacion oficial italiana de afectacion propia. <b>Vector publicado por la autoridad, y es el mas explicito de toda la campana:</b> «mediante la explotacion de instalaciones obsoletas, interfaces de administracion expuestas directamente a Internet y deficiencias en los mecanismos de autenticacion, el ataque ha permitido la activacion remota de los ciclos de desescarche y la modificacion de los parametros operativos de las instalaciones, causando la interrupcion de la cadena del frio». <b>Desconocido:</b> entidades afectadas, numero y cifras. La autoridad habla de «ingentes danos economicos» <b>sin dar ni una cifra</b>.",
+   "quien": "La autoridad nacional italiana de ciberseguridad, en su propio registro de cambios. <b>Cautela de metodo que hay que respetar:</b> las dos notas dicen «re-propuesto en portada», de modo que <b>lo verificado es que la autoridad lo volvio a destacar y por que, no que el contenido tecnico cambiara</b>. Una alerta re-destacada no es una alerta reescrita.",
+   "obl": "Las medidas van dirigidas expresamente a «organizaciones de la gran distribucion organizada, de la logistica alimentaria, de la refrigeracion industrial y <b>de los servicios de mantenimiento conectados</b>», es decir <b>la autoridad nombra al frigorista externo como sujeto</b>, lo que deja de ser una inferencia del boletin. Y contiene una advertencia de gobernanza aprovechable, literal: «los plazos indicados constituyen objetivos operativos recomendados para las actividades de verificacion y mitigacion y <b>no sustituyen a las obligaciones de notificacion aplicables</b>».",
+   "lec": "Es el documento operativo mas completo que ha producido la campana, y se puede entregar a un cliente tal cual: inventario de controladores, sistemas de supervision, interfaces de operador, pasarelas y servicios de teleasistencia con su estado de soporte; segregacion de redes y retirada de la exposicion directa a Internet de las interfaces de administracion; accesos remotos por red privada virtual con doble factor, acceso del mantenedor limitado a recursos y periodos autorizados con registro y revocacion, y maquinas puente; verificacion de cuentas y sustitucion de credenciales por defecto; y verificacion de parametros y busqueda de compromiso."
+  },
+  {
+   "id": "frio-grecia",
+   "ent": "Tiendas de alimentacion y supermercados en Grecia, sin entidad nombrada",
+   "pais": "Grecia",
+   "sec": "com",
+   "tips": [
+    "ot",
+    "cont"
+   ],
+   "vec": [
+    "exp"
+   ],
+   "hecho": "oficial",
+   "causa": "oficial",
+   "cifra": "",
+   "cifra_org": "ninguna",
+   "cifra_pag": "",
+   "afec": "Mas de 300 sistemas expuestos detectados el 14 de octubre, sin localizacion declarada en el texto",
+   "afec_org": "regulador",
+   "conf": "2026-11-03",
+   "conf_aprox": false,
+   "ed": 12,
+   "retro": false,
+   "detalle": "tabla",
+   "url": "https://cyber.gov.gr/i-ethniki-archi-kyvernoasfaleias-eiche-enimerosei-kai-systisei-sygkekrimena-metra-prostasias-gnostopoiontas-ton-kindyno-se-elegktes-emporikis-psyxis/",
+   "estado": "Comunicado de la autoridad nacional, con recomendaciones vigentes",
+   "fecha": "Comunicado de prensa de la autoridad nacional de ciberseguridad del <b>3 de noviembre de 2026</b>, con ultima modificacion el 5, que recuerda su propia advertencia del <b>14 de octubre de 2026</b>",
+   "sabe": "<b>Confirmado por la autoridad nacional:</b> su comunicado se dicta «con motivo de los ataques a sistemas de refrigeracion de tiendas de alimentacion y supermercados <b>en todo el pais</b>», y recuerda que ya el 14 de octubre habia advertido de vulnerabilidades en controladores de refrigeracion comercial de <b>Danfoss, Copeland/Dixell y Carel</b>. <b>Dos hallazgos propios de este comunicado.</b> El primero: <b>Carel es un cuarto fabricante que la alerta francesa nunca listo</b>, y aparece aqui por via oficial. El segundo: es <b>la primera cifra de una autoridad en toda la campana</b>, y es de exposicion y no de perdidas, «deteccion de <b>mas de 300 sistemas expuestos</b> Danfoss, Copeland/Dixell, Carel», con llamada a desconectarlos de inmediato de la Internet publica.",
+   "quien": "La autoridad nacional griega de ciberseguridad, en comunicado propio. <b>Dos precisiones de cita que hay que respetar.</b> Una: el comunicado <b>no dice donde</b> estan esos mas de 300 sistemas; la localizacion en Grecia es una inferencia razonable, <b>no una cita</b>, y no se puede publicar entre comillas. Dos: no «confirma» los ataques como hallazgo propio, los toma como el motivo de recordar su aviso previo, y encuadra ese aviso en los incidentes de Francia.",
+   "obl": "El comunicado recuerda, literal, que «las entidades sujetas a la <b>ley 5160/2024</b>, de transposicion de NIS2, deben notificar todo incidente significativo de ciberataque <b>en el plazo de 24 horas</b>». Es decir: hay una autoridad nacional que ya esta tratando estos incidentes como potencialmente significativos a efectos de NIS2, lo que es mucho mejor que argumentarlo en abstracto.",
+   "lec": "La frase del director de la autoridad, que vale como argumento de comite: «lo que nosotros detectamos lo detecta tambien el atacante; un hueco conocido pero no corregido puede convertirse en dano fisico en una sola noche». Y el dato de los mas de 300 sistemas expuestos es el mejor material disponible para justificar un barrido de exposicion propio: si una autoridad nacional encontro trescientos, un cliente con tiendas puede encontrar los suyos esta semana."
+  },
+  {
+   "id": "frio-finlandia",
+   "ent": "Instalaciones de frio en Finlandia, sin entidad nombrada",
+   "pais": "Finlandia",
+   "sec": "com",
+   "tips": [
+    "ot",
+    "cont"
+   ],
+   "vec": [
+    "desc"
+   ],
+   "hecho": "oficial",
+   "causa": "oficial",
+   "cifra": "",
+   "cifra_org": "ninguna",
+   "cifra_pag": "",
+   "afec": "",
+   "afec_org": "ninguna",
+   "conf": "2026-11-03",
+   "conf_aprox": false,
+   "ed": 12,
+   "retro": false,
+   "detalle": "tabla",
+   "url": "https://www.kyberturvallisuuskeskus.fi/fi/uutiset/iot-ja-ot-ymparistojen-tietoturva-alkaa-laitteiden-suojaamisesta",
+   "estado": "Confirmacion nacional de casos sospechosos, con recomendaciones de proteccion de equipo",
+   "fecha": "Aviso del centro nacional de ciberseguridad finlandes del <b>3 de noviembre de 2026</b> a las 8:52",
+   "sabe": "<b>Confirmado por el centro nacional:</b> «se han detectado ahora <b>tambien en Finlandia</b> ciberataques sospechosos similares». Nombra Danfoss. Y situa la oleada de principios de noviembre en <b>Belgica, Suecia, Irlanda y Estonia</b>, lo que incorpora dos paises nuevos por via oficial indirecta. Habla de «danos economicos significativos» <b>sin cifra</b>. <b>Vector: sin determinar.</b> El aviso alude a que en los equipos «se habia encontrado ya en 2025 una vulnerabilidad para la que ya no habia correccion disponible», pero <b>no da identificador ni producto</b>, y la afirmacion <b>no cuadra con los propios avisos del fabricante de 2025</b>, que si traen version corregida. Es el unico centro que insinua ese vinculo y lo hace de forma imprecisa: <b>no se construye sobre eso</b>.",
+   "quien": "El centro nacional finlandes de ciberseguridad, en su propio aviso, con la cautela de que el caso entra como «sospechoso» en su propia redaccion.",
+   "obl": "No cita obligaciones nacionales concretas. No se afirma que se disparara ningun plazo.",
+   "lec": "Que la cuenta de paises afectados sigue creciendo por avisos nacionales y no por ningun recuento oficial, y que conviene no sumar paises de oido. Oficialmente confirmados por su propia autoridad o por la entidad afectada van ocho, y <b>ninguna fuente oficial ofrece un recuento</b>: la declaracion conjunta de la Union se abstiene expresamente."
+  },
+  {
+   "id": "chainalysis",
+   "ent": "Chainalysis",
+   "pais": "Estados Unidos",
+   "sec": "tec",
+   "tips": [
+    "rgpd",
+    "acc"
+   ],
+   "vec": [
+    "desc"
+   ],
+   "hecho": "oficial",
+   "causa": "oficial",
+   "cifra": "",
+   "cifra_org": "ninguna",
+   "cifra_pag": "",
+   "afec": "",
+   "afec_org": "ninguna",
+   "conf": "2026-10-30",
+   "conf_aprox": false,
+   "ed": 12,
+   "retro": false,
+   "detalle": "tabla",
+   "url": "https://securityaffairs.com/?p=202241",
+   "estado": "Comunicado por la entidad, con parcheo en curso y desglose por cliente pendiente",
+   "fecha": "Declaracion propia de la compania el <b>30 de octubre de 2026</b>, con cobertura el 2 de noviembre",
+   "sabe": "<b>Confirmado por la entidad:</b> acceso no autorizado por un actor externo, cuyos metodos describe como «<b>tecnicas agenticas ofensivas</b>» sin desarrollar, y dice estar parcheando las vulnerabilidades usadas. Datos expuestos, segun la compania: identificadores de usuario, nombre completo, correo y etiquetas de rol en la organizacion de los usuarios aprovisionados. Afirma <b>no accedido</b>: contenido de investigaciones, resultados de transacciones o consultas, contrasenas en claro, secretos de doble factor y credenciales de sesion. <b>Desconocido y declarado como tal por la propia entidad:</b> el numero de afectados, porque sigue determinando que registros corresponden a que cliente, y <b>la via de entrada</b>: describe el medio, no el vector, y por eso en el registro va como sin determinar.",
+   "quien": "La propia compania, en declaracion recogida por prensa especializada. No hay confirmacion de autoridad.",
+   "obl": "No consta notificacion a ninguna autoridad y no se afirma. Es una entidad estadounidense sin perimetro europeo declarado en este incidente, de modo que no se le atribuye ninguna obligacion de la Union.",
+   "lec": "El angulo es quien es la victima: <b>es la firma de analisis de cadena de bloques que usan reguladores y policias europeos, y la que esta trazando el robo de la gran plataforma de criptoactivos</b>. Que la brecha la sufra el trazador, y por tecnicas agenticas, es el dato. Y la leccion de metodo para cualquier cliente: «el atacante uso un agente de IA» describe el medio y no la via de entrada, y confundir las dos cosas ensucia cualquier analisis de causa raiz."
+  },
+  {
+   "id": "workos",
+   "ent": "WorkOS",
+   "pais": "Estados Unidos",
+   "sec": "tec",
+   "tips": [
+    "rgpd",
+    "acc",
+    "sum"
+   ],
+   "vec": [
+    "desc"
+   ],
+   "hecho": "oficial",
+   "causa": "oficial",
+   "cifra": "",
+   "cifra_org": "ninguna",
+   "cifra_pag": "",
+   "afec": "",
+   "afec_org": "ninguna",
+   "conf": "2026-11-06",
+   "conf_aprox": false,
+   "ed": 12,
+   "retro": false,
+   "detalle": "tabla",
+   "url": "https://www.privacyguides.org/news/2026/11/06/data-breach-roundup-oct-30-nov-5-2026/",
+   "estado": "Comunicado por la entidad, con alcance no especificado",
+   "fecha": "Incidente de la semana del 30 de octubre al 5 de noviembre de 2026, recogido el <b>6 de noviembre</b>",
+   "sabe": "<b>Confirmado por la entidad:</b> el atacante <b>uso un agente comercial de inteligencia artificial</b> para entrar en una aplicacion interna de ventas. Datos afectados, segun la compania: contacto profesional, historico de cuentas de cliente, resumenes y extractos de comunicaciones con clientes e informacion de relacion de cuenta. <b>Desconocido:</b> la escala, que no especifica, y <b>la via de entrada</b>, porque describe el medio y no el vector: en el registro va como sin determinar.",
+   "quien": "La propia compania, en publicacion propia recogida por un recopilatorio especializado.",
+   "obl": "No consta notificacion a ninguna autoridad y no se afirma.",
+   "lec": "Es infraestructura de autenticacion e inicio de sesion unico, es decir <b>cadena de suministro de identidad</b>, que es la dependencia que menos clientes tienen inventariada y la que mas duele. La pregunta util para un cliente es cuantos de sus accesos dependen de un proveedor de identidad de terceros y que pasaria con sus sesiones si ese proveedor fuera comprometido."
+  },
+  {
+   "id": "digicert",
+   "ent": "DigiCert",
+   "pais": "Estados Unidos",
+   "sec": "tec",
+   "tips": [
+    "rgpd"
+   ],
+   "vec": [
+    "cfg"
+   ],
+   "hecho": "oficial",
+   "causa": "oficial",
+   "cifra": "",
+   "cifra_org": "ninguna",
+   "cifra_pag": "",
+   "afec": "",
+   "afec_org": "ninguna",
+   "conf": "2026-11-06",
+   "conf_aprox": false,
+   "ed": 12,
+   "retro": false,
+   "detalle": "tabla",
+   "url": "https://www.privacyguides.org/news/2026/11/06/data-breach-roundup-oct-30-nov-5-2026/",
+   "estado": "Comunicado por la entidad, con el sistema retirado de la exposicion",
+   "fecha": "Hecho publico el <b>6 de noviembre de 2026</b>",
+   "sabe": "<b>Confirmado por la entidad, con vector publicado:</b> un fallo en una <b>migracion de servidor</b> dejo un sistema interno expuesto a Internet. Datos afectados, segun la compania: nombres, correos corporativos, telefonos y direcciones, y en algunos casos <b>documentos de identidad, incluidos permisos de conducir, pasaportes y facturas de suministros</b>. Habla de «una pequena parte» de datos archivados y <b>no da numero</b>.",
+   "quien": "La propia compania, en publicacion propia recogida por un recopilatorio especializado.",
+   "obl": "No consta notificacion a ninguna autoridad y no se afirma.",
+   "lec": "Es una <b>autoridad de certificacion</b>, y el vector es de manual, lo que lo hace inmejorable para formacion: una migracion de servidor que deja un sistema interno mirando a Internet. La pregunta para cualquier cliente es quien revisa la exposicion <b>despues</b> de una migracion y con que evidencia, porque el control que falla aqui no es el de parcheo, es el de gestion del cambio. Y los documentos de identidad escaneados en un sistema de archivo son el tipo de dato que casi nunca aparece en el inventario de tratamientos."
+  },
+  {
+   "id": "applebees",
+   "ent": "Applebee's",
+   "pais": "Estados Unidos",
+   "sec": "com",
+   "tips": [
+    "rgpd"
+   ],
+   "vec": [
+    "cred"
+   ],
+   "hecho": "prensa",
+   "causa": "prensa",
+   "cifra": "",
+   "cifra_org": "ninguna",
+   "cifra_pag": "",
+   "afec": "",
+   "afec_org": "ninguna",
+   "conf": "2026-10-30",
+   "conf_aprox": false,
+   "ed": 12,
+   "retro": false,
+   "detalle": "tabla",
+   "url": "https://techcrunch.com/2026/10/30/applebees-exposed-customers-personal-data-after-leaving-database-password-in-app/",
+   "estado": "Corregido tras la divulgacion, reconocido por la compania",
+   "fecha": "Publicado el <b>30 de octubre de 2026</b>",
+   "sabe": "<b>Vector publicado, y es el motivo por el que esta ficha entra:</b> la <b>contrasena de la base de datos estaba incrustada en la aplicacion movil</b>, con acceso sin restriccion. Datos expuestos: nombre, correo, fecha de nacimiento, telefono, codigo postal, condicion de veterano, numero de inicios de sesion, fecha de creacion de cuenta y direcciones de los accesos recientes. <b>Sin numero de afectados.</b>",
+   "quien": "Prensa tecnologica solvente identificada, con correccion reconocida por la compania. <b>El hecho entra con etiqueta de prensa</b>, no de confirmacion de la entidad.",
+   "obl": "Entidad estadounidense sin perimetro europeo declarado. No se le atribuye ninguna obligacion de la Union y no consta notificacion.",
+   "lec": "Entra solo por el vector, y por eso vale: es la demostracion de que <b>una credencial embarcada en una aplicacion movil es una credencial publica</b>. Junto con el usuario y contrasena de fabrica que un fabricante de supervisores de frio publica en su propio boletin y con las contrasenas embebidas en el gestor de centro de datos de esta misma semana, son tres casos del mismo defecto de clase en siete dias. Si un cliente tiene aplicacion movil propia, la pregunta de esta semana es quien ha mirado dentro del paquete."
   }
  ]
 }
