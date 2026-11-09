@@ -654,3 +654,150 @@ a `%` donde sí lo hace, el generador aborta.
   cualquier ruta, lo que produce **falsos positivos de fecha** si se raspa el antiguo.
 - **El registro de certificaciones del ENS admite fechas de concesión futuras** y va con retraso de carga. No
   es un diario de altas: sirve para el total y la tendencia, no para una serie temporal fina.
+
+## Lo aprendido y lo pendiente de la edición 012 (09/11/2026)
+
+### Correcciones a este propio LEEME, que conviene hacer antes de volver a usarlo
+
+- **El paquete de infracciones de octubre de 2026 se decidió y se comunicó el 1 de octubre**, no el 30 de
+  septiembre. La fuente primaria (INF/26/1760) da `eventDate` 2026-10-01 y usa «hoy la Comisión ha decidido»;
+  el 30 de septiembre no aparece ni en los metadatos ni en el texto. Y **no existe ningún paquete de
+  septiembre de 2026**: los de 2026 son seis, 30 ene (INF/26/115), 11 mar (INF/26/431), 29 abr (INF/26/720),
+  4 jun (INF/26/1084), 8 jul (INF/26/1376) y 1 oct (INF/26/1760). La lista de fechas que este LEEME traía
+  («29 ene, 10 mar, 28 abr, 3 jun, 7 jul y 30 sep») mezcla fechas de decisión con fechas de comunicado.
+  Criterio a partir de ahora: usar la fecha que da el propio documento y no deducir la decisión.
+- **La lista anual de proveedores terceros críticos de TIC es del artículo 31(9) de DORA, no del 31(8).** El
+  31(8) es la lista de exclusiones de la designación. Citar el 8 dice lo contrario de lo que se quiere decir.
+- **El considerando de CER que limita el sector alimentario es el 5, no el 29.**
+- **El artículo 2.2.c) de NIS2 dice «el orden público», no «la protección pública».** La expresión «la
+  seguridad y la protección públicas» sí existe, pero en el considerando 69 y sobre incidentes a gran escala.
+- **El artículo 23.11 de NIS2 no cubre a los proveedores de servicios de confianza.** Su listado obligatorio
+  es de infraestructura y servicios digitales.
+- **«Entidad importante y no esencial» está incompleto para la alimentación.** El artículo 3.1.e) permite al
+  Estado que designa por el artículo 2.2 letras b) a e), y la c) es la de salud pública, clasificar la entidad
+  como **esencial**, con el régimen del 34.4 (10 millones o 2 %) en lugar del 34.5 (7 millones o 1,4 %).
+- **El techo del 2 de agosto de 2030 del artículo 111.2 del Reglamento de IA ya estaba en el texto de 2024.**
+  Lo que el Reglamento 2026/1744 cambió es el disparador, que pasa de fecha fija a la fecha de aplicación del
+  capítulo III.
+- **La trampa de los enlaces de fichas ISO muy vendidas no se reproduce.** `committee.iso.org/standard/42001`
+  sin `.html` sirve hoy la ficha correcta, no una etapa 95.99 de 2014. Dejar el aviso pero como no reproducible.
+
+### Ganancias de método, que son las que ahorran tiempo el lunes que viene
+
+- **La AEPD es alcanzable.** Lo que falla son tres direcciones de canal heredadas (HTTP 500) y **cualquier
+  cadena de consulta en sus vistas** (403 de Akamai, incluidos `?page=` y el parámetro de ordenación). Los
+  canales que funcionan: `/noticias/feed.xml`, `/blog/feed.xml` y
+  `/informes-y-resoluciones/resoluciones/feed.xml`. El mapa del sitio **sí** acepta parámetros. Los listados
+  de resoluciones y de blog se sirven montados en servidor; el de notas de prensa se carga por guion. Hay
+  retraso de caché demostrado: el canal del blog omitió una entrada del 3 de noviembre que sí estaba en el
+  listado, así que los ceros de la AEPD van «con reserva de caché».
+- **Para todo articulado de la UE, el Cellar sustituye a EUR-Lex y no es evasión:**
+  `publications.europa.eu/resource/celex/<CELEX>` con `Accept: application/xhtml+xml` y `Accept-Language`.
+  Sin `Accept-Language` devuelve 400. Para propuestas COM puede devolver **HTTP 300** y hay que seguir al
+  `.../DOC_1`. Y dos CELEX que existen devuelven 404 por esta ruta (`52026DC0710`, `52026PC0013`): hay que ir
+  por SPARQL al identificador de cellar y de ahí al DOC_1 o DOC_2. **WebFetch no sirve para articulado
+  consolidado largo: trunca en torno a 133.000 caracteres.**
+- **Trampa de SPARQL que produce ceros falsos y que ya ha costado una pasada:** `?x
+  cdm:resource_legal_id_celex "32022L2555"` como literal llano devuelve cero **también para la norma de
+  control**, porque el celex va tipado. La forma que funciona es
+  `?x cdm:resource_legal_id_celex ?c . FILTER(CONTAINS(STR(?c),"32022L2555"))`. Y en medidas nacionales, un
+  `MAX` agregado con `VALUES` devolvió un máximo falso donde el `GROUP BY ?fecha` dio el correcto: usar el
+  desglose por fecha.
+- **El HTML de presscorner sirve una cáscara vacía.** La vía es la API JSON,
+  `ec.europa.eu/commission/presscorner/api/documents?reference=...`, que devuelve el contenido en limpio, y
+  `.../api/search?text=...` para buscar. El parámetro `query` de la API de búsqueda **se ignora**. Y el sondeo
+  de referencias inexistentes devuelve **HTTP 200 con cuerpo vacío**, que es la señal de inexistencia.
+- **Rutas correctas de la CNMV:** `www.cnmv.es/portal/otra-informacion-relevante/resultado-oir?fechaDesde=...`
+  y `www.cnmv.es/portal/informacion-privilegiada/resultado-ip?...`, con `page` empezando en 0; el sufijo
+  `.aspx` es opcional y da el mismo resultado byte a byte. Las rutas de `consultas/busqueda/` devuelven 403
+  por ruta incorrecta, no por bloqueo. **Falso positivo recurrente: «dora» casa dentro de «DISTRIBUIDORA».**
+  Usar límite de palabra.
+- **Siemens:** el índice y el `changes.csv` del directorio CSAF devuelven 403, pero el **feed CSAF completo**
+  `cert-portal.siemens.com/productcert/csaf/ssa-feed-tlp-white.json` responde 200 y permite enumerar
+  publicaciones y revisiones. El RSS clásico está **congelado en el 22 de enero de 2026**: usarlo produce un
+  falso «sin novedad».
+- **SonicWall:** la página de su PSIRT es una cáscara de guion de menos de 1 KB. La vía es
+  `psirtapi.global.sonicwall.com/api/v1/vulndetail/?advisory_id=SNWLID-...`, que devuelve el historial.
+- **Datatilsynet danesa:** su canal real lleva un identificador opaco enlazado en el pie,
+  `/gbapi/rss/feed?id=...`. Las rutas evidentes devuelven 404.
+- **Garante italiano:** `garanteprivacy.it/o/gpdp-rss/rss?t=news` funciona; las fichas `docweb` sirven una
+  redirección por metarrefresco cuyo destino (`gpdp.it/...`) sí trae el contenido.
+- **La Moncloa:** el patrón `refc<AAAAMMDD>.aspx` ya no existe y **deja la conexión caída**, que es la forma
+  más fácil de confundir fuente inalcanzable con reunión inexistente. El patrón vigente es
+  `<AAAAMMDD>-referencia-rueda-de-prensa-ministros.aspx`. Y **la referencia publicada está truncada en
+  origen**: se corta a mitad de palabra en el último asunto. No hay cola que leer.
+- **La base de dictámenes del Consejo de Estado del BOE lleva un mes de retraso.** Comprobado: 26 dictámenes
+  desde el 1 de septiembre y el más reciente con fecha de aprobación de 8 de octubre de 2026. **Su cero nunca
+  es concluyente.** Y su búsqueda libre no hace búsqueda de frase.
+- **NIST:** para `CSWP` e `IR` el campo «Date Published» da **solo el mes**. El día sale del «Document
+  History» de la ficha o de la nota de retirada del documento derogado. Y la ruta corta `/pubs/cswp/50/final`
+  devuelve 404: hay que usar el slug completo.
+- **CERT-FR no numera las versiones de sus alertas.** No existe un «v3» que citar: lo citable es «última
+  revisión del DD de mes». Y en el índice, las alertas actualizadas llevan el prefijo `[MàJ]` en el título,
+  lo que da una forma rápida de distinguir «en curso» de «actualizada».
+- **Tres fuentes que dan la fecha del listado distinta de la del documento**, y las tres salieron esta
+  semana: en ENISA, los marcadores temporales de dos avisos técnicos están **cruzados entre sí**; su
+  comunicado de PHP aparece con fecha de noviembre siendo de octubre; y el mapa del sitio de DG CONNECT
+  mostró 98 páginas con fecha de la ventana por una **regeneración masiva del sitio**. Regla: la fecha buena
+  es la que el documento declara en su cuerpo.
+- **Rastreadores de ataques obsoletos.** El agregador que aparece en primeras posiciones con el rótulo de
+  ataques de 2026 sirve entradas de enero a agosto de **2025** y ninguna de noviembre de 2026. Es un cero
+  falso, no un bulo, y es peor.
+
+### Cambio de taxonomía: vector `hum`
+
+Se ha añadido a `VECTORES` el vector **`hum`, «Error humano al enviar o publicar»**. Hacía falta: la sanción
+polaca de esta edición trae el mecanismo publicado por el regulador con todo detalle, una empleada que adjunta
+un fichero por error y un fichero que queda publicado en la plataforma. Meterlo en `cfg` habría ensuciado el
+filtro que tiene que ser fiable, y dejarlo en `desc` habría perdido un dato que la fuente sí publica. **Las
+entradas antiguas no se han reclasificado**: solo se usa donde la fuente lo declare.
+
+### Correcciones de vector con fuente propia, hechas en esta edición
+
+Se han corregido dos vectores de fichas antiguas, y queda dicho en el `act` de cada una, que es la forma de no
+destruir el rastro: **`copenhague`** pasa a `cfg` porque la entidad declara un error de configuración en un
+entorno de pruebas y lo califica de error propio, y **`eichstatt`** pasa a `ter` porque el ayuntamiento
+declara entrada por una brecha de seguridad de un proveedor de software. Criterio: el vector se corrige cuando
+la fuente propia lo publica, porque el filtro tiene que ser fiable; la prosa antigua no se toca.
+
+### Un `%%` latente corregido en el banco
+
+La ficha `ua` (Universidad de Alicante, edición 002) llevaba desde agosto un `%%` en el campo `sabe`, que
+salía literal en la página. Corregido **en la entrada**. Conviene barrer `banco.json` por `%%` cada lunes:
+es una línea y evita que se repita.
+
+### Decisiones que necesita David, y dos son nuevas
+
+1. **El censo NANDO del Reglamento de Ciberresiliencia.** El buscador exige una clave que la propia
+   aplicación pública de la Comisión incrusta en el navegador, y usarla desde este entorno queda bloqueada
+   por su política de seguridad. No se ha eludido ni se eludirá por iniciativa propia. **O David autoriza
+   expresamente esa consulta, o el cero de organismos notificados se arrastra con fecha del 26 de octubre.**
+   No se ha encontrado una tercera vía, y el hito del artículo 35.2 es el 11 de diciembre.
+2. **Los cuatro `%%` del CSS de `web.py`** (punto 5 de este LEEME) siguen sin tocar, porque un lunes no toca
+   maqueta. Es un carácter por sitio y conviene hacerlo en una pasada aparte.
+3. **Las dos escalas de color del mapa** (punto 3) siguen pendientes de su confirmación.
+4. **La identidad de la ficha `comtf`**, «colegio de médicos de Tenerife», de la edición 009. No se ha podido
+   reconfirmar y las búsquedas dirigidas no devuelven nada; sí existe un caso de junio de 2026 en el
+   **colegio de enfermería** de la misma provincia. Hay que resolverlo antes de volver a citarla. Se ha dejado
+   la entrada con el aviso en su `act` en vez de borrarla.
+5. **La lista de destinatarios de los dos correos** sigue incompleta: David dijo «y algunos más».
+
+### Pendientes concretos para la edición 013
+
+- **Fechar la brecha del estudio nacional ENEIDA** comunicada por un hospital universitario de Valladolid. La
+  página se lee pero **no lleva fecha de publicación**, y sin fecha verificable no entra. Hay un PDF homólogo
+  de otra gerencia sin abrir cuyo nombre de fichero sugiere 2025.
+- **Verificar o descartar el ayuntamiento de Santa Perpètua de Mogoda**, que solo consta por una mención de
+  pasada en un medio canario.
+- **Reintentar la nota hib 899/2026 del Bundestag**, de 5 de noviembre, que devuelve 404 y es la única fuente
+  que sostiene los seis dispositivos infectados y la única que menciona un segundo vector, el bombardeo de
+  correo.
+- **Pedir el informe posterior al incidente de Binance**, comprometido en su actualización del 1 de noviembre.
+- **Barrer los canales propios de las demás cadenas de distribución afectadas** (ICA, Coop Suecia, Carrefour
+  Bélgica, Intermarché, Musgrave, Selver, Kesko): sus páginas de prensa no fueron alcanzables esta semana.
+- **Las publicaciones propias de las dos casas de seguridad** que dieron telemetría de la campaña del frío,
+  si se quieren usar sus cifras como algo más que prensa sectorial.
+- **Mirar `adif`, `adifrenfe` y `renfe`**, que siguen sin tocar y pueden ser el mismo caso contado tres veces.
+- **El peso de la página va por 758 KB con 87 incidentes.** Sube menos de lo lineal porque las trece entradas
+  nuevas de tabla pesan poco, pero el umbral de decisión de los 150 incidentes de este LEEME se acerca:
+  a este ritmo se alcanza en cinco o seis ediciones.
