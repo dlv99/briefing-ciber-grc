@@ -801,3 +801,189 @@ es una línea y evita que se repita.
 - **El peso de la página va por 758 KB con 87 incidentes.** Sube menos de lo lineal porque las trece entradas
   nuevas de tabla pesan poco, pero el umbral de decisión de los 150 incidentes de este LEEME se acerca:
   a este ritmo se alcanza en cinco o seis ediciones.
+
+## Lo aprendido y lo pendiente de la edición 013 (16/11/2026)
+
+### Un defecto de la plantilla que hay que arreglar, y que lleva ediciones sin verse
+
+**`web.py` importa `BULOS` dos veces y la segunda ensombrece a la primera.** La línea 5 trae
+`BULOS` de `contenido.py` y la línea 10 lo vuelve a traer de `incidentes.py`. Gana la segunda. La
+consecuencia es que **la lista `BULOS` de `contenido.py` nunca se renderiza**, y la pestaña
+«Correcciones» del panorama europeo enseña en realidad los bulos del registro de incidentes, los
+mismos que ya salen en la sección de incidentes. Es decir: **las correcciones editoriales que se
+escriben en `contenido.py` no las ve nadie**, y probablemente lleva así desde que se creó el
+registro acumulado.
+
+Mientras no se arregle, y un lunes no toca maqueta, **las correcciones que tienen que llegar al
+lector van en `incidentes.py`**, que es la lista que sí se renderiza en los dos sitios. Así se ha
+hecho en esta edición, y en `contenido.py` queda un comentario que lo explica. El arreglo es
+renombrar una de las dos, por ejemplo `CORRECCIONES` en `contenido.py`, y darle su propio bucle en
+la pestaña del mapa. **No se hace por iniciativa propia porque toca `web.py`.**
+
+### El banco necesita las claves de prosa aunque estén vacías
+
+`web.py` accede a `r["sabe"]`, `r["quien"]`, `r["obl"]` y `r["lec"]` **por índice directo y no con
+`get`**, también en las filas de tabla. Las entradas reconstruidas conservaban su prosa, así que
+nunca había fallado. Una entrada nueva de `detalle: "tabla"` escrita sin esos campos **aborta el
+generador con `KeyError`**. El validador de `incidentes.py` no lo detecta, porque solo los exige en
+las fichas. Se ha parcheado la entrada, como manda la regla: todas las entradas del banco llevan
+ahora esas seis claves, vacías donde no aplican. **Si se da de alta un incidente de tabla, hay que
+incluirlas vacías.**
+
+### Acentos: las entradas nuevas los llevan, las de la edición 012 no
+
+Las fichas que se dieron de alta en la edición 012 se escribieron **sin acentos** y así salen
+publicadas. Las de esta edición se han escrito con acentos correctos. Queda, por tanto, una
+inconsistencia visible en el registro. **No se han tocado las antiguas**, porque la regla dice que
+la prosa publicada no se reescribe, pero conviene decidir algún lunes si se hace una pasada de
+corrección ortográfica declarada en el `act` de cada una.
+
+### Trampas de fecha y de método aprendidas el 16/11/2026
+
+- **La ruta de consulta por referencia de presscorner que traía este LEEME ya no funciona.**
+  `api/documents?reference=INF_26_XXXX` devuelve HTTP 400, y añadiendo `&language=en` devuelve
+  **HTTP 200 con cuerpo vacío**, que es indistinguible de una referencia inexistente. La que
+  funciona hoy lleva las barras codificadas y el idioma en minúscula:
+  `api/documents?reference=INF%2F26%2F1760&language=en`. El buscador `api/search?text=...` sigue
+  funcionando como estaba documentado.
+- **La Moncloa publicó la referencia del 13/11/2026 con una errata en origen en el identificador**:
+  `20261113-refencia-rueda-de-prensa-ministros.aspx`, sin la segunda «e» de «referencia».
+  Construir la dirección por el patrón canónico **falla en silencio** y hace desaparecer una reunión
+  entera del Consejo de Ministros. **Entrar siempre por el índice de referencias, no por patrón.**
+- **El historial de revisiones de CERT-FR está incompleto.** La alerta ALE-015 declara **una sola
+  entrada** en su array `revisions`, del 05/11/2026, y sin embargo **el cuerpo de su resumen empieza
+  con «[Mise à jour du 6 novembre 2026]»**. Hay que mirar las dos cosas: el array y el texto. Esto
+  matiza, sin anularlo, el método de ALE-012, cuyo array sí es coherente con la ausencia del
+  prefijo `[MàJ]` en el título.
+- **En el espejo del catálogo de ISO, la dirección por número de norma NO es la ficha.**
+  `committee.iso.org/standard/42001.html` devuelve **ISO 12164-4:2008, conos huecos**, y
+  `/standard/27000.html` devuelve **ISO 11451-1:1995, vehículos de carretera**, las dos con HTTP 200.
+  Falso positivo perfecto: página válida, norma equivocada. Fichas reales: 82875 (27001),
+  81230 (42001), 44545 (42005), 44546 (42006), **61007 (27028)**.
+- **Las fichas de «National News» del CEPD llevan el campo «Date of final decision» y casi nunca
+  coincide con la fecha del listado.** De tres decisiones italianas publicadas el 10/11/2026, una es
+  de **mayo de 2026** (Wind Tre, 1,7 millones), otra de **septiembre** y la tercera no trae el campo.
+  Publicar la fecha del listado como fecha de la sanción habría metido 1,7 millones de euros falsos
+  en esta edición.
+- **Para barrer el DOUE por semana, el predicado es `cdm:official-journal-act_date_publication`.**
+  El que parece natural, `cdm:resource_legal_date_publication`, devuelve **cero falso con HTTP 200**.
+  Con el bueno, una semana completa son unos 222 registros en una sola consulta.
+- **El predicado de publicación del DOUE cuelga directamente del `work`**, no de un nodo intermedio
+  de diario oficial: consultarlo por nodo `?oj` da otro cero falso.
+- **Falso positivo nuevo en la CNMV: el pie y el menú de su propio portal contienen «ciber».** Un
+  barrido ingenuo del volcado bruto de los registros devuelve 32 coincidencias que son navegación.
+  Hay que recortar al bloque de resultados, igual que con «DISTRIBUIDORA».
+- **La trampa de «dora» dentro de otra palabra también muerde en el BOE**, no solo en la CNMV:
+  DEPURADORA, EXPENDEDORA, OPERADORA, COORDINADORA, CONSUMIDORAS. Doce falsos positivos en una
+  semana. Límite de palabra siempre.
+- **El BCE sirve índices vacíos y canales RSS buenos.** Los índices por fecha devuelven 200 con solo
+  los filtros. Funcionan `ecb.europa.eu/rss/press.html`,
+  `bankingsupervision.europa.eu/rss/press.html`, `.../rss/pub.html` y `.../rss/speeches.html`. En
+  cambio `ecb.europa.eu/rss/speeches.html` devuelve 404. Traen quince elementos: sirven para una
+  ventana semanal y no para más.
+- **El índice del Boletín de Supervisión del BCE y el título del artículo no coinciden.** El índice
+  titulaba «el paso final en la simplificación de las metodologías del SREP» y el artículo abierto
+  se titula «una metodología más ligera para los riesgos de liquidez y financiación». Su bloque
+  «risk controls» es de **controles de liquidez, no de controles TIC**.
+- **La DGSFP se puede leer aunque su página esté vacía**: el HTML trae plantillas sin resolver y el
+  listado se obtiene por el mismo servicio de datos que usa la propia página. Su dominio es
+  intermitente y corta conexiones, como INCIBE-CERT: hay que reintentar.
+- **La ficha del INCIBE-CERT sobre un incidente no está en `alerta-temprana/avisos`**, que es feed de
+  vulnerabilidades, sino en la **bitácora de ciberseguridad**. Y ojo al copiar la ruta: el menú dice
+  `bitacora-ciberseguridad` y la entrada lleva `bitacora-de-seguridad`.
+- **El observatorio legislativo del Parlamento Europeo ignora el filtro de texto** y devuelve
+  resultados no relacionados con HTTP 200. Es el mismo tipo de falso negativo que el de la
+  legislatura del Congreso, y deja sin rastrear el estado procedimental del Digital Omnibus.
+- **El buscador de documentos del CEPD ignora `search_api_fulltext`** y devuelve siempre los 555
+  documentos sin filtrar.
+- **El Supervisor Europeo de Protección de Datos ya no es del todo inalcanzable**, corrigiendo a las
+  dos ediciones anteriores: su **portada** responde 200 con el bloque de noticias en HTML y fechas.
+  Las páginas internas siguen bloqueadas: hay titulares, no contenido.
+- **La AEPD sigue sin poder datarse.** Su canal de resoluciones devuelve 100 entradas **sin `pubDate`
+  en ninguna**, y la vista con fecha sirve 10 elementos sin orden cronológico. **No es posible acotar
+  ninguna resolución de la AEPD a una ventana semanal.** Es laguna estructural, no de búsqueda.
+- **No existe paquete de infracciones de noviembre de 2026** a 16/11. Los de 2026 son seis: 30 ene,
+  11 mar, 29 abr, 4 jun, 8 jul y 1 oct. Referencia de calibración: en 2025 el de noviembre fue el
+  día 21. **Vigilarlo el lunes que viene.**
+
+### Correcciones de contenido que salieron del pase adversarial, y que valen como método
+
+El pase adversarial sobre la atribución francesa **tumbó tres afirmaciones** que estaban en el
+borrador y que habrían salido publicadas. Conviene dejarlas escritas porque son el tipo de error
+que más daño hace:
+
+1. **El embajador iraní no fue convocado el 9 de noviembre.** La declaración está en futuro, «va a
+   convocar». El portavoz del ministerio precisó el 13 que se hizo **el martes 10**, a nivel de
+   Secretario General.
+2. **No hay propuesta formal de sanciones europeas.** La declaración dice «propondrá», y el 13 el
+   ministerio reconocía que seguía «consolidando los elementos» y que harían falta «algunos días,
+   algunas semanas de trabajo».
+3. **No interviene la fiscalía antiterrorista y las órdenes de detención están requeridas, no
+   emitidas.** La calificación es de derecho común agravado por el fin de servir a una potencia
+   extranjera, no terrorista. Y los mandatos constan en la actualidad de la ANSSI, no en el
+   comunicado de la Fiscalía.
+
+Y una cuarta, de atribución de cifras: **las «varias decenas de millones de euros» las da solo el
+Ministerio de Exteriores**. El informe técnico del C4 no cuantifica nada y el portavoz las expresó
+el 13 como «millones de euros». El C4 dice «unos 700» emplazamientos y Exteriores «más de 700».
+
+**El caso de Salvamento Marítimo enseña lo contrario y es igual de importante:** el encargo lo daba
+por probable bulo porque la única pieza localizada era floja. Buscar más abajo sacó una declaración
+nominada de la propia entidad a elDiario.es y una pieza independiente seis días anterior. **La
+primera fuente que aparece no es la mejor fuente**, y un pase adversarial que solo busque tumbar
+también puede equivocarse por exceso.
+
+### Correcciones a datos de terceros, verificadas
+
+- **La página «DORA Oversight» de las autoridades europeas cita el artículo equivocado.** Dice que
+  publican la lista de proveedores críticos «conforme al artículo 31(8)». Es el **31(9)**. El 31(8)
+  es la lista de **exclusiones** de la designación. El PDF que esa misma página enlaza cita bien.
+- **La lista de proveedores terceros críticos de TIC sigue siendo la de 18/11/2025**, con 19
+  proveedores. Las rutas `/2026-11/` y `/2026-10/` del mismo fichero devuelven 404. El 18/11/2026
+  cumple un año. La frase defendible es «periodicidad anual incumplida de hecho», **no «plazo
+  vencido»**, porque el 31(9) fija periodicidad y no fecha de calendario.
+- **INCIBE-CERT contó 23 vulnerabilidades críticas en el martes de parches de noviembre** y tanto el
+  documento del propio fabricante como el aviso del CCB belga cuentan **63**. No se sabe con qué
+  subconjunto cuenta INCIBE. Se publica la discrepancia, no se resuelve.
+- **Cisco afirmó explotación activa de CVE-2026-20320 el 12/11 y se desdijo el 13/11**, dejando
+  escrito que «no tiene evidencia directa de explotación activa» mientras CISA la mantiene en el
+  catálogo. Es un desacuerdo real entre dos fuentes que suelen citarse como una.
+
+### Pendientes concretos para la edición 014
+
+- **Vigilar el paquete de infracciones**, que por cadencia toca entre el 16 y el 28 de noviembre y
+  es la vía por la que podría llegar una decisión nueva sobre España.
+- **Comprobar si las autoridades europeas publican la lista anual de proveedores críticos de TIC**,
+  cuyo aniversario es el 18 de noviembre.
+- **Seguir si Amadeus comunica algo a la CNMV** y si aparece alguna aerolínea española entre las
+  afectadas. El barrido del 1 al 16 de noviembre dio cero.
+- **Abrir el comunicado propio del grupo postal francés** sobre los 22 millones. La única versión
+  propia localizada lleva una fecha imposible, «16 novembre 2025», y no se puede datar de forma
+  independiente.
+- **Seguir la investigación de oficio de la autoridad letona** sobre el operador de mensajes de
+  texto, que declaró no haber recibido notificación alguna.
+- **Verificar la pista sin cerrar de una brecha en un proveedor que afectaría a la filial francesa
+  de una gran cadena de distribución.** La única pieza localizada prohíbe el acceso automatizado.
+- **Reintentar la nota hib 899/2026 del Bundestag** por `dserver.bundestag.de`, que es la vía no
+  probada. Van cuatro intentos fallidos acumulados.
+- **Barrer los canales propios de las siete cadenas de distribución** afectadas por la campaña del
+  frío. Pendiente arrastrado dos ediciones.
+- **Arrastres vivos de la 012**: fechar la brecha del estudio ENEIDA de Valladolid, verificar o
+  descartar Santa Perpètua de Mogoda, resolver la identidad de la ficha `comtf`, y mirar `adif`,
+  `adifrenfe` y `renfe`, que pueden ser el mismo caso contado tres veces.
+- **El peso de la página va por 833 KB con 107 incidentes**, frente a 758 KB con 87. Sube unos 75 KB
+  por cada veinte entradas, de las cuales siete eran fichas. **El umbral de decisión de los 150
+  incidentes de este LEEME se alcanza en dos o tres ediciones a este ritmo**, y conviene ir
+  preparando la carga aparte de la prosa de las entradas antiguas.
+
+### Decisiones que siguen necesitando a David
+
+1. **El censo NANDO del Reglamento de Ciberresiliencia.** Sin autorización expresa, el cero de
+   organismos notificados se arrastra con fecha del 26 de octubre. El hito del artículo 35.2 es el
+   **11 de diciembre**, dentro de tres semanas.
+2. **Los cuatro `%%` del CSS de `web.py`** (punto 5 de este LEEME) siguen sin tocar. Reconfirmados
+   esta semana en la página publicada.
+3. **El defecto de `BULOS` ensombrecido** descrito arriba. Es el más consecuente de los tres,
+   porque hace invisible una sección entera.
+4. **Las dos escalas de color del mapa** (punto 3) siguen pendientes de confirmación.
+5. **La lista de destinatarios de los dos correos** sigue incompleta: dijo «y algunos más».
