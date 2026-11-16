@@ -232,80 +232,133 @@ TABLA  = [r for r in INCIDENTES if r["detalle"] == "tabla"]
 # NO es la papelera de lo no confirmado: eso ahora entra al banco con
 # su etiqueta. Aqui solo lo que es falso o lo que te hara contar de mas.
 BULOS = [
+ ('«Francia emitió órdenes de detención y propuso sanciones europeas contra Irán el 9 de noviembre.»',
+  '<b>Las dos cosas están un paso por delante de lo que dicen los documentos, y conviene corregirlo antes de '
+  'repetirlo en una reunión.</b> Las órdenes de detención internacionales constan <b>requeridas, no '
+  'emitidas</b>: la agencia francesa de ciberseguridad dice que la Fiscalía de París «ha requerido la '
+  'expedición» de esos mandatos, y el comunicado de la propia Fiscalía, leído entero, <b>no los menciona</b>. '
+  'Y de sanciones europeas <b>no hay propuesta formal depositada</b>: la declaración del 9 de noviembre está '
+  'en futuro, «Francia propondrá a sus socios europeos», y el 13 de noviembre el portavoz del ministerio '
+  'reconocía que seguían «consolidando los elementos para llevar el expediente a la Unión Europea» y que '
+  'harían falta «algunos días, algunas semanas de trabajo». Añádase un tercer error de fecha que circula: '
+  '<b>el embajador iraní no fue convocado el 9, sino el martes 10</b>, y a nivel de Secretario General del '
+  'ministerio, según precisó el propio portavoz.'),
+ ('«Del caso de la refrigeración se ocupa la fiscalía antiterrorista francesa.»',
+  '<b>No.</b> La Fiscalía de París abrió el 9 de noviembre una <b>instrucción</b> por acceso fraudulento a '
+  'sistema de tratamiento automatizado de datos y daños por medio peligroso, en banda organizada, agravados '
+  'por el fin de servir a una potencia extranjera, más asociación de malhechores. Son calificaciones de '
+  '<b>derecho común agravado, no terroristas</b>, y por eso la fiscalía antiterrorista <b>no aparece en '
+  'ningún documento oficial</b>. La investigación está encomendada a la oficina anticibercriminalidad y al '
+  'servicio de inteligencia interior, bajo la dirección de los jueces de instrucción designados.'),
+ ('«La atribución francesa cubre toda la campaña europea de la refrigeración.»',
+  '<b>Cubre menos de lo que parece, y la diferencia importa.</b> La declaración de Exteriores se refiere a la '
+  'campaña de <b>la noche del 11 al 12 de octubre de 2026</b> en Francia. La declaración conjunta del 4 de '
+  'noviembre de la Comisión, ENISA, el centro de ciberdelincuencia de Europol, la red de CSIRT y EU-CyCLONe '
+  'constata incidentes «en varios Estados miembros» desde el 11 de octubre y <b>una segunda oleada el 1 y el '
+  '2 de noviembre</b>, y <b>no atribuye a nadie</b>. Esa segunda oleada, que es la que tocó a Bélgica, los '
+  'Países Bajos y los países nórdicos, <b>sigue sin atribuir</b>. Y entre el 9 y el 15 de noviembre ni ENISA '
+  'ni la Comisión publicaron reacción a la atribución francesa: barrido completo del índice de noticias de '
+  'ENISA, <b>cero apariciones de Irán</b>.'),
+ ('«Las pérdidas de la campaña del frío son de varias decenas de millones de euros, según Francia.»',
+  '<b>Según una parte de Francia, y conviene decir cuál.</b> La cifra procede <b>en exclusiva</b> de la '
+  'declaración política del Ministerio de Exteriores del 9 de noviembre. El <b>informe técnico del Centro de '
+  'Coordinación de Crisis Ciber no cuantifica nada</b> en euros, solo habla de «pérdidas de mercancía '
+  'importantes», y la actualidad publicada por la agencia de ciberseguridad <b>tampoco da ninguna cifra</b>. '
+  'Es más: el 13 de noviembre el portavoz del propio ministerio rebajó el orden de magnitud al hablar de '
+  '«toneladas de alimentos que hubo que tirar y millones de euros desperdiciados». Publíquese siempre con '
+  'procedencia, nunca como dato técnico. Y la discrepancia menor, que también está entre los dos documentos '
+  'del mismo día: el informe técnico dice <b>«unos 700»</b> emplazamientos y Exteriores dice <b>«más de '
+  '700»</b>.'),
+ ('«Schneider Electric tiene una vulnerabilidad explotada en la campaña de la refrigeración.»',
+  '<b>Ningún documento oficial lo dice, y escribirlo es un riesgo para un tercero.</b> El informe del C4 '
+  'sitúa equipos de ese fabricante en pequeñas instalaciones hidroeléctricas como <b>objetivo</b> del mismo '
+  'ataque, con «efectos moderados», y describe que la unidad atacante usó el protocolo Modbus sobre el puerto '
+  '502 para reconocimiento. <b>No imputa fallo de producto</b>, no cita ningún CVE y no hay aviso de '
+  'fabricante asociado a esta campaña. Lo mismo vale para la alerta del equipo de respuesta francés sobre los '
+  'controladores de frío: <b>no cita ni un CVE</b>, y los identificadores que existen para esos productos son '
+  'de agosto de 2026 y anteriores. <b>Que existan CVE no significa que la campaña los explotara.</b>'),
  ('«Los 250 millones de euros de Ahold Delhaize son el coste del ataque a la refrigeración.»',
-  '<b>Desmentido con el comunicado propio de la entidad.</b> Un teletipo de agencia del 4 de noviembre de 2026 '
-  'presenta los 200 a 250 millones de ventas y los 75 a 100 millones de resultado operativo en el mismo '
-  'contexto que los ataques a los frigoríficos. El comunicado de resultados del grupo, del mismo 4 de '
-  'noviembre a las 07:30, los atribuye a <b>un incidente de ciberseguridad de octubre de 2026 que afectó '
-  'principalmente a las capacidades en línea en el Benelux y Estados Unidos y a la cadena de suministro del '
-  'Benelux</b>, y añade que Bol no se vio afectada. <b>La palabra refrigeración no aparece ni una vez en todo '
-  'el comunicado</b>, recontado. Ese perfil es el del incidente de servicios de TI del 11 de octubre, que la '
-  'propia página de Delhaize separaba del de refrigeración del 2 de noviembre. <b>La campaña de refrigeración '
-  'sigue sin una sola cifra económica publicada por un CERT, un regulador o una cadena.</b>'),
- ('«Binance cifró su robo en 40 millones de dólares y 7.000 bitcoins.»',
-  '<b>Trampa de fecha, y es la más peligrosa de la semana porque los títulos son casi idénticos a los de '
-  '2026.</b> Las páginas del blog de Binance tituladas «Security Incident Recap» y «Binance Security Incident '
-  'Update #2 y #3» son de <b>mayo de 2019</b>, y son las que devuelve una búsqueda por delante de las de 2026. '
-  'La primera lleva un rótulo de 30 de octubre de 2026 en cabecera, y ese rótulo es lo único de 2026 de toda la '
-  'página. Las comunicaciones del incidente de 2026 están en su centro de publicación propio, serie «Security '
-  'Incident Recovery Update», y en su cuenta de la red social. <b>El aviso de método de la edición 011 se queda '
-  'corto: no es que el blog esté vacío de 2026, es que sirve contenido de 2019 con apariencia de actual.</b>'),
- ('«Harvard, 851.000 cuentas: brecha de noviembre de 2026.»',
-  '<b>Trampa de fecha.</b> La brecha es de <b>noviembre de 2025</b> y los datos se filtraron en febrero de '
-  '2026. Lo que ha ocurrido ahora es que se incorporaron a un servicio de comprobación de credenciales '
-  'filtradas, y por eso reaparece en los resúmenes de la semana del 30 de octubre al 5 de noviembre de 2026 '
-  'como si fuese nueva. Si entra en algún sitio, entra con fecha de 2025 y nota de reaparición.'),
- ('«Los frigoríficos del banco de sangre francés llegaron a 110 grados.»',
-  '<b>La cifra no es de la entidad.</b> La publicó un <b>semanario satírico francés</b>, que dio la noticia '
-  'primero, y la agencia que la recoge se la atribuye a él, no al operador de la sangre. Lo que describe es '
-  '<b>una consigna que los atacantes cambiaron en el controlador</b>, no una temperatura que el producto '
-  'alcanzara. La localización regional que circula también es del semanario. Y no hay comunicado propio de la '
-  'entidad ni del ministerio francés alcanzable: su listado de actualidad responde y su entrada más reciente es '
-  'del 1 de octubre de 2026.'),
- ('«El ciberataque a Renfe fue el primero realizado con inteligencia artificial a un organismo público en '
-  'España.»',
-  '<b>No verificado, y la verificación lo dice expresamente.</b> La comprobación publicada el 29 de septiembre '
-  'de 2026 por una plataforma de verificación no pudo confirmar el uso de inteligencia artificial, y preguntó a '
-  'las dos entidades sin obtener respuesta. La afirmación se apoya en prensa y la difundió un informativo de '
-  'televisión. <b>No se publica como hecho</b>, y conviene tenerlo fichado porque reaparece cada vez que se '
-  'habla de ataques asistidos por IA.'),
- ('«Los 160.000 datos de la Guardia Civil y del Ministerio de Defensa son de ahora.»',
-  '<b>Trampa de fecha y, además, cifras que no cuadran.</b> La publicación del INCIBE-CERT es de <b>20 de enero '
-  'de 2025</b>, con fecha interna del 16 y las cuatro referencias de noticias del 16 de enero de 2025. Y el '
-  'desglose no suma: habla de aproximadamente 160.000 datos, pero describe dos bases con datos de 109.000 '
-  'miembros de la Guardia Civil más una tercera del Ministerio de Defensa con unos 84.000 registros. La propia '
-  'página advertía de que el organismo competente investigaba para confirmar autenticidad y alcance, es decir '
-  '<b>no estaba confirmado</b>. El origen probable es un ransomware de marzo de 2024 contra una subcontrata de '
-  'reconocimientos médicos.'),
- ('«Hubo un sabotaje ferroviario italiano en 2026 con componente cíber», y «hubo un ciberataque a hospitales '
-  'belgas en 2026 con cancelación de cirugías.»',
-  '<b>Las dos son trampas de fecha y una no es ni cíber.</b> El sabotaje ferroviario italiano es del <b>7 de '
-  'febrero de 2026</b> y es <b>físico</b>: incendio de una caseta eléctrica, corte deliberado de cables de '
-  'fibra en arquetas y un artefacto incendiario rudimentario neutralizado, con unos 40.000 pasajeros afectados '
-  'y retrasos de hasta 150 minutos. Está fuera del ámbito. Y el caso hospitalario belga es de <b>enero de '
-  '2026</b>, un hospital de Amberes con al menos 70 intervenciones afectadas desde el martes 13 de enero. '
-  'Reaparecen las dos insistentemente en las búsquedas de 2026 y conviene tenerlas fichadas para no '
-  'readmitirlas por error en semanas sucesivas.'),
- ('«Existen 6,5 millones de euros en sanciones anónimas de la autoridad francesa que se pueden dar de alta.»',
-  '<b>Corrección de una premisa de este boletín, y queda cerrada.</b> No existen como tales. De las 83 '
-  'sanciones francesas de 2025 <b>solo diez se hicieron públicas</b>; las 73 restantes del procedimiento '
-  'simplificado <b>no se publican en absoluto</b>, ni con nombre ni anonimizadas. Lo único que consta es que '
-  '<b>catorce organismos</b> fueron sancionados por un incumplimiento relativo a la seguridad de los datos, '
-  '<b>sin importe desglosado y sin lista</b>, con un tope legal de 20.000 euros por sanción. No hay nada que '
-  'dar de alta y la cifra de 6,5 millones no está sostenida por ninguna publicación del regulador. No se '
-  'construye sumando noticias sueltas.'),
- ('«Ese rastreador de ataques dice que esta semana no ha pasado nada.»',
-  '<b>Cero falso, que es peor que un bulo.</b> El rastreador que aparece en las primeras posiciones de búsqueda '
-  'con el rótulo de ataques de hoy y de 2026 tiene, al abrirlo, <b>entradas que van del 8 de enero al 11 de '
-  'agosto de 2025</b>, y <b>ni una sola de noviembre de 2026</b>. Quien lo use como denominador concluirá que '
-  'no hubo incidentes. Se nombra el patrón, no la herramienta: un agregador sin fecha de última actualización '
-  'visible no sirve como fuente de ausencia.'),
- ('«ENISA contó 309 incidentes en organizaciones sanitarias europeas y los incidentes sanitarios españoles '
-  'crecieron un 40 por ciento en 2025.»',
-  '<b>Las dos cifras se están citando mal en la cobertura de los bancos de sangre.</b> La de los 309 incidentes '
-  'es <b>un dato de 2023</b> y se presenta como actual. La del 40 por ciento se atribuye a una agencia europea '
-  'y <b>no se ha podido verificar en su fuente</b>. Ninguna de las dos se usa aquí, y conviene no usarlas sin '
-  'ir al informe original.'),
+  '<b>Desmentido con el comunicado propio de la entidad, y el bulo sigue vivo.</b> El comunicado de '
+  'resultados del grupo, del 4 de noviembre a las 07:30, atribuye esas cifras a <b>un incidente de '
+  'ciberseguridad de octubre de 2026 que afectó principalmente a las capacidades en línea en el Benelux y '
+  'Estados Unidos y a la cadena de suministro del Benelux</b>. <b>La palabra refrigeración no aparece ni una '
+  'vez en todo el comunicado</b>, recontado. Ese perfil es el del incidente de servicios de informática del '
+  '11 de octubre, que la propia página de la cadena separaba del de refrigeración del 2 de noviembre. '
+  'Agravante nuevo de esta semana: <b>el bulo está ya incrustado en la cronología de una enciclopedia en '
+  'línea</b>, de modo que va a seguir reapareciendo.'),
+ ('«La oleada del 1 y 2 de noviembre alcanzó a cadenas alemanas y españolas.»',
+  '<b>No verificado, y la fuente que lo sostiene es una enciclopedia en línea.</b> Ninguna fuente primaria lo '
+  'sostiene. Lo único documentado del lado español sigue siendo el <b>aviso preventivo a veintiuna '
+  'empresas</b> no nombradas de la distribución alimentaria por parte del centro de ciberseguridad '
+  'valenciano, con <b>ningún ataque confirmado</b>, y la <b>desconexión preventiva</b> ordenada por la '
+  'agencia catalana sobre los equipos de control de temperatura del banco de sangre y tejidos. Las dos son '
+  'medidas preventivas, <b>no incidentes</b>, y no deben contarse como tales.'),
+ ('«El ransomware del CHU de Rouen del 15 de noviembre.»',
+  '<b>Trampa de fecha: es de 2019.</b> La pieza que lo recoge <b>no lleva año</b>, lo que la hace parecer '
+  'actual en cualquier búsqueda. <b>No hay ningún incidente en ese hospital en noviembre de 2026.</b>'),
+ ('«La brecha de Aura, con unas 900.000 personas afectadas, es de noviembre de 2026.»',
+  '<b>Es de marzo de 2026.</b> Otra trampa de fecha. El vector sí está publicado y es aprovechable como '
+  'ejemplo: <b>suplantación telefónica contra un empleado</b>.'),
+ ('«Las preguntas frecuentes de la Hochschule Heilbronn documentan el ataque al centro de servicios de '
+  'Baden-Wurtemberg.»',
+  '<b>Desmentido, y era un pendiente declarado de la edición pasada.</b> Abierta y leída la página: '
+  '<b>todas sus fechas son de 2022 y 2023</b>, y el estado de la propia página es de abril de 2023. El '
+  'hallazgo colateral que la edición 012 dejó abierto <b>era un falso positivo de cuatro años</b>. El caso '
+  'real del centro de servicios universitario sí existe, es de octubre de 2026 y entra en el registro de '
+  'esta edición con su propia ficha.'),
+ ('«El informe posterior al incidente de Binance no ha salido.»',
+  '<b>Salió el 3 de noviembre de 2026</b>, y el canal donde está no es ninguno de los dos que parecen. '
+  'Reconfirmado esta semana: <b>el blog de la entidad sirve contenido de 2019</b> con títulos casi idénticos '
+  'a los de 2026 y los devuelve por delante de los verdaderos, y <b>su centro de anuncios tampoco sirve</b>, '
+  'porque sus entradas recientes son promociones y avisos de producto. El canal bueno es su plataforma de '
+  'publicación propia. Dato nuevo del informe: la entidad declara haber repuesto el 98 por ciento a 31 de '
+  'octubre y haber congelado unos 2.850 millones de dólares.'),
+ ('«Los 200.000 afectados de la universidad técnica danesa.»',
+  '<b>Esa es la población del sistema, no el recuento de afectados, y la propia entidad lo dice.</b> La '
+  'universidad declara expresamente que <b>no puede determinar a cuántas personas afecta</b>, y que el '
+  'sistema contiene datos de unos 40.000 activos y 160.000 antiguos. Sumar las dos cifras y publicarlas como '
+  'afectados es inventar un dato que la fuente niega poder dar.'),
+ ('«El millón de números de la seguridad social de la universidad de Vanderbilt.»',
+  '<b>Lo dice el atacante, no la universidad.</b> Cualquier cifra que solo sostenga quien reivindica un '
+  'ataque va con esa etiqueta o no va. Lo mismo vale esta semana para los <b>46.000 registros de empleados</b> '
+  'que un atacante reclama de un fabricante de semiconductores, que la compañía <b>confirma como exposición '
+  'pero sin confirmar la cifra</b>, y para los cinco millones de dólares y los 30.000 registros de '
+  'conductores del caso de la naviera danesa.'),
+ ('«Los 125 millones de mensajes de texto letones los reconoce el operador.»',
+  '<b>Al contrario: el operador niega la fuga.</b> En declaración recogida por la radiotelevisión pública '
+  'letona dice, literalmente, que «hemos verificado que los datos de clientes no se han filtrado, no se han '
+  'copiado y siguen seguros», y reconoce solo «una vulnerabilidad, que ha sido corregida». <b>La cifra de 125 '
+  'millones es del equipo de investigación que lo destapó</b>, no de la entidad ni de ninguna autoridad. Y la '
+  'frase sobre una «vulnerabilidad de configuración de acceso» que circula como comunicado del proveedor es '
+  'en realidad una <b>respuesta privada a un cliente</b> que el cliente trasladó. Hay contradicción abierta '
+  'entre las dos versiones, y se publica como contradicción.'),
+ ('«Iberia está entre las aerolíneas afectadas por la brecha de Amadeus.»',
+  '<b>No consta, y lo que circula es otro incidente.</b> Ninguna fuente alcanzada sitúa a Iberia ni a Vueling '
+  'entre las afectadas. Lo que aparece al buscar es un incidente <b>distinto y anterior</b>, de enero de '
+  '2026, sobre una plataforma de transferencia de ficheros de otro fabricante, que <b>no menciona a Amadeus '
+  'en absoluto</b>. Y una segunda precisión del mismo caso: el periodo de exposición que se está publicando '
+  'con días exactos <b>no está en ninguna fuente</b>; lo publicado son meses, de agosto de 2023 a septiembre '
+  'de 2026, y procede de lo que Amadeus trasladó a una de las aerolíneas.'),
+ ('«El 2 de febrero de 2027 es un hito del Reglamento de IA.»',
+  '<b>No existe.</b> Recuento literal sobre los textos completos, anexos incluidos: la cadena aparece '
+  '<b>cero veces</b> en el Reglamento (UE) 2024/1689 original, cero en el Reglamento (UE) 2026/1744 que lo '
+  'modificó y cero en el consolidado. Las tres fechas próximas con las que es fácil confundirla son el '
+  '<b>2 de febrero de 2025</b>, aplicación de los capítulos I y II; el <b>2 de febrero de 2026</b>, en que la '
+  'Comisión debía dar directrices sobre clasificación de alto riesgo; y el <b>2 de diciembre de 2027</b>, que '
+  'es probablemente la que se estaba buscando.'),
+ ('«El alto riesgo del anexo III del Reglamento de IA se aplica desde el 2 de agosto de 2026.»',
+  '<b>Ya no.</b> La letra c) del párrafo tercero del artículo 113 fue <b>sustituida</b> por el Reglamento '
+  '(UE) 2026/1744 y dice ahora <b>2 de diciembre de 2027</b> para el alto riesgo del artículo 6.2 y del '
+  'anexo III, y <b>2 de agosto de 2028</b> para el del artículo 6.1 y el anexo I. Cualquier plan de '
+  'adecuación construido sobre agosto de 2026 trabaja con una fecha derogada, y quien asumió que el hito '
+  'nuevo era agosto de 2027 se equivoca por cuatro meses.'),
+ ('«La ISO no ha publicado la 27028.»',
+  '<b>Ya sí, desde el 11 de noviembre de 2026</b>, y con esto se cierra un arrastre propio: la edición 010 de '
+  'este boletín la dio por publicada cuando no lo estaba, se corrigió en la 011, y ahora la fecha real es el '
+  '11 de noviembre, leída en el ciclo de vida de su ficha. Lo que sigue siendo cierto es la trampa de '
+  'acceso: <b>la dirección por número de norma no es la ficha</b>, y pedir «42001» o «27000» en el espejo del '
+  'catálogo devuelve, con respuesta correcta, una norma de conos huecos de 2008 y otra de vehículos de '
+  'carretera de 1995.'),
 ]
 
-LAGUNAS = '<b>España, un incidente nuevo confirmado por la propia entidad, y es un ayuntamiento.</b> El de San Cristóbal de La Laguna, con ficha propia. Junto a él, dos cosas que <b>no son incidentes y no deben contarse como tales</b>, aunque sean la primera vez que la campaña de la refrigeración toca a España de forma documentada. La primera: la <b>Agència de Ciberseguretat de Catalunya ordenó desconectar la conexión centralizada de los equipos que controlan la temperatura del Banc de Sang i Teixits</b>, a raíz del ataque francés, y lo confirma su director clínico, que añade que es provisional y que no alteró mucho el trabajo porque ya hay tres comprobaciones independientes y ninguna cámara está conectada directamente a Internet. Es una <b>desconexión preventiva</b>. Ninguna de las dos piezas que la recogen fecha la orden, de modo que <b>no se puede datar la medida, solo su publicación</b>. La segunda: el centro de ciberseguridad de la Comunitat Valenciana avisó de forma <b>preventiva a 21 empresas</b> no nombradas de la distribución alimentaria, contactadas a través de su patronal, que usan la misma tecnología y el mismo fabricante de refrigeración que supermercados europeos ya atacados, con <b>ningún ataque confirmado y ninguna petición de rescate</b> en la Comunitat. El fabricante no se identifica, y la atribución de una vulnerabilidad conocida que hace un auditor en esa misma pieza es <b>opinión de un tercero, no vector publicado</b>. Dato editorial que conviene registrar: <b>la mejor pieza sobre la llegada del caso a España no está en ningún CERT, está en prensa generalista a partir de una patronal sectorial</b>, que es exactamente lo que este barrido venía a corregir. <b>El mercado español: cero comunicaciones de incidente, y esta vez con la serie completa.</b> Recorridos íntegramente los dos registros de comunicaciones al mercado de la <b>CNMV</b> del 2 al 8 de noviembre y paginando hasta el final, <b>95 comunicaciones en el registro de otra información relevante, números 43443 a 43537, y 11 en el de información privilegiada, números 3403 a 3413, 106 en total</b>, con las dos series <b>estrictamente continuas y sin un solo hueco</b>, lo que prueba que el barrido es exhaustivo. Barrido literal por ciber, ciberataque, brecha, incidente, indisponibilidad, interrupción, ransomware, intrusión, acceso no autorizado y fuga de datos: <b>cero coincidencias</b>, y un único falso positivo que conviene incorporar al método, porque es recurrente: el registro 3410, de una distribuidora de alimentación, casa con «dora» por estar contenido en «DISTRIBUIDORA». Con límite de palabra, cero. <b>Ninguna cotizada española comunicó al mercado un incidente de ciberseguridad en la ventana.</b> <b>Banca y seguros, cero por tercera edición consecutiva, y la razón estructural sigue en pie:</b> son doce ediciones y el régimen de notificación de <b>DORA</b> no ha aparecido una sola vez en esta sección, y no es laguna de búsqueda, es que <b>bajo DORA las notificaciones de incidentes graves van a la autoridad competente y no son públicas</b>, igual que no lo son las del Mecanismo Único de Supervisión ni las del Banco de España o la Dirección General de Seguros. Ausencia de noticias no es ausencia de incidentes, y conviene decírselo así a cualquier cliente que deduzca tranquilidad de este silencio. <b>El patrón de la semana, que es técnica novedosa y hay que contarlo junto y no como tres fichas sueltas:</b> en tres de los casos nuevos del resto del mundo el atacante usó <b>agentes de inteligencia artificial</b>, y en dos lo dice la propia víctima. La firma de análisis de cadena de bloques que está trazando el robo de Binance describe al actor con <b>técnicas agénticas ofensivas</b> y no explica cómo se ejecutó; la plataforma de identidad y de inicio de sesión único publica que el atacante <b>usó un agente comercial de IA</b> para entrar en una aplicación interna de ventas; y la autoridad de certificación del tercer caso declara un <b>error de configuración</b> en una migración de servidor. A efectos del filtro, los dos primeros van con vector <b>sin determinar</b>, porque describen el medio y no la vía de entrada, y eso es precisamente lo que hay que no inferir. Es el mismo patrón que el caso australiano de un agente comercial de IA que el INCIBE-CERT recogió el 6 de octubre, y encaja con el plazo del Banco Central Europeo sobre ciberamenaza potenciada por IA que esta edición sigue en la sección financiera. <b>Taxonomía: se ha añadido un vector, y se dice por qué.</b> <b>Error humano al enviar o publicar.</b> Hacía falta: la sanción polaca de esta edición trae el mecanismo publicado por el regulador con todo detalle, una empleada que adjunta un fichero por error y un fichero que queda publicado en la plataforma de la secretaría. Meterlo en «error de configuración» habría ensuciado el filtro que tiene que ser fiable, y dejarlo en «sin determinar» habría perdido un dato que la fuente sí publica. <b>Las entradas antiguas no se han reclasificado</b>: el vector nuevo solo se usa donde la fuente lo declara. <b>Dos correcciones de vector con fuente propia, y las dos mejoran el filtro.</b> La Universidad de Copenhague declara un <b>error de configuración en un entorno de pruebas</b> y lo califica de error propio, y Eichstätt declara entrada por <b>una brecha de seguridad de un proveedor de software</b>, lo que convierte su caso en cadena de suministro. Las dos se han corregido en el registro y queda dicho en el historial de cada ficha. <b>Casos anteriores que se dan de alta ahora, y es el sentido del registro acumulado:</b> el proveedor de facturación y los <b>once hospitales universitarios alemanes</b> de mayo de 2026, que es el mejor caso de cadena de suministro sanitaria europea del año y que explica por qué la Charité aparece dos veces con dos incidentes distintos; el <b>tercer</b> gran caso sanitario polaco, de septiembre de 2026, que es el ejemplo más completo de mapa de notificaciones de todo el registro; y la reconfirmación en fuente propia del Land del ataque a la <b>red del Estado de Berlín</b> de septiembre de 2026, que ya estaba fichado y al que se le añade el detalle que faltaba. Ninguno de los tres es de esta ventana, y entran por consecuencia material, que es la regla. <b>Un caso que queda sin dar de alta por no tener fecha verificable, y la regla se respeta:</b> la brecha del estudio nacional de enfermedad inflamatoria intestinal comunicada por un hospital universitario de Valladolid, que califica el hecho de ciberataque intencionado y doloso, afirma que se vieron datos identificativos y de salud de pacientes y que el encargado notificó a la <b>AEPD</b>, pero cuya página <b>no lleva fecha de publicación</b>: el único año visible es un copyright de plantilla. <b>Sin fecha de publicación verificable no entra</b>, y queda como pendiente expreso. <b>Una ficha del registro con sospecha de identidad equivocada, y se declara en vez de borrarla:</b> el <b>colegio de médicos de Tenerife</b>, de la edición 009, no se ha podido reconfirmar y las búsquedas dirigidas no devuelven ninguna pieza; lo que sí existe en la misma provincia es un caso de junio de 2026 en el <b>colegio de enfermería</b>. Hay que resolverlo antes de volver a citarlo. Y un segundo pendiente del mismo tipo: un ransomware en el ayuntamiento de <b>Santa Perpètua de Mogoda</b>, mencionado de pasada por un medio canario al enumerar episodios recientes, <b>sin ninguna pieza localizable en fuente propia ni en prensa catalana</b>. No se admite sin comprobación propia. <b>Sectores sin nada nuevo confirmado en la ventana:</b> telecomunicaciones, energía y agua, industria y alimentación por vía distinta de la distribución, y defensa y seguridad. <b>Fuentes que no se han podido alcanzar, y se declaran una a una, porque no alcanzar no es que no haya nada:</b> el <b>canal propio del Ayuntamiento de La Laguna</b>, que cierra la conexión cifrada y devuelve error de servidor sin ella, y es la laguna que más pesa del lado español porque su fuente propia es la que resolvería el vector, la afectación de datos y las notificaciones; el <b>centro de anuncios de Binance</b>, que es justo el canal donde publica, de modo que no puede afirmarse que no haya comunicaciones adicionales en la ventana; el listado general de notas de prensa de la <b>Charité</b>; la nota oficial del <b>Bundestag</b> que sostendría la cifra de seis dispositivos infectados, que devuelve error en todos los intentos; los comunicados del <b>operador francés de la sangre</b> y del <b>ministerio francés de Sanidad</b>; las <b>resoluciones de la AEPD</b>, cuyo listado y feeds se han alcanzado pero cuyo buscador rechaza cualquier parámetro, con retraso de caché demostrado en sus canales; el <b>Garante italiano</b> más allá de su boletín y la <b>agencia italiana de ciberseguridad</b> en su listado de alertas; el <b>equipo de respuesta belga</b>, bloqueado por su propio dominio, con lo que <b>Bélgica y Portugal siguen sin barrer</b>; la autoridad británica, que sirve contenido de <b>2024</b> a los clientes automatizados, de modo que <b>Reino Unido no puede considerarse barrido</b>; el <b>Supervisor Europeo de Protección de Datos</b>, que vuelve a quedar sin cubrir; y las autoridades de <b>tres Länder alemanes</b> y de <b>Renania del Norte-Westfalia</b>, cuyas rutas de comunicados devuelven error o no sirven fechas. <b>Y la laguna de datación sigue en pie:</b> el archivo histórico de internet está bloqueado en este entorno, de modo que <b>no se ha podido datar de forma independiente la primera publicación</b> de ninguna página, y por eso no se afirma que Delhaize haya retirado la mención a la refrigeración, solo que a 6 de noviembre no está. <b>Casos abiertos para la próxima edición</b>, que hay que volver a comprobar en fuente propia: el <b>Ayuntamiento de La Laguna</b>, por su canal propio, el vector y la notificación de datos personales; el <b>operador francés de la sangre</b>, para cerrar si hubo o no producto comprometido, porque hay una declaración posterior al semanario que choca con el relato oficioso; el <b>informe posterior al incidente de Binance</b>, comprometido en su actualización del 1 de noviembre, que es el documento que cerrará la causa raíz; la <b>Charité</b>, si envía las comunicaciones anunciadas y publica cifra propia; la <b>Universidad de Leipzig</b>, que lleva doce días sin publicar nada; la <b>Universidad de Copenhague</b>, por el fin del apagado y el alcance definitivo; el <b>centro de servicios de Baden-Wurtemberg</b>, con la pista nueva de la Hochschule Heilbronn y del informe anual del Tribunal de Cuentas del Land; y la nota del <b>Bundestag</b>, que es la que cerraría el caso del programa espía y la única que menciona un segundo vector, el bombardeo de correo.'
+LAGUNAS = '<b>El registro crece en veinte entradas y la mitad de la historia de la semana es una sola cadena de suministro.</b> Siete fichas desarrolladas y trece filas de tabla, más cuatro actualizaciones a casos que ya estaban. La ficha de la campaña de refrigeración <b>pasa de fila a ficha desarrollada</b>, porque por primera vez hay un documento oficial que la cuantifica y que nombra víctimas, y sus cifras de afectación <b>se corrigen al dato oficial</b>: donde este boletín daba «más de 350 establecimientos» con procedencia de prensa, ahora van <b>unos 700 emplazamientos y al menos quince inicios de fuego</b>, con procedencia de regulador, y queda dicho en su historial. <b>España, tres entradas y ninguna cómoda.</b> La primera es <b>Salvamento Marítimo</b>, que confirma un incidente de ransomware detectado el 4 de noviembre y lo hace once días después respondiendo a un periodista, sin comunicado propio, sin página de estado y sin nota del ministerio. La segunda es <b>Amadeus</b>, que no es una víctima española cualquiera: es una cotizada del IBEX en el origen de una brecha que arrastra a quince aerolíneas europeas y asiáticas, y que <b>no ha comunicado nada a la CNMV</b>. Y la tercera, que entra como asunto y no como ficha nueva porque ya estaba, es la ficha del <b>INCIBE-CERT sobre el Servicio Extremeño de Salud</b>. <b>Dos avisos de rigor sobre obligaciones, que es donde este registro no se relaja.</b> El primero: <b>la atribución a un Estado no dispara por sí misma ningún plazo</b>. Lo que hace es activar la vía sancionadora del Consejo, hoy solo anunciada, y convertir en real una discusión que hasta ahora era teórica, la de las <b>exclusiones por acto hostil de Estado en las pólizas de ciberriesgo</b>. Conviene que cualquier cliente con cadena de frío mire esa cláusula esta semana, porque un sabotaje atribuido a una unidad militar extranjera es exactamente el supuesto que esas exclusiones contemplan. El segundo: en el caso de Amadeus <b>no se puede afirmar ninguna notificación</b>; su declaración dice «autoridades» sin nombrar ninguna, y la única notificación declarada de todo el racimo es la de airBaltic, que dice haber informado a las autoridades pertinentes incluido su equipo nacional de respuesta. <b>El patrón de la semana, y hay que contarlo junto.</b> Tres de los casos nuevos tienen como origen <b>credenciales de cuenta de sistema o acceso de proveedor</b>, no una vulnerabilidad: Amadeus, según lo que trasladó a una de sus aerolíneas; el intermediario de mensajes de texto letón, cuya base guardaba cuatro años de mensajes íntegros de dos bancos y de un número de emergencias; y el racimo de proveedores de servicios gestionados comprometidos a través de una herramienta de acceso remoto, con seis proveedores, más de 286 equipos y 47 organizaciones aguas abajo. <b>A efectos del filtro, los dos primeros van con vector sin determinar</b>, porque lo publicado describe el medio y no acredita la vía de entrada, y eso es precisamente lo que no hay que inferir. <b>Educación e investigación, tres casos y todos alemanes o daneses.</b> La universidad de Múnich, con unos 600.000 registros de su sistema de admisión que incluyen matrículas de unos cincuenta años y datos bancarios desde 2005; el centro de servicios universitario de Baden-Wurtemberg, que cierra un pendiente declarado de la edición pasada; y la universidad técnica danesa, que ya estaba fichada y a la que se añade lo que faltaba. Ninguno es de esta ventana, y entran por consecuencia material, que es la regla del registro acumulado. <b>Casos que no entran, y por qué.</b> La atribución de Salvamento Marítimo a un grupo concreto de ransomware <b>no se ficha</b>: el grupo no ha reivindicado el ataque y la entidad no figura entre las víctimas publicadas en su sitio de filtraciones, comprobado. La brecha del estudio nacional de enfermedad inflamatoria intestinal comunicada por un hospital universitario de Valladolid <b>sigue sin entrar</b>, porque su página no lleva fecha de publicación verificable y sin fecha no entra; es el segundo lunes que se declara. Y el ayuntamiento de Santa Perpètua de Mogoda <b>sigue sin verificar</b>. <b>Sectores sin incidente nuevo confirmado en la ventana:</b> administración pública fuera del caso español, defensa y seguridad, telecomunicaciones fuera del caso letón, e industria y alimentación por vía distinta de la distribución. <b>Banca y seguros, cero por cuarta edición consecutiva</b>, y la razón estructural sigue siendo la misma y conviene repetirla a cualquier cliente que deduzca tranquilidad del silencio: <b>bajo DORA las notificaciones de incidentes graves van a la autoridad competente y no son públicas</b>, igual que no lo son las del Mecanismo Único de Supervisión, las del Banco de España ni las de la Dirección General de Seguros. Ausencia de noticias no es ausencia de incidentes. <b>Fuentes que no se han podido alcanzar en el barrido de incidentes, y se declaran una a una:</b> el <b>sitio propio de Salvamento Marítimo</b>, que cierra la conexión cifrada en todas las rutas y devuelve error de servidor sin ella, y que es la laguna que más pesa del lado español porque su fuente propia resolvería el vector y el alcance; el <b>CCN-CERT</b>, con reto anti robot por tercera edición consecutiva; las <b>salas de prensa de Finnair y de airBaltic</b>, con denegación y con cáscara de guion respectivamente, de modo que las cifras de las dos llegan por cobertura y no por fuente propia; la <b>sala de prensa del grupo postal francés</b>, pintada en cliente; el <b>canal propio del operador letón de mensajes</b>, que no tiene comunicado localizable; el <b>canal propio del ayuntamiento de San Cristóbal de La Laguna</b>, tercera semana sin alcanzar; la <b>nota del Bundestag</b> sobre el programa espía, cuarto intento fallido acumulado; las <b>resoluciones individuales de la autoridad francesa</b>, que su propio artículo agregado no enlaza; las <b>autoridades de los Länder alemanes</b>, no barridas, que es el hueco mayor del lado sancionador; y los <b>canales propios de siete cadenas de distribución</b> europeas afectadas por la campaña del frío, que siguen sin abrirse una a una y son laguna arrastrada, no cero. <b>Y un aviso de método que vale más que varios hallazgos</b>, porque estuvo a punto de costar un caso entero: el incidente de Salvamento Marítimo se iba a descartar porque la pieza que primero aparece en cualquier búsqueda es la más floja, un medio que no nombra a la entidad y atribuye la única afirmación institucional a «un organismo dependiente del Gobierno central». Buscar más abajo sacó una declaración nominada de la propia entidad y una pieza independiente seis días anterior. <b>La primera fuente que aparece no es la mejor fuente</b>, y en un barrido de incidentes eso no es una molestia: es la diferencia entre fichar y no fichar. <b>Casos abiertos para la próxima edición:</b> el informe de la autoridad francesa en su versión íntegra, para cerrar si hay más sectores tocados; el comunicado propio del grupo postal francés sobre los veintidós millones, cuya única versión propia lleva una fecha imposible de 2025; si <b>Amadeus</b> acaba comunicando algo a la CNMV o si alguna aerolínea española aparece; la <b>resolución de la autoridad de protección de datos letona</b>, que abrió investigación de oficio tras declarar que no había recibido notificación alguna; el ayuntamiento de La Laguna por su canal propio; y la pista sin cerrar de una brecha en un proveedor que afectaría a la filial francesa de una gran cadena de distribución, cuya única pieza localizada prohíbe el acceso automatizado.'
